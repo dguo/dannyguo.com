@@ -1,0 +1,11 @@
+title: Danny Guo
+email: dannyguo91@gmail.com
+description: Danny Guo's blog
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.dannyguo.com"
+twitter_username: dannyguo
+github_username:  dguo
+
+# Build settings
+markdown: kramdown
+

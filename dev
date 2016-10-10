@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+
+# $ ./dev -h
+
+from __future__ import print_function
+
+import argparse
+from subprocess import call
+
+def up(args):
+    call(['docker-compose', 'up', '--build', '--remove-orphans'])
+
+def down(args):
+    call(['docker-compose', 'down', '--remove-orphans', '--rmi', 'local'])
+
+parser = argparse.ArgumentParser(prog='./dev')
+subparsers = parser.add_subparsers(help='Available commands')
+
+parser_up = subparsers.add_parser('up',
+                                  help='Bring up the development enviroment')
+parser_up.set_defaults(func=up)
+
+parser_down = subparsers.add_parser('down',
+                     help='Bring down the development environment and clean up')
+parser_down.set_defaults(func=down)
+
+args = parser.parse_args()
+args.func(args)
+

@@ -1,0 +1,3 @@
+# Let Git handle line endings if the user doesn't have core.autocrlf set
+* text=auto
+

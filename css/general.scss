@@ -34,7 +34,7 @@ body {
 }
 
 #container {
-  max-width: 800px;
+  max-width: 750px;
   margin: auto;
 }
 
@@ -45,8 +45,8 @@ header {
 }
 
 footer {
-  margin-top: 25px;
-  font-size: small;
+  margin-top: 2rem;
+  font-size: .7rem;
   color: $burnt-orange;
 
   p {
@@ -58,6 +58,10 @@ footer {
   float: left;
   margin: 0px;
   font-size: large;
+
+  @media screen and (max-width: 475px) {
+    float: none;
+  }
 }
 
 .menu {
@@ -65,5 +69,15 @@ footer {
 
   a {
     margin: 0px 3px;
+  }
+
+  @media screen and (max-width: 475px) {
+    float: none;
+
+    margin-top: 10px;
+
+    a {
+      margin: 0px 0px;
+    }
   }
 }

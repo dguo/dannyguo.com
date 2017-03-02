@@ -26,4 +26,3 @@ parser_down.set_defaults(func=down)
 
 args = parser.parse_args()
 args.func(args)
-

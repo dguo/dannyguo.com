@@ -14,3 +14,6 @@ title: Danny Guo · Projects
 
 ## Websites
 * [The Daily Lore](https://www.dailylore.com/) - News headlines aggregator
+
+## Other
+* [Open source contributions](https://showmyprs.com/user/dguo)

@@ -14,6 +14,7 @@ title: Danny Guo · Projects
   activity (payments and rewards)
 
 ## Websites
+* [Digital Security Coach](https://digitalsecuritycoach.com) - An accessible crash course on digital security
 * [Make a README](https://makeareadme.com) - Explains the concept of a README
 * [The Daily Lore](https://www.dailylore.com/) - News headlines aggregator
 

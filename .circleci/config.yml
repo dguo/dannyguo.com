@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: jekyll/jekyll:pages
+    steps:
+      - checkout
+      - run:
+          name: Build the site
+          command: jekyll build

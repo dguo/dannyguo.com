@@ -1,32 +1,45 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-# $ ./dev -h
-
-from __future__ import print_function
+# ./dev -h
 
 import argparse
+from http.client import HTTPException
+import os
 from subprocess import call
 import sys
-
-def up(args):
-    try:
-        call(['docker-compose', 'up', '--build', '--remove-orphans'])
-    except KeyboardInterrupt:
-        sys.exit()
-
-def down(args):
-    call(['docker-compose', 'down', '--remove-orphans', '--rmi', 'local'])
+from threading import Thread
+import time
+from urllib.error import URLError
+from urllib.request import urlopen
+import webbrowser
 
 parser = argparse.ArgumentParser(prog='./dev')
-subparsers = parser.add_subparsers(help='Available commands')
+subparsers = parser.add_subparsers(metavar='<command>', title='commands')
 
-parser_up = subparsers.add_parser('up',
-                                  help='Bring up the development enviroment')
-parser_up.set_defaults(func=up)
+def open_in_borwser():
+    site = 'http://localhost:4000'
+    while True:
+        try:
+            urlopen(site)
+            break
+        except (URLError, HTTPException):
+            time.sleep(1)
+    webbrowser.open(site)
 
-parser_down = subparsers.add_parser('down',
-                     help='Bring down the development environment and clean up')
-parser_down.set_defaults(func=down)
+def start(args):
+    Thread(target=open_in_borwser).start()
+    call(['docker', 'run', '-it', '--rm', '-v',
+          os.getcwd() + ':/srv/jekyll:cached', '-w=/srv/jekyll', '-p',
+          '127.0.0.1:4000:4000', 'jekyll/jekyll:pages', 'jekyll', 'serve',
+          '--drafts'])
 
-args = parser.parse_args()
-args.func(args)
+parser_start = subparsers.add_parser(
+    'start', help='Start the development enviroment'
+)
+parser_start.set_defaults(func=start)
+
+if len(sys.argv) > 1:
+    args = parser.parse_args()
+    args.func(args)
+else:
+    parser.print_help()

@@ -3,10 +3,11 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-$ocean-blue: rgb(28, 107, 160);
-$burnt-orange: rgb(191, 87, 0);
-$blood-red: rgb(138, 7, 7);
-$forest-green: rgb(38, 106, 46);
+$blue: #0087BD; // NCS blue
+$orange: #EE7F2D; // Princeton
+$red: #C40233; // NCS red
+$green: #009F6B; // NCS green
+$black: #333; // avoid pure black
 
 .clearfix {
   &:after {
@@ -17,11 +18,11 @@ $forest-green: rgb(38, 106, 46);
 }
 
 h1 {
-  color: $forest-green;
+  color: $green;
 }
 
 a {
-  color: $ocean-blue;
+  color: $blue;
   text-decoration: none;
 
   &:hover {
@@ -31,6 +32,7 @@ a {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  color: $black;
 }
 
 #container {
@@ -39,7 +41,7 @@ body {
 }
 
 header {
-  color: $blood-red;
+  color: $red;
   margin: 25px 0px;
   @extend .clearfix;
 }
@@ -47,8 +49,8 @@ header {
 footer {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  font-size: .7rem;
-  color: $burnt-orange;
+  font-size: .8rem;
+  color: $orange;
 
   p {
     margin: 5px 0px;

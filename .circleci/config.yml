@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: jekyll/jekyll:pages
+    working_directory: /srv/jekyll
     steps:
       - checkout
       - run:

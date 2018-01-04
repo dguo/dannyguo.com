@@ -8,6 +8,7 @@ $orange: #EE7F2D; // Princeton
 $red: #C40233; // NCS red
 $green: #009F6B; // NCS green
 $black: #333; // avoid pure black
+$gray: #696969;
 
 .clearfix {
   &:after {
@@ -83,4 +84,10 @@ footer {
       margin: 0px 0px;
     }
   }
+}
+
+blockquote {
+  color: $gray;
+  padding-left: 15px;
+  border-left: 2px solid #CCC;
 }

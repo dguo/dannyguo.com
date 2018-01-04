@@ -4,8 +4,8 @@ title: Danny Guo
 ---
 
 # Hello, World
-Welcome to my corner of the Internet. Please feel free to check out my
-[writing](/blog) and [other activities](/projects).
+Welcome to my corner of the Internet. Feel free to check out my
+[writing](/blog) and [other activities](/projects). I'm currently working on [Sublime Fund](https://sublimefund.org), with the goal of getting more people involved in philanthropy.
 
 If you have arrived here in error and/or are disappointed, try checking out a [trending subreddit](https://www.reddit.com/r/trendingsubreddits/), a [random Wikipedia article](https://en.wikipedia.org/wiki/Special:Random), or a [random YouTube video](http://www.ytroulette.com) instead.
 

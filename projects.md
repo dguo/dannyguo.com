@@ -23,6 +23,9 @@ title: Danny Guo · Projects
 * [Make a README](https://makeareadme.com) - Explains the concept of a README
 * [The Daily Lore](https://www.dailylore.com/) - News headlines aggregator
 
+## Miscellaneous
+* [dotfiles](https://github.com/dguo/dotfiles) - My personal system configuration
+
 ## Open source contributions
 * [ioredis](https://github.com/luin/ioredis) - Added [transparent key prefixing](https://github.com/luin/ioredis#transparent-key-prefixing)
 * [yarn](https://yarnpkg.com) - Added [offline mirror pruning](https://yarnpkg.com/en/docs/prune-offline-mirror) (mentioned in a [F8 2017 presentation](https://developers.facebook.com/videos/f8-2017/building-high-quality-javascript-tools/) at around 39:00)

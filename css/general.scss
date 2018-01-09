@@ -9,6 +9,9 @@ $red: #C40233; // NCS red
 $green: #009F6B; // NCS green
 $black: #333; // avoid pure black
 $gray: #696969;
+$white: #FFF;
+$twitter-blue: #1da1f2;
+$github-black: #24292e;
 
 .clearfix {
   &:after {
@@ -48,9 +51,10 @@ header {
 }
 
 footer {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-size: .8rem;
+  border-top: 1px solid #eee;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: .9rem;
   color: $orange;
 
   p {
@@ -95,4 +99,44 @@ blockquote {
 img {
   border-radius: 8px;
   max-width: 100%;
+}
+
+#social-buttons {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.link-button {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  border-radius: 3px;
+  color: $white;
+  padding: 6px 17px;
+}
+
+.twitter {
+  background-color: $twitter-blue;
+  &:hover {
+    background-color: darken($twitter-blue, 10%);
+  }
+}
+
+.github {
+  background-color: $github-black;
+  &:hover {
+    background-color: darken($github-black, 10%);
+  }
+}
+
+.email {
+  background-color: $red;
+  &:hover {
+    background-color: darken($red, 10%);
+  }
 }

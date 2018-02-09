@@ -10,6 +10,34 @@ what I want to be doing. I'll probably include issues with tooling, bugs that
 take me longer to figure out than they should, and times when figuring out what
 the "right" thing to do seems hard.
 
+## 2018-02-08
+
+### Localhost stops working
+All of a sudden, I can't access my website that is running locally. The Docker
+Compose output looks good, and the port mapping looks fine when I run
+`docker-compose ps`. I try restarting the service, then restarting Docker
+(`sudo systemctl restart docker`), then restarting my computer. But it's still
+not working. I try to access the site in Chrome, and it does work! I try
+curling, but that hangs, just like Firefox. I try starting another project in
+Docker on a different port, and the results are the same. I try serving up a
+folder with Python (`python -m http.server` for Python 3), and it's still only
+accessible from Chrome. I decide to inspect my `/etc/hosts` file, and it's
+empty. I add `127.0.0.1 localhost` to it, and everything works again. I'm not
+sure how that happened though since I didn't update anything that I know of. I
+also don't know why Chrome was able to access localhost regardless.
+
+Looking back, I should have immediately tried the Python server to verify that
+it wasn't a Docker issue. That should have led me to checking out `/etc/hosts`
+more quickly rather than spending time restarting things.
+
+On the bright side, I spent a bit of time learning the [basic
+difference](https://stackoverflow.com/questions/20778771/what-is-the-difference-between-0-0-0-0-127-0-0-1-and-localhost)
+between `127.0.0.1` and `0.0.0.0`. Essentially, `127.0.0.1` will only serve
+clients on the same host, whereas `0.0.0.0` will serve clients on any host
+(like another computer if they know your IP address).
+
+Time wasted: ~30 minutes
+
 ## 2018-02-06
 
 ### Colorized output with ls

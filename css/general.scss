@@ -29,7 +29,7 @@ a {
   color: $blue;
   text-decoration: none;
 
-  &:hover {
+  &:not(.anchorjs-link):hover {
     text-decoration: underline;
   }
 }

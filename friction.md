@@ -8,7 +8,52 @@ title: Danny Guo · Development Friction
 I decided to start documenting all the things that cause me to lose focus on
 what I want to be doing. I'll probably include issues with tooling, bugs that
 take me longer to figure out than they should, and times when figuring out what
-the "right" thing to do seems hard.
+the "right" thing to do takes more than a couple minutes of research. In that
+sense, this is also a log of things that I have learned.
+
+## 2018-02-15
+
+### "RESTful" Partial Updates
+I want to follow convention when it comes to partially updating resources
+through a REST API. I know that `POST` is used to create resources, and `PUT`
+is used to update resources at a known location, but I don't want to send the
+entire object for updates. Instead, I only want to send the values that should
+be changed. I learn about `PATCH`, but it's not as simple as I imagined it
+would be. I read this [blog
+post](http://williamdurand.fr/2014/02/14/please-do-not-patch-like-an-idiot/),
+which tells me that `PATCH` is supposed to send instructions (i.e. `{"op":
+"replace", "path": "/email", "value": "newemail@example.com"`) for the update
+rather than just values (i.e. `{"email": "newemail@example.com"}`).
+
+I've never actually seen the former. In API documentation, I'm used to seeing
+the pattern of "send the values that you want to be updated, and those are the
+only ones that will change." That's how the [Stripe
+API](https://stripe.com/docs/api#update_recipient) works.  It uses `POST` for
+updates. The
+[Twilio](https://www.twilio.com/docs/api/rest/addresses#instance-post) and
+[Lob](https://lob.com/docs#templates_update) APIs also use `POST` for updates,
+which seems to go against [this
+guide](http://restcookbook.com/HTTP%20Methods/put-vs-post/), though [Roy
+Fielding](https://en.wikipedia.org/wiki/Roy_Fielding) apparently [doesn't have
+a problem](http://roy.gbiv.com/untangled/2009/it-is-okay-to-use-post) with it.
+I can't find an API that actually uses `PATCH`, except for [Google
+APIs](https://developers.google.com/gmail/api/v1/reference/users/labels/patch).
+
+I find another [blog
+post](https://blog.apisyouwonthate.com/put-vs-patch-vs-json-patch-208b3bfda7ac)
+that summarizes the topic. I think I will just use `PATCH` but not bother with
+the "official" approach of using a description of changes. My website is not
+complicated enough to justify that. I am following the informal approach that
+is [detailed
+here](https://restful-api-design.readthedocs.io/en/latest/methods.html#patch-vs-put).
+It is the Stripe/Twilio/Lob approach but uses `PATCH` instead of `POST`.
+
+`PUT` is not in the conversation because it is supposed to be idempotent. And
+while `PATCH` might seem idempotent, it is not because the rest of the resource
+might change in the meantime, or the changeset might depend on the resource
+already having certain values.
+
+Time spent: ~1 hour, 30 minutes
 
 ## 2018-02-08
 
@@ -36,7 +81,7 @@ between `127.0.0.1` and `0.0.0.0`. Essentially, `127.0.0.1` will only serve
 clients on the same host, whereas `0.0.0.0` will serve clients on any host
 (like another computer if they know your IP address).
 
-Time wasted: ~30 minutes
+Time spent: ~30 minutes
 
 ## 2018-02-06
 
@@ -53,7 +98,7 @@ that tells me I can do `export CLICOLOR=1` to achieve the same effect on Mac. I
 dotfiles](https://github.com/dguo/dotfiles/commit/ee1f5938074db1ad4e5256756253d3526dea9105)
 to set that when I'm on Mac and add the color flag otherwise.
 
-Time wasted: ~10 minutes
+Time spent: ~10 minutes
 
 ### No type checks with pm2 and ts-node
 I'm not getting type errors for the server during development, and a type error
@@ -93,4 +138,4 @@ learn that I can also turn on type checking with an environment variable, so I
 add `"TS_NODE_TYPE_CHECK": "1"` to the pm2 config. And that works! Type errors
 are being reported again.
 
-Time wasted: ~1 hour
+Time spent: ~1 hour

@@ -26,6 +26,7 @@ title: Danny Guo · Projects
 
 ## Miscellaneous
 * [dotfiles](https://github.com/dguo/dotfiles) - My personal system configuration
+* [React Production Build PSA](https://github.com/dguo/react-production-build-psa) - PSA to get developers to use the production build of React
 
 ## Open source contributions
 * [ioredis](https://github.com/luin/ioredis) - Added [transparent key prefixing](https://github.com/luin/ioredis#transparent-key-prefixing)

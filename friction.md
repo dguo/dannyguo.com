@@ -11,6 +11,36 @@ take me longer to figure out than they should, and times when figuring out what
 the "right" thing to do takes more than a couple minutes of research. In that
 sense, this is also a log of things that I have learned.
 
+## 2018-03-14
+
+### The "prepublish" npm lifecycle event is confusing
+I want to make sure that I run certain commands before publishing to the npm
+registry. I know npm supports [lifecycle
+events](https://docs.npmjs.com/misc/scripts) in `package.json`. The
+`prepublish` one seems to be what I'm looking for, but apparently it's
+[problematic](https://docs.npmjs.com/misc/scripts#prepublish-and-prepare).  The
+issue is that it was implemented to run not only before publishing but also
+during development after the user does `npm install`. This is incredibly
+unintuitive and seems to have caused a ton of [issues and
+discussion](https://github.com/npm/npm/issues/10074). There is even an
+[in-publish](https://www.npmjs.com/package/in-publish) package that is used as
+a workaround and has been downloaded millions of times.
+
+The npm team finally decided to resolved the issue, but the solution is pretty
+painful too. They added a `prepare` event that acts like `prepublish` (running
+after `npm install` too) and a `prepublishOnly` event that actually only runs
+before publishing. The plan is to issue a deprecation warning for
+`prepublish`, change it to act like `prepublishOnly` in a new major version, and
+then eventually deprecate `prepublishOnly`. I assume they put a lot of thought
+into it, but I don't understand why they couldn't skip the `prepublishOnly` part
+and just directly change the `prepublish` behavior in a new major version.
+
+Another related issue is that the Yarn team [has to keep
+up](https://github.com/yarnpkg/yarn/issues/1323) with the changes. It's
+unfortunate how much effort has been spent on this issue when it seems like it
+could have been avoided by just not making something act in a way that isn't
+implied by its name at all.
+
 ## 2018-03-13
 
 ### JavaScript modules with TypeScript

@@ -10,8 +10,9 @@ title: Danny Guo · Projects
 * [Bloomberg](https://bloomberg.com) (2013 - 2017) - Worked on [Terminal](https://www.bloomberg.com/professional/solution/bloomberg-terminal/) functions and the [Bloomberg Service Center](https://service.bloomberg.com) website
 
 ## Libraries
+* [format-stripe-metadata](https://github.com/sublimefund/format-stripe-metadata) - Ensure that [Stripe metadata](https://stripe.com/docs/api#metadata) is valid
 * [sleep-ts](https://github.com/dguo/sleep-ts) - Pause JavaScript execution using Promises and flexible time formats
-* [strsim](https://github.com/dguo/strsim-rs) - Rust implementations of [string similarity metrics](https://en.wikipedia.org/wiki/String_metric)
+* [strsim-rs](https://github.com/dguo/strsim-rs) - Rust implementations of [string similarity metrics](https://en.wikipedia.org/wiki/String_metric)
 
 ## Applications
 * [PawBlock](https://dannyguo.com/pawblock) - Browser extension for preventing procrastination by blocking websites

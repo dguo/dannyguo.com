@@ -15,9 +15,13 @@ title: Danny Guo · Projects
 * [strsim-rs](https://github.com/dguo/strsim-rs) - Rust implementations of [string similarity metrics](https://en.wikipedia.org/wiki/String_metric)
 
 ## Applications
-* [PawBlock](https://dannyguo.com/pawblock) - Browser extension for preventing procrastination by blocking websites
 * [churn](https://github.com/dguo/churn) - CLI for keeping track of credit card
   activity (payments and rewards)
+
+## Browser Extensions
+* [Chromatastic](https://addons.mozilla.org/en-US/firefox/addon/chromatastic/) - Dynamic Firefox theme that continuously cycles through colors
+* [PawBlock](https://dannyguo.com/pawblock) - Prevents procrastination by blocking websites
+* [Picture Paint](https://addons.mozilla.org/en-US/firefox/addon/picture-paint/) - Dynamic Firefox theme that uses the color palette of the current National Geographic Photo of the Day
 
 ## Websites
 * [Jolly Code](https://jollycode.org) - A celebration of fun programming projects

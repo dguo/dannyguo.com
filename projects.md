@@ -20,6 +20,7 @@ title: Danny Guo · Projects
 
 ## Browser Extensions
 * [Chromatastic](https://addons.mozilla.org/en-US/firefox/addon/chromatastic/) - Dynamic Firefox theme that continuously cycles through colors
+* [Color Tailor](https://addons.mozilla.org/en-US/firefox/addon/color-tailor/) - Dynamic Firefox theme that changes the theme to the current website's "primary" color
 * [PawBlock](https://dannyguo.com/pawblock) - Prevents procrastination by blocking websites
 * [Picture Paint](https://addons.mozilla.org/en-US/firefox/addon/picture-paint/) - Dynamic Firefox theme that uses the color palette of the current National Geographic Photo of the Day
 

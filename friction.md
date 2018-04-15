@@ -11,6 +11,23 @@ take me longer to figure out than they should, and times when figuring out what
 the "right" thing to do takes more than a couple minutes of research. In that
 sense, this is also a log of things that I have learned.
 
+## 2018-04-14
+### TypeScript's watch mode watches too many files
+I ran into a baffling issue where the TypeScript compiler's watch mode would
+trigger recompilation whenever I changed seemingly irrelevant files like
+`package.json` or a JS file in `node_modules`. Watch mode is
+[documented](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
+to only watch "input files". After some debugging, I realized that removing
+almost all of my dependencies fixed the problem. I tried doing binary search to
+figure out if a particular package was causing the issue, but I couldn't narrow
+it down to just one package. I ended up with a set of dependencies that
+reproduces the problem. Removing any of them seemed to fix the problem. What
+was particularly strange was the fact that the input files didn't even reference
+any of the dependencies.
+
+I made a [repo](https://github.com/dguo/tsc-watch-bug) demonstrating the problem
+and submitted an [issue](https://github.com/Microsoft/TypeScript/issues/23414).
+
 ## 2018-03-14
 
 ### The "prepublish" npm lifecycle event is confusing

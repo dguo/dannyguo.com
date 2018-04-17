@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/dannyguo
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://dannyguo.com
+  * I am dannyguo (https://keybase.io/dannyguo) on keybase.
+  * I have a public key ASAeJVJXzH2XO09KdLbDG4ZMgW0mfo4Lhra-Pr4KS5ykFgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01011e280d6d9bee0a774f5315b823ae19192f0e1514190adaa701482b9e790513b00a",
+      "host": "keybase.io",
+      "kid": "01201e255257cc7d973b4f4a74b6c31b864c816d267e8e0b86b6be3ebe0a4b9ca4160a",
+      "uid": "77713c3738ee85d7469c7e33b1c29519",
+      "username": "dannyguo"
+    },
+    "merkle_root": {
+      "ctime": 1523988743,
+      "hash": "ed288f09d96f9845c6f4034c751ef7386c56ceedb81671ace21d74cffbeeedb01930d1e30d87576ca55fef88e0be324d6ff2cc869db22213e1c65c9fbe437940",
+      "hash_meta": "2ec5d3b0f207a402edddb341934d9eccce00bd4be4c93b7cdd195675b94aa5f4",
+      "seqno": 2403397
+    },
+    "service": {
+      "entropy": "kzPd3Eahl8Z38Y12cLtMIclS",
+      "hostname": "dannyguo.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.47"
+  },
+  "ctime": 1523988775,
+  "expire_in": 504576000,
+  "prev": "8cd15cdaf96869513ddc1dad4c50906527553ed1980de204853bb39e24f3da24",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgHiVSV8x9lztPSnS2wxuGTIFtJn6OC4a2vj6+CkucpBYKp3BheWxvYWTESpcCCMQgjNFc2vloaVE93B2tTFCQZSdVPtGYDeIEhTuzniTz2iTEIAc5e3eoQB++R72f5UAjHuIMExQcr4fM7oF7zAsCN09jAgHCo3NpZ8RA+LL/2sAToZ+MdSiFiWLF3MPgJN8Ww+wam2F7AywJ8j8Yfv41nhfM6H6LKw/UbClI8zUyOGWnQygfkZIyGeW9AqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIO8rPQZ/7xfaGki20E97muSYZeIIVscXvx2xz5/9Rkaso3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/dannyguo
+
+==================================================================

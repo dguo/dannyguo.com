@@ -11,6 +11,26 @@ take me longer to figure out than they should, and times when figuring out what
 the "right" thing to do takes more than a couple minutes of research. In that
 sense, this is also a log of things that I have learned.
 
+## 2018-04-29
+### Can't empty an AWS S3 bucket through the web interface
+I have a bucket leftover from an old project. I have tried to empty/delete it
+before, but the operation never succeeded. It incurs less than ten cents in
+costs, and AWS doesn't seem to charge for tiny amounts (presumably because
+of payment processing fees), so I never bothered to try emptying it from the
+CLI. It's just interesting that a couple years later, I still can't empty the
+bucket from the web interface. When I press "Empty bucket," a progress bar
+immediately appears saying "100% Sucessful." But when I open the bucket, it's
+still filled with files. Furthermore, clicking on the progress bar opens a popup
+that lists how many objects are being deleted. It goes up by 1000 every few
+seconds, which seems to contradict the progress bar. The title also has
+"Completed" in it. Eventually, the total objects number stops going up. I
+refresh and open the bucket. It's still filled with files.
+
+Deleting the bucket is different. It actually says "In progress" when it's..in
+process. But it eventually hangs too. Maybe part of the problem is that there
+are hundreds of thousands of files in the bucket. I just expected better from
+the UI.
+
 ## 2018-04-14
 ### TypeScript's watch mode watches too many files
 I ran into a baffling issue where the TypeScript compiler's watch mode would

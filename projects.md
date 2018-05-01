@@ -15,6 +15,7 @@ title: Danny Guo · Projects
 * [strsim-rs](https://github.com/dguo/strsim-rs) - Rust implementations of [string similarity metrics](https://en.wikipedia.org/wiki/String_metric)
 
 ## Applications
+* [Splurge Stopper](https://github.com/dguo/splurge-stopper) - Amazon Alexa skill for avoiding splurging on purchases
 * [churn](https://github.com/dguo/churn) - CLI for keeping track of credit card
   activity (payments and rewards)
 

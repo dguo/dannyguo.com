@@ -30,8 +30,8 @@ def start(args):
     Thread(target=open_in_browser).start()
     call(['docker', 'run', '-it', '--rm', '-v',
           os.getcwd() + ':/srv/jekyll:cached', '-w=/srv/jekyll', '-p',
-          '127.0.0.1:4000:4000', 'jekyll/jekyll:pages', 'jekyll', 'serve',
-          '--drafts'])
+          '4000:4000', '-p', '35729:35729',  'jekyll/jekyll:pages', 'jekyll',
+          'serve', '--drafts', '--incremental', '--livereload'])
 
 parser_start = subparsers.add_parser(
     'start', help='Start the development enviroment'

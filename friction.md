@@ -4,12 +4,60 @@ title: Danny Guo · Development Friction
 ---
 
 # Development Friction
-
 I decided to start documenting all the things that cause me to lose focus on
 what I want to be doing. I'll probably include issues with tooling, bugs that
 take me longer to figure out than they should, and times when figuring out what
 the "right" thing to do takes more than a couple minutes of research. In that
 sense, this is also a log of things that I have learned.
+
+## 2018-05-04
+### Files created by Docker containers in mounted volumes are owned by root
+For browser extensions, Mozilla requires developers to [upload source
+code](https://developer.mozilla.org/en-US/Add-ons/Source_Code_Submission) for
+review when the extension code is obfuscated or minified. To make it easier, I
+have a Python script in my project that first packages the extension using
+[web-ext](https://github.com/mozilla/web-ext) and then creates a ZIP of the
+source code using the `git archive`
+[command](https://git-scm.com/docs/git-archive).  This was working fine on my
+Mac, but when I tried it on my Linux laptop, the `git archive` command failed
+because it lacked permission to create a file in the `web-ext-artifacts`
+directory that was created by web-ext. The issue was that the script ran
+web-ext inside a Docker container, which created `web-ext-artifacts` with
+[root](https://en.wikipedia.org/wiki/Superuser) as the owner.
+
+I found this [GitHub issue](https://github.com/moby/moby/issues/3206), and one
+of the comments suggested setting the user with the `--user`
+[flag](https://docs.docker.com/engine/reference/commandline/run/#options) when
+running the container. I tried it, and it fixed the issue. So the Python script
+grabs the user id and group id of the current user and passes them to Docker.
+Now all the files and directories are owned by me rather than root, and the
+Python script can successfully create the ZIP.
+
+I was curious why the issue didn't occur on my Mac. I read the documentation
+for [osxfs](https://docs.docker.com/docker-for-mac/osxfs/#ownership), but I
+found this [Stack Overflow
+answer](https://stackoverflow.com/a/43213455/1481479) easier to understand.
+The gist of it is:
+
+> Inside the container, the osxfs driver pretends that whatever uid/gid is
+> running in the container is also the uid/gid that owns the mounted files.
+
+> If you chown files (in the container) to something else, no chown is
+> performed on the real files; this owner information is stored in an
+> extended file attribute instead, and that value is used by the container
+> (and ignored by macOS).
+
+> The real files are owned by whoever owns them in macOS, outside the
+> container. Access control is determined using those real file ownerships,
+> and the uid/gid of the user running the Docker applications (which is
+> probably your login user on the Mac).
+
+This [GitHub issue
+comment](https://github.com/docker/for-mac/issues/2657#issuecomment-371210749)
+explains that the point of this is 1) to not require root on the host if the
+container creates files that are owned by root from its perspective and 2) to
+make sure that the container can access any files that the host user can access
+and has shared with the container through a volume mount.
 
 ## 2018-04-29
 ### Can't empty an AWS S3 bucket through the web interface

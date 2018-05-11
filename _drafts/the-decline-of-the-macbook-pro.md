@@ -3,37 +3,46 @@ layout: post
 title: The Decline of the Macbook Pro
 ---
 I've been using Macs for almost nine years. I got a 15" MacBook Pro the summer
-before my freshman year of college through my school's computer store. This was
-shortly after Apple introduced the stunningly elegant [unibody
-design](https://en.wikipedia.org/wiki/MacBook_Pro#Second_generation_(Unibody)).
-I used it for six years before getting a 13" model in 2015. I'm considering
-getting a new one in the next year or two, but it seems like the latest Macbook
-Pros are worse in almost every regard that matters to me.
+before my freshman year of college through my school's computer store. I used
+it for six years before getting a 13" model in 2015. I'm considering getting a
+new one in the next year or two, but it seems like the latest Macbook Pros are
+worse in almost every way that matters to me.
 
 [MagSafe](https://en.wikipedia.org/wiki/MagSafe) was always one of the best
 MacBook features. Now, all the MacBook Pro models use
 [USB-C](https://en.wikipedia.org/wiki/USB-C) for charging. While I like the
-idea of eventually being able to use the same charger for everything, it's
-unfortunate they couldn't find a way to preserve MagSafe functionality.
+idea of eventually being able to use the same charger for everything, losing
+MagSafe is still unfortunate.
 
 Apple has always been enthusiastic about pushing forward with new standards and
-embracing a wireless future. They dropped the DVD drive long before other
-companies. But I didn't want a DVD drive, even in 2015. Now MacBook Pros only have USB-C ports. My 2013 machine has HDMI, which has occasionally been useful since HDMI is so widely used. Not having a single legacy USB port may be progressive, but it'd be decidedly inconvenient for me. Toting around dongles is not a good experience.
+embracing a wireless world. They dropped the DVD drive long before other
+companies did. But I didn't want a DVD drive, even in 2015. USB 2/3 and HDMI
+are different. MacBook Pros only have USB-C ports now. My 2015 machine has
+HDMI, which has occasionally been useful since HDMI is so widely supported. Not
+having a single legacy USB port may be progressive, but I don't like the idea
+of buying and carrying around dongles and adapters.
 
 I've tried the new butterfly mechanism keyboard, and it feels terrible. It has
-almost no travel. I love the physical feeling of typing. That's why I use a
+almost no travel. I love the physical feeling of typing, which is why I use a
 mechanical keyboard with obnoxiously loud switches. Furthermore, the new
 keyboard seems to be significantly [less
 reliable](https://theoutline.com/post/2402/the-new-macbook-keyboard-is-ruining-my-life),
-with [pieces of
-dust or debris](https://arstechnica.com/gadgets/2018/05/report-butterfly-macbook-pro-keyboards-require-more-frequent-more-expensive-repairs/)
+with [pieces of dust or
+debris](https://arstechnica.com/gadgets/2018/05/report-butterfly-macbook-pro-keyboards-require-more-frequent-more-expensive-repairs/)
 causing keypresses to not register.
 
-The trackpad is too big. Even with good palm rejection, even one failure in a
-hundred is too much. I set my sensitivity to max anyway, so a larger trackpad
-doesn't help me in any way. It's also aesthetically too large because there's almost no margin between it and the keyboard and the edge of the machine. I've realized that one of the reasons most terminal emulators look ugly is because they barely provide any margin between the text and the edges.
+The trackpad is too big. Even one palm rejection failure in a hundred is too
+much. I set my sensitivity to max anyway, so a larger trackpad doesn't help me
+because I can go from one edge of the screen to another with barely any finger
+movement. The trackpad is also aesthetically too large because there's almost
+no margin between it and the keyboard and the edge of the machine. I've
+realized that one of the reasons most terminal emulators look ugly by default
+is because they barely provide any margin between the text and the edges.
 
-It's expensive for the hardware specs.
+MacBook Pros are expensive. At least in terms of the core hardware
+specifications, other laptops with similar processors, RAM, and hard drives are
+several hundred dollars cheaper. However, Apple products also retain much more
+resale value.
 
 The touch bar doesn't seem useful.
 

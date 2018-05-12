@@ -37,16 +37,68 @@ because I can go from one edge of the screen to another with barely any finger
 movement. The trackpad is also aesthetically too large because there's almost
 no margin between it and the keyboard and the edge of the machine. I've
 realized that one of the reasons most terminal emulators look ugly by default
-is because they barely provide any margin between the text and the edges.
+is because they barely provide any margin between the text and the edges. The same concept applies to the current trackpad.
 
-MacBook Pros are expensive. At least in terms of the core hardware
-specifications, other laptops with similar processors, RAM, and hard drives are
-several hundred dollars cheaper. However, Apple products also retain much more
-resale value.
+The touch bar doesn't seem useful. I don't mind the digital escape key, since I
+remap my caps lock key to control (when tapped) and escape (when held down)
+anyway, but I would rather use keyboard shortcuts than look down at the touch
+bar. At home, I also put my laptop on a stand, so reaching up for the touch bar
+would definitely be slower than using my mouse.
 
-The touch bar doesn't seem useful.
+I've realized that almost all of the macOS software is effectively [bloatware](https://en.wikipedia.org/wiki/Software_bloat#Bloatware) for me.
 
-I use almost none of the OS X software.
+![macOS software](https://i.imgur.com/IO6AQCf.png)
+
+Preview is the only one I use regularly.
+
+* Photos
+    * I use Google Photos.
+* iMovie
+    * I don't make videos.
+* GarageBand
+    * I don't make music.
+* Pages
+    * I haven't needed to make a Word document in a long time, and if I did, I could use Google Docs
+* Numbers
+    * I use Google Sheets.
+* Keynote
+    * I would make a HTML presentation using something like [Reveal.js](https://revealjs.com/)
+* Siri
+    * I find voice assistants generally unhelpful, and on my laptop, where typing is easy, they're even less useful.
+* Safari
+    * I use Firefox as my primary browser.
+* Mail
+    * I use the Gmail web client.
+* FaceTime
+    * It's restricted to macOS/iOS users. Skype, Facebook Messenger, Google Hangouts, etc. all work anywhere. I tried to use Facetime with my family once and learned that it still only supports one on one video chat.
+* Messages
+    * It's also restricted to macOS/iOS users. I use Google Voice, so I can receive and send SMS messsages using any browser.
+* Maps
+    * I use Google Maps.
+* Notes
+    * I use [Evernote](https://www.evernote.com).
+* Calendar
+    * I use Google Calendar.
+* Contacts
+    * I use Google Contacts.
+* Reminders
+    * I use [Todoist](https://todoist.com).
+* Photo Booth
+    * This was fun to play around with, but I haven't opened it in years.
+* iTunes
+    * I use Google Play Music and Pocketcasts. iTunes also became the definition of feature creep.
+* iBooks
+    * I read books on my Kindle and check them out from the New York Public Library's e-book website.
+* App Store
+    * I only use this for system updates. I use Homebrew for other software because I can check my software list into version control.
+* Time Machine
+    * All the data I care to back up is in Google Drive, Dropbox, or GitHub.
+
+The overarching problem with Apple software is that it's tied to Apple
+hardware. I want my software to be hardware-agnostic.
+
+The big reason for me to totally buy into Apple's ecosystem would be their
+stance on privacy. But for now, that's not compelling enough.
 
 I've been considering getting a Lenovo [Thinkpad X1
 Carbon](https://en.wikipedia.org/wiki/ThinkPad_X1_Carbon) instead.

@@ -4,6 +4,7 @@ title: Danny Guo · Problems
 ---
 This is a list of problems, complaints, suggestions, etc.
 
+* Restaurant menus should have pictures for every item. Nutrition info would also be nice.
 * [Evernote](https://evernote.com/)
     * In the web version, it's not possible to add rows to tables.
     * Opening a note in the web version causes nested lists to be flattened. These changes seem to sync, so the lists are flattened even in the native clients.

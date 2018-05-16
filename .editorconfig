@@ -12,4 +12,3 @@ trim_trailing_whitespace = true
 
 [*.{scss,yml}]
 indent_size = 2
-

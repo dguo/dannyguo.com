@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{ partial "default-head.html" . }}
+    </head>
+    <body>
+        <div id="container">
+            {{ partial "header.html" . }}
+
+            {{ .Content }}
+
+            {{ partial "footer.html" }}
+        </div>
+
+        {{ partial "default-js.html" }}
+    </body>
+</html>

@@ -1,0 +1,141 @@
+/*
+$blue: #0087BD; // NCS blue
+$orange: #EE7F2D; // Princeton
+$red: #C40233; // NCS red
+$green: #009F6B; // NCS green
+$black: #333; // avoid pure black
+$gray: #696969;
+$white: #FFF;
+$twitter-blue: #1da1f2;
+$github-black: #24292e;
+*/
+
+.clearfix:after, header:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+h1 {
+  color: #009F6B;
+}
+
+a {
+  color: #0087BD;
+  text-decoration: none;
+}
+
+a:not(.anchorjs-link):hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+#container {
+  max-width: 750px;
+  margin: auto;
+}
+
+header {
+  color: #C40233;
+  margin: 25px 0px;
+}
+
+footer {
+  border-top: 1px solid #eee;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: .9rem;
+  color: #EE7F2D;
+}
+
+footer p {
+  margin: 5px 0px;
+}
+
+.title {
+  float: left;
+  margin: 0px;
+  font-size: large;
+}
+
+@media screen and (max-width: 475px) {
+  .title {
+    float: none;
+  }
+}
+
+.menu {
+  float: right;
+}
+
+.menu a {
+  margin: 0px 3px;
+}
+
+@media screen and (max-width: 475px) {
+  .menu {
+    float: none;
+    margin-top: 10px;
+  }
+  .menu a {
+    margin: 0px 0px;
+  }
+}
+
+blockquote {
+  color: #696969;
+  padding-left: 15px;
+  border-left: 2px solid #CCC;
+}
+
+img {
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+#social-buttons {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.link-button {
+  border-radius: 3px;
+  color: #FFF;
+  padding: 6px 17px;
+}
+
+.link-button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.link-button:hover {
+  text-decoration: none;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.twitter:hover {
+  background-color: #0c85d0;
+}
+
+.github {
+  background-color: #24292e;
+}
+
+.github:hover {
+  background-color: #0e1011;
+}
+
+.email {
+  background-color: #C40233;
+}
+
+.email:hover {
+  background-color: #920126;
+}

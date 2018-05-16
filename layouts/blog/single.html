@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{ partial "default-head.html" }}
+
+        <link rel="stylesheet" href="/css/post.css" type="text/css" />
+    </head>
+    <body>
+        <div id="container">
+            {{ partial "header.html" . }}
+
+            <h1>{{ .Title }}</h1>
+            <small>Published on {{.Date.Format "2006-01-02"}}</small>
+
+            {{ .Content }}
+
+            {{ partial "footer.html" . }}
+        </div>
+
+        {{ partial "default-js.html" . }}
+    </body>
+</html>

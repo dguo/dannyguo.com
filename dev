@@ -5,7 +5,7 @@
 import argparse
 from http.client import HTTPException
 import os
-from subprocess import call
+from subprocess import run
 import sys
 from threading import Thread
 import time
@@ -16,8 +16,21 @@ import webbrowser
 parser = argparse.ArgumentParser(prog='./dev')
 subparsers = parser.add_subparsers(metavar='<command>', title='commands')
 
+DOCKER_RUN = [
+    'docker', 'run', '--init', '-it', '--rm', '-v',
+    f'{os.getcwd()}:/src:cached', '-w=/src', '-p', '1313:1313',
+    'jguyomard/hugo-builder:0.40-extras'
+]
+
+def command(help):
+    def decorator(func):
+        parser = subparsers.add_parser(func.__name__, help=help)
+        parser.set_defaults(func=func)
+        return func
+    return decorator
+
 def open_in_browser():
-    site = 'http://localhost:4000'
+    site = 'http://localhost:1313'
     while True:
         try:
             urlopen(site)
@@ -26,20 +39,23 @@ def open_in_browser():
             time.sleep(1)
     webbrowser.open(site)
 
-def start(args):
+@command('Open a shell')
+def sh(args, remaining):
+    return run(DOCKER_RUN + ['sh']).returncode
+
+@command('Start development')
+def start(args, remaining):
     Thread(target=open_in_browser).start()
-    call(['docker', 'run', '-it', '--rm', '-v',
-          os.getcwd() + ':/srv/jekyll:cached', '-w=/srv/jekyll', '-p',
-          '4000:4000', '-p', '35729:35729',  'jekyll/jekyll:pages', 'jekyll',
-          'serve', '--drafts', '--incremental', '--livereload'])
+    run(DOCKER_RUN + ['hugo', 'serve', '--bind', '0.0.0.0', '-v'])
 
-parser_start = subparsers.add_parser(
-    'start', help='Start the development enviroment'
-)
-parser_start.set_defaults(func=start)
+@command('Run a Hugo command')
+def hugo(args, remaining):
+    return run(DOCKER_RUN + ['hugo'] + remaining or []).returncode
 
-if len(sys.argv) > 1:
-    args = parser.parse_args()
-    args.func(args)
-else:
-    parser.print_help()
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        args, remaining = parser.parse_known_args()
+        returncode = args.func(args, remaining)
+        sys.exit(returncode)
+    else:
+        parser.print_help()

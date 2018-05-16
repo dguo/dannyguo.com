@@ -2,12 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4.3
+      - image: jguyomard/hugo-builder:0.40-extras
+    working_directory: /src
     steps:
       - checkout
       - run:
-          name: Install dependencies
-          command: bundle install
-      - run:
           name: Build the site
-          command: jekyll build
+          command: hugo

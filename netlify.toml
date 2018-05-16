@@ -1,6 +1,12 @@
 [build]
-  command = "jekyll build"
-  publish = "_site"
+  command = "hugo"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.40"
+
+[context.production.environment]
+  HUGO_ENV = "production"
 
 [[redirects]]
   from = "/blood-moon/*"

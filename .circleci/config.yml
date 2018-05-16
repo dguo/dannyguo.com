@@ -2,10 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: jekyll/jekyll:pages
-    working_directory: /srv/jekyll
+      - image: circleci/ruby:2.4.3
     steps:
       - checkout
+      - run:
+          name: Install dependencies
+          command: bundle install
       - run:
           name: Build the site
           command: jekyll build

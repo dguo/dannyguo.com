@@ -30,8 +30,10 @@ a:not(.anchorjs-link):hover {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
   color: #333;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 code {

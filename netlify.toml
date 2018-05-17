@@ -1,3 +1,8 @@
 [build]
   command = "jekyll build"
   publish = "_site"
+
+[[redirects]]
+  from = "/pawblock/*"
+  to = "https://pawblock.netlify.com/:splat"
+  status = 200

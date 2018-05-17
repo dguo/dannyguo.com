@@ -1,4 +1,6 @@
 baseURL: https://dannyguo.com
 googleAnalytics: UA-90320718-1
 languageCode: en-us
+pygmentsCodefences: true
+pygmentsStyle: monokai
 title: Danny Guo

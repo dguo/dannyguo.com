@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: jguyomard/hugo-builder:0.40-extras
+      - image: jguyomard/hugo-builder:0.40
     working_directory: /src
     steps:
       - checkout

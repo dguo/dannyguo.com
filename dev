@@ -19,7 +19,7 @@ subparsers = parser.add_subparsers(metavar='<command>', title='commands')
 DOCKER_RUN = [
     'docker', 'run', '--init', '-it', '--rm', '-v',
     f'{os.getcwd()}:/src:cached', '-w=/src', '-p', '1313:1313',
-    'jguyomard/hugo-builder:0.40-extras'
+    'jguyomard/hugo-builder:0.40'
 ]
 
 def command(help):

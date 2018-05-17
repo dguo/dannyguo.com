@@ -92,6 +92,11 @@ blockquote {
   border-left: 2px solid #CCC;
 }
 
+.highlight pre {
+  border-radius: 3px;
+  padding: 8px;
+}
+
 img {
   border-radius: 8px;
   max-width: 100%;

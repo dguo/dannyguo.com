@@ -3,6 +3,11 @@
   publish = "_site"
 
 [[redirects]]
+  from = "/blood-moon/*"
+  to = "https://blood-moon.netlify.com/:splat"
+  status = 200
+
+[[redirects]]
   from = "/pawblock/*"
   to = "https://pawblock.netlify.com/:splat"
   status = 200

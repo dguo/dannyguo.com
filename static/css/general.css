@@ -48,6 +48,14 @@ hr {
   border: 1px solid #eee;
 }
 
+hr.comments-separator {
+  margin-bottom: 50px;
+}
+
+.comments-separator {
+  margin-top: 40px;
+}
+
 footer {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;

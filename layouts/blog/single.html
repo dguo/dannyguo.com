@@ -14,9 +14,11 @@
 
             {{ .Content }}
 
-            <hr>
+            <hr class="comments-separator">
 
             {{ template "_internal/disqus.html" . }}
+
+            <div class="comments-separator">
 
             {{ partial "footer.html" . }}
         </div>

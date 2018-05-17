@@ -44,8 +44,11 @@ header {
   margin: 25px 0px;
 }
 
+hr {
+  border: 1px solid #eee;
+}
+
 footer {
-  border-top: 1px solid #eee;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: .9rem;

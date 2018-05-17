@@ -9,9 +9,9 @@
 
             {{ .Content }}
 
-            {{ partial "footer.html" }}
+            {{ partial "footer.html" . }}
         </div>
 
-        {{ partial "default-js.html" }}
+        {{ partial "default-js.html" . }}
     </body>
 </html>

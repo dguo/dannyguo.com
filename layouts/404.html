@@ -1,9 +1,24 @@
----
-layout: single
-title: Page not found
----
+<!DOCTYPE html>
+<html>
+    <head>
+        {{ partial "default-head.html" . }}
+    </head>
+    <body>
+        <div id="container">
+            {{ partial "header.html" . }}
 
-# Whoops!
-Sorry, but I can't find that page for you. Try going to the [homepage](/).
+            <h1>Whoops!</h1>
 
-![Sad rabbit](https://i.imgur.com/qickpZA.jpg)
+            <p>
+                Sorry, but I can't find that page for you. Try going to the
+                <a href="/">homepage</a>.
+            <p>
+
+            <img src="https://i.imgur.com/qickpZA.jpg" alt="Sad rabbit">
+
+            {{ partial "footer.html" . }}
+        </div>
+
+        {{ partial "default-js.html" . }}
+    </body>
+</html>

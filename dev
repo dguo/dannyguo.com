@@ -46,7 +46,7 @@ def sh(args, remaining):
 @command('Start development')
 def start(args, remaining):
     Thread(target=open_in_browser).start()
-    run(DOCKER_RUN + ['hugo', 'serve', '--bind', '0.0.0.0', '-v'])
+    run(DOCKER_RUN + ['hugo', 'server', '--bind', '0.0.0.0', '--buildDrafts'])
 
 @command('Run a Hugo command')
 def hugo(args, remaining):

@@ -25,7 +25,7 @@ a {
   text-decoration: none;
 }
 
-a:not(.anchorjs-link):hover {
+a:not(.anchorjs-link):not(.link-button):hover {
   text-decoration: underline;
 }
 
@@ -135,10 +135,6 @@ img {
 
 .link-button:not(:last-child) {
   margin-right: 10px;
-}
-
-.link-button:hover {
-  text-decoration: none;
 }
 
 .twitter {

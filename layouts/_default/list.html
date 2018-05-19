@@ -1,11 +1,9 @@
 {{ define "main" }}
-    <div id="container">
-        {{ .Content }}
+    {{ .Content }}
 
-        {{ range .Data.Pages.ByDate.Reverse }}
-            <p>
-                <span>{{.Date.Format "2006-01-02"}} </span><a href="{{.Permalink}}">{{.Title}}</a>
-            </p>
-        {{ end }}
-    </div>
+    {{ range .Data.Pages.ByDate.Reverse }}
+        <p>
+            <span>{{.Date.Format "2006-01-02"}} </span><a href="{{.Permalink}}">{{.Title}}</a>
+        </p>
+    {{ end }}
 {{ end }}

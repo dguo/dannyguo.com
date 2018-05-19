@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        {{ partial "default-head.html" . }}
-    </head>
-    <body>
-        <div id="container">
-            {{ partial "header.html" . }}
+{{ define "main" }}
+    <div id="container">
+        {{ .Content }}
 
-            {{ .Content }}
-
-            {{ range .Data.Pages.ByDate.Reverse }}
-                <p>
-                    <span>{{.Date.Format "2006-01-02"}} </span><a href="{{.Permalink}}">{{.Title}}</a>
-                </p>
-            {{ end }}
-
-            {{ partial "footer.html" . }}
-        </div>
-
-        {{ partial "default-js.html" . }}
-    </body>
-</html>
+        {{ range .Data.Pages.ByDate.Reverse }}
+            <p>
+                <span>{{.Date.Format "2006-01-02"}} </span><a href="{{.Permalink}}">{{.Title}}</a>
+            </p>
+        {{ end }}
+    </div>
+{{ end }}

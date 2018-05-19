@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        {{ partial "default-head.html" . }}
+        {{ partial "head.html" . }}
+
+        {{ block "head-extra" . }}
+        {{ end }}
     </head>
     <body>
         <div id="container">
             {{ partial "header.html" . }}
 
-            {{ .Content }}
+            {{ block "main" . }}
+            {{ end }}
 
             {{ partial "footer.html" . }}
         </div>
 
-        {{ partial "default-js.html" . }}
+        {{ partial "js.html" . }}
     </body>
 </html>

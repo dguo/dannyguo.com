@@ -1,28 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        {{ partial "default-head.html" }}
+{{ define "head-extra" }}
+    <link rel="stylesheet" href="/css/post.css" type="text/css" />
+{{ end }}
 
-        <link rel="stylesheet" href="/css/post.css" type="text/css" />
-    </head>
-    <body>
-        <div id="container">
-            {{ partial "header.html" . }}
+{{ define "main" }}
+    <div id="container">
+        <h1>{{ .Title }}</h1>
+        <small>Published on {{.Date.Format "2006-01-02"}}</small>
 
-            <h1>{{ .Title }}</h1>
-            <small>Published on {{.Date.Format "2006-01-02"}}</small>
+        {{ .Content }}
 
-            {{ .Content }}
+        <hr class="comments-separator">
 
-            <hr class="comments-separator">
+        {{ template "_internal/disqus.html" . }}
 
-            {{ template "_internal/disqus.html" . }}
-
-            <div class="comments-separator">
-
-            {{ partial "footer.html" . }}
-        </div>
-
-        {{ partial "default-js.html" . }}
-    </body>
-</html>
+        <div class="comments-separator">
+    </div>
+{{ end }}

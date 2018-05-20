@@ -46,6 +46,16 @@ body {
   line-height: 1.6;
 }
 
+* {
+  cursor: url(cursor.png), auto !important;
+  /* Fix for high resolution displays that only works in Chrome and Safari
+     See https://stackoverflow.com/a/15577496/1481479 */
+  cursor: -webkit-image-set(
+    url('cursor.png') 1x,
+    url('cursor-2x.png') 2x
+  ), auto !important;
+}
+
 code {
   background-color: #F6F6F6;
   border-radius: 4px;

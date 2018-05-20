@@ -6,8 +6,13 @@ title: The Decline of the MacBook Pro
 I've been using Macs for almost nine years. I got a 15" MacBook Pro the summer
 before my freshman year of college through my school's computer store. I used
 it for six years before getting a 13" model in 2015. I'm considering getting a
-new one in the next year or two, but it seems like the latest MacBook Pros are
-worse in almost every way that matters to me.
+new one in the next year or two, but it seems like the latest MacBook Pros have
+gotten worse in many ways that are important to me. While it's hard to
+generalize from my opinions, I've read a fair amount of discontent on [Hacker
+News](https://news.ycombinator.com/) and the
+[r/apple](https://www.reddit.com/r/apple/) subreddit. [Some
+people](https://marco.org/2017/11/14/best-laptop-ever) are seeking out used or
+refurbished 2015 machines.
 
 ## Charging
 
@@ -21,12 +26,11 @@ MagSafe is still unfortunate.
 
 Apple has always been enthusiastic about pushing forward with new standards and
 embracing a wireless world. They dropped the DVD drive long before other
-companies did. But I didn't want a DVD drive, even in 2015. USB 2 and 3 and HDMI
-are different. MacBook Pros only have USB-C ports now, and I consider that to
-be a huge disadvantage. My 2015 machine has HDMI, which has occasionally been
-useful since HDMI is so widely supported. Not having a single legacy USB
-port may be progressive, but I don't like the idea of buying and carrying
-around dongles and adapters.
+companies did. But I didn't want a DVD drive, even in 2015. USB 3 and HDMI are
+different. MacBook Pros only have USB-C ports now. Not having a single legacy
+USB port may be progressive, but I don't like the idea of buying and carrying
+around dongles and adapters. The built-in HDMI port on my 2015 machine has been
+useful since HDMI is so widely supported.
 
 ## Keyboard
 
@@ -47,10 +51,13 @@ The trackpad is too big. Even one palm rejection failure in a hundred is too
 much. I set my sensitivity to max anyway, so a larger trackpad doesn't help me
 because I can go from one edge of the screen to another with barely any finger
 movement. The trackpad is also aesthetically too large because there's almost
-no margin between it and the keyboard and the edge of the laptop. I've realized
-that one of the reasons most terminal emulators look ugly by default is because
-they barely provide any margin between the text and the edges. The same concept
-applies to the current trackpad.
+no margin between it and the keyboard and the edge of the laptop. One of the
+reasons many terminal emulators and older websites look ugly is because they
+don't have enough margin between elements (i.e. text inputs with no margin
+between the text and the borders). The MacBook Pro trackpad is ugly for the
+same reason.
+
+## Touch Bar
 
 The touch bar doesn't seem useful. I don't mind the digital escape key, since I
 remap my caps lock key to escape (when tapped) and control (when held down)
@@ -77,15 +84,15 @@ I've realized that almost all of the macOS software is effectively [bloatware](h
 * Keynote
     * I prefer creating HTML presentations using something like [reveal.js](https://revealjs.com/).
 * Siri
-    * Voice assistants are more helpful on smartphones where typing is harder. I don't use Siri on my MacBook.
+    * Voice assistants are more helpful on smartphones where typing is harder. I never use Siri on my laptop.
 * Safari
     * I use [Firefox](https://www.mozilla.org/en-US/firefox/) as my primary browser.
 * Mail
     * I use the [Gmail](https://www.google.com/gmail/about/) web client.
 * FaceTime
-    * It's restricted to macOS/iOS users. [Skype](https://www.skype.com/), [Facebook Messenger](https://www.messenger.com/), [Google Hangouts](https://hangouts.google.com/), etc. all work anywhere. I tried to use Facetime with my family once and learned that it still only supports one on one video chat.
+    * It's restricted to macOS/iOS users. [Skype](https://www.skype.com/), [Facebook Messenger](https://www.messenger.com/), [Google Hangouts](https://hangouts.google.com/), etc. all work anywhere and with multiple people. I tried to use FaceTime with my family once and learned that it still only supports one on one video chat.
 * Messages
-    * It's also restricted to macOS/iOS users. I use [Google Voice](https://www.google.com/voice), so I can receive and send SMS messsages using any browser.
+    * It's also restricted to macOS/iOS users. I use [Google Voice](https://www.google.com/voice), so I can send and receive SMS messsages using any device, since it works through Hangouts, which is multi-platform.
 * Maps
     * I use [Google Maps](https://www.google.com/maps).
 * Notes
@@ -101,7 +108,7 @@ I've realized that almost all of the macOS software is effectively [bloatware](h
 * Preview
     * This is only one I use regularly.
 * iTunes
-    * I use [Google Play Music](https://play.google.com/music/) and [Pocket Casts](https://www.shiftyjelly.com/pocketcasts/). iTunes also became the definition of feature creep.
+    * I use [Google Play Music](https://play.google.com/music/) and [Pocket Casts](https://www.shiftyjelly.com/pocketcasts/). iTunes also became the definition of [feature creep](https://en.wikipedia.org/wiki/Feature_creep).
 * iBooks
     * I read books on my [Kindle](https://en.wikipedia.org/wiki/Amazon_Kindle) and check them out from the New York Public Library's [e-book website](https://nypl.overdrive.com/).
 * App Store
@@ -109,48 +116,51 @@ I've realized that almost all of the macOS software is effectively [bloatware](h
 * Time Machine
     * All the data I care to back up is in [Google Drive](https://www.google.com/drive/), [Dropbox](https://www.dropbox.com/), or [GitHub](https://github.com/).
 
-The overarching problem with Apple software is that they are tied to Apple
+The overarching problem with macOS programs is that they are tied to Apple
 hardware, and they don't have web versions. I want my software to be
 hardware-agnostic.
 
-One reason to buy into Apple's ecosystem is their pro-privacy stance, but for
-now, that's not compelling enough. While I don't want to be so reliant on
+One reason to buy into Apple's ecosystem is their pro-privacy stance, but
+that's not compelling enough for me yet. While I don't want to be so reliant on
 Google services, I'd rather use software from a variety of companies. Todoist
-is better than any solution Apple or Google has produced, and I'm always on the
-look out for alternatives to other Google products.
+is better than any similar product that Apple or Google has produced, and I'm
+always on the look out for new solutions in established categories.
 
 ## Docker
 
-As a software developer, I try to do as much development as I can in
+I try to do as much software development as I can in
 [Docker](https://www.docker.com/). However, there are significant performance
 issues with [Docker for Mac](https://www.docker.com/docker-mac) when using
 [mounted volumes](https://github.com/docker/for-mac/issues/77). The issues
-aren't very noticeable for small projects, but for working on a medium-sized website, I do all the development on Linux on a five year old Lenovo laptop.
+aren't very noticeable for small projects, but for working on a medium-sized
+website, I do all the development on Linux on a five year old Lenovo laptop.
+If I could only fix one issue with using Macs, it'd be this one.
 
 ## Alternatives
 
-I've been considering getting a Lenovo [Thinkpad X1
-Carbon](https://en.wikipedia.org/wiki/ThinkPad_X1_Carbon) instead. It has USB-C
-ports but still retains legacy USB and HDMI ports. It's about a half pound
-lighter than the 13" Macbook Pro, yet it has a 14" screen. It even has a matte
-screen option that I would prefer. Its gimmicky feature is a physical webcam
-cover, which I actually want.
+I'm considering getting a Lenovo [ThinkPad X1
+Carbon](https://en.wikipedia.org/wiki/ThinkPad_X1_Carbon) instead and running
+Arch Linux on it. The X1 has USB-C ports but still retains legacy USB and HDMI
+ports. It's about a half pound lighter than the 13" Macbook Pro, yet it has a
+14" screen. It even has a matte screen option that I would prefer. Its gimmicky
+feature is a physical webcam cover, which I actually want.
 
 At this point, the only big thing holding me back from switching is the fact
 that I want to learn how to develop mobile apps, and a Mac is basically
 required for iOS development. While there are workarounds, they all have enough
-restrictions and drawbacks that they don't seem viable. Some of the other
-advantages of a Mac are:
+restrictions and drawbacks that they don't seem very viable. Some of the other
+advantages of sticking with Apple are:
 
 * [iTerm2](https://iterm2.com/) is the best terminal emulator I've used.
-* There are many native apps for macOS, compared to Linux.
-* macOS is more polished and reliable on a day to day basis.
+* There are many more desirable native apps for macOS than for Linux.
+* macOS is more polished and reliable than Linux on a day to day basis.
 
-## Conclusion
+## Hope
 
 Apple is holding their [Worldwide Developers
 Conference](https://en.wikipedia.org/wiki/Apple_Worldwide_Developers_Conference)
 in a few weeks, and I hope there will be some positive news regarding the
 MacBook Pro. When I got my first Mac, I checked the shipping status multiple
 times a day because I was so excited. If I decide to stick with Apple now, it
-would be with great reluctance.
+would be with great reluctance. That's a pretty incredible turnaround but not
+the kind that Apple wants.

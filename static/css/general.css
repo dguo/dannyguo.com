@@ -25,8 +25,18 @@ a {
   text-decoration: none;
 }
 
+/* Animated link underline on hover
+   Adapted from https://codepen.io/shshaw/details/pdyJBW */
+a:not(.anchorjs-link):not(.link-button) {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .3s;
+}
+
 a:not(.anchorjs-link):not(.link-button):hover {
-  text-decoration: underline;
+  background-size: 100% 2px;
 }
 
 body {

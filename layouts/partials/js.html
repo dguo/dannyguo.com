@@ -1,12 +1,8 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-
 <script type="text/javascript">
     var greetings = ['Hello', '你好', 'Hola', 'Namaste', 'Marhabaan',
                      'Bonjour', 'Hallå', 'こんにちは', '안녕하세요'];
     document.getElementById('greeting').innerHTML =
         greetings[Math.floor(Math.random() * greetings.length)];
-
-    anchors.add();
 </script>
 
 {{ template "_internal/google_analytics_async.html" . }}

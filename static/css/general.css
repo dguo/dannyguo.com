@@ -27,7 +27,7 @@ a {
 
 /* Animated link underline on hover
    Adapted from https://codepen.io/shshaw/details/pdyJBW */
-a:not(.anchorjs-link):not(.link-button) {
+a:not(.anchor):not(.link-button) {
   background-image: linear-gradient(currentColor, currentColor);
   background-position: 0 100%;
   background-repeat: no-repeat;
@@ -35,8 +35,14 @@ a:not(.anchorjs-link):not(.link-button) {
   transition: background-size .3s;
 }
 
-a:not(.anchorjs-link):not(.link-button):hover {
+a:not(.anchor):not(.link-button):hover {
   background-size: 100% 2px;
+}
+
+.icon-link {
+  font-size: 0.7em;
+  margin-left: 0.6em;
+  margin-bottom: 1px;
 }
 
 body {
@@ -169,4 +175,13 @@ img {
 
 .email:hover {
   background-color: #920126;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }

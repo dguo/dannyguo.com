@@ -1,5 +1,5 @@
 {{ define "main" }}
-    {{ .Content }}
+    {{ partial "anchor.html" .Content }}
 
     {{ range .Data.Pages.ByDate.Reverse }}
         <p>

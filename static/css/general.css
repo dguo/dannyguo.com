@@ -16,6 +16,16 @@ $github-black: #24292e;
   clear: both;
 }
 
+/* https://css-tricks.com/overriding-the-default-text-selection-color-with-css/ */
+::selection {
+  background-color: #C40233;
+  color: #FFF;
+}
+::-moz-selection {
+  background-color: #C40233;
+  color: #FFF;
+}
+
 h1 {
   color: #009F6B;
 }

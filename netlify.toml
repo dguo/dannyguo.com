@@ -9,11 +9,11 @@
   HUGO_ENV = "production"
 
 [[redirects]]
-  from = "/blood-moon/*"
-  to = "https://blood-moon.netlify.com/:splat"
-  status = 200
+  from = "/blood-moon"
+  to = "https://www.blood-moon.dannyguo.com"
+  status = 301
 
 [[redirects]]
-  from = "/pawblock/*"
-  to = "https://pawblock.netlify.com/:splat"
-  status = 200
+  from = "/pawblock"
+  to = "https://www.pawblock.dannyguo.com"
+  status = 301

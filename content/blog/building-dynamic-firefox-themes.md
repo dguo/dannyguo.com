@@ -213,7 +213,7 @@ native input.
 This seems to be a general issue with theming. When I used themes in the
 past, I never stuck with them for long because images can clash badly with
 favicons and extension icons. Solid colors work much better in my opinion, but
-there are still occassions when an icon gets washed out by the theme. I'd love
+there are still occasions when an icon gets washed out by the theme. I'd love
 to see a good solution to this problem. Maybe just adding a very small white
 margin to the icons would be sufficient.
 

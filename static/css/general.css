@@ -62,7 +62,8 @@ body {
   line-height: 1.6;
 }
 
-code {
+/* Don't apply to syntax highlighting for code examples. */
+:not(pre) > code {
   background-color: #F6F6F6;
   border-radius: 4px;
   color: #C40233;

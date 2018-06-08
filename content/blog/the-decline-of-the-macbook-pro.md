@@ -109,7 +109,7 @@ I've realized that almost all of the macOS software is effectively [bloatware](h
 * Photo Booth
     * This was fun to play around with, but I haven't opened it in years.
 * Preview
-    * This is only one I use regularly.
+    * This is the only one I use regularly.
 * iTunes
     * I use [Google Play Music](https://play.google.com/music/) and [Pocket Casts](https://www.shiftyjelly.com/pocketcasts/). iTunes also became the definition of [feature creep](https://en.wikipedia.org/wiki/Feature_creep).
 * iBooks

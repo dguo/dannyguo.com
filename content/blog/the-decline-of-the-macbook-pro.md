@@ -29,8 +29,9 @@ embracing a wireless world. They dropped the DVD drive long before other
 companies did. But I didn't want a DVD drive, even in 2015. USB 3 and HDMI are
 different. MacBook Pros only have USB-C ports now. Not having a single legacy
 USB port may be progressive, but I don't like the idea of buying and carrying
-around dongles and adapters. The built-in HDMI port on my 2015 machine has
-been useful since HDMI is so widely supported.
+around dongles and adapters. The built-in HDMI port on my 2015 machine has been
+useful since HDMI is so widely supported. At this point, I just hope they don't
+drop the headphone jack like they did for iPhones.
 
 ## Keyboard
 
@@ -148,11 +149,11 @@ the 13" Macbook Pro, yet it has a 14" screen. It even has a matte screen option
 that I would prefer. Rather than a touch bar, its uncommon feature is a
 physical webcam cover, which I actually want.
 
-At this point, the main thing holding me back from switching is the fact that I
-want to learn how to develop mobile apps, and a Mac is basically required for
-iOS development. While there are workarounds, they all have enough restrictions
-and drawbacks that they don't seem viable. Some of the other advantages of
-sticking with Apple are:
+The main thing holding me back from switching is the fact that I want to learn
+how to develop mobile apps, and a Mac is basically required for iOS
+development. While there are workarounds, they all have enough restrictions and
+drawbacks that they don't seem viable. Some of the other advantages of sticking
+with Apple are:
 
 * [iTerm2](https://iterm2.com/) is the best terminal emulator I've used.
 * There are many more desirable native apps for macOS than for Linux.

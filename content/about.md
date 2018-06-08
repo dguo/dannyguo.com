@@ -8,3 +8,9 @@ interested in learning and trying new things.
 
 I am currently working on [Sublime Fund](https://sublimefund.org). Before that,
 I worked at [Bloomberg](https://www.bloomberg.com/) on their [Customer Service Center](https://service.bloomberg.com) website.
+
+## Public Profiles
+* [GitHub](https://github.com/dguo)
+* [Hacker News](https://news.ycombinator.com/user?id=dguo)
+* [Keybase](https://keybase.io/dannyguo)
+* [Twitter](https://twitter.com/dannyguo)

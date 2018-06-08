@@ -123,11 +123,13 @@ The overarching problem with macOS programs is that they are tied to Apple
 hardware, and they don't have web versions. I want my software to be
 hardware-agnostic.
 
-One big reason to buy into Apple's ecosystem is their pro-privacy stance, but
-that's not compelling enough for me yet. While I don't want to be so reliant on
-Google services, I'd rather use software from a variety of companies anyway.
-Todoist is better than any similar product that Apple or Google has produced,
-and I'm always on the look out for new solutions in established categories.
+One big reason to buy into Apple's ecosystem is their [pro-privacy
+stance](https://techcrunch.com/2015/06/02/apples-tim-cook-delivers-blistering-speech-on-encryption-privacy/),
+but that's not compelling enough for me yet. While I don't want to be so
+reliant on Google services, I'd rather use software from a variety of companies
+anyway.  Todoist is better than any similar product that Apple or Google has
+produced, and I'm always on the look out for new solutions in established
+categories.
 
 ## Docker
 
@@ -157,7 +159,7 @@ with Apple are:
 
 * [iTerm2](https://iterm2.com/) is the best terminal emulator I've used.
 * There are many more desirable native apps for macOS than for Linux.
-* macOS is generally more polished and reliable in my experience. I've never had to debug the wake from sleep functionality on my Mac. Though Apple software quality seems to have [taken a downturn](https://www.wired.com/story/apples-security-macos-high-sierra-ios-11/) recently.
+* macOS is generally more polished and reliable in my experience. I've never had to debug the wake from sleep functionality on my Mac, but I've had to for Linux. On the other hand, Apple software quality seems to have [taken a downturn](https://www.wired.com/story/apples-security-macos-high-sierra-ios-11/) recently.
 
 ## Hope
 

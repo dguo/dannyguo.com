@@ -168,3 +168,8 @@ and I can only hope that the changes will restore some sense of desire. When I
 got my first Mac, I checked the shipping status multiple times a day because I
 was so excited. If I stick with Apple now, it would be with great reluctance.
 The Apple magic isn't there anymore.
+
+Continue the discussion on [Hacker
+News](https://news.ycombinator.com/item?id=17266492), on
+[Medium](https://medium.com/@dannyguo/the-decline-of-the-macbook-pro-e5a7c2215d61),
+or in the comments below.

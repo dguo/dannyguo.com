@@ -121,7 +121,9 @@ I've realized that almost all of the macOS software is effectively [bloatware](h
 
 The overarching problem with macOS programs is that they are tied to Apple
 hardware, and they don't have web versions. I want my software to be
-hardware-agnostic.
+hardware-agnostic (update: Anais Wall pointed out in the comments that
+[iCloud](https://www.icloud.com/) does have web versions for some Apple
+software).
 
 One big reason to buy into Apple's ecosystem is their [pro-privacy
 stance](https://techcrunch.com/2015/06/02/apples-tim-cook-delivers-blistering-speech-on-encryption-privacy/),

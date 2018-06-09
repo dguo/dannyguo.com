@@ -13,4 +13,5 @@ I worked at [Bloomberg](https://www.bloomberg.com/) on their [Customer Service C
 * [GitHub](https://github.com/dguo)
 * [Hacker News](https://news.ycombinator.com/user?id=dguo)
 * [Keybase](https://keybase.io/dannyguo)
+* [Medium](https://medium.com/@dannyguo)
 * [Twitter](https://twitter.com/dannyguo)

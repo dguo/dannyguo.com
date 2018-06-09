@@ -63,7 +63,7 @@ body {
 }
 
 /* Don't apply to syntax highlighting for code examples. */
-:not(pre) > code {
+:not(pre) > code, code:not([data-lang]) {
   background-color: #F6F6F6;
   border-radius: 4px;
   color: #C40233;

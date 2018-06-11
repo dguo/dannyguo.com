@@ -4,3 +4,16 @@ languageCode: en-us
 pygmentsCodefences: true
 pygmentsStyle: monokai
 title: Danny Guo
+
+outputFormats:
+  Algolia:
+    baseName: algolia
+    isPlainText: true
+    mediaType: "application/json"
+    notAlternative: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - Algolia

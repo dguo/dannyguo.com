@@ -2,6 +2,7 @@
 Hello! My website is available at https://dannyguo.com.
 
 ## Tech Stack
+* [Algolia](https://algolia.com/) for search functionality
 * [CircleCI](https://circleci.com/) for continuous integration
     * This involves building the site and running [HTMLProofer](https://github.com/gjtorikian/html-proofer) on the output
 * [Disqus](https://disqus.com/) for comments in posts

@@ -27,5 +27,6 @@
         </div>
 
         {{ partial "js.html" . }}
+        {{ block "js-extra" . }}{{ end }}
     </body>
 </html>

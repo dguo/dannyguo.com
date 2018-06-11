@@ -2,10 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: jguyomard/hugo-builder:0.40
+      - image: cibuilds/hugo:0.41
     working_directory: /src
     steps:
       - checkout
       - run:
           name: Build the site
           command: hugo
+      - run:
+          name: Lint the HTML
+          command: htmlproofer --check-favicon --check-html --check-opengraph public

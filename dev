@@ -19,7 +19,7 @@ subparsers = parser.add_subparsers(metavar='<command>', title='commands')
 DOCKER_RUN = [
     'docker', 'run', '--init', '-it', '--rm', '-v',
     f'{os.getcwd()}:/src:cached', '-w=/src', '-p', '1313:1313',
-    'jguyomard/hugo-builder:0.40'
+    'cibuilds/hugo:0.41'
 ]
 
 def command(help):
@@ -39,6 +39,18 @@ def open_in_browser():
             time.sleep(1)
     webbrowser.open(site)
 
+@command('Run a Hugo command')
+def hugo(args, remaining):
+    return run(DOCKER_RUN + ['hugo'] + (remaining or [])).returncode
+
+@command('Lint the resulting HTML')
+def lint(args, remaining):
+    rc = hugo(None, None)
+    if rc:
+        return rc
+    return run(DOCKER_RUN + ['htmlproofer', '--check-favicon', '--check-html',
+                             '--check-opengraph', 'public']).returncode
+
 @command('Open a shell')
 def sh(args, remaining):
     return run(DOCKER_RUN + ['sh']).returncode
@@ -47,10 +59,6 @@ def sh(args, remaining):
 def start(args, remaining):
     Thread(target=open_in_browser).start()
     run(DOCKER_RUN + ['hugo', 'server', '--bind', '0.0.0.0', '--buildDrafts'])
-
-@command('Run a Hugo command')
-def hugo(args, remaining):
-    return run(DOCKER_RUN + ['hugo'] + remaining or []).returncode
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:

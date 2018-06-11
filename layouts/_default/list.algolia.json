@@ -1,0 +1,10 @@
+{{/* Generates a valid Algolia search index */}}
+{{/* https://forestry.io/blog/search-with-algolia-in-hugo/ */}}
+{{- $.Scratch.Add "index" slice -}}
+{{- $section := $.Site.GetPage "section" .Section }}
+{{- range .Site.AllPages -}}
+  {{- if and (eq .Kind "page") (and (eq .Type "blog") (and (not .Draft) (not .Params.private))) -}}
+    {{- $.Scratch.Add "index" (dict "objectID" .UniqueID "content" (htmlUnescape (trim (replace .Plain "\n" " ") " ")) "kind" .Kind "lastModifiedDate" (.Lastmod.Format "2006-01-02") "publishDate" (.PublishDate.Format "2006-01-02") "relativePermalink" .RelPermalink "title" (replace .Title "Danny Guo · " "") "type" .Type "weight" .Weight "section" .Section "tags" .Params.Tags "categories" .Params.Categories)}}
+  {{- end -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

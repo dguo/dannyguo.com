@@ -1,0 +1,20 @@
+#stats {
+  margin-bottom: 1.5em;
+  margin-top: 1em;
+}
+
+.search-highlight {
+  background-color: #FFD700;
+  border-radius: 4px;
+}
+
+.ais-hits--item:not(:last-child) {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+#algolia-logo {
+  margin-bottom: 1em;
+  margin-top: 0.2em;
+  max-width: 180px;
+}

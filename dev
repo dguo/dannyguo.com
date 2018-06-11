@@ -5,6 +5,7 @@
 import argparse
 from http.client import HTTPException
 import os
+from shutil import which
 from subprocess import run
 import sys
 from threading import Thread
@@ -19,8 +20,11 @@ subparsers = parser.add_subparsers(metavar='<command>', title='commands')
 DOCKER_RUN = [
     'docker', 'run', '--init', '-it', '--rm', '-v',
     f'{os.getcwd()}:/src:cached', '-w=/src', '-p', '1313:1313',
-    'cibuilds/hugo:0.41'
 ]
+
+DOCKER_HUGO = DOCKER_RUN + ['cibuilds/hugo:0.41']
+
+DOCKER_NODE = DOCKER_RUN + ['node:10.4.0-alpine']
 
 def command(help):
     def decorator(func):
@@ -39,26 +43,63 @@ def open_in_browser():
             time.sleep(1)
     webbrowser.open(site)
 
+@command('Sync the search index with Algolia')
+def algolia(args, remaining):
+    # Check for required environment variables
+    if not os.path.isfile('.env'):
+        print('Aborting: create a .env file based off of template.env')
+        return 1
+
+    with open('template.env') as template:
+        required_variables = {
+            line.split('=')[0] for line in template
+            if '=' in line and line[0] != '#'
+        }
+
+    with open('.env') as env:
+        set_variables = {
+            line.split('=')[0] for line in env
+            if '=' in line and line[0] != '#'
+        }
+
+    missing_variables = required_variables - set_variables
+    if missing_variables:
+        print('Your .env is missing these variables:')
+        print(', '.join(missing_variables))
+        return 1
+
+    # Generate the search index by generating the site
+    rc = hugo(None, None)
+    if rc:
+        return rc
+
+    # Sync with Algolia
+    if which('atomic-algolia'):
+        return run(['atomic-algolia']).returncode
+    if which('npx'):
+        return run(['npx', 'atomic-algolia']).returncode
+    return run(DOCKER_NODE + ['npx', 'atomic-algolia']).returncode
+
 @command('Run a Hugo command')
 def hugo(args, remaining):
-    return run(DOCKER_RUN + ['hugo'] + (remaining or [])).returncode
+    return run(DOCKER_HUGO + ['hugo'] + (remaining or [])).returncode
 
 @command('Lint the resulting HTML')
 def lint(args, remaining):
     rc = hugo(None, None)
     if rc:
         return rc
-    return run(DOCKER_RUN + ['htmlproofer', '--check-favicon', '--check-html',
+    return run(DOCKER_HUGO + ['htmlproofer', '--check-favicon', '--check-html',
                              '--check-opengraph', 'public']).returncode
 
 @command('Open a shell')
 def sh(args, remaining):
-    return run(DOCKER_RUN + ['sh']).returncode
+    return run(DOCKER_HUGO + ['sh']).returncode
 
 @command('Start development')
 def start(args, remaining):
     Thread(target=open_in_browser).start()
-    run(DOCKER_RUN + ['hugo', 'server', '--bind', '0.0.0.0', '--buildDrafts'])
+    run(DOCKER_HUGO + ['hugo', 'server', '--bind', '0.0.0.0', '--buildDrafts'])
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:

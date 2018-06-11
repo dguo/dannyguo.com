@@ -1,0 +1,20 @@
+{{ define "head-extra" }}
+    <link rel="stylesheet" tpe="text/css" href="/css/search.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch-theme-algolia.min.css">
+{{ end }}
+
+{{ define "main" }}
+    <div id="search-box"></div>
+    <div id="stats"></div>
+    <div id="hits"></div>
+    <div id="pagination"></div>
+    <a class="link-image" href="https://www.algolia.com/">
+        <img id="algolia-logo" alt="Search by Algolia" src="https://www.algolia.com/static_assets/images/press/downloads/search-by-algolia.png">
+    </a>
+{{ end }}
+
+{{ define "js-extra" }}
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0"></script>
+    <script src="/js/search.js"></script>
+{{ end }}

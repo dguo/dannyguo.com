@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
+    {{ `<!--
+                 Z
+                z
+               z
+         /\_/\
+     ("\( -_- )/")
+       ((     ))
+      (...)-(...)
+
+    -->` | safeHTML }}
+
     <head>
         {{ partial "head.html" . }}
 
-        {{ block "head-extra" . }}
-        {{ end }}
+        {{ block "head-extra" . }}{{ end }}
     </head>
     <body>
         <div id="container">

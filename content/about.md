@@ -13,6 +13,7 @@ I worked at [Bloomberg](https://www.bloomberg.com/) on their [Customer Service C
 * [GitHub](https://github.com/dguo)
 * [Hacker News](https://news.ycombinator.com/user?id=dguo)
 * [Keybase](https://keybase.io/dannyguo)
+* [LinkedIn](https://www.linkedin.com/in/danny-guo/)
 * [Medium](https://medium.com/@dannyguo)
 * [Stack Overflow](https://stackoverflow.com/users/1481479/danny-guo)
 * [Twitter](https://twitter.com/dannyguo)

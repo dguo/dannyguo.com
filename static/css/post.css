@@ -1,3 +1,9 @@
 h1 {
-  margin-bottom: 0.2em;
+  margin-bottom: 0em;
+}
+
+.subheader {
+  color: #999999;
+  font-size: 0.9em;
+  margin-bottom: 2em;
 }

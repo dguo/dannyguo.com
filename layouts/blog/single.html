@@ -4,7 +4,7 @@
 
 {{ define "main" }}
     <h1>{{ .Title }}</h1>
-    <small>Published on {{.Date.Format "2006-01-02"}}</small>
+    <div class="subheader">{{.Date.Format "January 2, 2006"}} · {{ .ReadingTime | lang.NumFmt 0 }} minute{{ if not (eq .ReadingTime 1) }}s{{ end }} to read · {{ .WordCount | lang.NumFmt 0 }} words</div>
 
     {{ partial "anchor.html" .Content }}
 

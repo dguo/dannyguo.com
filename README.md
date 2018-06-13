@@ -12,3 +12,4 @@ Hello! My website is available at https://dannyguo.com.
 * [Imgur](https://imgur.com/) for image hosting
     * This allows me to avoid committing images to Git
 * [Netlify](https://netlify.com/) for hosting
+* [Repl.it](https://repl.it/) for embedded, interactive code snippets

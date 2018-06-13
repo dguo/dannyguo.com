@@ -27,6 +27,10 @@ Note that `background` is a
 [shorthand](https://stackoverflow.com/a/10205500/1481479) for multiple
 `background-*` properties, with `background-color` being the first one.
 
+Try it out:
+
+{{< replit css-selection-styling >}}
+
 ## Browser Support
 
 You should include the `-moz-` prefixed version for now to support Firefox, but

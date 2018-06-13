@@ -19,7 +19,7 @@ in the background. This one was inspired by the lighting effects on my
 [Razer](https://www.razer.com/gaming-keyboards) keyboard. I keep mine in what I
 like to call [Nyan Cat](https://en.wikipedia.org/wiki/Nyan_Cat) mode:
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Wd9PSgfVpiM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{{< youtube Wd9PSgfVpiM >}}
 
 I considered trying to replicate the effect, but it seems like it would be too
 obnoxious in the browser. I'm also not sure if it's feasible with the current
@@ -27,7 +27,7 @@ API. The only method I can think of is to use an [animated
 SVG](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json/theme#Image_formats),
 which is possible as of Firefox 59. I decided to do spectrum cycling instead:
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pI96n8kjKW8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{{< youtube pI96n8kjKW8 >}}
 
 Here's a GIF of what it looks like:
 

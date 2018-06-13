@@ -89,8 +89,10 @@ def lint(args, remaining):
     rc = hugo(None, None)
     if rc:
         return rc
-    return run(DOCKER_HUGO + ['htmlproofer', '--check-favicon', '--check-html',
-                             '--check-opengraph', 'public']).returncode
+    return run(DOCKER_HUGO + [
+        'htmlproofer', '--check-favicon', '--check-html', '--check-opengraph',
+        '--disable-external', 'public'
+    ]).returncode
 
 @command('Open a shell')
 def sh(args, remaining):

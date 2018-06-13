@@ -11,4 +11,4 @@ jobs:
           command: hugo
       - run:
           name: Lint the HTML
-          command: htmlproofer --check-favicon --check-html --check-opengraph public
+          command: htmlproofer --check-favicon --check-html --check-opengraph --disable-external public

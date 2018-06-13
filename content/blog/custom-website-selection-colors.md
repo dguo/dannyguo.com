@@ -52,7 +52,7 @@ won't recognize the unprefixed version, so they both reject the rule.
 You should include the `-moz-` prefixed version for now to support Firefox, but
 be aware that Firefox [won't need the
 prefix](https://bugzilla.mozilla.org/show_bug.cgi?id=509958) from version 62
-onwards.
+onward.
 
 According to [Can I use](https://caniuse.com/#feat=css-selection), about 85% of
 users are on browsers that support this feature. iOS Safari is the notable

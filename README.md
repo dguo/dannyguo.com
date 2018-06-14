@@ -13,3 +13,15 @@ Hello! My website is available at https://dannyguo.com.
     * This allows me to avoid committing images to Git
 * [Netlify](https://netlify.com/) for hosting
 * [Repl.it](https://repl.it/) for embedded, interactive code snippets
+
+## Publishing Checklist
+1. Upload any images to the dedicated [Imgur album](https://imgur.com/a/mA7JRWp)
+2. Publish the post by removing the `draft` flag
+3. Back up images in Google Drive
+4. [Import](https://medium.com/p/import) the post into [Medium](https://medium.com/@dannyguo)
+    * Convert code blocks into [GitHub gists](https://gist.github.com/) and embed them
+    * Embed any [Repl.it](https://repl.it/repls) snippets
+5. Publicize the post, as appropriate, and update the post with links
+    * Twitter
+    * Reddit
+    * Hacker News

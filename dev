@@ -19,12 +19,8 @@ subparsers = parser.add_subparsers(metavar='<command>', title='commands')
 
 DOCKER_RUN = [
     'docker', 'run', '--init', '-it', '--rm', '-v',
-    f'{os.getcwd()}:/src:cached', '-w=/src', '-p', '1313:1313',
+    f'{os.getcwd()}:/src:cached', '-w=/src'
 ]
-
-DOCKER_HUGO = DOCKER_RUN + ['cibuilds/hugo:0.41']
-
-DOCKER_NODE = DOCKER_RUN + ['node:10.4.0-alpine']
 
 def command(help):
     def decorator(func):
@@ -32,6 +28,15 @@ def command(help):
         parser.set_defaults(func=func)
         return func
     return decorator
+
+def run_in_hugo(command, bind_port=False):
+    return run(
+        DOCKER_RUN + (['-p', '1313:1313'] if bind_port else []) +
+        ['cibuilds/hugo:0.41'] + command
+    ).returncode
+
+def run_in_node(command):
+    return run(DOCKER_RUN + ['node:10.4.0-alpine'] + command).returncode
 
 def open_in_browser():
     site = 'http://localhost:1313'
@@ -78,30 +83,30 @@ def algolia(args, remaining):
         return run(['atomic-algolia']).returncode
     if which('npx'):
         return run(['npx', 'atomic-algolia']).returncode
-    return run(DOCKER_NODE + ['npx', 'atomic-algolia']).returncode
+    return run_in_node(['npx', 'atomic-algolia'])
 
 @command('Run a Hugo command')
 def hugo(args, remaining):
-    return run(DOCKER_HUGO + ['hugo'] + (remaining or [])).returncode
+    return run_in_hugo(['hugo'] + (remaining or []))
 
 @command('Lint the resulting HTML')
 def lint(args, remaining):
     rc = hugo(None, None)
     if rc:
         return rc
-    return run(DOCKER_HUGO + [
+    return run_in_hugo([
         'htmlproofer', '--check-favicon', '--check-html', '--check-opengraph',
         '--disable-external', 'public'
-    ]).returncode
+    ])
 
 @command('Open a shell')
 def sh(args, remaining):
-    return run(DOCKER_HUGO + ['sh']).returncode
+    return run_in_hugo(['sh'])
 
 @command('Start development')
 def start(args, remaining):
     Thread(target=open_in_browser).start()
-    run(DOCKER_HUGO + ['hugo', 'server', '--bind', '0.0.0.0', '--buildDrafts'])
+    run_in_hugo(['hugo', 'server', '--bind', '0.0.0.0', '--buildDrafts'], True)
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:

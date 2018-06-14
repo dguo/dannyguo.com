@@ -30,8 +30,9 @@
 
     <p>
         &copy;
+        <span id="copyright-year">{ now.Year }}</span>
         <script type="text/javascript">
-            document.write(new Date().getFullYear());
+            document.getElementById('copyright-year').textContent = new Date().getFullYear();
         </script>
         Danny Guo
     </p>

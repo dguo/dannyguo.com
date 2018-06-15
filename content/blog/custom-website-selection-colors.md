@@ -98,3 +98,9 @@ limit them to specific elements using standard selectors.
 Try it out:
 
 {{< replit css-styling-selections-with-selectors >}}
+
+Continue the discussion on
+[Medium](https://medium.com/@dannyguo/custom-website-selection-colors-201790f70669),
+on
+[Reddit](https://www.reddit.com/r/css/comments/8r3rtb/custom_website_selection_colors/),
+or in the comments below.

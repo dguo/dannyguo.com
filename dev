@@ -99,6 +99,12 @@ def lint(args, remaining):
         '--disable-external', 'public'
     ])
 
+def new(args, remaining):
+    return run_in_hugo(['hugo', 'new', f'blog/{args.title}.md'])
+new_parser = subparsers.add_parser('new', help='Generate a new blog post')
+new_parser.add_argument('title', help="title of the post in kebab-case")
+new_parser.set_defaults(func=new)
+
 @command('Open a shell')
 def sh(args, remaining):
     return run_in_hugo(['sh'])

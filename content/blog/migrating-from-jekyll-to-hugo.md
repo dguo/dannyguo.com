@@ -133,3 +133,8 @@ Jekyll is still a solid choice for creating a static website. It has a large
 community and its own advantages (like a plugin system).  However, I'm happy
 that I switched to Hugo and that it's in my development toolbox now. I
 encourage anyone who maintains or needs a static website to check it out.
+
+Continue the discussion on [Hacker
+News](https://news.ycombinator.com/item?id=17387103), on
+[Medium](https://medium.com/@dannyguo/migrating-from-jekyll-to-hugo-8c57c1e9722b),
+or in the comments below.

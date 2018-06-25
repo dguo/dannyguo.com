@@ -84,12 +84,12 @@ hr {
   border: 1px solid #eee;
 }
 
-hr.comments-separator {
-  margin-bottom: 50px;
+hr.separator {
+  margin-bottom: 25px;
 }
 
-.comments-separator {
-  margin-top: 40px;
+.separator {
+  margin-top: 25px;
 }
 
 footer {

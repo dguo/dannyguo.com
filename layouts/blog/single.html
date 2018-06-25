@@ -8,9 +8,25 @@
 
     {{ partial "anchor.html" .Content }}
 
-    <hr class="comments-separator">
+    <hr class="separator">
+
+    <div class="clearfix">
+        {{ with .PrevInSection }}
+            <span class="previous-link">
+                <a href="{{ .Permalink }}">← {{ .Title }}</a>
+            </span>
+        {{ end }}
+
+        {{ with .NextInSection }}
+            <span class="next-link">
+                <a href="{{ .Permalink }}">{{ .Title }} →</a>
+            </span>
+        {{ end }}
+    </div>
+
+    <hr class="separator">
 
     {{ template "_internal/disqus.html" . }}
 
-    <div class="comments-separator">
+    <div class="separator">
 {{ end }}

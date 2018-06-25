@@ -7,3 +7,15 @@ h1 {
   font-size: 0.9em;
   margin-bottom: 2em;
 }
+
+.previous-link {
+  float: left;
+  text-align: left;
+  width: 48%;
+}
+
+.next-link {
+  float: right;
+  text-align: right;
+  width: 48%;
+}

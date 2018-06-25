@@ -10,6 +10,10 @@ $twitter-blue: #1da1f2;
 $github-black: #24292e;
 */
 
+html {
+  border-top: 4px solid #C40233;
+}
+
 .clearfix:after, header:after {
   content: '';
   display: table;

@@ -19,6 +19,7 @@ Hello! My website is available at https://dannyguo.com.
 ## Content
 
 * [blog](https://www.dannyguo.com/blog/)
+* [books](https://www.dannyguo.com/books/)
 * [concerts that I've attended](https://www.dannyguo.com/about/#music)
 * [food choices](https://www.dannyguo.com/food/)
 * [GPG key](https://www.dannyguo.com/keys/)

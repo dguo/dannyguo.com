@@ -8,19 +8,23 @@ tags:
 title: The Leap From Computer Science to Software Engineering
 ---
 
-When I left my previous job, a new junior engineer asked me if I had any
-advice. I took that as an opportunity to really think about what I had learned
-in four years of working since college. What this really means is figuring out
-what distinguishes a computer science student from a software engineer.
+Right before I left my previous job, a new junior engineer asked me if I had
+any advice. I took that as an opportunity to reflect on what I had learned in
+four years of working after graduating college. What that really meant was
+figuring out what distinguishes a computer science student from a software
+engineer.
 
-As a disclaimer, I only minored in
-computer science. I took five CS courses in total.
+What do I take for granted when I have conversations with other software
+engineers?
 
-In my job, I learned about all the additional stuff that goes into software
-development. This is a list of skills that I think is important and broadly
-applicable.
+As a disclaimer, I only minored in CS, taking five courses in total. I also
+never did a software engineering internship, which I assume is how most CS
+students start to make the transition from student to professional.
 
-I'm sure many people pick up these skills through internships.
+In my job, I learned about all the additional skills that go into software
+development. This is a list of topics that I think is broadly applicable.
+
+## Requirements
 
 ## Documentation
 
@@ -41,6 +45,8 @@ I'm sure many people pick up these skills through internships.
 ## Tool awareness
 
 ## Not invented here syndrome
+
+## Aphorisms
 
 Learn which decisions are easy to change later and which are hard.
 

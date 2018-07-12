@@ -3,13 +3,29 @@ title: Danny Guo · Development Friction
 ---
 
 # Development Friction
+
 I decided to start documenting all the things that cause me to lose focus on
 what I want to be doing. I'll probably include issues with tooling, bugs that
 take me longer to figure out than they should, and times when figuring out what
 the "right" thing to do takes more than a couple minutes of research. In that
 sense, this is also a log of things that I have learned.
 
+Apparently, Google uses [friction logs](https://devrel.net/developer-experience/an-introduction-to-friction-logging) as well.
+
+## 2018-07-12
+
+### Deprecation warning in Vim
+
+When I start Vim on my Mac, I get this error message: `/must>not&exist/foo:1:
+DeprecationWarning: the imp module is deprecated in favour of importlib; see
+the module's documentation for alternative uses`. I found this [GitHub
+issue](https://github.com/vim/vim/issues/3117). The problem occurs with
+[Python 3.7](https://docs.python.org/3/whatsnew/3.7.html). I'm just going to
+wait for it to be fixed upstream since it doesn't actually seem to affect my
+Vim usage.
+
 ## 2018-05-04
+
 ### Files created by Docker containers in mounted volumes are owned by root
 For browser extensions, Mozilla requires developers to [upload source
 code](https://developer.mozilla.org/en-US/Add-ons/Source_Code_Submission) for

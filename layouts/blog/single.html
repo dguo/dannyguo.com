@@ -4,7 +4,7 @@
 
 {{ define "main" }}
     <h1>{{ .Title }}</h1>
-    <div class="subheader">{{.Date.Format "January 2, 2006"}} · {{ .ReadingTime | lang.NumFmt 0 }} minute{{ if not (eq .ReadingTime 1) }}s{{ end }} to read · {{ .WordCount | lang.NumFmt 0 }} words</div>
+    <div class="subheader">{{.Date.Format "January 2, 2006"}}&nbsp;&nbsp;·&nbsp;&nbsp;{{ .WordCount | lang.NumFmt 0 }} words&nbsp;&nbsp;·&nbsp;&nbsp;~{{ .ReadingTime | lang.NumFmt 0 }} minute{{ if not (eq .ReadingTime 1) }}s{{ end }} to read</div>
 
     {{ partial "anchor.html" .Content }}
 

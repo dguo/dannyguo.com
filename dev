@@ -22,6 +22,8 @@ DOCKER_RUN = [
     f'{os.getcwd()}:/src:cached', '-w=/src'
 ]
 
+LOCAL_SITE = 'http://localhost:1313'
+
 def command(help):
     def decorator(func):
         parser = subparsers.add_parser(func.__name__, help=help)
@@ -39,14 +41,13 @@ def run_in_node(command):
     return run(DOCKER_RUN + ['node:10.4.0-alpine'] + command).returncode
 
 def open_in_browser():
-    site = 'http://localhost:1313'
     while True:
         try:
-            urlopen(site)
+            urlopen(LOCAL_SITE)
             break
         except (ConnectionError, URLError, HTTPException):
             time.sleep(1)
-    webbrowser.open(site)
+    webbrowser.open(LOCAL_SITE)
 
 @command('Sync the search index with Algolia')
 def algolia(args, remaining):
@@ -104,6 +105,10 @@ def new(args, remaining):
 new_parser = subparsers.add_parser('new', help='Generate a new blog post')
 new_parser.add_argument('title', help="title of the post in kebab-case")
 new_parser.set_defaults(func=new)
+
+@command('Open the local website')
+def open(args, remaining):
+    webbrowser.open(LOCAL_SITE)
 
 @command('Open a shell')
 def sh(args, remaining):

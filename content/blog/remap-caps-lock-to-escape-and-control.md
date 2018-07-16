@@ -2,7 +2,6 @@
 categories:
   - programming
 date: "2018-07-16"
-draft: true
 tags:
   - vim
 title: Remap Caps Lock to Escape and Control
@@ -71,14 +70,21 @@ $ sudo apt update
 $ sudo apt install xcape
 ```
 
-Next you need to remap caps lock to function as control. Here are some options:
+Next you need to remap caps lock to control. Check out this [EmacsWiki
+page](https://www.emacswiki.org/emacs/MovingTheCtrlKey) for options.  For
+Ubuntu/[GNOME](https://www.gnome.org/), I use [GNOME
+Tweaks](https://wiki.gnome.org/Apps/Tweaks) (`$ sudo apt install
+gnome-tweak-tool`), which has a setting for caps lock as control under the
+"Typing" tab.
 
-1. If you are using [GNOME](https://www.gnome.org/), install [GNOME Tweaks](https://wiki.gnome.org/Apps/Tweaks) (`$ sudo apt install gnome-tweak-tool`), open it, and find the setting
+Now run xcape:
 
 ```sh
-$ setxkbmap -option 'caps:ctrl_modifier'
 $ xcape -e 'Control_L=Escape'
 ```
+
+To keep it working through system restarts, you can add that line to your
+`~/.profile` or use any method for running a script on startup.
 
 ## Mac
 
@@ -141,8 +147,8 @@ appears to be another option. It depends on
 I use [AutoHotkey](https://www.autohotkey.com/) with a script from this [Super
 User answer](https://superuser.com/a/581988/922801). Save it as a text file
 with a `.ahk` extension. To run it, just double click the file after you
-install AutoHotkey. To automatically run it whenever you log in, add a shortcut
-to the script to your [Startup
+install AutoHotkey. To automatically run it after restarts, add a shortcut to
+the script to your [Startup
 folder](https://support.microsoft.com/en-us/help/4026268/windows-10-change-startup-apps).
 Reference the [docs](https://www.autohotkey.com/docs/Program.htm#run) for more
 info.

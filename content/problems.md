@@ -19,3 +19,4 @@ This is a list of problems, complaints, suggestions, etc.
     * Big Team Battle matchmaking frequently gets stuck when the game is still loading, and one or two people drop off. If I wait a couple minutes, it eventually gives up with an error message. But if you quit out of Halo, start it again, and go back into matchmaking, you can generally find a match in a few seconds. It happens so often that if there are any empty spots, I just automatically quit out now.
     * There should be a button to quickly enter matchmaking again from the post-match screen instead of waiting for the countdown to finish or going back to the main menu.
     * Super Fiesta on Hang 'Em High isn't fun because long-range weapons are so advantageous.
+    * You can't sell requestions in bulk. You have to sell them one by one. Someone actually made a [Chrome extension](https://chrome.google.com/webstore/detail/sell-reqs-tool/ifnmllpebfhkkpihacgmnpkjflmdajpn) to solve the problem.

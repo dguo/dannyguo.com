@@ -4,6 +4,7 @@ categories:
 date: "2018-07-23"
 tags:
   - hackathon
+  - MoMath
 title: "MoMath Hackathon 2018: Vortex Pool"
 ---
 
@@ -65,7 +66,8 @@ interesting than our wind tunnel did, and the implementation is simpler and far
 less computationally intensive. My friend who handled all the velocity
 calculations said this was because each airfoil was essentially made up of
 dozens of the [vortexes](https://en.wikipedia.org/wiki/Vortex) that we were
-rendering now with a single digit count. Check out this demo.
+rendering now with a single digit count. Check out this [online
+demo](https://katbug.github.io/momath-vortexpool/). Click to create vortexes.
 
 {{< imgur taEXQoG >}}
 

@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: "2018-06-25"
+date: "2018-07-28"
 draft: true
 tags:
   - computer science
@@ -26,6 +26,17 @@ development. This is a list of topics that I think is broadly applicable.
 
 ## Requirements
 
+In college, assignments were well-specified, and many of them had been used for
+hundreds of students before me. For the most part, these assignments gave me
+very clear goals to work towards.
+
+The real world isn't like that very often. Ill-defined requirements are common,
+and people don't know what they really need or want. This frustrated me at
+first, but I eventually realized that it's my responsibility too to help figure
+out requirements.
+
+## Third party code
+
 ## Documentation
 
 ## Logging
@@ -38,8 +49,8 @@ development. This is a list of topics that I think is broadly applicable.
 
 ## Environments
 
-In school, I had never been exposed to the concept of multiple environments,
-such as development, test, and production.
+In college, I had never been exposed to the concept of multiple environments,
+such as development, staging, and production.
 
 ## Continuous integration and deployment
 
@@ -47,11 +58,16 @@ such as development, test, and production.
 
 ## Legacy code
 
+In college, everything I wrote was from scratch.
+
+I've gradually learned how to dive into existing codebases. I've seen plenty of
+`TODO` comments that are years old and instances of kludgy fixes and
+workarounds for horrifying issues.
+
 ## Tool awareness
 
 ## Not invented here syndrome
 
-## Aphorisms
 
 ## Decision reversibility
 
@@ -73,7 +89,7 @@ work, and then all the UI work. Overall, the project took me longer than it
 should have because I underestimated how long it would take to hook the
 different layers together.
 
-Think before you write.
+## Think before you write
 
 ## Explore
 
@@ -89,3 +105,9 @@ Use the right tool for the job.
 Internalize the [twelve-factor app](https://12factor.net/).
 
 ## Make things
+
+## Complications
+
+## Debugging
+
+I still use `print` debugging for the most part.

@@ -4,11 +4,17 @@ title: Danny Guo · Books
 
 # Books
 
-Currently reading: [Bury My Heart at Wounded Knee: An Indian History of the American West](https://en.wikipedia.org/wiki/Bury_My_Heart_at_Wounded_Knee) ([Amazon](https://amzn.to/2tvnMtp)) by [Dee Brown](https://en.wikipedia.org/wiki/Dee_Brown_(writer))
+Currently reading: [The Rust Programming Language](https://doc.rust-lang.org/book/) ([Amazon](https://amzn.to/2Koooqg)) by [Steve Klabnik](https://www.steveklabnik.com/) and [Carol Nichols](http://carol-nichols.com/)
 
-Next up (non-fiction): [Homo Deus: A Brief History of Tomorrow](https://en.wikipedia.org/wiki/Homo_Deus:_A_Brief_History_of_Tomorrow) ([Amazon](https://amzn.to/2Kr6rrT)) by [Yuval Noah Harari](https://en.wikipedia.org/wiki/Yuval_Noah_Harari)
+Next up (non-fiction):
 
-Next up (fiction): [A Clash of Kings](https://en.wikipedia.org/wiki/A_Clash_of_Kings) ([Amazon](https://amzn.to/2KrjWYG)) by [George R. R. Martin](https://en.wikipedia.org/wiki/George_R._R._Martin)
+* [We Should All Be Feminists](https://en.wikipedia.org/wiki/We_Should_All_Be_Feminists) ([Amazon](https://amzn.to/2O9ij3o)) by [Chimamanda Ngozi Adichie](https://en.wikipedia.org/wiki/Chimamanda_Ngozi_Adichie)
+* [Homo Deus: A Brief History of Tomorrow](https://en.wikipedia.org/wiki/Homo_Deus:_A_Brief_History_of_Tomorrow) ([Amazon](https://amzn.to/2Kr6rrT)) by [Yuval Noah Harari](https://en.wikipedia.org/wiki/Yuval_Noah_Harari)
+
+Next up (fiction):
+
+* [The English Patient](https://en.wikipedia.org/wiki/The_English_Patient) ([Amazon](https://amzn.to/2vewwET)) by [Michael Ondaatje](https://en.wikipedia.org/wiki/Michael_Ondaatje)
+* [A Clash of Kings](https://en.wikipedia.org/wiki/A_Clash_of_Kings) ([Amazon](https://amzn.to/2KrjWYG)) by [George R. R. Martin](https://en.wikipedia.org/wiki/George_R._R._Martin)
 
 I stopped reading for pleasure in college, but I've realized how much I have
 been missing out on. Now I am trying to read daily. I mostly read non-fiction,
@@ -44,6 +50,9 @@ very much a work in progress.
 
 ## History
 
+* [Bury My Heart at Wounded Knee: An Indian History of the American West](https://en.wikipedia.org/wiki/Bury_My_Heart_at_Wounded_Knee) ([Amazon](https://amzn.to/2tvnMtp)) by [Dee Brown](https://en.wikipedia.org/wiki/Dee_Brown_(writer))
+    * Started on 2018-06-24
+    * Finished on 2018-08-03
 * [A Game of Thrones](https://en.wikipedia.org/wiki/A_Game_of_Thrones) ([Amazon](https://amzn.to/2KphvWA)) by [George R. R. Martin](https://en.wikipedia.org/wiki/George_R._R._Martin)
     * Started on 2018-06-10
     * Finished on 2018-06-24

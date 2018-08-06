@@ -31,6 +31,7 @@ title: Danny Guo · Projects
 * [The Daily Lore](https://www.dailylore.com/) - News headlines aggregator
 
 ## Miscellaneous
+* [Blood Moon](https://github.com/dguo/blood-moon) - A bold, dark color scheme for code
 * [dotfiles](https://github.com/dguo/dotfiles) - My personal system configuration
 * [React Production Build PSA](https://github.com/dguo/react-production-build-psa) - PSA to get developers to use the production build of React
 * [Vortex Pool](https://github.com/katbug/momath-vortexpool) - [MoMath](https://momath.org/) 2018 [Expressions Hackathon](http://hackathon.momath.org/) submission. [Math Square](https://github.com/momath/math-square) category runner-up.

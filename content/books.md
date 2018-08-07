@@ -4,11 +4,10 @@ title: Danny Guo · Books
 
 # Books
 
-Currently reading: [The Rust Programming Language](https://doc.rust-lang.org/book/) ([Amazon](https://amzn.to/2Koooqg)) by [Steve Klabnik](https://www.steveklabnik.com/) and [Carol Nichols](http://carol-nichols.com/)
+Currently reading: [We Should All Be Feminists](https://en.wikipedia.org/wiki/We_Should_All_Be_Feminists) ([Amazon](https://amzn.to/2O9ij3o)) by [Chimamanda Ngozi Adichie](https://en.wikipedia.org/wiki/Chimamanda_Ngozi_Adichie)
 
 Next up (non-fiction):
 
-* [We Should All Be Feminists](https://en.wikipedia.org/wiki/We_Should_All_Be_Feminists) ([Amazon](https://amzn.to/2O9ij3o)) by [Chimamanda Ngozi Adichie](https://en.wikipedia.org/wiki/Chimamanda_Ngozi_Adichie)
 * [Homo Deus: A Brief History of Tomorrow](https://en.wikipedia.org/wiki/Homo_Deus:_A_Brief_History_of_Tomorrow) ([Amazon](https://amzn.to/2Kr6rrT)) by [Yuval Noah Harari](https://en.wikipedia.org/wiki/Yuval_Noah_Harari)
 
 Next up (fiction):
@@ -50,6 +49,9 @@ very much a work in progress.
 
 ## History
 
+* [The Rust Programming Language](https://doc.rust-lang.org/book/) ([Amazon](https://amzn.to/2Koooqg)) by [Steve Klabnik](https://www.steveklabnik.com/) and [Carol Nichols](http://carol-nichols.com/)
+    * Started on 2018-08-01
+    * Finished on 2018-08-07
 * [Bury My Heart at Wounded Knee: An Indian History of the American West](https://en.wikipedia.org/wiki/Bury_My_Heart_at_Wounded_Knee) ([Amazon](https://amzn.to/2tvnMtp)) by [Dee Brown](https://en.wikipedia.org/wiki/Dee_Brown_(writer))
     * Started on 2018-06-24
     * Finished on 2018-08-03

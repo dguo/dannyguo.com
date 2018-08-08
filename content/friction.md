@@ -126,7 +126,7 @@ discussion](https://github.com/npm/npm/issues/10074). There is even an
 [in-publish](https://www.npmjs.com/package/in-publish) package that is used as
 a workaround and has been downloaded millions of times.
 
-The npm team finally decided to resolved the issue, but the solution is pretty
+The npm team finally decided to resolve the issue, but the solution is pretty
 painful too. They added a `prepare` event that acts like `prepublish` (running
 after `npm install` too) and a `prepublishOnly` event that actually only runs
 before publishing. The plan is to issue a deprecation warning for

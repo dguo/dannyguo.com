@@ -4,7 +4,7 @@ title: Danny Guo · Books
 
 # Books
 
-Currently reading: [We Should All Be Feminists](https://en.wikipedia.org/wiki/We_Should_All_Be_Feminists) ([Amazon](https://amzn.to/2O9ij3o)) by [Chimamanda Ngozi Adichie](https://en.wikipedia.org/wiki/Chimamanda_Ngozi_Adichie)
+Currently reading: [The English Patient](https://en.wikipedia.org/wiki/The_English_Patient) ([Amazon](https://amzn.to/2vewwET)) by [Michael Ondaatje](https://en.wikipedia.org/wiki/Michael_Ondaatje)
 
 Next up (non-fiction):
 
@@ -12,7 +12,6 @@ Next up (non-fiction):
 
 Next up (fiction):
 
-* [The English Patient](https://en.wikipedia.org/wiki/The_English_Patient) ([Amazon](https://amzn.to/2vewwET)) by [Michael Ondaatje](https://en.wikipedia.org/wiki/Michael_Ondaatje)
 * [A Clash of Kings](https://en.wikipedia.org/wiki/A_Clash_of_Kings) ([Amazon](https://amzn.to/2KrjWYG)) by [George R. R. Martin](https://en.wikipedia.org/wiki/George_R._R._Martin)
 
 I stopped reading for pleasure in college, but I've realized how much I have
@@ -49,6 +48,9 @@ very much a work in progress.
 
 ## History
 
+* [We Should All Be Feminists](https://en.wikipedia.org/wiki/We_Should_All_Be_Feminists) ([Amazon](https://amzn.to/2O9ij3o)) by [Chimamanda Ngozi Adichie](https://en.wikipedia.org/wiki/Chimamanda_Ngozi_Adichie)
+    * Started on 2018-08-07
+    * Finished on 2018-08-09
 * [The Rust Programming Language](https://doc.rust-lang.org/book/) ([Amazon](https://amzn.to/2Koooqg)) by [Steve Klabnik](https://www.steveklabnik.com/) and [Carol Nichols](http://carol-nichols.com/)
     * Started on 2018-08-01
     * Finished on 2018-08-07

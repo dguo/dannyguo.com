@@ -12,6 +12,54 @@ sense, this is also a log of things that I have learned.
 
 Apparently, Google uses [friction logs](https://devrel.net/developer-experience/an-introduction-to-friction-logging) as well.
 
+## 2018-08-09
+
+### Yarn doesn't handle @types packages well
+
+When I tried to update React, I also tried to update the @types/react
+TypeScript definitions. Unfortunately, the resulting `node_modules` structure
+caused a TypeScript compilation error. I got a lot of trace that looked like:
+
+```sh
+TS2320: Interface 'Element' cannot simultaneously extend types 'ReactElement<any>' and 'ReactElement<any>'.
+  Named property 'type' of types 'ReactElement<any>' and 'ReactElement<any>' are not identical.
+```
+
+I found this [GitHub issue](https://github.com/yarnpkg/yarn/issues/4489). The
+probelm is that nested instances of the React types are created. The issue
+apparently doesn't happen with npm. It doesn't seem that there is an obvious
+workaround with Yarn. I have run into this issue before and was able to fix it
+by blowing away my `node_modules` and Yarn lockfile. But that didn't work this
+time, and it's a suboptimal solution anyway because I'll inevitably pick up
+many non-React related subdependency updates, which could break something.
+
+I assume React + TypeScript + Yarn isn't that uncommon of a combination, so I'm
+surprised that the GitHub issue hasn't received more attention and thumbs ups.
+I may have to switch back to npm just because of it.
+
+As a side note, TypeScript in general is great, but one of the biggest
+downsides is that the type definitions are frequently developed in
+[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) rather
+than being bundled with the package itself. It's a huge kludge that usually
+works well enough, but I hope that in the near future, more and more developers
+choose to write their projects in TypeScript to begin with.
+
+### Hashids.js doesn't work with ES6 imports
+
+I tried using [Hashids](https://hashids.org/), but I got an error when I tried
+to include the JavaScript version in a TypeScript project. I got this error
+when I tried to import it:
+
+```sh
+Uncaught TypeError: HashIds.default is not a constructor
+```
+
+I found this [GitHub
+issue](https://github.com/ivanakimov/hashids.js/issues/51), which links to a
+[more in-depth issue](https://github.com/ivanakimov/hashids.js/issues/36). The
+issue is that the project exports its functionality in a strange way. As a
+workaround, I changed the import to a require.
+
 ## 2018-07-12
 
 ### Deprecation warning in Vim

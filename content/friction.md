@@ -340,3 +340,17 @@ add `"TS_NODE_TYPE_CHECK": "1"` to the pm2 config. And that works! Type errors
 are being reported again.
 
 Time spent: ~1 hour
+
+## 2017-10-12
+
+### Jest is very slow in Docker
+
+I added [Jest](https://jestjs.io/) to a codebase to test
+[React](https://reactjs.org/) components, but even a single, trivial test took
+over a minute to complete. I had the `:cached` [volume mount
+option](https://docs.docker.com/docker-for-mac/osxfs-caching/) set, but Jest
+was still very slow. I found this [GitHub
+issue](https://github.com/facebook/jest/issues/1395). Unfortunately, it was
+closed due to being perceived as a Docker issue. Nevertheless, it seems like a
+Jest issue to me because [Mocha](https://mochajs.org/) doesn't have nearly as
+bad of a performance issue in Docker.

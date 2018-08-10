@@ -25,7 +25,8 @@ TS2320: Interface 'Element' cannot simultaneously extend types 'ReactElement<any
   Named property 'type' of types 'ReactElement<any>' and 'ReactElement<any>' are not identical.
 ```
 
-I found this [GitHub issue](https://github.com/yarnpkg/yarn/issues/4489). The
+I found this [GitHub issue](https://github.com/yarnpkg/yarn/issues/4489), and
+this [StackOverflow question](https://stackoverflow.com/q/45736109/1481479). The
 probelm is that nested instances of the React types are created. The issue
 apparently doesn't happen with npm. It doesn't seem that there is an obvious
 workaround with Yarn. I have run into this issue before and was able to fix it

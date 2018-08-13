@@ -1,16 +1,31 @@
 ---
 categories:
-  -
-date: "2018-08-10"
+  - programming
+date: "2018-08-13"
 draft: true
 tags:
-  -
+  - security
 title: I Published My AWS Secret Key to Github
 ---
 
-Last month, I was cleaning up my Google Drive folders when I found one of my first programming projects.
+One of my earliest programming projects was a basic news headlines aggregator
+that would display the top three headlines for each news source. I called it
+[The Daily Lore](https://dailylore.com/). The [original
+site](https://www.dailylore.com/legacy/) was [hosted on AWS S3 as a static
+website](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html).
+At the time, I didn't know how to make a dynamic website, so my hacky solution
+for updating the headlines was to run a Python script that would generate a JS
+file with the headlines hardcoded inside. The script then updated the JS file
+in the S3 bucket. To automate the updates, I ran the script on a micro EC2
+instance in a cron job. Crucially, that means the script needed a AWS secret
+key.
 
-I pushed it up to GitHub. A few minutes later, I got an email:
+Eventually, AWS terminated my instance for some reason, and I abandoned the
+website for a while. I revived it a few years later with a [new
+repo](https://github.com/dguo/dailylore). Last month, I was cleaning up my Google Drive when I came across the old source code. I had copied the `.git` folder
+as well, so I decided to push it up to GitHub just for fun.
+
+A few minutes later, I got an email:
 
 > Amazon Web Services has opened case ******** on your behalf.
 >
@@ -51,14 +66,16 @@ I pushed it up to GitHub. A few minutes later, I got an email:
 ## Immediate actions
 
 First, I let out a loud d'oh! I immediately knew the consequences of what I had
-done. I've read plenty of stories ending up with thousands of dollars in AWS
-charges because nefarious people scrape the keys and spin up instances for
-purposes like Bitcoin mining.
+done. I've read [plenty of
+stories](https://medium.com/@nagguru/exposing-your-aws-access-keys-on-github-can-be-extremely-costly-a-personal-experience-960be7aad039)
+of nefarious people [scraping the
+keys](https://www.theregister.co.uk/2015/01/06/dev_blunder_shows_github_crawling_with_keyslurping_bots/)
+and spinning up tons of EC2 instances for purposes like Bitcoin mining.
 
-I deleted the GitHub repo, but like the email cautions, I knew that wasn't enough.
-Once a secret is compromised once, it's compromised forever.
-
-So I went into the AWS console and invalidated the key.
+I deleted the GitHub repo, but like the email cautions, I knew that wasn't
+enough. Once a secret is compromised once, it's compromised forever. I went
+into the AWS console and invalidated the key. Luckily, this was on my personal
+AWS account, and nothing else depended on that key.
 
 Then I created an IAM user.
 
@@ -78,13 +95,19 @@ I did a more thorough inspection and found other things in the repo that
 shouldn't have ever been in there. There was a PDF explaining how SVGs work.
 There was an Excel spreadsheet containing account passwords.
 
-I used The BFG to remove those as well.
+I used The BFG to remove those as well. I did a manual inspection to make sure
+it worked as expected, and then I re-pushed to GitHub.
 
 ## Retrospective
 
 I should have done a manual inspection of the files before pushing. I also
-should have used a tool that is designed to find secrets in Git repos. There are several of them:
+should have used a tool that is designed to find secrets in Git repos. There
+are several of them:
 
 * [git-secrets](https://github.com/awslabs/git-secrets)
 * [gitleaks](https://github.com/zricethezav/gitleaks)
 * [Truffle Hog](https://github.com/dxa4481/truffleHog)
+
+I should have distrusted my past self. While it's secondhand
+nature to me now to use environment variables for secrets and to think about
+how they can be leaked, I forgot that at one point, I didn't know any of that.

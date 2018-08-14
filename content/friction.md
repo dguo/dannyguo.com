@@ -12,6 +12,38 @@ sense, this is also a log of things that I have learned.
 
 Apparently, Google uses [friction logs](https://devrel.net/developer-experience/an-introduction-to-friction-logging) as well.
 
+## 2018-08-13
+
+### TypeScript's watch mode has to do an initial compilation
+
+My start script for development cleans the `dist` folder that holds the
+compiled files, runs `tsc` in watch mode in the background, and then starts the
+server using [pm2](https://github.com/Unitech/pm2), which watches the `dist`
+folder. This presents a small issue where initially running the script causes a
+lot of trace because `pm2` tries to start the server before the files are done
+compiling. `pm2` prints an error and then repeatedly tries to start it,
+printing an error each time until `tsc` is done.
+
+There is an open [GitHub
+issue](https://github.com/Microsoft/TypeScript/issues/12996), and I added the
+workaround of doing a normal `tsc` compile first. While this does get rid of a
+decent amount of the trace, there is another issue of pm2 restarting each time
+a file is recompiled by the second invocation of `tsc`. This wouldn't be an
+issue if there was a way to disable the initial compilation when running in
+watch mode, as suggested by the GitHub issue.
+
+This problem is exacerbated by the need to clean the `dist` folder in the first
+place because TypeScript doesn't do it. See this [GitHub
+issue](https://github.com/Microsoft/TypeScript/issues/16057). Without manually
+cleaning it, old files would get left in the folder.
+
+Another related issue is that `pm2` immediately tries to restart the server,
+which causes all the trace because each new file triggers a restart. It would
+be nice if the program could be smarter during development. `pm2` also
+repeatedly tries to restart when there is a `tsc` error. Ideally, it would wait
+for me to make a change before trying to do so. I haven't looked into the root
+cause for this particular issue yet.
+
 ## 2018-08-09
 
 ### Yarn doesn't handle @types packages well

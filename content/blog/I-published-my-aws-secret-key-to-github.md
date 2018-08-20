@@ -85,10 +85,12 @@ present, like newly created servers or IAM users.
 
 ## Cleaning up and republishing
 
-I still wanted to publish the repo, but I needed to scrub the secrets. It
-wouldn't be enough to just remove them in a new commit because they would still
-be in the Git history. This part was the silver lining because I knew about
-[the BFG](https://rtyley.github.io/bfg-repo-cleaner/) (I assume the name is a
+I still wanted to publish the repo, but I also wanted to scrub the secrets.
+Even though they were no longer usable, I didn't want anyone to see them in the
+future and get the impression that committing secrets is okay. It wouldn't be
+enough to just remove them in a new commit because they would still be in the
+Git history. This part was the silver lining because I knew about [the
+BFG](https://rtyley.github.io/bfg-repo-cleaner/) (I assume the name is a
 reference to the [weapon](https://en.wikipedia.org/wiki/BFG_%28weapon%29) in
 [Doom](https://en.wikipedia.org/wiki/Doom_(1993_video_game)), but I'm not sure)
 but had never gotten a chance to use it before. It made it very easy to remove

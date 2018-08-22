@@ -46,16 +46,25 @@ Since a static website has the same assets for everyone, it's also easy to impro
 
 [JAMstack](https://jamstack.org/)
 
+[SPA](https://en.wikipedia.org/wiki/Single-page_application)
+
+[PWA]()
+
+[PRPL](https://developers.google.com/web/fundamentals/performance/prpl-pattern/)
+
 ## Generation
 
 * No framework
-* Jekyll
-* Hugo
-* Next
-* Gatsby
-* Hexo
-* VuePress
+* [Hexo](https://hexo.io/)
+* [Hugo](https://gohugo.io/)
+* [Jekyll](https://jekyllrb.com/)
+* [Metalsmith](http://www.metalsmith.io/)
+* [Middleman](https://middlemanapp.com/)
 * [Pelican](https://github.com/getpelican/pelican)
+
+* [Next](https://nextjs.org/)
+* [Gatsby](https://www.gatsbyjs.org/)
+* [VuePress](https://vuepress.vuejs.org/)
 
 For even more options, you can check out [StaticGen](https://www.staticgen.com/).
 
@@ -71,8 +80,9 @@ What to consider:
 
 Options:
 
-* Netlify
-* GitHub Pages
-* GitLab Pages
-* AWS S3
-* Firebase
+* [Netlify](https://www.netlify.com/)
+* [Bitbucket Cloud](https://confluence.atlassian.com/bitbucket/publishing-a-website-on-bitbucket-cloud-221449776.html)
+* [GitHub Pages](https://pages.github.com/)
+* [GitLab Pages](https://about.gitlab.com/features/pages/)
+* [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
+* [Firebase](https://firebase.google.com/docs/hosting/)

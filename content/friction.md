@@ -12,6 +12,25 @@ sense, this is also a log of things that I have learned.
 
 Apparently, Google uses [friction logs](https://devrel.net/developer-experience/an-introduction-to-friction-logging) as well.
 
+## 2018-08-26
+
+### Symbolic links don't work in subdirectories
+
+I tried creating a symbolic link with a command that looked like:
+
+```sh
+$ ln -s ../foo.css bar/foo.css
+```
+
+But it didn't work. I learned from this [Stack
+Exchange](https://unix.stackexchange.com/a/176497/280976) answer that the
+target in a symbolic link is used as-is. If the target is an absolute path, the
+symbolic link will work as long as the file is not moved. If the target is a
+relative path, the relative path is determined from the location of the
+symbolic link, *not* from where you issue the `ln` command, which was my wrong
+assumption. The benefit of this approach is that the symbolic link will remain
+valid as long as the relative path remains valid.
+
 ## 2018-08-13
 
 ### TypeScript's watch mode has to do an initial compilation

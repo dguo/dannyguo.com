@@ -34,7 +34,7 @@ def command(help):
 def run_in_hugo(command, bind_port=False):
     return run(
         DOCKER_RUN + (['-p', '1313:1313'] if bind_port else []) +
-        ['cibuilds/hugo:0.41'] + command
+        ['cibuilds/hugo:0.48'] + command
     ).returncode
 
 def run_in_node(command):

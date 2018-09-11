@@ -1,21 +1,17 @@
 ---
 categories:
   - programming
-date: "2018-09-06"
+date: "2018-09-10"
 draft: true
 tags:
   - webdev
 title: The State of Static Websites in 2018
 ---
 
-There has traditionally been a clear distinction between
-static and dynamic websites, but this distinction has
-become more nuanced. Frameworks are available to facilitate
-building one or the other. For static websites, you could
-use Jekyll or Hugo. For dynamic websites, you could use
-Ruby on Rails or Django. Let's take a look at the current
-state of tooling for static websites, and examine why the
-usual distinction between static and dynamic is blurring.
+There has traditionally been a clear distinction between static and dynamic
+websites, but this distinction has become more nuanced as static websites have
+become more powerful. Let's review the difference and then take a look at the
+current state of tooling.
 
 ## Static vs. Dynamic
 
@@ -23,26 +19,24 @@ The difference between a static website and a dynamic website is that a static
 website serves the same assets to everyone. You can think of it like directly
 copying pre-existing files (e.g. HTML, CSS, and JavaScript) from the server to
 the browser. A blog is a good fit for a static website because every visitor
-expects to see the same content. In contrast, a dynamic website generates the
+expects to see the same content. In contrast, a dynamic website generates
 assets (usually the HTML) on the fly. Dynamic websites allow for flexibility,
 but static websites have some important advantages.
 
 ### Simpler deployment and hosting
 
-A static website is just a set of files, so deploying it
-can be as simple as copying the files to somewhere. Servers
-can deliver the files without executing any additional
-code.
-
-Besides a server, there's no need for additional
-infrastructure, like a database.
+A static website is just a set of files, so deploying it can be as simple as
+copying the files somewhere. Servers can deliver the website without executing
+any additional code, so there is no need to have PHP, Python, Ruby, etc.
+installed. There's also no need for extra infrastructure, like a database.
 
 ### Smaller surface area for security issues
 
 Dynamic websites have to handle a wide range of potential security issues (like
-[SQL injection](https://en.wikipedia.org/wiki/SQL_injection)) because they run
-code in response to user actions and input. Static websites can avoid some of
-these problems entirely because they do not run code.
+[SQL injection](https://en.wikipedia.org/wiki/SQL_injection) and [cross-site
+request forgery](https://en.wikipedia.org/wiki/Cross-site_request_forgery))
+because they run code in response to user actions and input. Static websites
+can avoid some of these problems by default because they do not run code.
 
 ### Better performance
 
@@ -57,13 +51,12 @@ invalidation adds additional complexity and room for error.
 
 ## Tooling
 
-These advantages mean that developers should only choose to
-use a dynamic server when it's actually necessary. Plenty
-of websites don't need the flexibility of [Django](https://www.djangoproject.com/), [Rails](https://rubyonrails.org/), or
-[Wordpress](https://wordpress.org/).
-
-Many tools have popped up to make creating and hosting a
-static website as simple as possible.
+These advantages mean that developers should only choose to use a dynamic
+server when it's actually necessary. Plenty of websites don't need the
+flexibility of [Django](https://www.djangoproject.com/),
+[Rails](https://rubyonrails.org/), or [Wordpress](https://wordpress.org/), and
+many tools are available to make creating and hosting a static website as
+simple as possible.
 
 ### Generation
 

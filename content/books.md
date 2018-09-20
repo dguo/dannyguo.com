@@ -4,15 +4,7 @@ title: Danny Guo · Books
 
 # Books
 
-Currently reading: [The English Patient](https://en.wikipedia.org/wiki/The_English_Patient) ([Amazon](https://amzn.to/2vewwET)) by [Michael Ondaatje](https://en.wikipedia.org/wiki/Michael_Ondaatje)
-
-Next up (non-fiction):
-
-* [Homo Deus: A Brief History of Tomorrow](https://en.wikipedia.org/wiki/Homo_Deus:_A_Brief_History_of_Tomorrow) ([Amazon](https://amzn.to/2Kr6rrT)) by [Yuval Noah Harari](https://en.wikipedia.org/wiki/Yuval_Noah_Harari)
-
-Next up (fiction):
-
-* [A Clash of Kings](https://en.wikipedia.org/wiki/A_Clash_of_Kings) ([Amazon](https://amzn.to/2KrjWYG)) by [George R. R. Martin](https://en.wikipedia.org/wiki/George_R._R._Martin)
+Currently reading: [A Fall of Moondust](https://en.wikipedia.org/wiki/A_Fall_of_Moondust) ([Amazon](https://amzn.to/2Dh2VkS)) by [Arthur C. Clarke](https://en.wikipedia.org/wiki/Arthur_C._Clarke)
 
 I stopped reading for pleasure in college, but I've realized how much I have
 been missing out on. Now I am trying to read daily. I mostly read non-fiction,
@@ -48,6 +40,9 @@ very much a work in progress.
 
 ## History
 
+* [The English Patient](https://en.wikipedia.org/wiki/The_English_Patient) ([Amazon](https://amzn.to/2vewwET)) by [Michael Ondaatje](https://en.wikipedia.org/wiki/Michael_Ondaatje)
+    * Started on 2018-08-09
+    * Finished on 2018-09-20
 * [We Should All Be Feminists](https://en.wikipedia.org/wiki/We_Should_All_Be_Feminists) ([Amazon](https://amzn.to/2O9ij3o)) by [Chimamanda Ngozi Adichie](https://en.wikipedia.org/wiki/Chimamanda_Ngozi_Adichie)
     * Started on 2018-08-07
     * Finished on 2018-08-09

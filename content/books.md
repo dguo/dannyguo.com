@@ -4,7 +4,7 @@ title: Danny Guo · Books
 
 # Books
 
-Currently reading: [A Fall of Moondust](https://en.wikipedia.org/wiki/A_Fall_of_Moondust) ([Amazon](https://amzn.to/2Dh2VkS)) by [Arthur C. Clarke](https://en.wikipedia.org/wiki/Arthur_C._Clarke)
+Currently reading: [A Room of One's Own](https://en.wikipedia.org/wiki/A_Room_of_One%27s_Own) ([Amazon](https://amzn.to/2Dorah2)) by [Virginia Woolf](https://en.wikipedia.org/wiki/Virginia_Woolf)
 
 I stopped reading for pleasure in college, but I've realized how much I have
 been missing out on. Now I am trying to read daily. I mostly read non-fiction,
@@ -40,6 +40,9 @@ very much a work in progress.
 
 ## History
 
+* [A Fall of Moondust](https://en.wikipedia.org/wiki/A_Fall_of_Moondust) ([Amazon](https://amzn.to/2Dh2VkS)) by [Arthur C. Clarke](https://en.wikipedia.org/wiki/Arthur_C._Clarke)
+    * Started on 2018-09-20
+    * Finished on 2018-09-22
 * [The English Patient](https://en.wikipedia.org/wiki/The_English_Patient) ([Amazon](https://amzn.to/2vewwET)) by [Michael Ondaatje](https://en.wikipedia.org/wiki/Michael_Ondaatje)
     * Started on 2018-08-09
     * Finished on 2018-09-20

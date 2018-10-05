@@ -17,3 +17,6 @@ outputs:
     - HTML
     - RSS
     - Algolia
+
+params:
+  sourceCodeRepo: https://github.com/dguo/dguo.github.io/blob/master

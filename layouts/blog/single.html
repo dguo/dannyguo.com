@@ -26,6 +26,13 @@
 
     <hr class="separator">
 
+    <p class="edit-message">
+        Found an error or typo? Feel free to open a pull request on
+        <a href="{{ .Site.Params.sourceCodeRepo }}/content/{{ .File.Path }}">GitHub</a>.
+    </p>
+
+    <hr class="separator">
+
     {{ template "_internal/disqus.html" . }}
 
     <div class="separator">

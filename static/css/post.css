@@ -9,6 +9,10 @@ h1 {
   margin-top: 0.8em;
 }
 
+.edit-message {
+  color: #999999;
+}
+
 .previous-link {
   float: left;
   text-align: left;

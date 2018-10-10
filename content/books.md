@@ -4,7 +4,7 @@ title: Danny Guo · Books
 
 # Books
 
-Currently reading: [A Room of One's Own](https://en.wikipedia.org/wiki/A_Room_of_One%27s_Own) ([Amazon](https://amzn.to/2Dorah2)) by [Virginia Woolf](https://en.wikipedia.org/wiki/Virginia_Woolf)
+Currently reading: [Profit over People: Neoliberalism and Global Order](https://en.wikipedia.org/wiki/Profit_over_People) ([Amazon](https://amzn.to/2A3RPMn)) by [Noam Chomsky](https://en.wikipedia.org/wiki/Noam_Chomsky)
 
 I stopped reading for pleasure in college, but I've realized how much I have
 been missing out on. Now I am trying to read daily. I mostly read non-fiction,
@@ -40,6 +40,9 @@ very much a work in progress.
 
 ## History
 
+* [A Room of One's Own](https://en.wikipedia.org/wiki/A_Room_of_One%27s_Own) ([Amazon](https://amzn.to/2Dorah2)) by [Virginia Woolf](https://en.wikipedia.org/wiki/Virginia_Woolf)
+    * Started on 2018-09-22
+    * Finished on 2018-10-10
 * [A Fall of Moondust](https://en.wikipedia.org/wiki/A_Fall_of_Moondust) ([Amazon](https://amzn.to/2Dh2VkS)) by [Arthur C. Clarke](https://en.wikipedia.org/wiki/Arthur_C._Clarke)
     * Started on 2018-09-20
     * Finished on 2018-09-22

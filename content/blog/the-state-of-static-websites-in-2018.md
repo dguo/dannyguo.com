@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: "2018-10-05"
+date: "2018-10-22"
 draft: true
 tags:
   - webdev
@@ -62,8 +62,8 @@ creating and hosting a static website as simple as possible.
 
 There are many frameworks for creating static websites. We'll go over some of
 the most popular ones, but keep in mind that there's nothing wrong with
-sometimes forgoing frameworks entirely. Depending on the site, writing raw HTML
-might be the best approach.
+sometimes forgoing frameworks entirely. Depending on the website, writing raw
+HTML might be the best approach.
 
 The benefit of frameworks is that they make it easy to solve common problems.
 They tend to come with some sort of templating system. They can also make it
@@ -75,14 +75,16 @@ This list is not exhaustive. For even more options, check out
 #### Jekyll
 
 [Jekyll](https://jekyllrb.com/) was one of the first widely used frameworks, in
-part because GitHub has a well-supported Jekyll integration. It allows users to
-write content in Markdown, a feature that many other frameworks have copied. It
-is also advertised as being blog-aware, so it is particularly good for creating
-websites with blogs. It supports many features that are associated with blogs,
-like tags and permalinks.
+part because GitHub has a
+[well-supported](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/)
+Jekyll integration. It allows users to write content in
+[Markdown](https://commonmark.org/), a common feature in static website
+frameworks now. It is also advertised as being blog-aware, so it supports many
+features that are associated with blogs, like tags and permalinks.
 
 Jekyll is written in [Ruby](https://www.ruby-lang.org/) and has a rich
-[plugin](https://jekyllrb.com/docs/plugins/) ecosystem.
+[plugin](https://jekyllrb.com/docs/plugins/) ecosystem. Check out [Awesome
+Jekyll Plugins](https://github.com/planetjekyll/awesome-jekyll-plugins).
 
 It also has many themes. Check out [jekyllthemes.io](https://jekyllthemes.io/)
 and [jekyllthemes.org](http://jekyllthemes.org/).
@@ -90,7 +92,9 @@ and [jekyllthemes.org](http://jekyllthemes.org/).
 #### Hexo
 
 [Hexo](https://hexo.io/) is like Jekyll but runs on
-[Node.js](https://nodejs.org/).
+[Node.js](https://nodejs.org/). It also has
+[plugins](https://hexo.io/plugins/index.html) and
+[themes](https://hexo.io/themes/).
 
 #### Hugo
 
@@ -117,15 +121,16 @@ What to consider:
 * Cache invalidation
 * Prerendering
 * Minification
+* CLI for deployment
 
 #### Object storage
 
-Object storage is a basic building block of cloud computing platforms, and
+[Object storage](https://en.wikipedia.org/wiki/Object_storage) is a basic building block of cloud computing platforms, and
 many of them allow you to treat a bucket as a static website. To deploy the
 website, you just have to update the files in the bucket.
 
-* [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
-* [Azure Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website)
+* [Amazon Web Services S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
+* [Microsoft Azure Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website)
 * [Google Cloud Storage](https://cloud.google.com/storage/docs/hosting-static-website)
 
 #### VCS
@@ -143,13 +148,19 @@ website, you just have to update the files in the bucket.
 
 ## Statically generated but dynamic
 
-In the past, a static website implied that the website in the browser is
-static. However, the front end has become more and more capable.
+In the past, the fact that a website was statically generated also implied that
+the website itself was also largely static. However, the front end has become
+more and more powerful, and this trend has rapidly accelerated in the past few
+years. First, JavaScript appeared in 1995.
+
+[Ajax](https://en.wikipedia.org/wiki/Ajax_(programming)) came along in 2005, which allowed websites to update without re-rendering a full HTML page.
+
+[SPA](https://en.wikipedia.org/wiki/Single-page_application)
+
+The culmination of these developments is the [JAMstack](https://jamstack.org/), which is an "architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup."
 
 Some websites will need a data-only server anyway to power mobile apps. With a
 statically generated website, it can use the same server.
-
-[Ajax](https://en.wikipedia.org/wiki/Ajax_(programming))
 
 [Formspree](https://formspree.io/)
 
@@ -161,11 +172,4 @@ statically generated website, it can use the same server.
 
 [Remarkbox](https://www.remarkbox.com/)
 
-## SPAs and the JAMstack
-
-[JAMstack](https://jamstack.org/)
-
-[SPA](https://en.wikipedia.org/wiki/Single-page_application)
-
 [PWA](https://developers.google.com/web/progressive-web-apps/)
-

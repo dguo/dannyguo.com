@@ -1,36 +1,43 @@
 ---
 categories:
   - programming
-date: "2018-10-22"
+date: "2018-10-24"
 draft: true
 tags:
   - webdev
 title: The State of Static Websites in 2018
 ---
 
-There has traditionally been a clear distinction between static and dynamic
-websites, but this distinction has become more nuanced as static websites have
-become more powerful. Let's review the difference and then take a look at the
-current state of tooling.
+There has traditionally been a clear distinction between statically and
+dynamically generated websites, but this distinction has become more nuanced as
+more and more processing is being done in the browser rather than in servers.
+Let's review the difference between static and dynamic websites, take a look at
+current options for tooling, and then go over the implications of more powerful
+static websites for web development.
 
 ## Static vs. Dynamic
+
+In the context of this post, the terms "static" and "dynamic" refer to how
+websites are generated, not how they work in the browser. A static generated
+website could be extremely interactive through JavaScript, and a dynamic
+website might not have any interaction at all.
 
 The difference between a static website and a dynamic website is that a static
 website serves the same assets to everyone. You can think of it like directly
 copying pre-existing files (e.g. HTML, CSS, and JavaScript) from the server to
 the browser. A blog is a good fit for a static website because every visitor
-expects to see the same content. In contrast, a dynamic website generates
-assets (usually the HTML) on the fly. Dynamic websites allow for flexibility,
-but static websites have some important advantages.
+expects to see the same content. In contrast, a dynamic website generates HTML
+on the fly. Dynamic websites allow for flexibility, but static websites have
+some important advantages.
 
-### Simpler deployment and hosting
+### Simpler Deployment and Hosting
 
 A static website is just a set of files, so deploying it can be as simple as
 copying the files somewhere. Servers can deliver the website without executing
 any additional code, so there is no need to have PHP, Python, Ruby, etc.
 installed. There's also no need for extra infrastructure, like a database.
 
-### Smaller surface area for security issues
+### Smaller Surface Area for Security Issues
 
 Dynamic websites have to handle a wide range of potential security issues (like
 [SQL injection](https://en.wikipedia.org/wiki/SQL_injection) and [cross-site
@@ -38,7 +45,7 @@ request forgery](https://en.wikipedia.org/wiki/Cross-site_request_forgery))
 because they run code in response to user actions and input. Static websites
 can avoid many of these problems by default because they do not run code.
 
-### Better performance
+### Better Performance
 
 It's generally faster for a server to just serve a file than to dynamically
 generate HTML.
@@ -60,10 +67,9 @@ creating and hosting a static website as simple as possible.
 
 ### Generation
 
-There are many frameworks for creating static websites. We'll go over some of
-the most popular ones, but keep in mind that there's nothing wrong with
-sometimes forgoing frameworks entirely. Depending on the website, writing raw
-HTML might be the best approach.
+There are numerous frameworks for creating static websites, but keep in mind
+that there's nothing wrong with sometimes forgoing frameworks entirely.
+Depending on the website, writing raw HTML might be the best approach.
 
 The benefit of frameworks is that they make it easy to solve common problems.
 They tend to come with some sort of templating system. They can also make it
@@ -84,10 +90,9 @@ features that are associated with blogs, like tags and permalinks.
 
 Jekyll is written in [Ruby](https://www.ruby-lang.org/) and has a rich
 [plugin](https://jekyllrb.com/docs/plugins/) ecosystem. Check out [Awesome
-Jekyll Plugins](https://github.com/planetjekyll/awesome-jekyll-plugins).
-
-It also has many themes. Check out [jekyllthemes.io](https://jekyllthemes.io/)
-and [jekyllthemes.org](http://jekyllthemes.org/).
+Jekyll Plugins](https://github.com/planetjekyll/awesome-jekyll-plugins). It
+also has many themes. See [jekyllthemes.io](https://jekyllthemes.io/) and
+[jekyllthemes.org](http://jekyllthemes.org/).
 
 #### Hexo
 
@@ -112,7 +117,7 @@ and [jekyllthemes.org](http://jekyllthemes.org/).
 
 Static site generators produce a directory of files that have to be served
 somehow. There are many options for static site hosting, and it can be very
-cheap or even free.
+cheap or even free. Besides cost, there are
 
 What to consider:
 
@@ -123,7 +128,7 @@ What to consider:
 * Minification
 * CLI for deployment
 
-#### Object storage
+#### Object Storage
 
 [Object storage](https://en.wikipedia.org/wiki/Object_storage) is a basic building block of cloud computing platforms, and
 many of them allow you to treat a bucket as a static website. To deploy the
@@ -135,23 +140,37 @@ website, you just have to update the files in the bucket.
 
 #### VCS
 
-* [Bitbucket Cloud](https://confluence.atlassian.com/bitbucket/publishing-a-website-on-bitbucket-cloud-221449776.html)
-* [GitHub Pages](https://pages.github.com/)
-    * https://pages.github.com/versions/
-* [GitLab Pages](https://about.gitlab.com/features/pages/)
+GitHub pioneered VCS-integrated static website hosting with [GitHub
+Pages](https://pages.github.com/). It allows users to publish a directory of
+static content as a website. The Jekyll integration also meant that GitHub
+could automatically build and publish a Jekyll site without the user needing to
+do any additional work. This is convenient, but keep in mind that the Jekyll
+environment is out of your control. You cannot change the Jekyll version or use
+plugins that they don't provide. They do [publish the
+versions](https://pages.github.com/versions/) of all the dependencies.
 
-#### Dedicated hosting
+GitHub Pages is free and supports [custom
+domains](https://help.github.com/articles/using-a-custom-domain-with-github-pages/),
+and
+[HTTPS](https://help.github.com/articles/securing-your-github-pages-site-with-https/).
+
+Bitbucket Cloud also has [free website
+publishing](https://confluence.atlassian.com/bitbucket/publishing-a-website-on-bitbucket-cloud-221449776.html).
+
+GitLab has [GitLab Pages](https://about.gitlab.com/features/pages/).
+
+#### Dedicated Hosting
 
 * [Netlify](https://www.netlify.com/)
 * [Firebase](https://firebase.google.com/docs/hosting/)
 * [Neocities](https://neocities.org/)
 
-## Statically generated but dynamic
+## Statically Generated but Dynamic
 
 In the past, the fact that a website was statically generated also implied that
 the website itself was also largely static. However, the front end has become
 more and more powerful, and this trend has rapidly accelerated in the past few
-years. First, JavaScript appeared in 1995.
+years. JavaScript first appeared in 1995.
 
 [Ajax](https://en.wikipedia.org/wiki/Ajax_(programming)) came along in 2005, which allowed websites to update without re-rendering a full HTML page.
 

@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: "2018-10-24"
+date: "2018-10-30"
 draft: true
 tags:
   - webdev
@@ -10,7 +10,7 @@ title: The State of Static Websites in 2018
 
 There has traditionally been a clear distinction between statically and
 dynamically generated websites, but this distinction has become more nuanced as
-more and more processing is being done in the browser rather than in servers.
+more and more rendering is happening in the browser rather than in servers.
 Let's review the difference between static and dynamic websites, take a look at
 current options for tooling, and then go over the implications of more powerful
 static websites for web development.
@@ -18,9 +18,9 @@ static websites for web development.
 ## Static vs. Dynamic
 
 In the context of this post, the terms "static" and "dynamic" refer to how
-websites are generated, not how they work in the browser. A static generated
-website could be extremely interactive through JavaScript, and a dynamic
-website might not have any interaction at all.
+websites are generated, not how they work in the browser. A static website
+could be extremely interactive through JavaScript, and a dynamic website might
+not have any interaction at all.
 
 The difference between a static website and a dynamic website is that a static
 website serves the same assets to everyone. You can think of it like directly
@@ -117,12 +117,20 @@ also has many themes. See [jekyllthemes.io](https://jekyllthemes.io/) and
 
 Static site generators produce a directory of files that have to be served
 somehow. There are many options for static site hosting, and it can be very
-cheap or even free. Besides cost, there are
+cheap or even free. Besides cost, there are many factors to consier.
 
-What to consider:
+[All
+websites](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https)
+should be served through [HTTPS](https://en.wikipedia.org/wiki/HTTPS) now, even
+if they don't handle credit card numbers or passwords. Chrome now marks all
+HTTP websites as "not secure." Luckily, most static site hosts offer managed
+SSL for free, so you don't even need to remember to renew your certificates.
+It's frequently powered by [Let's Encrypt](https://letsencrypt.org/) behind the
+scenes.
 
-* SSL
-* CDN
+Static websites should be served through a CDN for increased performance.
+
+
 * Cache invalidation
 * Prerendering
 * Minification
@@ -168,15 +176,22 @@ GitLab has [GitLab Pages](https://about.gitlab.com/features/pages/).
 ## Statically Generated but Dynamic
 
 In the past, the fact that a website was statically generated also implied that
-the website itself was also largely static. However, the front end has become
-more and more powerful, and this trend has rapidly accelerated in the past few
-years. JavaScript first appeared in 1995.
+the website itself was also largely static. However, browsers have become more
+powerful, and it's becoming more common to see websites that are rendered
+and controlled by JavaScript.
 
-[Ajax](https://en.wikipedia.org/wiki/Ajax_(programming)) came along in 2005, which allowed websites to update without re-rendering a full HTML page.
+JavaScript first appeared in 1995 to allow for client-side scripting in
+[Netscape Navigator](https://en.wikipedia.org/wiki/Netscape_Navigator).
+[Ajax](https://en.wikipedia.org/wiki/Ajax_(programming)) came along in 2005,
+which allowed websites to update without re-rendering a full HTML page. This
+development led to the rise of the [single-page
+application](https://en.wikipedia.org/wiki/Single-page_application) (SPA)
+pattern, in which the user never experiences a full page reload.
 
-[SPA](https://en.wikipedia.org/wiki/Single-page_application)
-
-The culmination of these developments is the [JAMstack](https://jamstack.org/), which is an "architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup."
+The culmination of these developments is the [JAMstack](https://jamstack.org/),
+which refers to an architecture where dynamic rendering happens through
+JavaScript running on the client, server-side actions are accessed through
+resuable APIs, and templated markup is prebuilt at deploy time.
 
 Some websites will need a data-only server anyway to power mobile apps. With a
 statically generated website, it can use the same server.

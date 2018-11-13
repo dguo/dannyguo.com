@@ -12,6 +12,32 @@ sense, this is also a log of things that I have learned.
 
 Apparently, Google uses [friction logs](https://devrel.net/developer-experience/an-introduction-to-friction-logging) as well.
 
+## 2018-11-12
+
+### Xcode doesn't have native live reloading
+
+I'm used to setting up live reloading for all my projects, but for a [Safari App
+Extension](https://developer.apple.com/documentation/safariservices/safari_app_extensions),
+that doesn't seem to be possible. Even for iOS development, it seems like you
+have to [use a plugin](https://stackoverflow.com/a/46177204/1481479).
+
+### Xcode's settings are stored in binary format
+
+This is my first time using Xcode. I usually try to store as much of my system
+configuration in my [dotfiles repo](https://github.com/dguo/dotfiles), but Xcode
+doesn't make it easy. Its [settings are
+stored](https://stackoverflow.com/q/2580193/1481479) in a binary property list
+format. While I could still check this in, it would be easier to work with in a
+plain text format, like JSON.
+
+### Safari doesn't detect extension changes during development
+
+While working on a Safari App Extension, it took some trial and error to figure
+out how to get Safari to actually pick up a change to the code. The only
+reliable way I found was to clean the build folder every time. Simply restarting
+the project wasn't good enough. Sometimes, the extension would even stop showing
+up in Safari preferences.
+
 ## 2018-08-26
 
 ### Symbolic links don't work in subdirectories

@@ -66,7 +66,7 @@ limit them to specific elements using standard selectors.
 ```css
 .iron-man::selection {
     color: #beba46;
-    background:#790d0d;
+    background: #790d0d;
 }
 
 .iron-man::-moz-selection {
@@ -85,7 +85,7 @@ limit them to specific elements using standard selectors.
 }
 
 .thor::selection {
-    color:#e63900;
+    color: #e63900;
     background: #363636;
 }
 

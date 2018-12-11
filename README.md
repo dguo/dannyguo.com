@@ -38,6 +38,7 @@ Hello! My website is available at https://dannyguo.com.
     * Convert code blocks into [GitHub gists](https://gist.github.com/) and embed them
     * Embed any [Repl.it](https://repl.it/repls) snippets
 5. Publicize the post, as appropriate, and update the post with links
-    * Twitter
-    * Reddit
-    * Hacker News
+    * [Hacker News](https://news.ycombinator.com/)
+    * [Lobsters](https://lobste.rs/)
+    * [Reddit](https://www.reddit.com/)
+    * [Twitter](https://twitter.com/)

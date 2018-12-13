@@ -10,7 +10,32 @@ take me longer to figure out than they should, and times when figuring out what
 the "right" thing to do takes more than a couple minutes of research. In that
 sense, this is also a log of things that I have learned.
 
-Apparently, Google uses [friction logs](https://devrel.net/developer-experience/an-introduction-to-friction-logging) as well.
+Apparently, Google uses [friction
+logs](https://devrel.net/developer-experience/an-introduction-to-friction-logging)
+as well.
+
+## 2018-12-12
+
+### Safari's developer console truncates output
+
+While working on a Safari App Extension, I was using `console.log` to debug, but
+some of my output in the developer console was getting truncated with ellipses.
+It appears that at least in Safari 12.0.2, truncation can occur when a string is
+provided after the first argument to `console.log` or if it's a value in an
+object that is provided as any argument.
+
+Hovering over the output doesn't show the full string, and using the console's
+"Copy Selected" feature copies the truncated version. So there doesn't seem to
+be any way to view the full string.
+
+From trial and error, it seems that truncation occurs once the string hits 140
+characters (fun fact: that is the [old limit for
+Tweets](https://twitter.com/jack/status/912784057863245824)).
+
+![Safari truncating developer console output](https://i.imgur.com/8kYVhKh.png)
+
+I submitted a report on the [Apple Bug
+Reporter](https://developer.apple.com/bug-reporting/).
 
 ## 2018-11-12
 

@@ -12,6 +12,7 @@ I worked at [Bloomberg](https://www.bloomberg.com/) on their [Customer Service C
 ## Public Profiles
 
 * [dev.to](https://dev.to/dguo)
+* [devRant](https://devrant.com/users/dguo)
 * [GitHub](https://github.com/dguo)
 * [Hacker News](https://news.ycombinator.com/user?id=dguo)
 * [Keybase](https://keybase.io/dannyguo)

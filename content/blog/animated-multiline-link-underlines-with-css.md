@@ -8,38 +8,45 @@ tags:
 title: Animated Multiline Link Underlines with CSS
 ---
 
-One of the fun parts of building my personal website from scratch instead of
-using someone else's theme is that I can start from the browser's defaults and
-throw in my own flourishes for fun.
+One of the fun parts of building my [personal
+website](https://www.dannyguo.com/) from scratch instead of using a
+[theme](https://themes.gohugo.io/) made by someone else is that I can start from
+the browser's defaults and gradually add my own flourishes. I strive to keep my
+site lean, but making it personal is also kind of the point. There is a spectrum
+of gratuitous touches between the spartan pages of [Hacker
+News](https://news.ycombinator.com/) and
+[Craigslist](https://newyork.craigslist.org/) on one end and the sensory
+overload of [old MySpace](https://news.codecademy.com/myspace-coding-legacy/) on
+the other.
 
-I ran across an example of a website that does fancy things with underlining
-links on hover, and I wanted to add it my site.
+I ran across a site that has fancy, animated underlines for links, and I wanted
+to add a similar effect to my site. It was important to me to use a pure CSS
+solution. Link underlines, especially on a blog, shouldn't require JavaScript or
+run any risk of causing a performance issue or unexpected behavior (see [scroll
+hijacking](https://envato.com/blog/scroll-hijacking/)).
 
-Like many things in the world, the topic of drawing lines under text on the web
-can be [surprisingly
+Here's what the effect looks like now.
+
+## Implementation
+
+The topic of drawing lines under text on the web can be [surprisingly
 complicated](https://medium.design/crafting-link-underlines-on-medium-7c03a9274f9),
-depending on how far away you want to
+depending on how far you are willing to
 [stray](https://css-tricks.com/styling-underlines-web/) from `text-decoration:
 underline`.
 
-The
-[commit](https://github.com/dguo/dguo.github.io/commit/14e51391329163fa414ac55d77fdf6da521ab644)
-ended up being pretty small.
-
-It was important to me to have a pure CSS solution. I didn't want to use any
-JavaScript to do it.
-
-I investigated a number of approaches.
+I investigated a few approaches:
 
 * [Animating Link Underlines](http://tobiasahlin.com/blog/css-trick-animating-link-underlines/)
 * [CSS Animated Underline Links](http://www.cssportal.com/blog/css-animated-underline-links/)
 
-Unfortunately, these solutions have one small drawback: they don't work properly
-if the link spans more than one line. The underline would only show up for the
+Unfortunately, these solutions have one drawback: they don't work properly if
+the link spans more than one line. The underline would only show up for the
 first line. I eventually found a [CodePen](https://codepen.io/shshaw/pen/pdyJBW)
-that doesn't have this flaw.
-
-I stripped away the CSS until I got to a solution that worked for me.
+by [Shaw](https://twitter.com/shshaw) that doesn't have this flaw. I stripped
+away the CSS until I got to a solution that worked for me. The
+[commit](https://github.com/dguo/dguo.github.io/commit/14e51391329163fa414ac55d77fdf6da521ab644)
+ended up being pretty small.
 
 ```css
 a {

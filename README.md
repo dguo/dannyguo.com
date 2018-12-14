@@ -16,6 +16,20 @@ Hello! My website is available at https://dannyguo.com.
 * [Netlify](https://netlify.com/) for hosting
 * [Repl.it](https://repl.it/) for embedded, interactive code snippets
 
+## Features
+
+Many of these were easy to add because of Hugo.
+
+* [animated link underlines](https://github.com/dguo/dguo.github.io/commit/14e51391329163fa414ac55d77fdf6da521ab644)
+* [comments](https://github.com/dguo/dguo.github.io/commit/8bbd1e12cf145844e384b1858f169d96fd70b45c)
+* [custom text selection colors](https://github.com/dguo/dguo.github.io/commit/b6426c17c4fc7c1d53131c626f93481762919fc8)
+* ["edit on GitHub" links](https://github.com/dguo/dguo.github.io/commit/a28a14aef5846cefe714b24a2cd67081398c71b7)
+* [estimated reading times and word counts](https://github.com/dguo/dguo.github.io/commit/8471241935cc21e84b8e51f51d20b59226698551)
+* [pagination links to the previous and next posts](https://github.com/dguo/dguo.github.io/commit/5e8f017598f5afe430398c45c3808f4968c8eee4)
+* [static anchor links](https://github.com/dguo/dguo.github.io/commit/d8f81fa4573ccdf90030cb8f1252ec27f330493f)
+* [static copyright year](https://github.com/dguo/dguo.github.io/commit/a8a3e1acac919f759253f07ad8a466be8ba4fcfb)
+* [static syntax highlighting](https://github.com/dguo/dguo.github.io/commit/3f02ffcd82883de75ac68151b1b518b045fb390b)
+
 ## Content
 
 * [blog](https://www.dannyguo.com/blog/)

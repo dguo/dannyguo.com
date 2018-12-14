@@ -39,4 +39,5 @@ title: Danny Guo · Projects
 ## Open source contributions
 * [ioredis](https://github.com/luin/ioredis) - Added [transparent key prefixing](https://github.com/luin/ioredis#transparent-key-prefixing)
 * [yarn](https://yarnpkg.com) - Added [offline mirror pruning](https://yarnpkg.com/en/docs/prune-offline-mirror) (mentioned in a [F8 2017 presentation](https://developers.facebook.com/videos/f8-2017/building-high-quality-javascript-tools/) at around 39:00)
-* [other](https://showmyprs.com/user/dguo) (yes, I really dislike typos)
+* [pull requests](https://showmyprs.com/user/dguo) (yes, I really dislike typos)
+* [recent GitHub activity](https://gitstalk.netlify.com/dguo)

@@ -153,9 +153,13 @@ blockquote {
   overflow-x: auto;
 }
 
-img {
+img,
+video {
   border-radius: 8px;
   max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #social-buttons {

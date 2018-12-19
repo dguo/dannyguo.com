@@ -1,8 +1,7 @@
 ---
 categories:
   - programming
-date: "2018-12-18"
-draft: true
+date: "2018-12-19"
 tags:
   - css
 title: Animated Multiline Link Underlines with CSS
@@ -21,7 +20,7 @@ the other.
 I ran across a site that had fancy, animated underlines for links, and I wanted
 to add a similar effect to my site. It was important to me to use a pure CSS
 solution. For something as frivolous as this, I didn't want to add JavaScript
-that has a risk of causing a performance issue or unexpected behavior (see
+that has a risk of causing a performance issue or frustrating behavior (see
 [scroll hijacking](https://envato.com/blog/scroll-hijacking/)).
 
 Here's what the effect looks like now.
@@ -42,8 +41,9 @@ I investigated a few approaches:
 * [Animating Link Underlines](http://tobiasahlin.com/blog/css-trick-animating-link-underlines/)
 * [CSS Animated Underline Links](http://www.cssportal.com/blog/css-animated-underline-links/)
 
-Both of them essentially remove any default `text-decoration` and add a
-simulated border using
+Both of them essentially remove the default
+[text-decoration](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+and add a simulated border using
 [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements).
 The border is then animated by [CSS
 transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions).
@@ -58,12 +58,13 @@ CSS until I got to a solution that looks good to me.
 
 {{< video 8pxxwkT >}}
 
-The
-[commit](https://github.com/dguo/dguo.github.io/commit/14e51391329163fa414ac55d77fdf6da521ab644)
-ended up being satisfyingly small.
+Here is the relevant code. You can use [this
+repl](https://repl.it/@dyguo/animated-multiline-link-underlines) to play around
+with it.
 
 ```css
 a {
+    text-decoration: none;
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0% 100%;
     background-repeat: no-repeat;
@@ -76,34 +77,47 @@ a:hover {
 }
 ```
 
-This method creates a [background
-image](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image) using
-linear-gradient.
+Let's go through this approach part by part. First, we turn off the default
+`text-decoration` for links.
 
-`currentColor`
-[tells](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentColor_keyword)
-the browser to use the element's computed `color` property.
+We want to use
+[background-image](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
+because it can span multiple lines. While we could supply an actual image, we
+only want to draw a line, so we use
+[linear-gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient),
+which generates an image for us. Normally, it's used to create a gradient
+between two different colors, but I want the underline to just be the same color
+as the link, so I use
+[currentColor](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentColor_keyword)
+for both the beginning and the end of the gradient. `currentColor` tells the
+browser to use the element's computed
+[color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) property.
 
-`linear-gradient`
-[creates](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient) an
-image.
+We use
+[background-position](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)
+to place the image in the bottom left corner. `0%` sets the horizontal position,
+and `100%` sets the vertical position.
 
-`background-position`
-[places](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)
-the image in the bottom left corner.
+We turn off
+[background-repeat](https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat)
+to prevent it from creating multiple instances of the image to fill the entire
+background of the link.
 
-Turning off `background-repeat` prevents it from
-[creating](https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat)
-multiple instances of the image to fill the background.
+We use
+[background-size](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)
+to make the image zero pixels wide and two pixels tall. It has zero width
+because the underline should only appear on hover.
 
-`background-size` sets the image to take up zero horizontal space and 2 pixels
-of vertical space.
+We set a [transition](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
+on `background-size`, so any change to the property will take `0.3` seconds
+to complete.
 
-`transition` [says](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
-to take 0.3 seconds to make a change to the `background-size`.
+On link [hover](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover), we
+change the width of the image to `100%`, creating a full underline, and
+`transition` takes care of the animation.
 
-On hover, we set the width of the 100%, creating a full underline, and
-transition takes care of the animation.
-
-Here are some [other](https://speckyboy.com/underline-text-effects-css/)
-animation underline effects for inspiration.
+And that's it! I was very happy with how small the
+[commit](https://github.com/dguo/dguo.github.io/commit/14e51391329163fa414ac55d77fdf6da521ab644)
+ended up being. If you'd like to add something similar to your site, feel free
+to take this implementation, or check out some other [animated underline
+effects](https://speckyboy.com/underline-text-effects-css/) for inspiration.

@@ -21,6 +21,7 @@ Center](https://service.bloomberg.com) website.
 * [LinkedIn](https://www.linkedin.com/in/danny-guo/)
 * [Medium](https://medium.com/@dannyguo)
 * [npm](https://www.npmjs.com/~dguo)
+* [repl.it](https://repl.it/@dyguo)
 * [Stack Overflow](https://stackoverflow.com/users/1481479/danny-guo)
 * [Twitter](https://twitter.com/dannyguo)
 

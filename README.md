@@ -52,6 +52,10 @@ Many of these were easy to add because of Hugo.
     * Convert code blocks into [GitHub gists](https://gist.github.com/) and embed them
     * Embed any [Repl.it](https://repl.it/repls) snippets
 5. Import the post into [dev.to](https://dev.to/)
+    * To get around dev.to's [issue](https://github.com/thepracticaldev/dev.to/issues/575) with line break handling in Markdown, use `:%s/\(\S\)\n\(\S\)/\1 \2/ ` in Vim to join lines within paragraphs (afterwards, fix lists, code blocks, etc. as appropriate)
+    * Add `canonical_url` to the front matter
+    * Add any GIFs manually
+    * Add a canonical link and an edit on GitHub link to the bottom of the post
 6. Publicize the post, as appropriate, and update the post with links
     * [Hacker News](https://news.ycombinator.com/)
     * [Lobsters](https://lobste.rs/)

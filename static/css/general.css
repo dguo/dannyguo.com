@@ -179,6 +179,12 @@ button,
   -webkit-tap-highlight-color: transparent;
 }
 
+button::-moz-focus-inner {
+  /* prevent mobile Firefox's dotted outline when buttons are clicked
+     https://stackoverflow.com/a/199319/1481479 */
+  border: 0;
+}
+
 .link-button {
   align-items: center;
   border-radius: 3px;

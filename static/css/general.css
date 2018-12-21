@@ -166,6 +166,19 @@ video {
   margin-bottom: 0.8em;
 }
 
+button,
+.link-button {
+  /* prevent ugly blue highlighting when buttons are clicked on mobile
+     https://stackoverflow.com/a/21003770/1481479 */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .link-button {
   align-items: center;
   border-radius: 3px;

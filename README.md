@@ -22,6 +22,7 @@ Many of these were easy to add because of Hugo.
 
 * [animated link underlines](https://github.com/dguo/dguo.github.io/commit/14e51391329163fa414ac55d77fdf6da521ab644)
 * [comments](https://github.com/dguo/dguo.github.io/commit/8bbd1e12cf145844e384b1858f169d96fd70b45c)
+* [copy to clipboard buttons for code blocks](https://github.com/dguo/dguo.github.io/commit/6953658a361112c3d3f7c348a537a200d24c8c63)
 * [custom text selection colors](https://github.com/dguo/dguo.github.io/commit/b6426c17c4fc7c1d53131c626f93481762919fc8)
 * ["edit on GitHub" links](https://github.com/dguo/dguo.github.io/commit/a28a14aef5846cefe714b24a2cd67081398c71b7)
 * [estimated reading times and word counts](https://github.com/dguo/dguo.github.io/commit/8471241935cc21e84b8e51f51d20b59226698551)

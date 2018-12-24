@@ -1,0 +1,13 @@
+{
+    "name": "dannyguo.com",
+    "version": "1.0.0",
+    "repository": "https://github.com/dguo/dguo.github.io",
+    "author": "Danny Guo",
+    "private": true,
+    "scripts": {
+        "update-search-index": "atomic-algolia"
+    },
+    "devDependencies": {
+        "atomic-algolia": "^0.3.17"
+    }
+}

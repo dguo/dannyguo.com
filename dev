@@ -5,7 +5,6 @@
 import argparse
 from http.client import HTTPException
 import os
-from shutil import which
 from subprocess import run
 import sys
 from threading import Thread
@@ -17,28 +16,25 @@ import webbrowser
 parser = argparse.ArgumentParser(prog='./dev')
 subparsers = parser.add_subparsers(metavar='<command>', title='commands')
 
-DOCKER_RUN = [
-    'docker', 'run', '--init', '-it', '--rm', '-v',
-    f'{os.getcwd()}:/src:cached', '-w=/src'
-]
-
 LOCAL_SITE = 'http://localhost:1313'
 
 def command(help):
     def decorator(func):
-        parser = subparsers.add_parser(func.__name__, help=help)
+        parser = subparsers.add_parser(
+            func.__name__.replace('_', '-'), help=help
+        )
         parser.set_defaults(func=func)
         return func
     return decorator
 
-def run_in_hugo(command, bind_port=False):
+def run_command(command, bind_port=False):
     return run(
-        DOCKER_RUN + (['-p', '1313:1313'] if bind_port else []) +
-        ['cibuilds/hugo:0.48'] + command
+        [
+            'docker', 'run', '--init', '-it', '--rm', '-v',
+            f'{os.getcwd()}:/src:cached'
+        ] + (['-p', '1313:1313'] if bind_port else []) + ['dannyguo-dev'] +
+        command
     ).returncode
-
-def run_in_node(command):
-    return run(DOCKER_RUN + ['node:10.4.0-alpine'] + command).returncode
 
 def open_in_browser():
     while True:
@@ -79,29 +75,28 @@ def algolia(args, remaining):
     if rc:
         return rc
 
-    # Sync with Algolia
-    if which('atomic-algolia'):
-        return run(['atomic-algolia']).returncode
-    if which('npx'):
-        return run(['npx', 'atomic-algolia']).returncode
-    return run_in_node(['npx', 'atomic-algolia'])
+    return run_command(['yarn', 'run', 'update-search-index'])
+
+@command('Build a Docker image for development')
+def build_docker(args, remaining):
+    return run(['docker', 'build', '-t', 'dannyguo-dev', '.']).returncode
 
 @command('Run a Hugo command')
 def hugo(args, remaining):
-    return run_in_hugo(['hugo'] + (remaining or []))
+    return run_command(['hugo'] + (remaining or []))
 
 @command('Lint the resulting HTML')
 def lint(args, remaining):
     rc = hugo(None, None)
     if rc:
         return rc
-    return run_in_hugo([
+    return run_command([
         'htmlproofer', '--check-favicon', '--check-html', '--check-opengraph',
         '--disable-external', 'public'
     ])
 
 def new(args, remaining):
-    return run_in_hugo(['hugo', 'new', f'blog/{args.title}.md'])
+    return run_command(['hugo', 'new', f'blog/{args.title}.md'])
 new_parser = subparsers.add_parser('new', help='Generate a new blog post')
 new_parser.add_argument('title', help="title of the post in kebab-case")
 new_parser.set_defaults(func=new)
@@ -112,12 +107,16 @@ def view(args, remaining):
 
 @command('Open a shell')
 def sh(args, remaining):
-    return run_in_hugo(['sh'])
+    return run_command(['sh'])
 
 @command('Start development')
 def start(args, remaining):
     Thread(target=open_in_browser).start()
-    run_in_hugo(['hugo', 'server', '--bind', '0.0.0.0', '--buildDrafts'], True)
+    run_command(['hugo', 'server', '--bind', '0.0.0.0', '--buildDrafts'], True)
+
+@command('Run a Yarn command')
+def yarn(args, remaining):
+    return run_command(['yarn'] + (remaining or []))
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:

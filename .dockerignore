@@ -1,0 +1,13 @@
+.git
+archetypes
+config.yaml
+content
+dev
+layouts
+netlify.toml
+node_modules
+public
+README.md
+resources
+static
+*.env

@@ -43,6 +43,10 @@ a {
   text-decoration: none;
 }
 
+.menu a {
+  margin: 0px 3px;
+}
+
 /* Animated link underline on hover
    Adapted from https://codepen.io/shshaw/details/pdyJBW */
 a:not(.anchor):not(.link-button):not(.link-image):not(.ais-pagination--link) {
@@ -127,10 +131,6 @@ footer p {
   float: right;
 }
 
-.menu a {
-  margin: 0px 3px;
-}
-
 @media screen and (max-width: 475px) {
   .menu {
     float: none;
@@ -193,6 +193,15 @@ button::-moz-focus-inner {
   padding: 0.3em 1em;
 }
 
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
 .link-button .icon {
   margin-right: 0.4em;
 }
@@ -223,13 +232,4 @@ button::-moz-focus-inner {
 
 .email:hover {
   background-color: #920126;
-}
-
-.icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
 }

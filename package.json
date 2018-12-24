@@ -5,17 +5,23 @@
     "author": "Danny Guo",
     "private": true,
     "scripts": {
+        "lint:css": "stylelint static/css/*",
         "lint:js": "eslint static/js/*",
         "update-search-index": "atomic-algolia"
     },
     "devDependencies": {
         "atomic-algolia": "^0.3.17",
-        "eslint": "^5.11.0"
+        "eslint": "^5.11.0",
+        "stylelint": "^9.9.0",
+        "stylelint-config-recommended": "^2.1.0"
     },
     "eslintConfig": {
         "extends": "eslint:recommended",
         "env": {
             "browser": true
         }
+    },
+    "stylelint": {
+        "extends": "stylelint-config-recommended"
     }
 }

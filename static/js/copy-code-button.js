@@ -1,3 +1,5 @@
+/* global clipboard */
+
 if (clipboard) {
     document.querySelectorAll('.highlight').forEach(function (codeBlock) {
         var button = document.createElement('button');
@@ -16,7 +18,7 @@ if (clipboard) {
                 setTimeout(function () {
                     button.innerText = 'Copy';
                 }, 2000);
-            }, function (error) {
+            }, function () {
                 button.innerText = 'Error';
             });
         });

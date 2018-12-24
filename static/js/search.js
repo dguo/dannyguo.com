@@ -1,4 +1,6 @@
-const search = instantsearch({
+/* global instantsearch */
+
+var search = instantsearch({
     appId: 'MK3FXFX5GZ',
     apiKey: '9c93c5845a4e979b651b9aaca5d63bf9',
     indexName: window.location.hostname.indexOf('dannyguo.com') === -1 ? 'dev_posts' : 'prod_posts',

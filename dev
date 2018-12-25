@@ -85,15 +85,13 @@ def build_docker(args, remaining):
 def hugo(args, remaining):
     return run_command(['hugo'] + (remaining or []))
 
-@command('Lint the resulting HTML')
+@command('Run linters')
 def lint(args, remaining):
     rc = hugo(None, None)
     if rc:
         return rc
-    return run_command([
-        'htmlproofer', '--check-favicon', '--check-html', '--check-opengraph',
-        '--disable-external', 'public'
-    ])
+
+    return run_command(['yarn', 'run', 'lint'])
 
 def new(args, remaining):
     return run_command(['hugo', 'new', f'blog/{args.title}.md'])

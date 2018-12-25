@@ -17,6 +17,10 @@ RUN wget ${HUGO_BINARY_URL} && \
 WORKDIR /home/node
 COPY package.json yarn.lock ./
 RUN yarn install
+
+# so that we can use the installed executables from any directory
+ENV PATH ${PATH}:/home/node/node_modules/.bin
+# so that the executables know where to look up dependencies
 ENV NODE_PATH /home/node/node_modules
 
 WORKDIR /src

@@ -5,6 +5,7 @@
     "author": "Danny Guo",
     "private": true,
     "scripts": {
+        "lint": "yarn lint:css && yarn lint:html && yarn lint:js && yarn lint:md",
         "lint:css": "stylelint static/css/*",
         "lint:html": "htmlhint public/**/*/*.html",
         "lint:js": "eslint static/js/*",

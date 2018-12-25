@@ -11,6 +11,7 @@ categories is "Best Dynamic Theme." I love adding color to my setup, so I was
 pretty motivated to participate. I ended up creating three extensions.
 
 ## Chromatastic
+
 [Chromatastic](https://addons.mozilla.org/en-US/firefox/addon/chromatastic/)
 ([source code](https://github.com/dguo/chromatastic)) continuously cycles
 through colors using a
@@ -37,6 +38,7 @@ The color transitions occur fairly slowly, so the overall effect shouldn't be
 distracting.
 
 ## Color Tailor
+
 [Color Tailor](https://addons.mozilla.org/en-US/firefox/addon/color-tailor/)
 ([source code](https://github.com/dguo/color-tailor)) changes the browser theme
 to the current website's "primary" color, as determined by the meta
@@ -59,6 +61,7 @@ Here's the result:
 ![Color Tailor screenshot](https://i.imgur.com/uqJqd3A.png)
 
 ## Picture Paint
+
 [Picture Paint](https://addons.mozilla.org/en-US/firefox/addon/picture-paint/)
 ([source code](https://github.com/dguo/picture-paint)) uses the color palette
 of the current [National Geographic Photo of the
@@ -93,10 +96,12 @@ Preferences:
 ![Golden Gate Bridge](https://i.imgur.com/g3bfzRd.png)
 
 ## What I learned
+
 These extensions are relatively simple, but I still learned quite a few things
 in the process of making them.
 
 ### web-ext
+
 Mozilla has created a command line tool called
 [web-ext](https://github.com/mozilla/web-ext) to [streamline extension
 development](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Getting_started_with_web-ext).
@@ -107,6 +112,7 @@ issue](https://github.com/mozilla/web-ext/issues/521) to allow web-ext to
 attach to a remote Firefox instance, which would also fix this issue.
 
 ### Webpack
+
 Firefox extensions have a default [Content Security
 Policy](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Content_Security_Policy)
 that disallows using unsafe practices such as
@@ -117,6 +123,7 @@ to change the extension's CSP just for source maps, so I ended up using the
 `inline-source-map` option.
 
 ### Theme API
+
 The [theme
 API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/theme)
 offers a lot of granularity in terms of coloring individual browser elements,
@@ -124,6 +131,7 @@ and using it is straightforward. As of now, Firefox is the only browser that
 supports dynamically updating the theme.
 
 ### Getting the favicon
+
 At first, I tried to get the favicon location by looking for an [icon
 reference](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_custom_icons_to_your_site)
 in the page's head element and defaulting to `/favicon.ico` otherwise. This
@@ -136,9 +144,15 @@ updates](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/onUp
 to the tab info.
 
 ### HSV
-My first thought for creating a rainbow effect with Chromatastic was to cycle through [RGB](https://en.wikipedia.org/wiki/RGB_color_model) combinations. But [it turns out](https://arduino.stackexchange.com/a/35791/45573) it's easier to create smooth transitions using [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) values.
+
+My first thought for creating a rainbow effect with Chromatastic was to cycle
+through [RGB](https://en.wikipedia.org/wiki/RGB_color_model) combinations. But
+[it turns out](https://arduino.stackexchange.com/a/35791/45573) it's easier to
+create smooth transitions using [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV)
+values.
 
 ### Getting the National Geographic photo
+
 There doesn't seem to be an official API to get the National Geographic Photo
 of the Day. I found an [unofficial
 API](https://github.com/crisboarna/national-geographic-api) on npm, but it uses
@@ -154,6 +168,7 @@ surprise, it worked! Leaving it off returns the current month, so Picture Paint
 does that for the daily updates.
 
 ### Bad themes
+
 During development, I tried to set a theme and forgot the `textcolor`
 property. Apparently this property is
 [required](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json/theme#colors),
@@ -165,6 +180,7 @@ the documentation and found the source of the problem. I would expect the
 Promise to reject if the theme is invalid.
 
 ### Color quantization
+
 Until I worked on these extensions, I didn't know that the technique of getting
 color palettes from images is called [color
 quantization](https://en.wikipedia.org/wiki/Color_quantization). I tried many
@@ -188,6 +204,7 @@ hand, can afford to take a few seconds to processs the image because it happens
 in the background.
 
 ### Canvas permission issue
+
 The issue that took me the longest to resolve occurred when I first tried to
 use the color quantization libraries. I was getting a DOM security error, and I
 eventually [figured out](https://stackoverflow.com/a/49696532/1481479) that I
@@ -199,6 +216,7 @@ report](https://bugzilla.mozilla.org/show_bug.cgi?id=1318565) regarding using
 canvas in an extension.
 
 ### Popup coloring
+
 Firefox 60 will [significantly
 increase](https://blog.mozilla.org/addons/2018/04/02/extensions-firefox-60/)
 the number of UI elements that can be themed. I changed my code to set popup
@@ -218,6 +236,7 @@ to see a good solution to this problem. Maybe just adding a very small white
 margin to the icons would be sufficient.
 
 ### Imperative UI
+
 It was nice to work on something with a very limited scope. Instead of using a
 UI framework for something so small, I manually manipulated the DOM with
 vanilla JS. After working in [React](https://reactjs.org/) for a while, it is
@@ -228,6 +247,7 @@ but it still gave me flashbacks to dealing with [jQuery](https://jquery.com/)
 [spaghetti](https://en.wikipedia.org/wiki/Spaghetti_code).
 
 ### Photon design system
+
 Firefox has a new design system called
 [Photon](https://design.firefox.com/photon/index.html). It's like Google's
 [Material Design](https://material.io/). I referenced it for things like color
@@ -243,6 +263,7 @@ request](https://github.com/FirefoxUX/photon-extension-kit/pull/1) to
 "photonize" the CSS.
 
 ### Packaging source code
+
 Firefox has a review process for extensions, and [providing the source
 code](https://developer.mozilla.org/en-US/Add-ons/Source_Code_Submission) is
 required when the final code is obfuscated or minified. I have a release
@@ -253,6 +274,7 @@ such as `node_modules`. It turned out that Git has an [archive
 command](https://git-scm.com/docs/git-archive) that does exactly what I need.
 
 ## Conclusion
+
 Building these extensions was fun. Please feel free to contact me or open an
 issue if you have any suggestions or issues with any of them. Picture Paint
 turned out better than I had anticipated, and that's the one I'll personally

@@ -8,12 +8,14 @@
         "lint:css": "stylelint static/css/*",
         "lint:html": "htmlhint public/**/*/*.html",
         "lint:js": "eslint static/js/*",
+        "lint:md": "markdownlint content/**/*/*.md",
         "update-search-index": "atomic-algolia"
     },
     "devDependencies": {
         "atomic-algolia": "^0.3.17",
         "eslint": "^5.11.0",
         "htmlhint": "^0.10.1",
+        "markdownlint-cli": "^0.13.0",
         "stylelint": "^9.9.0",
         "stylelint-config-recommended": "^2.1.0"
     },

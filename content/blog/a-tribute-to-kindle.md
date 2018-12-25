@@ -6,9 +6,13 @@ I've been thinking about just how many digital devices I own. Excluding
 accessories like my keyboard, the full list is:
 
 * [Apple iPad](https://en.wikipedia.org/wiki/IPad_(2017)) (2017)
-* [Apple Macbook Pro](https://en.wikipedia.org/wiki/MacBook_Pro#Third_generation_(Retina)) (2015 13")
+* [Apple Macbook
+  Pro](https://en.wikipedia.org/wiki/MacBook_Pro#Third_generation_(Retina))
+  (2015 13")
 * [Amazon Echo Dot](https://en.wikipedia.org/wiki/Amazon_Echo#Echo_Dot) (2nd generation)
-* [Amazon Kindle Paperwhite](https://en.wikipedia.org/wiki/Amazon_Kindle#Kindle_Paperwhite_(2nd_generation)) (2nd generation)
+* [Amazon Kindle
+  Paperwhite](https://en.wikipedia.org/wiki/Amazon_Kindle#Kindle_Paperwhite_(2nd_generation))
+  (2nd generation)
 * [Google Home Mini](https://en.wikipedia.org/wiki/Google_Home#Home_Mini)
 * [Lenovo IdeaPad Y410p](https://en.wikipedia.org/wiki/IdeaPad_Y_Series#Y410p)
 * [Microsoft Xbox 360](https://en.wikipedia.org/wiki/Xbox_360)
@@ -31,6 +35,7 @@ My Kindle, for the most part, doesn't trigger these concerns. It simply
 improves the reading experience in almost every way.
 
 ## Positives
+
 Physical books take up space and are absurdly heavy. Every time I move, I get
 rid of a few more of them. My Kindle can hold thousands of books, yet it weighs
 less and is smaller than many paperback books.
@@ -69,6 +74,7 @@ The upgrade cycle is long. I'm still using the same Kindle I bought five
 years ago and feel no need to get a new one.
 
 ## Negatives
+
 I like the idea of having a bookshelf full of books that are meaningful to me,
 but buying a book just for display doesn't seem like a good use of money.
 
@@ -92,6 +98,7 @@ See [Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman)'s
 sympathetic, but I still choose to use my Kindle everyday.
 
 ## Conclusion
+
 My Kindle does one thing, and it does it exceptionally well. It may not be
 perfect, but I don't have a love-hate relationship with it. I wish I could say
 that about all my devices.

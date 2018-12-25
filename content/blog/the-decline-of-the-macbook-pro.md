@@ -70,7 +70,8 @@ my mouse.
 
 ## macOS
 
-I've realized that almost all of the macOS software is effectively [bloatware](https://en.wikipedia.org/wiki/Software_bloat#Bloatware) for me.
+I've realized that almost all of the macOS software is effectively
+[bloatware](https://en.wikipedia.org/wiki/Software_bloat#Bloatware) for me.
 
 ![macOS software](https://i.imgur.com/IO6AQCf.png)
 
@@ -81,21 +82,32 @@ I've realized that almost all of the macOS software is effectively [bloatware](h
 * GarageBand
     * I don't make music.
 * Pages
-    * I haven't needed to make a Word document in a long time, but I can use [Google Docs](https://www.google.com/docs/about/).
+    * I haven't needed to make a Word document in a long time, but I can use
+      [Google Docs](https://www.google.com/docs/about/).
 * Numbers
     * I use [Google Sheets](https://www.google.com/sheets/about/) when I need a spreadsheet.
 * Keynote
     * I prefer creating HTML presentations using frameworks like [reveal.js](https://revealjs.com/).
 * Siri
-    * Voice assistants are more helpful on smartphones where typing is harder. I never use Siri on my laptop.
+    * Voice assistants are more helpful on smartphones where typing is harder. I
+      never use Siri on my laptop.
 * Safari
     * I use [Firefox](https://www.mozilla.org/en-US/firefox/) as my primary browser.
 * Mail
     * I use the [Gmail](https://www.google.com/gmail/about/) web client.
 * FaceTime
-    * It's restricted to macOS/iOS users. [Skype](https://www.skype.com/), [Facebook Messenger](https://www.messenger.com/), [Google Hangouts](https://hangouts.google.com/), etc. all work anywhere and with multiple people. I tried to use FaceTime with my family once and learned that it still only supports one on one video chats, though Apple [recently announced](https://techcrunch.com/2018/06/04/apple-is-adding-group-facetime-video-calls-to-ios-12/) that group video chats are coming.
+    * It's restricted to macOS/iOS users. [Skype](https://www.skype.com/),
+      [Facebook Messenger](https://www.messenger.com/), [Google
+      Hangouts](https://hangouts.google.com/), etc. all work anywhere and with
+      multiple people. I tried to use FaceTime with my family once and learned
+      that it still only supports one on one video chats, though Apple [recently
+      announced](https://techcrunch.com/2018/06/04/apple-is-adding-group-facetime-video-calls-to-ios-12/)
+      that group video chats are coming.
 * Messages
-    * It's also restricted to macOS/iOS users. I use [Google Voice](https://www.google.com/voice), so I can send and receive SMS messsages using any device because it works through Hangouts, which is multi-platform.
+    * It's also restricted to macOS/iOS users. I use [Google
+      Voice](https://www.google.com/voice), so I can send and receive SMS
+      messsages using any device because it works through Hangouts, which is
+      multi-platform.
 * Maps
     * I use [Google Maps](https://www.google.com/maps).
 * Notes
@@ -111,13 +123,22 @@ I've realized that almost all of the macOS software is effectively [bloatware](h
 * Preview
     * This is the only one I use regularly.
 * iTunes
-    * I use [Google Play Music](https://play.google.com/music/) and [Pocket Casts](https://www.shiftyjelly.com/pocketcasts/). iTunes also became the definition of [feature creep](https://en.wikipedia.org/wiki/Feature_creep).
+    * I use [Google Play Music](https://play.google.com/music/) and [Pocket
+      Casts](https://www.shiftyjelly.com/pocketcasts/). iTunes also became the
+      definition of [feature
+      creep](https://en.wikipedia.org/wiki/Feature_creep).
 * iBooks
-    * I read books on my [Kindle](https://en.wikipedia.org/wiki/Amazon_Kindle) and check them out from the New York Public Library's [e-book website](https://nypl.overdrive.com/).
+    * I read books on my [Kindle](https://en.wikipedia.org/wiki/Amazon_Kindle)
+      and check them out from the New York Public Library's [e-book
+      website](https://nypl.overdrive.com/).
 * App Store
-    * I only use this for system updates. I use [Homebrew](https://caskroom.github.io/) for software because I can check my software list into version control.
+    * I only use this for system updates. I use
+      [Homebrew](https://caskroom.github.io/) for software because I can check
+      my software list into version control.
 * Time Machine
-    * All the data I care to back up is in [Google Drive](https://www.google.com/drive/), [Dropbox](https://www.dropbox.com/), or [GitHub](https://github.com/).
+    * All the data I care to back up is in [Google
+      Drive](https://www.google.com/drive/),
+     [Dropbox](https://www.dropbox.com/), or [GitHub](https://github.com/).
 
 The overarching problem with macOS programs is that they are tied to Apple
 hardware, and they don't have web versions. I want my software to be
@@ -161,7 +182,11 @@ with Apple are:
 
 * [iTerm2](https://iterm2.com/) is the best terminal emulator I've used.
 * There are many more desirable native apps for macOS than for Linux.
-* macOS is generally more polished and reliable in my experience. I've never had to debug the wake from sleep functionality on my Mac, but I've had to for Linux. On the other hand, Apple software quality seems to have [taken a downturn](https://www.wired.com/story/apples-security-macos-high-sierra-ios-11/) recently.
+* macOS is generally more polished and reliable in my experience. I've never had
+  to debug the wake from sleep functionality on my Mac, but I've had to for
+  Linux. On the other hand, Apple software quality seems to have [taken a
+  downturn](https://www.wired.com/story/apples-security-macos-high-sierra-ios-11/)
+  recently.
 
 ## Hope
 

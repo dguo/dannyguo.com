@@ -28,7 +28,7 @@ you might have in the future if you invest it instead.
 
 > You: Hey Alexa, ask Splurge Stopper why I shouldn't spend 80 dollars on fancy
 > socks.
-
+>
 > Alexa: Because if you invest it instead, you might have about 143 dollars in
 > 10 years, 257 dollars in 20 years, 459 dollars in 30 years, or 823 dollars in
 > 40 years.
@@ -41,16 +41,20 @@ adjusted for inflation, the amounts reflect current day [purchasing
 power](https://en.wikipedia.org/wiki/Purchasing_power).
 
 ## Caveats
+
 1. [Past performance is no guarantee of future
-results](https://www.thebalance.com/past-performance-is-no-guarantee-of-future-results-357862).
-Losing money is a risk.
+   results](https://www.thebalance.com/past-performance-is-no-guarantee-of-future-results-357862).
+   Losing money is a risk.
+
 2. You have to actually invest the money that you don't spend. It's not enough
-to just not make the purchase.
+   to just not make the purchase.
+
 3. You have to hold for the long term. The point of listing the amounts for
-multiple time periods is to show just how effective exponential growth can be
-when it has enough time to really take off.
+   multiple time periods is to show just how effective exponential growth can be
+   when it has enough time to really take off.
 
 ## What I Learned
+
 This was my first time working with Alexa or any voice control platform, so I
 learned the basic concepts as I read the [Alexa Skills Kit
 documentation](https://developer.amazon.com/docs/ask-overviews/build-skills-with-the-alexa-skills-kit.html).

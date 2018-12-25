@@ -57,7 +57,7 @@ Add this job to `/etc/udevmon.yaml`:
 Start the process with [systemd](https://en.wikipedia.org/wiki/Systemd):
 
 ```sh
-$ sudo systemctl enable udevmon
+sudo systemctl enable udevmon
 ```
 
 ### xcape
@@ -66,8 +66,8 @@ $ sudo systemctl enable udevmon
 On recent versions of Ubuntu, you should be able to just run:
 
 ```sh
-$ sudo apt update
-$ sudo apt install xcape
+sudo apt update
+sudo apt install xcape
 ```
 
 Next you need to remap caps lock to control. Check out this [EmacsWiki
@@ -80,7 +80,7 @@ gnome-tweak-tool`), which has a setting for caps lock as control under the
 Now run xcape:
 
 ```sh
-$ xcape -e 'Control_L=Escape'
+xcape -e 'Control_L=Escape'
 ```
 
 To keep it working through system restarts, you can add that line to your

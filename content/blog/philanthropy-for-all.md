@@ -34,7 +34,8 @@ solution. People don’t donate or don’t donate as much as they could for a
 variety of reasons. With Sublime Fund, we want to mitigate as many of these
 barriers as possible.
 
-### Issues with deciding to donate:
+### Issues with deciding to donate
+
 * Some people are not fully aware of issues in the first place.
     * We will create a way for people to easily stay informed about the topics
     they care about and to discover new ones.
@@ -47,7 +48,8 @@ barriers as possible.
     personalized reports in the future so that our users know what their
     charities are specifically working on.
 
-### Issues with the actual process of donating:
+### Issues with the actual process of donating
+
 * People have to remember or be prompted to donate.
     * We only allow recurring donations to spur sustained support. By using us,
   donors can take the manual effort out of donating. They can also contribute
@@ -69,19 +71,18 @@ barriers as possible.
   representative just to cancel his donation. Managing donations shouldn’t be
   anything like [trying to cancel cable][4].
 * People can be reluctant to give out their credit card number.
-    * By using us, people can donate to as many charities as they want while only
-  entering their payment info once.
-
+    * By using us, people can donate to as many charities as they want while
+      only entering their payment info once.
 * People might be wary of being spammed with emails and physical mail after
-donating.
+  donating.
     * We preserve donor privacy and do not forward personal information to
-  charities.  We won’t send our users any unwanted solicitations for more
-  donations.
+      charities. We won’t send our users any unwanted solicitations for more
+      donations.
 * It can be hard to keep track of donations, especially for people who support
-multiple charities.
+  multiple charities.
     * Users can easily view all the donations they have made through us, and we
-  also send a summary email at the end of year to make it simple to claim tax
-  deductions.
+      also send a summary email at the end of year to make it simple to claim
+      tax deductions.
 
 We’re optimistic that these incremental improvements will result in more
 people getting involved with philanthropy. You don’t have to be Bill Gates to

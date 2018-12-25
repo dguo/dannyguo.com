@@ -1,0 +1,9 @@
+{
+    "first-header-h1": false,
+    "line-length": {
+        "code_blocks": false
+    },
+    "ul-indent": {
+        "indent": 4
+    }
+}

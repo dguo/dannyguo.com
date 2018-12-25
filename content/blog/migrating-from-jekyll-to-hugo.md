@@ -35,8 +35,10 @@ I found quite a few posts from people who have migrated from Jekyll to Hugo:
 * [Docs are Migrating from Jekyll to Hugo](https://kubernetes.io/blog/2018/05/05/hugo-migration/)
 * [Bye Bye, Jekyll. Hello, Hugo.](https://ramhiser.com/post/2017-12-28-bye-bye-jekyll-hello-hugo/)
 * [Switching to Hugo](https://jvns.ca/blog/2016/10/09/switching-to-hugo/)
-* [Hugo vs. Jekyll: a showdown of static site generator](https://novelist.xyz/tech/hugo-vs-jekyll-static-site-generator/) (sic)
-* [Migrating from Jekyll+Github Pages to Hugo+Netlify ](https://www.sarasoueidan.com/blog/jekyll-ghpages-to-hugo-netlify/)
+* [Hugo vs. Jekyll: a showdown of static site
+  generator](https://novelist.xyz/tech/hugo-vs-jekyll-static-site-generator/)
+  (sic)
+* [Migrating from Jekyll+Github Pages to Hugo+Netlify](https://www.sarasoueidan.com/blog/jekyll-ghpages-to-hugo-netlify/)
 
 I also found a [Hacker News
 comment](https://news.ycombinator.com/item?id=12678013) by the [creator of
@@ -47,7 +49,7 @@ Hugo's pros and cons:
 > sites) 3. Integrated live-reload while editing in near realtime 4.
 > Multilingual capabilities 5. Flexible 6. Very strong community 7. Very good &
 > comprehensive documentation (but not perfect...yet)
-
+>
 > Hugo struggles with: 1. Not integrated with Github like Jekyll (though
 > webhooks solve this to a large degree) 2. No plugin support 3. Media & Asset
 > processing not tightly integrated

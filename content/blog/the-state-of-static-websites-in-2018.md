@@ -130,7 +130,6 @@ scenes.
 
 Static websites should be served through a CDN for increased performance.
 
-
 * Cache invalidation
 * Prerendering
 * Minification
@@ -138,9 +137,10 @@ Static websites should be served through a CDN for increased performance.
 
 #### Object Storage
 
-[Object storage](https://en.wikipedia.org/wiki/Object_storage) is a basic building block of cloud computing platforms, and
-many of them allow you to treat a bucket as a static website. To deploy the
-website, you just have to update the files in the bucket.
+[Object storage](https://en.wikipedia.org/wiki/Object_storage) is a basic
+building block of cloud computing platforms, and many of them allow you to treat
+a bucket as a static website. To deploy the website, you just have to update the
+files in the bucket.
 
 * [Amazon Web Services S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
 * [Microsoft Azure Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website)

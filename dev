@@ -47,8 +47,15 @@ def open_in_browser():
 
 @command('Sync the search index with Algolia')
 def algolia(args, remaining):
-    # Check for required environment variables
-    if not os.path.isfile('.env'):
+    if os.environ.get('CI') == 'true':
+        with open('template.env') as template, open('.env', 'w') as env:
+            for line in template:
+                if '=' in line and line[0] != '#':
+                    split = line.strip().split('=')
+                    key = split[0]
+                    value = os.environ.get(key, split[1])
+                    env.write(f'{key}={value}\n')
+    elif not os.path.isfile('.env'):
         print('Aborting: create a .env file based off of template.env')
         return 1
 

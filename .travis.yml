@@ -9,3 +9,6 @@ services:
 install: ./dev build-docker
 
 script: ./dev lint
+
+after_success:
+  - test $TRAVIS_BRANCH = "master" && ./dev algolia

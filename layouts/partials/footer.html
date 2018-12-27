@@ -2,24 +2,24 @@
 
 <footer>
     <p id="social-buttons">
-        <a href="https://twitter.com/dannyguo" class="link-button twitter">
+        {{with .Site.Author.twitter}}<a href="https://twitter.com/{{.}}" class="link-button twitter">
             <svg class="icon icon-twitter">
                 <use xlink:href="/images/icons.svg#icon-twitter"></use>
             </svg>
             Twitter
-        </a>
-        <a href="https://github.com/dguo" class="link-button github">
+        </a>{{end}}
+        {{with .Site.Author.github}}<a href="https://github.com/{{.}}" class="link-button github">
             <svg class="icon icon-github">
                 <use xlink:href="/images/icons.svg#icon-github"></use>
             </svg>
             GitHub
-        </a>
-        <a href="mailto:danny@dannyguo.com" class="link-button email">
+        </a>{{end}}
+        {{with .Site.Author.email }}<a href="mailto:{{.}}" class="link-button email">
             <svg class="icon icon-mail">
                 <use xlink:href="/images/icons.svg#icon-mail"></use>
             </svg>
             Email
-        </a>
+        </a>{{end}}
     </p>
 
     <p>
@@ -34,7 +34,7 @@
         <script type="text/javascript">
             document.getElementById('copyright-year').textContent = new Date().getFullYear();
         </script>
-        Danny Guo
+        {{ .Site.Author.name }}
     </p>
 
     <p>

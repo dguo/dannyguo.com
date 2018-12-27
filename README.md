@@ -26,6 +26,7 @@ Many of these were easy to add because of Hugo.
 * ["edit on GitHub" links](https://github.com/dguo/dguo.github.io/commit/a28a14aef5846cefe714b24a2cd67081398c71b7)
 * [estimated reading times and word counts](https://github.com/dguo/dguo.github.io/commit/8471241935cc21e84b8e51f51d20b59226698551)
 * [pagination links to the previous and next posts](https://github.com/dguo/dguo.github.io/commit/5e8f017598f5afe430398c45c3808f4968c8eee4)
+* [RSS feed for blog posts](https://github.com/dguo/dguo.github.io/commit/2001465e76c58e409c60ff688dd779298ab5b1f4)
 * [static anchor links](https://github.com/dguo/dguo.github.io/commit/d8f81fa4573ccdf90030cb8f1252ec27f330493f)
 * [static copyright year](https://github.com/dguo/dguo.github.io/commit/a8a3e1acac919f759253f07ad8a466be8ba4fcfb)
 * [static syntax highlighting](https://github.com/dguo/dguo.github.io/commit/3f02ffcd82883de75ac68151b1b518b045fb390b)

@@ -9,6 +9,7 @@ googleAnalytics: UA-90320718-1
 languageCode: en-us
 pygmentsCodefences: true
 pygmentsStyle: monokai
+rssLimit: 20
 title: Danny Guo
 
 outputFormats:
@@ -17,11 +18,13 @@ outputFormats:
     isPlainText: true
     mediaType: "application/json"
     notAlternative: true
+  RSS:
+    mediatype: application/rss
+    baseName: feed
 
 outputs:
   home:
     - HTML
-    - RSS
     - Algolia
 
 params:

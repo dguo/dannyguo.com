@@ -1,0 +1,4 @@
+/* The header is only necessary on the standalone form page. */
+.ml-form-embedContent h4 {
+  display: none;
+}

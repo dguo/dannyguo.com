@@ -185,6 +185,10 @@ button::-moz-focus-inner {
   border: 0;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .link-button {
   align-items: center;
   border-radius: 3px;

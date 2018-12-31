@@ -70,8 +70,8 @@ a:not(.anchor):not(.link-button):not(.link-image):not(.ais-pagination--link):hov
 body {
   color: #333;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 /* Don't apply to syntax highlighting for code examples. */
@@ -83,7 +83,7 @@ body {
 }
 
 #container {
-  max-width: 750px;
+  max-width: 710px;
   margin: auto;
 }
 

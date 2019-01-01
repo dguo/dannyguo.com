@@ -10,6 +10,7 @@ h1 {
 }
 
 .follow-up-message {
+  font-size: 0.9em;
   color: #999999;
 }
 
@@ -17,12 +18,14 @@ h1 {
   float: left;
   text-align: left;
   width: 48%;
+  font-size: 0.9em;
 }
 
 .next-link {
   float: right;
   text-align: right;
   width: 48%;
+  font-size: 0.9em;
 }
 
 .copy-code-button {

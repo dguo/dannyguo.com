@@ -14,6 +14,14 @@ html {
   border-top: 4px solid #C40233;
 }
 
+
+body {
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
 .clearfix:after, header:after {
   content: '';
   display: table;
@@ -32,10 +40,25 @@ html {
 
 h1 {
   color: #009F6B;
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1.1em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 a {
@@ -67,13 +90,6 @@ a:not(.anchor):not(.link-button):not(.link-image):not(.ais-pagination--link):hov
   margin-bottom: 1px;
 }
 
-body {
-  color: #333;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
 /* Don't apply to syntax highlighting for code examples. */
 :not(pre) > code, code:not([data-lang]) {
   background-color: #F6F6F6;
@@ -83,8 +99,10 @@ body {
 }
 
 #container {
-  max-width: 710px;
+  max-width: 700px;
   margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 header {
@@ -151,6 +169,7 @@ blockquote {
   border-radius: 3px;
   padding: 8px;
   overflow-x: auto;
+  font-size: 0.9em;
 }
 
 img,

@@ -22,6 +22,11 @@ body {
   line-height: 1.5;
 }
 
+pre,
+code {
+  font-family: 'Source Code Pro', monospace;
+}
+
 .clearfix:after, header:after {
   content: '';
   display: table;

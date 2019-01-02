@@ -7,6 +7,11 @@
 
 <link rel="stylesheet" href="/css/general.css" type="text/css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+
+{{ if (findRE "<code|<pre" .Content 1) }}
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+{{ end  }}
+
 <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 

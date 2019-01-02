@@ -13,6 +13,7 @@ Here is a list of referrals to services that I have used.
 * [Coinbase](https://www.coinbase.com/join/598e3a0f40ca84019011cd2e) - digital currency
 * [Humble Monthly](https://www.humblebundle.com/monthly?refc=iN5E0k) - monthly subscription service for PC games
 * [Lyft](https://www.lyft.com/i/DANNY335061) - ridesharing
+* [MailerLite](https://www.mailerlite.com/invite/66d31012752c5) - email marketing
 * [Robinhood](http://share.robinhood.com/dannyg60) - brokerage
 * [SeatGeek](https://sg.app.link/HVWIlNTTwQ?s=copy&p=web) - live entertainment
 * [Slice](https://refer.slicelife.com/x/5KY6gB) - pizza delivery

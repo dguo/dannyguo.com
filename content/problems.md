@@ -7,6 +7,10 @@ This is a list of problems, complaints, suggestions, etc.
 * [Evernote](https://evernote.com/)
     * In the web version, it's not possible to add/remove table rows. See this [discussion](https://discussion.evernote.com/topic/98147-editing-table-on-the-web-with-basic/).
     * Opening a note in the web version causes nested lists to be flattened. These changes seem to sync, so the lists are flattened even in the native clients. See this [discussion](https://discussion.evernote.com/topic/112541-why-are-bullet-points-numbered-lists-suddenly-completely-broken/).
+    * On the Mac version, when creating a new notebook, you have to always
+      choose whether the notebook is "Private" or "Shared". There's no way to
+      default to one option. See this
+      [discussion](https://discussion.evernote.com/topic/100071-allow-default-setting-for-new-notebook-to-be-private-or-shared/).
 * [Google Maps](https://www.google.com/maps)
     * It seems to frequently underestimate the travel time, even when the subway is running without delays. I should keep a log of estimated and actual times to get some actual data on the issue.
     * It's especially unreliable for travel time when NYC buses are involved, even though the [MTA Bus Time](http://bustime.mta.info/) website is reliably accurate. Maybe this is more a problem with the buses though.

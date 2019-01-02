@@ -5,11 +5,13 @@
     "author": "Danny Guo",
     "private": true,
     "scripts": {
+        "format:watch": "onchange 'public/**/*.html' -- prettier --write {{changed}}",
         "lint": "yarn lint:css && yarn lint:html && yarn lint:js && yarn lint:md",
         "lint:css": "stylelint static/css/*",
         "lint:html": "htmlhint public/**/*/*.html",
         "lint:js": "eslint static/js/*",
         "lint:md": "markdownlint content/**/*/*.md",
+        "start": "yarn format:watch & hugo server --bind 0.0.0.0 --buildDrafts --cleanDestinationDir --renderToDisk",
         "update-search-index": "atomic-algolia"
     },
     "devDependencies": {
@@ -17,6 +19,8 @@
         "eslint": "^5.11.0",
         "htmlhint": "^0.10.1",
         "markdownlint-cli": "^0.13.0",
+        "onchange": "^5.2.0",
+        "prettier": "^1.15.3",
         "stylelint": "^9.9.0",
         "stylelint-config-recommended": "^2.1.0"
     },

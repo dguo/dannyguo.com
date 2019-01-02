@@ -4,6 +4,7 @@ title: Danny Guo
 ---
 
 # Hello, World
+
 Welcome to my corner of the Internet. Feel free to check out my
 [writing](/blog) and [other activities](/projects). I'm currently working on
 [Sublime Fund](https://sublimefund.org), with the goal of getting more people

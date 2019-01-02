@@ -117,7 +117,7 @@ def sh(args, remaining):
 @command('Start development')
 def start(args, remaining):
     Thread(target=open_in_browser).start()
-    run_command(['hugo', 'server', '--bind', '0.0.0.0', '--buildDrafts'], True)
+    run_command(['yarn', 'start'], True)
 
 @command('Run a Yarn command')
 def yarn(args, remaining):

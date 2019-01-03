@@ -52,6 +52,8 @@ Many of these were easy to add because of Hugo.
 4. [Import](https://medium.com/p/import) the post into [Medium](https://medium.com/@dannyguo)
     * Convert code blocks into [GitHub gists](https://gist.github.com/) and embed them
     * Embed any [Repl.it](https://repl.it/repls) snippets
+    * Set the [content licensing](https://help.medium.com/hc/en-us/articles/214741758-Content-licenses)
+      to "Attribution, non-commercial, share alike"
 5. Import the post into [dev.to](https://dev.to/)
     * To get around dev.to's [issue](https://github.com/thepracticaldev/dev.to/issues/575) with line break handling in Markdown, use `:%s/\(\S\)\n\(\S\)/\1 \2/ ` in Vim to join lines within paragraphs (afterwards, fix lists, code blocks, etc. as appropriate)
     * Add `canonical_url` to the front matter
@@ -62,3 +64,11 @@ Many of these were easy to add because of Hugo.
     * [Lobsters](https://lobste.rs/)
     * [Reddit](https://www.reddit.com/)
     * [Twitter](https://twitter.com/)
+
+## License
+
+The content of this project (in the `content` directory) is licensed under the
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+license](http://creativecommons.org/licenses/by-nc-sa/4.0/), and the underlying
+source code used to format and display this content is licensed under the [MIT
+license](https://github.com/dguo/dguo.github.io/blob/master/LICENSE.txt).

@@ -61,11 +61,11 @@ Another approach is to use [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## Frameworks
 
-https://github.com/RichiH/vcsh
+[vcsh](https://github.com/RichiH/vcsh)
 
-https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/
+[managing your dotfiles](https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
 
-https://github.com/anishathalye/dotbot/
+[dotbot](https://github.com/anishathalye/dotbot/)
 
 For more resources, check out [Awesome
 dotfiles](https://github.com/webpro/awesome-dotfiles).

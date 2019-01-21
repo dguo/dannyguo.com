@@ -15,6 +15,7 @@ Here is a list of referrals to services that I have used.
 * [Lyft](https://www.lyft.com/i/DANNY335061) - ridesharing
 * [MailerLite](https://www.mailerlite.com/invite/66d31012752c5) - email marketing
 * [Notion](https://www.notion.so/?r=05fb7cfe3ba74ade80f59ad1601f0f98) - workspace
+* [Privacy](https://privacy.com/join/RW6Z6) - virtual payment cards
 * [Robinhood](http://share.robinhood.com/dannyg60) - brokerage
 * [SeatGeek](https://sg.app.link/HVWIlNTTwQ?s=copy&p=web) - live entertainment
 * [Slice](https://refer.slicelife.com/x/5KY6gB) - pizza delivery

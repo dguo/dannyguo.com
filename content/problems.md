@@ -11,6 +11,9 @@ This is a list of problems, complaints, suggestions, etc.
       choose whether the notebook is "Private" or "Shared". There's no way to
       default to one option. See this
       [discussion](https://discussion.evernote.com/topic/100071-allow-default-setting-for-new-notebook-to-be-private-or-shared/).
+    * On the Mac version, there's no way to delete an image in a note thumbnail,
+      even after the image has been removed from the note itself. See this
+      [discussion](https://discussion.evernote.com/topic/80084-control-which-image-shown-in-a-notes-thumbnailsnippet-view/).
 * [Google Maps](https://www.google.com/maps)
     * It seems to frequently underestimate the travel time, even when the subway is running without delays. I should keep a log of estimated and actual times to get some actual data on the issue.
     * It's especially unreliable for travel time when NYC buses are involved, even though the [MTA Bus Time](http://bustime.mta.info/) website is reliably accurate. Maybe this is more a problem with the buses though.

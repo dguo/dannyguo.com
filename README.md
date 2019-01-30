@@ -32,6 +32,7 @@ Many of these were easy to add because of Hugo.
 * [static anchor links](https://github.com/dguo/dguo.github.io/commit/d8f81fa4573ccdf90030cb8f1252ec27f330493f)
 * [static copyright year](https://github.com/dguo/dguo.github.io/commit/a8a3e1acac919f759253f07ad8a466be8ba4fcfb)
 * [static syntax highlighting](https://github.com/dguo/dguo.github.io/commit/3f02ffcd82883de75ac68151b1b518b045fb390b)
+* ["Updated on" dates](https://github.com/dguo/dguo.github.io/commit/86db8a3831508876bd8836573af3e752300e07c1) for blog posts when applicable
 
 ## Content
 

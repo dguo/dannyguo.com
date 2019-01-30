@@ -1,4 +1,5 @@
 ---
+date:
 draft: true
 title: Better cd-ing
 ---

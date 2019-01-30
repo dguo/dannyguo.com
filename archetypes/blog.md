@@ -1,7 +1,7 @@
 ---
 categories:
   -
-date: "{{ now.Format "2006-01-02" }}"
+date:
 draft: true
 tags:
   -

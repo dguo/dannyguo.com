@@ -1,7 +1,7 @@
 ---
 categories:
   -
-date: "2019-01-02"
+date:
 draft: true
 tags:
   -

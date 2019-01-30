@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: "2018-07-28"
+date:
 draft: true
 tags:
   - computer science

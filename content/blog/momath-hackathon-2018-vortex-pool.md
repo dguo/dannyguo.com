@@ -48,7 +48,7 @@ airfoils when multiple people were close to each other.
 
 By the end of the night, we had a working prototype. It looked like this.
 
-{{< imgur lrMngzB >}}
+{{< video lrMngzB >}}
 
 But it wasn't as good as we wanted it to be. In particular, the calculations
 for the velocity changes for each particle was expensive enough that
@@ -69,13 +69,13 @@ dozens of the [vortexes](https://en.wikipedia.org/wiki/Vortex) that we were
 rendering now with a single digit count. Check out this [online
 demo](https://katbug.github.io/momath-vortexpool/). Click to create vortexes.
 
-{{< imgur taEXQoG >}}
+{{< video taEXQoG >}}
 
 The source code, along with a more in-depth explanation, is on
-[GitHub](https://github.com/katbug/momath-vortexpool). We won a runner-up prize
-for the category, and we're hopeful it will actually be used on the museum
-floor. We didn't think to take a video of it in action, but here are some
-pictures.
+[GitHub](https://github.com/katbug/momath-vortexpool). We won a [runner-up
+prize](http://hackathon.momath.org/showcase/) for the category, and we're
+hopeful it will actually be used on the museum floor. We didn't think to take a
+video of it in action, but here are some pictures.
 
 ![Vortex Pool 1](https://i.imgur.com/tdHwdwE.jpg)
 

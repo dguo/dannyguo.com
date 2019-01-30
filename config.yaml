@@ -5,6 +5,7 @@ author:
   twitter: dannyguo
 baseURL: https://www.dannyguo.com/
 disqusShortname: dannyguo
+enableRobotsTXT: true
 googleAnalytics: UA-90320718-1
 languageCode: en-us
 pygmentsCodefences: true

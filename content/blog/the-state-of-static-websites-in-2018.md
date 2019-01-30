@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: "2018-10-30"
+date:
 draft: true
 tags:
   - webdev

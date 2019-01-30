@@ -1,4 +1,5 @@
 ---
+date:
 draft: true
 title: Credit Card Rewards
 ---

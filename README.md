@@ -33,6 +33,7 @@ Many of these were easy to add because of Hugo.
 * [static copyright year](https://github.com/dguo/dguo.github.io/commit/a8a3e1acac919f759253f07ad8a466be8ba4fcfb)
 * [static syntax highlighting](https://github.com/dguo/dguo.github.io/commit/3f02ffcd82883de75ac68151b1b518b045fb390b)
 * ["Updated on" dates](https://github.com/dguo/dguo.github.io/commit/86db8a3831508876bd8836573af3e752300e07c1) for blog posts when applicable
+* unlisted posts that are only publicly available through a direct link
 
 ## Content
 
@@ -47,10 +48,25 @@ Many of these were easy to add because of Hugo.
 * [mini blog of issues I've run into while programming](https://www.dannyguo.com/friction/)
 * [referral links](https://wwww.dannyguo.com/referrals/)
 
-## Checklist for Publishing a Post
+## Checklist for Publishing an Unlisted Post
+
+Follow this checklist to make a post publicly available, but only through a
+direct link. Nothing on the site should link to it. This concept is the same as
+an [unlisted YouTube video](https://support.google.com/youtube/answer/157177) or
+[unlisted Medium
+post](https://help.medium.com/hc/en-us/articles/215552778-Unlisted-publishing).
+
+1. Remove the `draft` flag from the front matter
+2. Add an `unlisted` flag with a value of `true`
+3. Leave the `date`, `categories`, and `tags` fields empty
+4. Commit, and push to deploy
+
+## Checklist for Publishing a Final Post
 
 1. Upload any images to the dedicated [Imgur album](https://imgur.com/a/mA7JRWp)
-2. Publish the post by removing the `draft` flag
+2. Update the front matter
+    * Remove the `draft` or `unlisted` flag
+    * Set the `date`, `categories`, and `tags` fields
 3. Back up images in Google Drive
 4. [Import](https://medium.com/p/import) the post into [Medium](https://medium.com/@dannyguo)
     * Convert code blocks into [GitHub gists](https://gist.github.com/) and embed them

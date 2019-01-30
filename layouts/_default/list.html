@@ -1,7 +1,7 @@
 {{ define "main" }}
     {{ partial "anchor.html" .Content }}
 
-    {{ range .Data.Pages.ByDate.Reverse }}
+    {{ range where .Data.Pages.ByDate.Reverse "Params.unlisted" "!=" true }}
         <p>
             <em>{{.Date.Format "2006-01-02"}}</em>
             &middot;

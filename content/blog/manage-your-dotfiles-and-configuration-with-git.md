@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: "2019-01-06"
+date:
 draft: true
 tags:
   - dotfiles

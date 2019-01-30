@@ -1,7 +1,7 @@
 ---
 categories:
   -
-date: "2018-10-22"
+date:
 draft: true
 tags:
   -

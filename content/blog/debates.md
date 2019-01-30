@@ -2,7 +2,7 @@
 categories:
   -
 date:
-unlisted: true
+draft: true
 tags:
   -
 title: Debates

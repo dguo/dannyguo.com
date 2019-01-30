@@ -2,6 +2,7 @@
 categories:
   - programming
 date: "2018-12-19"
+lastmod: "2019-01-29"
 tags:
   - css
 title: Animated Multiline Link Underlines with CSS
@@ -72,7 +73,7 @@ a {
     transition: background-size .3s;
 }
 
-a:hover {
+a:hover, a:focus {
     background-size: 100% 2px;
 }
 ```
@@ -114,7 +115,11 @@ to complete.
 
 On link [hover](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover), we
 change the width of the image to `100%`, creating a full underline, and
-`transition` takes care of the animation.
+`transition` takes care of the animation. As [nickels55
+suggests](https://www.reddit.com/r/web_design/comments/a7y701/animated_multiline_link_underlines_with_css/ec6pwel/),
+we also want the effect to happen on focus for those who use keyboard
+navigation. Thanks to nickels55 for keeping
+[accessibility](https://en.wikipedia.org/wiki/Web_accessibility) in mind.
 
 And that's it! I was very happy with how small the
 [commit](https://github.com/dguo/dguo.github.io/commit/14e51391329163fa414ac55d77fdf6da521ab644)

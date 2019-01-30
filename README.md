@@ -46,7 +46,7 @@ Many of these were easy to add because of Hugo.
 * [mini blog of issues I've run into while programming](https://www.dannyguo.com/friction/)
 * [referral links](https://wwww.dannyguo.com/referrals/)
 
-## Publishing Checklist
+## Checklist for Publishing a Post
 
 1. Upload any images to the dedicated [Imgur album](https://imgur.com/a/mA7JRWp)
 2. Publish the post by removing the `draft` flag
@@ -66,6 +66,17 @@ Many of these were easy to add because of Hugo.
     * [Lobsters](https://lobste.rs/)
     * [Reddit](https://www.reddit.com/)
     * [Twitter](https://twitter.com/)
+
+## Checklist for Updating a Post
+
+Only do this for substantial changes, not small ones like fixing typos or links.
+
+1. Add the `lastmod` variable to the post's [front
+   matter](https://gohugo.io/content-management/front-matter/#front-matter-variables)
+2. Update the post content
+3. Publish it
+4. If applicable, update the Medium post and/or the dev.to post
+    * Make sure to check embedded content, like code examples
 
 ## License
 

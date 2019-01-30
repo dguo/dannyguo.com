@@ -3,10 +3,13 @@
 {{ end }}
 
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
-    <div class="subheader">{{.Date.Format "January 2, 2006"}}&nbsp;&nbsp;·&nbsp;&nbsp;{{ .WordCount | lang.NumFmt 0 }} words&nbsp;&nbsp;·&nbsp;&nbsp;~{{ .ReadingTime | lang.NumFmt 0 }} minute{{ if not (eq .ReadingTime 1) }}s{{ end }} to read</div>
+    <article>
+        <h1>{{ .Title }}</h1>
 
-    {{ partial "anchor.html" .Content }}
+        <div class="subheader">{{ if ne .Date .Lastmod }}Updated on <time itemprop="dateModified" datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "January 2, 2006" }}</time>&nbsp;&nbsp;·&nbsp;&nbsp;Published on {{ end }}<time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{.Date.Format "January 2, 2006"}}</time>{{ if eq .Date .Lastmod }}&nbsp;&nbsp;·&nbsp;&nbsp;{{ else }}<br>{{ end }}{{ .WordCount | lang.NumFmt 0 }} words&nbsp;&nbsp;·&nbsp;&nbsp;~{{ .ReadingTime | lang.NumFmt 0 }} minute{{ if not (eq .ReadingTime 1) }}s{{ end }} to read</div>
+
+        {{ partial "anchor.html" .Content }}
+    </article>
 
     <hr class="separator">
 

@@ -19,6 +19,7 @@ Center](https://service.bloomberg.com) website.
 * [Hacker News](https://news.ycombinator.com/user?id=dguo)
 * [Keybase](https://keybase.io/dannyguo)
 * [LinkedIn](https://www.linkedin.com/in/danny-guo/)
+* [MDN](https://developer.mozilla.org/en-US/profiles/dguo)
 * [Medium](https://medium.com/@dannyguo)
 * [npm](https://www.npmjs.com/~dguo)
 * [repl.it](https://repl.it/@dyguo)

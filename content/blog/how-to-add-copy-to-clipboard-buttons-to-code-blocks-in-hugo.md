@@ -127,7 +127,7 @@ I put the code in a function and added click handlers. I used
 to get the code to be copied. After the copy operation, the button displays
 either an error message or a success message that lasts for two seconds.
 
-{{< highlight js "hl_lines=1 8-21 26" >}}
+{{< highlight js "hl_lines=1 8-22 26" >}}
 function addCopyButtons(clipboard) {
     document.querySelectorAll('.highlight').forEach(function (codeBlock) {
         var button = document.createElement('button');

@@ -1,27 +1,29 @@
 ---
 categories:
-  -
-date:
-draft: true
+  - programming
+date: "2019-03-22"
 tags:
-  -
+  - hugo
 title: How to Add Copy to Clipboard Buttons to Code Blocks in Hugo
 ---
 
-A small quality of life improvement for technical websites is to add copy to
-clipboard buttons to code blocks. When a visitor wants to copy a code example
-or a shell command, it's nice to be able to just hit a button rather than
-manually select the text, right click, and press copy.
+A small quality of life improvement for programming-related websites is to add
+copy to clipboard buttons to code blocks. When a visitor wants to copy a code
+example or a shell command, it's nice to be able to just hit a button rather
+than manually select the text, right click, and press copy.
 
 I use [Hugo](https://gohugo.io/) to build my [personal
 website](https://www.dannyguo.com/). While Hugo has built-in support for [syntax
 highlighting](https://gohugo.io/content-management/syntax-highlighting/), it
-doesn't support copy buttons. Here is how I added the feature to my website.
+doesn't support copy buttons. Here is how I added the feature to my website. The
+end result looks like this:
+
+![code block with a copy button](https://i.imgur.com/3MCAOe7.png)
 
 ## Adding the buttons
 
-I first inspected the source of a page with code blocks and found that Hugo
-generates each block with something like this:
+I inspected the source of a page with code blocks and found that Hugo generates
+each block with markup like this:
 
 ```html
 <div class="highlight">
@@ -44,78 +46,178 @@ document.querySelectorAll('.highlight').forEach(function (codeBlock) {
 });
 ```
 
+For many implementations of copy code buttons that I've seen, the button is
+located in the top right or bottom right corner of the code block. However, I've
+noticed that the button can cover up some of the code if the line is too long,
+especially on mobile. To avoid this possibility, I placed each button before the
+entire code block.
+
+Some implementations only show the button when the user hovers over the code
+block, but for discoverability, I left the buttons always visible.
+
+For styling the buttons, I used this CSS:
+
+```css
+.copy-code-button {
+    color: #272822;
+    background-color: #FFF;
+    border-color: #272822;
+    border: 2px solid;
+    border-radius: 3px 3px 0px 0px;
+
+    /* right-align */
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+
+    margin-bottom: -2px;
+    padding: 3px 8px;
+    font-size: 0.8em;
+}
+
+.copy-code-button:hover {
+    cursor: pointer;
+    background-color: #F2F2F2;
+}
+
+.copy-code-button:focus {
+    /* Avoid an ugly focus outline on click in Chrome,
+       but darken the button for accessibility.
+       See https://stackoverflow.com/a/25298082/1481479 */
+    background-color: #E6E6E6;
+    outline: 0;
+}
+
+.copy-code-button:active {
+    background-color: #D9D9D9;
+}
+
+.highlight pre {
+    /* Avoid pushing up the copy buttons. */
+    margin: 0;
+}
+```
+
 ## Interacting with the clipboard
 
-[Document.execCommand](https://developers.google.com/web/updates/2015/04/cut-and-copy-commands)
+Next, I investigated how to [copy to the clipboard using
+JavaScript](https://stackoverflow.com/q/400212/1481479). The most popular
+library for doing so is [clipboard.js](https://clipboardjs.com/), but I wanted
+to avoid bringing in a dependency if possible.
 
-[clipboard API](https://developers.google.com/web/updates/2018/03/clipboardapi)
+One way is to use
+[execCommand](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand)
+with `document.execCommand('copy')`, which copies the current text selection.
+[Under the hood](https://github.com/zenorocha/clipboard.js), clipboard.js uses
+this method.
 
-[clipboard.js](https://github.com/zenorocha/clipboard.js/)
+However, there is a newer approach, the [Clipboard
+API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API). It has
+[several
+advantages](https://developers.google.com/web/updates/2018/03/clipboardapi):
+it's asynchronous, takes arbitrary text/data (so it doesn't have to already
+exist on the page), and has a better story for dealing with permissions.
+Chrome, Firefox, and Opera [support
+it](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API#Browser_compatibility)
+already. For other browsers, there is a
+[polyfill](https://github.com/lgarron/clipboard-polyfill).
 
-The native [Clipboard
-API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API)
-
-[clipboard-polyfill](https://github.com/lgarron/clipboard-polyfill)
-
+I put the code in a function and added click handlers. I used
 [innerText](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText)
-gives me the code to be copied.
+to get the code to be copied. After the copy operation, the button displays
+either an error message or a success message that lasts for two seconds.
 
-{{< highlight js "hl_lines=7-20" >}}
-document.querySelectorAll('.highlight').forEach(function (codeBlock) {
-    var button = document.createElement('button');
-    button.className = 'copy-code-button';
-    button.type = 'button';
-    button.innerText = 'Copy';
+{{< highlight js "hl_lines=1 8-21 26" >}}
+function addCopyButtons(clipboard) {
+    document.querySelectorAll('.highlight').forEach(function (codeBlock) {
+        var button = document.createElement('button');
+        button.className = 'copy-code-button';
+        button.type = 'button';
+        button.innerText = 'Copy';
 
-    button.addEventListener('click', function () {
-        clipboard.writeText(codeBlock.innerText).then(function () {
-            /* Chrome doesn't seem to blur automatically,
-               leaving the button in a focused state */
-            button.blur();
+        button.addEventListener('click', function () {
+            clipboard.writeText(codeBlock.innerText).then(function () {
+                /* Chrome doesn't seem to blur automatically,
+                   leaving the button in a focused state. */
+                button.blur();
 
-            button.innerText = 'Copied!';
-            setTimeout(function () {
-                button.innerText = 'Copy';
-            }, 2000);
-        }, function (error) {
-            button.innerText = 'Error';
+                button.innerText = 'Copied!';
+
+                setTimeout(function () {
+                    button.innerText = 'Copy';
+                }, 2000);
+            }, function (error) {
+                button.innerText = 'Error';
+            });
         });
-    });
 
-    codeBlock.parentNode.insertBefore(button, codeBlock);
-});
+        codeBlock.parentNode.insertBefore(button, codeBlock);
+    });
+}
 {{< / highlight >}}
 
-## Smart loading
+Next, I added a check for whether or not the browser supports the Clipboard API.
+If not, the script loads the polyfill from
+[CDNJS](https://cdnjs.com/libraries/clipboard-polyfill).
+
+```js
+if (navigator && navigator.clipboard) {
+    addCopyButtons(navigator.clipboard);
+} else {
+    var script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/2.7.0/clipboard-polyfill.promise.js';
+    script.integrity = 'sha256-waClS2re9NUbXRsryKoof+F9qc1gjjIhc2eT7ZbIv94=';
+    script.crossOrigin = 'anonymous';
+    script.onload = function() {
+        addCopyButtons(clipboard);
+    };
+
+    document.body.appendChild(script);
+}
+```
+
+After the Clipboard API becomes ubiquitous, I'll remove the polyfill code.
+
+## Smart loading with Hugo
 
 After I got the functionality to work, I thought about how to include the
 script. I had three options. The first was to indiscriminately include it on
-every page. The script is small, but as a fun optimization exercise, I wanted to
-only include it when it's actually needed.
+every page. The script is small, but for optimization, I wanted to only include
+it when it's actually needed, saving a bit of bandwidth and a network request
+(or two, if the polyfill is needed).
 
-The second option was to use a [custom front matter
+The second option was to use a [custom Hugo front matter
 variable](https://gohugo.io/content-management/front-matter/#user-defined).
-With this method, I'd have to manually set a flag on every post that has a code
-block. The template could then check for this flag. However, this approach runs
-the risk of me forgetting to set the flag.
+With this method, I'd set a flag on every post that has a code block.  The
+template could then check for this flag. However, this approach involves manual
+work and runs the risk of me forgetting to do it.
 
 The third option was to find a way to use Hugo to figure out which pages have at
-least one code block. A regex seemed like the way to go. Hugo's
-[findRE](https://gohugo.io/functions/findre/) function can determine if the
+least one code block. A regex seemed like the way to go. I used Hugo's
+[findRE](https://gohugo.io/functions/findre/) function to determine if the
 HTML contains the text `class="highlight"`.
 
 ```html
 {{ if (findRE "class=\"highlight\"" .Content 1) }}
     <script src="/js/copy-code-button.js"></script>
-{{ end  }}
+{{ end }}
 ```
 
-I pass it a limit parameter of `1` because I only care if the page has a code
+I passed it a limit parameter of `1` because I only care if the page *has* a code
 block or not, not the total number of code blocks.
 
-## Related
+## Non-Hugo websites
 
-[CodeCopy](https://github.com/zenorocha/codecopy) is a browser extension that
+This solution should easily work for non-Hugo websites as well. The only part of
+the script that is specific to Hugo is the `.highlight` selector. Modifying the
+selector and possibly where the button is inserted should be all that is needed.
+
+## CodeCopy
+
+[CodeCopy](https://github.com/zenorocha/codecopy) is a browser extension for
+[Chrome](https://chrome.google.com/webstore/detail/codecopy/fkbfebkcoelajmhanocgppanfoojcdmg)
+and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/codecopy/) that
 adds copy buttons to code blocks on many websites that are likely to have them,
 such as [GitHub](https://github.com/) and [Stack
-Overflow](https://stackoverflow.com/).
+Overflow](https://stackoverflow.com/). It's made by the [same
+person](https://zenorocha.com/) behind clipboard.js.

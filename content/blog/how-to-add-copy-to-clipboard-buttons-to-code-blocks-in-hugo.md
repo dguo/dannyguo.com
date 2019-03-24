@@ -18,7 +18,7 @@ highlighting](https://gohugo.io/content-management/syntax-highlighting/), it
 doesn't support copy buttons. Here is how I added the feature to my website. The
 end result looks like this:
 
-![code block with a copy button](https://i.imgur.com/3MCAOe7.png)
+![code block with a copy button](https://i.imgur.com/8SBpdIT.png)
 
 ## Adding the buttons
 

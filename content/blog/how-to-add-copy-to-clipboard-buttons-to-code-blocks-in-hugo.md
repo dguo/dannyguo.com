@@ -33,16 +33,26 @@ each block with markup like this:
 </div>
 ```
 
-The `highlight` class gave me a selector to work with.
+Code blocks without syntax highlighting have the same structure but without the
+surrounding highlight div. To account for both cases, I selected for
+[code](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code) elements
+that are children of
+[pre](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre) elements.
 
 ```js
-document.querySelectorAll('.highlight').forEach(function (codeBlock) {
+document.querySelectorAll('pre > code').forEach(function (codeBlock) {
     var button = document.createElement('button');
     button.className = 'copy-code-button';
     button.type = 'button';
     button.innerText = 'Copy';
 
-    codeBlock.parentNode.insertBefore(button, codeBlock);
+    var pre = codeBlock.parentNode;
+    if (pre.parentNode.classList.contains('highlight')) {
+        var highlight = pre.parentNode;
+        highlight.parentNode.insertBefore(button, highlight);
+    } else {
+        pre.parentNode.insertBefore(button, pre);
+    }
 });
 ```
 
@@ -127,9 +137,9 @@ I put the code in a function and added click handlers. I used
 to get the code to be copied. After the copy operation, the button displays
 either an error message or a success message that lasts for two seconds.
 
-{{< highlight js "hl_lines=1 8-22 26" >}}
+{{< highlight js "hl_lines=1 8-22 32" >}}
 function addCopyButtons(clipboard) {
-    document.querySelectorAll('.highlight').forEach(function (codeBlock) {
+    document.querySelectorAll('pre > code').forEach(function (codeBlock) {
         var button = document.createElement('button');
         button.className = 'copy-code-button';
         button.type = 'button';
@@ -151,7 +161,13 @@ function addCopyButtons(clipboard) {
             });
         });
 
-        codeBlock.parentNode.insertBefore(button, codeBlock);
+        var pre = codeBlock.parentNode;
+        if (pre.parentNode.classList.contains('highlight')) {
+            var highlight = pre.parentNode;
+            highlight.parentNode.insertBefore(button, highlight);
+        } else {
+            pre.parentNode.insertBefore(button, pre);
+        }
     });
 }
 {{< / highlight >}}
@@ -195,10 +211,10 @@ work and runs the risk of me forgetting to do it.
 The third option was to find a way to use Hugo to figure out which pages have at
 least one code block. A regex seemed like the way to go. I used Hugo's
 [findRE](https://gohugo.io/functions/findre/) function to determine if the
-HTML contains the text `class="highlight"`.
+HTML seems to contain a `pre` element.
 
-```html
-{{ if (findRE "class=\"highlight\"" .Content 1) }}
+```go html template
+{{ if (findRE "<pre" .Content 1) }}
     <script src="/js/copy-code-button.js"></script>
 {{ end }}
 ```
@@ -206,10 +222,14 @@ HTML contains the text `class="highlight"`.
 I passed it a limit parameter of `1` because I only care if the page *has* a code
 block or not, not the total number of code blocks.
 
+Keep in mind that this script should be loaded after the page content,
+preferably at the end of the body so that it doesn't block rendering. Otherwise,
+the selector might run before the code blocks actually exist.
+
 ## Non-Hugo websites
 
 This solution should easily work for non-Hugo websites as well. The only part of
-the script that is specific to Hugo is the `.highlight` selector. Modifying the
+the script that is specific to Hugo is the `pre > code` selector. Modifying the
 selector and possibly where the button is inserted should be all that is needed.
 
 ## CodeCopy

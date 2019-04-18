@@ -17,6 +17,11 @@ title: Danny Guo · Projects
 
 ## Applications
 
+* [BrokerScribe](https://github.com/dguo/broker-scribe) - [Puppeteer](https://github.com/GoogleChrome/puppeteer)
+    script that enters
+    [1099-B](https://www.investopedia.com/terms/f/form-1099-b.asp) transactions
+    from the CSV file provided by [Betterment](https://www.betterment.com/) into
+    [TurboTax Online](https://turbotax.intuit.com/)
 * [Splurge Stopper](https://amazon.com/gp/product/B07CSRNT9R) ([GitHub](https://github.com/dguo/splurge-stopper)) - Amazon Alexa skill for avoiding splurging on purchases
 * [churn](https://github.com/dguo/churn) - CLI for keeping track of credit card
   activity (payments and rewards)

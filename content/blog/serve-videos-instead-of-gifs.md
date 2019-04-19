@@ -14,16 +14,29 @@ content, whether it's entertaining or informative. They are ubiquitous on the
 internet, with [entire services](https://giphy.com/) dedicated to making and
 sharing them. It's easy for web developers to embed them with a simple
 [img](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) tag. Yet
-they have a huge drawback: they have relatively huge file sizes. A single GIF
-can be larger than the average website ([over 2
+they have a significant drawback: massive file sizes. A single GIF can be larger
+than the average website ([over 2
 MB](https://www.keycdn.com/support/the-growth-of-web-page-size)).
+
+## GIFs
+
+> I don't care what anything was *designed* to do. I care about what it *can* do.
+>
+> -- [Gene Kranz](https://youtu.be/XLMDSjCzEx8?t=109) in Apollo 13
+
+GIFs [were never
+designed](https://www.wired.com/2017/05/gif-turns-30-ancient-format-changed-internet/)
+to serve full videos, but a
+
+The reason GIFs are so large is that they don't do any compression between
+frames.
 
 ## Serving videos
 
 It does take a bit more work to use the
 [video](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) tag
-rather than `img`. To serve what is roughly the equivalent of a GIF, we can use
-markup like this:
+rather than `img`. To serve the video equivalent of a GIF, we can use markup
+like this:
 
 ```html
 <video autoplay loop muted playsinline>
@@ -32,8 +45,8 @@ markup like this:
 </video>
 ```
 
-The `autoplay`, `loop`, and `muted` attributes give us the same behavior that we
-would expected from a GIF.
+Using all of these video attributes gives us the same behavior that we expect
+from a GIF.
 
 The `playsinline` attribute is also necessary for [iOS in
 particular](https://webkit.org/blog/6784/new-video-policies-for-ios/). See this
@@ -50,7 +63,18 @@ request](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#Attrib
 If it can't handle the type, it can move on to the next source rather than
 asking the server for the type.
 
+Video behavior can also be affected by the user's power settings. For example,
+videos won't autoplay on iOS if the user has power saving mode activated.
+Instead, the user will see the controls and can manually play the video.
+
 ## Creating videos
+
+To convert an existing GIF into a video file, you can use
+[FFmpeg](https://ffmpeg.org/).
+
+```sh
+ffmpeg -f gif -i dancing-baby.gif dancing-baby.mp4
+```
 
 To take video screenshots, I use [Kap](https://getkap.co/). It supports saving
 the videos in GIF, MP4, [WebM](https://en.wikipedia.org/wiki/WebM), or APNG

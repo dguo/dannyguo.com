@@ -110,3 +110,72 @@ const puppeteer = require('puppeteer');
     });
 })();
 ```
+
+The first step was to handle the log in page.
+
+```js
+const page = await browser.newPage();
+await page.goto('https://myturbotax.intuit.com/');
+```
+
+I used
+[prompts](https://github.com/terkelg/prompts) to collect the authentication info.
+
+```js
+const {email, password} = await prompts([
+    {
+        type: 'text',
+        name: 'email',
+        message: 'Email address'
+    },
+    {
+        type: 'text',
+        name: 'password',
+        message: 'Password',
+        style: 'password',
+    }
+]);
+```
+
+I considered passing the info through environment variables, but I ran into
+two-factor authentication, so I needed to collect a dynamic code.
+
+I set the values with JS after finding out [how to pass a
+variable](https://stackoverflow.com/a/46098448/1481479) to `evaluate`.
+
+```js
+await page.evaluate(email => {
+    document.getElementById('ius-identifier').value = email;
+    document.getElementById('ius-remember').checked = false;
+}, email);
+```
+
+Next I had to figure out how to handle waiting for the UI to be ready after
+hitting submit. In my experience, this part is a common source of flakiness for
+UI tests using tools like [WebdriverIO](https://webdriver.io/) and
+[Nightwatch.js](http://nightwatchjs.org/).
+
+I tried following the example in the documentation.
+
+```js
+await Promise.all([
+    page.waitForNavigation(),
+    page.click('#ius-sign-in-submit-btn')
+]);
+```
+
+Unfortunately, I kept getting this error: `TimeoutError: Navigation Timeout
+Exceeded: 30000ms exceeded`.
+
+I realized that the site was built as a [single-page
+application](https://en.wikipedia.org/wiki/Single-page_application). While
+Puppeteer [does
+handle](https://github.com/GoogleChrome/puppeteer#q-whats-considered-a-navigation)
+History API usage as a navigation event, the site didn't update the URL.
+
+```js
+await Promise.all([
+    page.waitFor('#ius-sign-in-mfa-password-collection-current-password'),
+    page.click('#ius-sign-in-submit-btn')
+]);
+```

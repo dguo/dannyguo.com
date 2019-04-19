@@ -113,6 +113,8 @@ const puppeteer = require('puppeteer');
 
 The first step was to handle the log in page.
 
+![TurboTax login page](https://i.imgur.com/leJ1KaV.png)
+
 ```js
 const page = await browser.newPage();
 await page.goto('https://myturbotax.intuit.com/');
@@ -167,15 +169,71 @@ await Promise.all([
 Unfortunately, I kept getting this error: `TimeoutError: Navigation Timeout
 Exceeded: 30000ms exceeded`.
 
-I realized that the site was built as a [single-page
+At first, I tried playing around with different `waitForNavigation`
+[options](https://stackoverflow.com/a/53040107/1481479), but then I realized
+that the site was built as a [single-page
 application](https://en.wikipedia.org/wiki/Single-page_application). While
 Puppeteer [does
 handle](https://github.com/GoogleChrome/puppeteer#q-whats-considered-a-navigation)
-History API usage as a navigation event, the site didn't update the URL.
+[History API](https://developer.mozilla.org/en-US/docs/Web/API/History) usage as
+a navigation event, the site doesn't seem to use the History API. It merely
+updates the form on the page. So I tried to wait for the existence of the
+password field instead using
+[waitFor](https://pptr.dev/#?product=Puppeteer&version=master&show=api-pagewaitforselectororfunctionortimeout-options-args).
+
+![TurboTax password field](https://i.imgur.com/8Tlu496.png)
 
 ```js
 await Promise.all([
-    page.waitFor('#ius-sign-in-mfa-password-collection-current-password'),
+    page.waitFor(
+        '#ius-sign-in-mfa-password-collection-current-password'
+    ),
     page.click('#ius-sign-in-submit-btn')
 ]);
 ```
+
+This worked, but then when I tried to set the password and click continue, I
+would sometimes get `Error: Node is either not visible or not an HTMLElement`.
+
+```js
+await page.evaluate(password => {
+    document.getElementById(
+        'ius-sign-in-mfa-password-collection-current-password',
+    ).value = password;
+}, password);
+
+await page.click('#ius-sign-in-mfa-password-collection-continue-btn');
+```
+
+After logging in, I had to enter transactions to fill this page.
+
+![empty Betterment sales page](https://i.imgur.com/xLZPby9.png)
+
+I matched up each field on this form to the columns in the CSV.
+
+![empty transaction form](https://i.imgur.com/1BuZOY2.png)
+
+I continued to set the values directly with JS, but I ran into validation
+errors, even though I could see the values in the fields before trying to
+continue.
+
+![form validation errors](https://i.imgur.com/WCc92oi.png)
+
+I suspect that the form has validation that runs when the user types in a value.
+After reading through [this
+issue](https://github.com/GoogleChrome/puppeteer/issues/441), I found a cleaner
+approach, which was to use the
+[type](https://pptr.dev/#?product=Puppeteer&version=v1.14.0&show=api-pagetypeselector-text-options)
+and
+[select](https://pptr.dev/#?product=Puppeteer&version=v1.14.0&show=api-pageselectselector-values)
+methods.
+
+```js
+await page.type('#edt_00', transaction.description);
+await page.select('#combo_00', category);
+```
+
+At the end, all my sales were filled in. I checked several of them to verify
+that the information was transcribed correctly.
+
+![filled Betterment sales page](https://i.imgur.com/jvcFAhO.png)

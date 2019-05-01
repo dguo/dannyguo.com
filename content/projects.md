@@ -6,6 +6,7 @@ title: Danny Guo · Projects
 
 ## Professional
 
+* [Seed](https://seed.credit/) (2019 - present)
 * [Sublime Fund](https://sublimefund.org) (2017 - present)
 * [Bloomberg](https://bloomberg.com) (2013 - 2017) - Worked on [Terminal](https://www.bloomberg.com/professional/solution/bloomberg-terminal/) functions and the [Bloomberg Service Center](https://service.bloomberg.com) website
 

@@ -7,8 +7,9 @@ title: Danny Guo · About
 My name is Danny Guo. I spend most of my time writing software, but I'm always
 interested in learning and trying new things.
 
-I am currently working on [Sublime Fund](https://sublimefund.org). Before that,
-I worked at [Bloomberg](https://www.bloomberg.com/) on their [Customer Service
+I am currently working on [Sublime Fund](https://sublimefund.org) and
+[Seed](https://seed.credit/). Before that, I worked at
+[Bloomberg](https://www.bloomberg.com/) on their [Customer Service
 Center](https://service.bloomberg.com) website.
 
 ## Public Profiles

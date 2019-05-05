@@ -1,10 +1,11 @@
 ---
 categories:
-  -
-date:
+  - webdev
+date: "2019-05-07"
 draft: true
 tags:
-  -
+  - puppeteer
+  - automation
 title: Automating TurboTax Data Entry With Puppeteer
 ---
 
@@ -13,17 +14,22 @@ my 2018 tax return, I wanted to use the [free
 edition](https://turbotax.intuit.com/personal-taxes/online/free-edition.jsp) of
 [Intuit](https://www.intuit.com/)'s [TurboTax
 Online](https://turbotax.intuit.com/). For non-retirement account investments,
-each transaction must be documented in the tax return. I had hundreds of
+each transaction must be documented in the tax return with [Form
+8949](https://www.irs.gov/forms-pubs/about-form-8949). I had hundreds of
 transactions in my account in 2018, and I didn't want to enter them manually.
 
-Betterment does have a [TurboTax
+Betterment has a [TurboTax
 integration](https://www.betterment.com/resources/tax-software-importing/) to do
 this work automatically, but TurboTax [doesn't
 allow](https://turbotax.intuit.com/personal-taxes/compare/online/) importing
-forms unless you have the Premier plan or above. I didn't want to pay for the
-Premier plan, in part because of Intuit's [lobbying
+investment transactions unless you have the Premier plan or above. I also
+couldn't [import a TXF
+file](https://github.com/andreasg123/stock-gain-tax-import) because that feature
+is only available in the desktop versions of TurboTax. I didn't want to pay for
+the Premier plan, in part because of Intuit's [lobbying
 efforts](https://www.propublica.org/article/filing-taxes-could-be-free-simple-hr-block-intuit-lobbying-against-it)
-against a simpler tax filing system.
+against a simpler tax filing system and because of their other [questionable
+practices](https://www.propublica.org/article/intuit-turbotax-h-r-block-gutted-free-tax-filing-internal-memo).
 
 This seemed like a great opportunity to try out
 [Puppeteer](https://github.com/GoogleChrome/puppeteer). It's a library for
@@ -31,18 +37,18 @@ controlling Chrome and is developed by the Chrome team.
 
 In the end, I probably [spent more time automating the
 process](https://xkcd.com/1319/) than it would have taken to just enter the
-transactions by hand, but I did learn a lot, and I hope to reuse the script in
-the future. It's available on [GitHub](https://github.com/dguo/broker-scribe). I
-call it BrokerScribe.
-
-Here's a demo of the end result (running at half speed):
+transactions manually, but I learned a new tool, and I hope to reuse the script
+in the future. It's available on [GitHub](https://github.com/dguo/broker-scribe)
+with the name BrokerScribe. Here's a demo of the end result (running at half
+speed):
 
 {{< video rSXtbz2 >}}
 
 ## Parsing the CSV file
 
-First, I downloaded the 1099-B CSV file from Betterment's [tax forms
-page](https://wwws.betterment.com/app/tax_forms).
+First, I downloaded the
+[1099-B](https://www.irs.gov/forms-pubs/about-form-1099-b) CSV file from
+Betterment's [tax forms page](https://wwws.betterment.com/app/tax_forms).
 
 ![Betterment tax forms](https://i.imgur.com/iZnRus1.png)
 
@@ -91,11 +97,12 @@ const csv = require('neat-csv');
 
 ## Using Puppeteer
 
-I launched Puppeteer in non-headless mode, which means that the browser UI
-actually appears and can be controlled outside of the script. It launches a
-bundled version of Chromium. It's possible to [use an existing
-installation](https://stackoverflow.com/q/47122579/1481479) of Chrome, but each
-version of the library is only guaranteed to work with its bundled browser.
+I launched Puppeteer in non-headless mode so that the browser UI would actually
+appear and be controllable from outside of the script. It launches a bundled
+version of Chromium (which Chrome is built on). It's possible to [control an
+existing installation](https://stackoverflow.com/q/47122579/1481479) of Chrome,
+but each version of the library is only guaranteed to work with its bundled
+browser.
 
 I also turned off the default viewport so that [resizing the window would also
 resize the viewport](https://github.com/GoogleChrome/puppeteer/issues/3688).
@@ -111,7 +118,9 @@ const puppeteer = require('puppeteer');
 })();
 ```
 
-The first step was to handle the log in page.
+## Logging in
+
+The first step in the TurboTax workflow was logging in.
 
 ![TurboTax login page](https://i.imgur.com/leJ1KaV.png)
 
@@ -120,8 +129,10 @@ const page = await browser.newPage();
 await page.goto('https://myturbotax.intuit.com/');
 ```
 
-I used
-[prompts](https://github.com/terkelg/prompts) to collect the authentication info.
+I used [prompts](https://github.com/terkelg/prompts) to interactively collect
+authentication info. I considered passing the info through environment
+variables, but I ran into two-factor authentication later, so I needed to be
+able to collect a dynamic code.
 
 ```js
 const {email, password} = await prompts([
@@ -139,11 +150,9 @@ const {email, password} = await prompts([
 ]);
 ```
 
-I considered passing the info through environment variables, but I ran into
-two-factor authentication, so I needed to collect a dynamic code.
-
-I set the values with JS after finding out [how to pass a
-variable](https://stackoverflow.com/a/46098448/1481479) to `evaluate`.
+I set the input values with JS after finding out [how to pass a
+variable](https://stackoverflow.com/a/46098448/1481479) to
+[evaluate](https://pptr.dev/#?product=Puppeteer&version=master&show=api-pageevaluatepagefunction-args).
 
 ```js
 await page.evaluate(email => {
@@ -152,12 +161,12 @@ await page.evaluate(email => {
 }, email);
 ```
 
-Next I had to figure out how to handle waiting for the UI to be ready after
+Next, I had to figure out how to handle waiting for the UI to be "ready" after
 hitting submit. In my experience, this part is a common source of flakiness for
 UI tests using tools like [WebdriverIO](https://webdriver.io/) and
-[Nightwatch.js](http://nightwatchjs.org/).
-
-I tried following the example in the documentation.
+[Nightwatch.js](http://nightwatchjs.org/). I tried following the
+[example](https://pptr.dev/#?product=Puppeteer&version=master&show=api-pagewaitfornavigationoptions)
+in the documentation.
 
 ```js
 await Promise.all([
@@ -167,18 +176,16 @@ await Promise.all([
 ```
 
 Unfortunately, I kept getting this error: `TimeoutError: Navigation Timeout
-Exceeded: 30000ms exceeded`.
-
-At first, I tried playing around with different `waitForNavigation`
-[options](https://stackoverflow.com/a/53040107/1481479), but then I realized
-that the site was built as a [single-page
+Exceeded: 30000ms exceeded`. At first, I tried playing around with different
+`waitForNavigation` options, but then I realized that the site was built as a
+[single-page
 application](https://en.wikipedia.org/wiki/Single-page_application). While
 Puppeteer [does
-handle](https://github.com/GoogleChrome/puppeteer#q-whats-considered-a-navigation)
+treat](https://github.com/GoogleChrome/puppeteer#q-whats-considered-a-navigation)
 [History API](https://developer.mozilla.org/en-US/docs/Web/API/History) usage as
-a navigation event, the site doesn't seem to use the History API. It merely
-updates the form on the page. So I tried to wait for the existence of the
-password field instead using
+a navigation event, the site doesn't use the History API. It merely updates the
+form on the page. I tried to wait for the existence of the password field
+instead using
 [waitFor](https://pptr.dev/#?product=Puppeteer&version=master&show=api-pagewaitforselectororfunctionortimeout-options-args).
 
 ![TurboTax password field](https://i.imgur.com/8Tlu496.png)
@@ -192,48 +199,160 @@ await Promise.all([
 ]);
 ```
 
-This worked, but then when I tried to set the password and click continue, I
-would sometimes get `Error: Node is either not visible or not an HTMLElement`.
+This solution worked. I filled in the password the same way that I filled in the
+email. The next part of the form was for two-factor
+authentication, using a code that was sent to my email. However, it only
+triggered some of the time, even after unchecking remember me on the first part
+of the log in form. This meant that I didn't have a stable element to wait for.
+My original solution was to just put in a sleep and then check if the two-factor
+authentication form appeared.
 
 ```js
-await page.evaluate(password => {
-    document.getElementById(
-        'ius-sign-in-mfa-password-collection-current-password',
-    ).value = password;
-}, password);
+await page.waitFor(5000); // in milliseconds
 
-await page.click('#ius-sign-in-mfa-password-collection-continue-btn');
+if ((await page.$('#ius-mfa-options-submit-btn')) !== null) {
+    // collect the code, and submit it
+}
 ```
+
+However, I now realize that a much better solution would have been to use a
+selector with two elements, one for each possible path, with something like:
+
+```js
+await page.waitFor('#ius-mfa-options-submit-btn, #dashboard');
+```
+
+This method avoids the antipattern of sleeping with a hardcoded duration, which
+slows things down and makes the code more brittle since the duration might not
+be long enough if the server is slow to respond, the client is on a poor
+internet connection, etc.
+
+## Entering transactions
 
 After logging in, I had to enter transactions to fill this page.
 
 ![empty Betterment sales page](https://i.imgur.com/xLZPby9.png)
 
-I matched up each field on this form to the columns in the CSV.
+I matched up each field on this form to the respective column in the CSV file.
 
 ![empty transaction form](https://i.imgur.com/1BuZOY2.png)
 
-I continued to set the values directly with JS, but I ran into validation
-errors, even though I could see the values in the fields before trying to
-continue.
+I continued to set the values directly with in-page JS.
+
+```js
+await page.evaluate(transaction => {
+    document.getElementById('edt_00').value = transaction.description;
+    document.getElementById('edt_01').value = transaction.dateSold;
+    document.getElementById('edt_02').value = transaction.dateAcquired;
+    document.getElementById('edt_03').value = transaction.grossProceeds;
+    document.getElementById('edt_04').value = transaction.costBasis;
+
+    let category;
+    if (transaction.reportingCategory === 'D') {
+        category = '4';
+    } else if (transaction.reportingCategory === 'A') {
+        category = '1';
+    } else {
+        throw new Error('Unexpected reporting category');
+    }
+
+    document.getElementById('combo_00').value = category;
+}, transaction);
+```
+
+But I ran into validation errors, even though I could see the values in the
+fields before trying to continue. I received an error message, and the fields
+were blanked out.
 
 ![form validation errors](https://i.imgur.com/WCc92oi.png)
 
-I suspect that the form has validation that runs when the user types in a value.
-After reading through [this
-issue](https://github.com/GoogleChrome/puppeteer/issues/441), I found a cleaner
+I suspected that the form has validation that runs as the user enters data. By
+setting the value directly, the validation was bypassed, and it thought the user
+had left the fields blank. After reading through [this
+issue](https://github.com/GoogleChrome/puppeteer/issues/441) and [this
+question](https://stackoverflow.com/q/45864516/1481479), I found a better
 approach, which was to use the
 [type](https://pptr.dev/#?product=Puppeteer&version=v1.14.0&show=api-pagetypeselector-text-options)
 and
 [select](https://pptr.dev/#?product=Puppeteer&version=v1.14.0&show=api-pageselectselector-values)
-methods.
+methods instead of setting values with JS. Using these methods fixed the issue.
 
 ```js
 await page.type('#edt_00', transaction.description);
 await page.select('#combo_00', category);
 ```
 
-At the end, all my sales were filled in. I checked several of them to verify
-that the information was transcribed correctly.
+After submitting the transaction, there was a radio selection to choose if I
+wanted to submit another one. I tried clicking the "enter a new transaction"
+radio with Puppeteer's
+[click](https://pptr.dev/#?product=Puppeteer&version=master&show=api-pageclickselector-options)
+method.
+
+```js
+await page.click('#radio_00\\:0');
+```
+
+But this time, the more ergonomic approach didn't work. After hitting continue,
+the page thought I didn't make a choice. I tried clicking the radio with JS, and
+I was able to continue.
+
+```js
+await page.evaluate(() => {
+    document.querySelector('#radio_00\\:0').click();
+});
+```
+
+The final issue I ran into was that I would get `Error: Node is either not
+visible or not an HTMLElement` when trying to fill in info on the new
+transaction page. My guess for the root cause is that the site animates some DOM
+changes, like the appearance of the form, most likely with [CSS
+transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions).
+Puppeteer's `waitFor` only detects the element's existence in the DOM. It
+doesn't know if the element is visible, if click handlers have been attached,
+etc. I added a one second sleep as a workaround. A future improvement would be to
+find a way to wait for the end of any transitions.
+
+In the end, the script took about 30 minutes to fill in all my transactions. I
+checked several of them to verify that the information was transcribed
+correctly.
 
 ![filled Betterment sales page](https://i.imgur.com/jvcFAhO.png)
+
+## Conclusion
+
+I have three main takeaways from my first experiment with Puppeteer. The first
+is that I should default to using the high-level API (e.g. `type`, `select`,
+`click`) first before resorting to injecting JS with `evaluate`. The high-level
+API is cleaner and better simulates a real human being using the website.
+
+The second is that I need to be smarter about waiting for things to be ready
+rather than adding sleeps. I've resorted to sleeping quite often in my past
+end-to-end test code, but it's something I need to minimize going forward.
+
+The third is that handling more modern websites that use fancier techniques like
+animations or are built as SPAs can be tricky. I
+[found](https://github.com/GoogleChrome/puppeteer/issues/372)
+[multiple](https://github.com/GoogleChrome/puppeteer/issues/1805)
+[issues](https://github.com/GoogleChrome/puppeteer/issues/2977) with people
+having problems interacting with elements, and a common explanation is that the
+site's JS hasn't fully run yet.
+
+Regardless, I see a lot of potential in using Puppeteer, especially for
+automated tests. The author of PhantomJS [stopped
+development](https://groups.google.com/d/msg/phantomjs/9aI5d-LDuNE/5Z3SMZrqAQAJ)
+after headless Chrome was announced. The other big tool in this field is
+[Selenium](https://www.seleniumhq.org/), but it's not very reliable in my
+experience, harder to set up, and resource heavy. I'm optimistic that Puppeteer
+will prove to be a better option for most cases.
+
+One concern is that Puppeteer only works for Chrome, but the Puppeteer
+developers appear to be working on [experimental
+support](https://www.npmjs.com/package/puppeteer-firefox) for Firefox.
+[Edge](https://www.microsoft.com/en-us/windows/microsoft-edge) is also
+[switching to
+Chromium](https://arstechnica.com/gadgets/2018/12/post-mortem-tying-edge-to-windows-10-was-a-fatal-error/),
+and most fringe browsers like [Opera](https://www.opera.com/) and
+[Brave](https://brave.com/) run on Chromium. For non-testing purposes, such as
+taking screenshots and automating workflows like BrokerScribe does, browser
+compatibility doesn't really matter, and Puppeteer is shaping up to be a great
+alternative to Selenium.

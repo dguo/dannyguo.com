@@ -1,8 +1,7 @@
 ---
 categories:
   - webdev
-date: "2019-05-07"
-draft: true
+date: "2019-05-12"
 tags:
   - puppeteer
   - automation
@@ -33,7 +32,8 @@ practices](https://www.propublica.org/article/intuit-turbotax-h-r-block-gutted-f
 
 This seemed like a great opportunity to try out
 [Puppeteer](https://github.com/GoogleChrome/puppeteer). It's a library for
-controlling Chrome and is developed by the Chrome team.
+controlling [Chrome](https://www.google.com/chrome/) and is developed by the
+Chrome team.
 
 In the end, I probably [spent more time automating the
 process](https://xkcd.com/1319/) than it would have taken to just enter the
@@ -329,8 +329,8 @@ The second is that I need to be smarter about waiting for things to be ready
 rather than adding sleeps. I've resorted to sleeping quite often in my past
 end-to-end test code, but it's something I need to minimize going forward.
 
-The third is that handling more modern websites that use fancier techniques like
-animations or are built as SPAs can be tricky. I
+The third is that handling websites that use fancier techniques like animations
+or are built as SPAs can be tricky. I
 [found](https://github.com/GoogleChrome/puppeteer/issues/372)
 [multiple](https://github.com/GoogleChrome/puppeteer/issues/1805)
 [issues](https://github.com/GoogleChrome/puppeteer/issues/2977) with people
@@ -338,9 +338,9 @@ having problems interacting with elements, and a common explanation is that the
 site's JS hasn't fully run yet.
 
 Regardless, I see a lot of potential in using Puppeteer, especially for
-automated tests. The author of PhantomJS [stopped
+automated tests. The author of [PhantomJS](http://phantomjs.org/) [stopped
 development](https://groups.google.com/d/msg/phantomjs/9aI5d-LDuNE/5Z3SMZrqAQAJ)
-after headless Chrome was announced. The other big tool in this field is
+after headless Chrome was announced. Another big tool in this field is
 [Selenium](https://www.seleniumhq.org/), but it's not very reliable in my
 experience, harder to set up, and resource heavy. I'm optimistic that Puppeteer
 will prove to be a better option for most cases.

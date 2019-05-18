@@ -31,9 +31,9 @@ against a simpler tax filing system and because of their other [questionable
 practices](https://www.propublica.org/article/intuit-turbotax-h-r-block-gutted-free-tax-filing-internal-memo).
 
 This seemed like a great opportunity to try out
-[Puppeteer](https://github.com/GoogleChrome/puppeteer). It's a library for
-controlling [Chrome](https://www.google.com/chrome/) and is developed by the
-Chrome team.
+[Puppeteer](https://github.com/GoogleChrome/puppeteer). It's a
+[Node.js](https://nodejs.org/) library for controlling
+[Chrome](https://www.google.com/chrome/) and is developed by the Chrome team.
 
 In the end, I probably [spent more time automating the
 process](https://xkcd.com/1319/) than it would have taken to just enter the

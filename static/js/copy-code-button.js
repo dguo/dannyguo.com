@@ -9,10 +9,10 @@ function addCopyButtons(clipboard) {
         button.innerText = 'Copy';
 
         button.addEventListener('click', function() {
-            clipboard.writeText(codeBlock.innerText).then(
+            clipboard.writeText(codeBlock.textContent).then(
                 function() {
                     /* Chrome doesn't seem to blur automatically, leaving the button
-                   in a focused state */
+                       in a focused state */
                     button.blur();
 
                     button.innerText = 'Copied!';

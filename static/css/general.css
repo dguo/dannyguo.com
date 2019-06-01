@@ -177,13 +177,6 @@ blockquote {
   border-left: 2px solid #ccc;
 }
 
-.highlight pre {
-  border-radius: 3px;
-  padding: 8px;
-  overflow-x: auto;
-  font-size: 0.9em;
-}
-
 img,
 video {
   border-radius: 8px;

@@ -130,7 +130,7 @@ tons of strangers.
 ![Mailgun's add domain page](https://i.imgur.com/Nnkx9eP.png)
 
 Next, go to wherever you manage your website's DNS settings (like your domain
-registrar), and add the DNS records provided by Mailgun. The [MX
+registrar) and add the DNS records provided by Mailgun. The [MX
 records](https://en.wikipedia.org/wiki/MX_record) are for setting Mailgun's
 servers as the recipient for emails. The [TXT
 records](https://en.wikipedia.org/wiki/TXT_record) are for setting up

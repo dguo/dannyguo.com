@@ -1,7 +1,11 @@
 {
+    "code-block-style": false,
     "first-header-h1": false,
     "line-length": {
         "code_blocks": false
+    },
+    "single-title": {
+        "front_matter_title": ""
     },
     "ul-indent": {
         "indent": 4

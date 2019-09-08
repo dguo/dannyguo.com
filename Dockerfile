@@ -1,4 +1,4 @@
-FROM node:10.14.2-alpine
+FROM node:12.10.0-alpine
 
 LABEL maintainer="dannyguo91@gmail.com"
 

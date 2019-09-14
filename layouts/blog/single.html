@@ -1,5 +1,9 @@
 {{ define "head-extra" }}
     <link rel="stylesheet" href="/css/post.css" type="text/css" />
+
+    {{ with .Params.canonicalUrl }}
+        <link rel="canonical" href="{{.}}" />
+    {{ end }}
 {{ end }}
 
 {{ define "main" }}

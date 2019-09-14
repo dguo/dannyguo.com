@@ -122,7 +122,7 @@ navigation. Thanks to nickels55 for keeping
 [accessibility](https://en.wikipedia.org/wiki/Web_accessibility) in mind.
 
 And that's it! I was very happy with how small the
-[commit](https://github.com/dguo/dguo.github.io/commit/14e51391329163fa414ac55d77fdf6da521ab644)
+[commit](https://github.com/dguo/dannyguo.com/commit/14e51391329163fa414ac55d77fdf6da521ab644)
 ended up being. If you'd like to add something similar to your site, feel free
 to take this implementation, or check out some other [animated underline
 effects](https://speckyboy.com/underline-text-effects-css/) for inspiration.

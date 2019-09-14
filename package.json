@@ -1,7 +1,7 @@
 {
     "name": "dannyguo.com",
     "version": "1.0.0",
-    "repository": "https://github.com/dguo/dguo.github.io",
+    "repository": "https://github.com/dguo/dannyguo.com",
     "author": "Danny Guo",
     "private": true,
     "scripts": {

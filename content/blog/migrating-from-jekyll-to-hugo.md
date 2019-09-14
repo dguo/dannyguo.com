@@ -9,7 +9,7 @@ title: Migrating from Jekyll to Hugo
 ---
 
 I recently migrated my personal website (the source code is on
-[GitHub](https://github.com/dguo/dguo.github.io)) from
+[GitHub](https://github.com/dguo/dannyguo.com)) from
 [Jekyll](https://jekyllrb.com/) to [Hugo](https://gohugo.io/). It was mostly
 painless, and now I'm eager to write more often and put more content on my
 website.
@@ -96,7 +96,7 @@ reloading with Hugo works quickly and reliably.
 
 ## Migrating
 
-[This](https://github.com/dguo/dguo.github.io/commit/91a60dea4414432cb315a1560327b62860b93183)
+[This](https://github.com/dguo/dannyguo.com/commit/91a60dea4414432cb315a1560327b62860b93183)
 is the commit where I did the migration. Hugo has a
 [command](https://gohugo.io/commands/hugo_import_jekyll/) to import from
 Jekyll, so I ran that first. Most of the work after that was just converting

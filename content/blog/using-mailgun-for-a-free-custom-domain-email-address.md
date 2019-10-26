@@ -105,9 +105,17 @@ for something like a business.
 
 ### Instructions
 
-Here are the step by step instructions. [Sign up](https://signup.mailgun.com/)
-for a Mailgun account, and provide a payment method unless you're okay with the
-sending restriction.
+Here are the step by step instructions. Note that Mailgun has distinct [support
+for the European Union
+region](https://www.mailgun.com/blog/we-have-a-new-region-in-europe-yall/). All
+of the links in this guide are for the United States region, so if you are in
+the EU, make sure to stay in one region in the Mailgun dashboard (especially
+when you create a new route) so that you don't run into problems receiving email
+on your custom domain. Thanks to [Kuj](https://disqus.com/by/disqus_WIcggqRDL9/)
+for informing me of this issue in the comments.
+
+[Sign up](https://signup.mailgun.com/) for a Mailgun account, and provide a
+ payment method unless you're okay with the sending restriction.
 
 ![Mailgun's payment info form](https://i.imgur.com/iF4KJKP.png)
 

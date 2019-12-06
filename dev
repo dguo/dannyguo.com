@@ -30,10 +30,11 @@ def command(help):
 def run_command(command, bind_port=False):
     return run(
         [
-            'docker', 'run', '--init', '-it', '--rm', '-v',
+            'docker', 'run', '--init', '--rm', '-v',
             f'{os.getcwd()}:/src:cached'
-        ] + (['-p', '1313:1313'] if bind_port else []) + ['dannyguo-dev'] +
-        command
+        ] +
+        (['-p', '1313:1313'] if bind_port else []) +
+        (['-it'] if sys.stdout.isatty() else []) + ['dannyguo-dev'] + command
     ).returncode
 
 def open_in_browser():

@@ -1,0 +1,20 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build the Docker image
+        run: ./dev build-docker
+      - name: Run linters
+        run: ./dev lint
+      - name: Sync the Algolia index
+        run: ./dev algolia
+        if: github.ref == 'refs/heads/master' && success()
+        env:
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+          AGLOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}

@@ -1,7 +1,7 @@
 # Danny Guo's personal website
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2288054d-de7c-458b-bbf4-21a1c3fcfeee/deploy-status)](https://app.netlify.com/sites/dannyguo/deploys)
-[![Build Status](https://travis-ci.org/dguo/dannyguo.com.svg?branch=master)](https://travis-ci.org/dguo/dannyguo.com)
+[![CI status](https://github.com/dguo/dannyguo.com/workflows/CI/badge.svg)](https://github.com/dguo/dannyguo.com/actions?query=branch%3Amaster)
 
 Hello! My website is available at https://dannyguo.com.
 

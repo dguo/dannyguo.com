@@ -13,7 +13,7 @@ jobs:
       - name: Run linters
         run: ./dev lint
       - name: Sync the Algolia index
-        run: ./dev algolia
+        run: echo "To re-implement later.."
         if: github.ref == 'refs/heads/master' && success()
         env:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}

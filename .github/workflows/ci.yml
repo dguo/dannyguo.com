@@ -18,3 +18,4 @@ jobs:
         env:
           ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
           AGLOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+          CI: true

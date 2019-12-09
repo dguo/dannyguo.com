@@ -137,7 +137,7 @@ I put the code in a function and added click handlers. I used
 to get the code to be copied. After the copy operation, the button displays
 either an error message or a success message that lasts for two seconds.
 
-{{< highlight js "hl_lines=1 8-22 32" >}}
+```js {hl_lines=[1,"8-22",32]}
 function addCopyButtons(clipboard) {
     document.querySelectorAll('pre > code').forEach(function (codeBlock) {
         var button = document.createElement('button');
@@ -170,7 +170,7 @@ function addCopyButtons(clipboard) {
         }
     });
 }
-{{< / highlight >}}
+```
 
 Next, I added a check for whether or not the browser supports the Clipboard API.
 If not, the script loads the polyfill from

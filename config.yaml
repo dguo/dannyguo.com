@@ -8,10 +8,12 @@ disqusShortname: dannyguo
 enableRobotsTXT: true
 googleAnalytics: UA-90320718-1
 languageCode: en-us
-pygmentsCodefences: true
-pygmentsStyle: monokai
 rssLimit: 20
 title: Danny Guo
+
+markup:
+  highlight:
+    style: monokai
 
 outputFormats:
   Algolia:

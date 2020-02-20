@@ -2,12 +2,27 @@
 categories:
   - programming
 date: "2018-12-07"
-draft: false
+lastmod: "2020-02-18"
 tags:
   - email
   - tutorial
 title: Using Mailgun for a Free Custom Domain Email Address
 ---
+
+{{< warning >}}
+This method is no longer viable. Mailgun has <a
+href="https://news.ycombinator.com/item?id=22192543">updated</a> their <a
+href="https://www.mailgun.com/pricing/">pricing</a> options, and the free plan
+no longer includes receiving email. Check out <a
+href="https://www.zoho.com/mail/zohomail-pricing.html">Zoho Mail's free plan</a>
+for an option that is still free, but keep in mind that it only allows web
+access. A paid but affordable alternative is <a
+href="https://www.namecheap.com/hosting/email/">Namecheap's email hosting</a>.
+Personally, I plan on switching to <a
+href="https://www.fastmail.com/">Fastmail</a> because I'm going to make my
+custom domain email address my primary email address, so I want a full-featured
+service.
+{{< /warning >}}
 
 I've been using [Gmail](https://www.google.com/gmail/about/) for my primary
 email address for over 13 years. I should thank my sister for making me use my

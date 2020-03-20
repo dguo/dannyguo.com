@@ -8,13 +8,12 @@ tags:
 title: One Year of Spaced Repetition Learning With Anki
 ---
 
-I started using [Anki](https://apps.ankiweb.net/) just over a year ago, after a
-long time of being frustrated with my poor memory. I had been interested in
-[spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition) for a
-while, but I finally dived in after reading [Michael
-Nielsen](http://michaelnielsen.org/)'s [Augmenting Long-term
-Memory](http://augmentingcognition.com/ltm.html). This was the most powerful
-statement:
+I started using [Anki](https://apps.ankiweb.net/) over a year ago, after a long
+time of being frustrated with my poor memory. I had been interested in [spaced
+repetition](https://en.wikipedia.org/wiki/Spaced_repetition) for a while, but I
+finally dived in after reading [Michael Nielsen](http://michaelnielsen.org/)'s
+[Augmenting Long-term Memory](http://augmentingcognition.com/ltm.html). This was
+the most compelling statement:
 
 > Anki makes memory a *choice*, rather than a haphazard event, to be left to
 > chance.
@@ -29,8 +28,8 @@ Spaced repetition is a learning technique.
 
 ## Year in Review
 
-I started off slowly to get a sense of how well Anki would work for me. Every
-day, I checked [Merriam-Webster's Word of the
+I started off slowly to get a sense of how Anki works in practice. Every day, I
+checked [Merriam-Webster's Word of the
 Day](https://www.merriam-webster.com/word-of-the-day). If I didn't know the word
 already, I added it to Anki. My first card was for the word
 ["trousseau,"](https://www.merriam-webster.com/dictionary/trousseau) which I
@@ -47,8 +46,12 @@ I eventually began to add programming cards as well. Sometimes I will search for
 an answer to a programming question, end up on [Stack
 Overflow](https://stackoverflow.com/), and realize that I've visited the page
 before because I've had the same question in the past. I just forgot the answer.
+
 Now, I will frequently add cards to Anki whenever I visit a Stack Overflow page,
-making it unlikely that I'll ever need to re-learn an answer.
+making it unlikely that I'll ever need to re-learn an answer. This may seem
+unnecessary because I can always look up the answer again, but my motivation is
+to avoid context switching when I feel like I'm [in the
+zone](https://en.wikipedia.org/wiki/Flow_(psychology)).
 
 I generally use the Anki desktop program to add cards, but to review cards, I
 usually use

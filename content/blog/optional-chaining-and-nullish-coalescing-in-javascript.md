@@ -8,6 +8,9 @@ tags:
 title: Optional Chaining and Nullish Coalescing in JavaScript
 ---
 
+*This post was originally written for the [LogRocket
+blog](https://blog.logrocket.com/optional-chaining-and-nullish-coalescing-in-javascript/).*
+
 Optional chaining and nullish coalescing are new JavaScript operators. They have
 both reached [stage 3](https://tc39.es/process-document/) in the
 [TC39](https://tc39.es/) process, which means that their specifications are

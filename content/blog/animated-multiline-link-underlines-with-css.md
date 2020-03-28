@@ -15,8 +15,9 @@ flourishes. I strive to keep my site lean, but making it personal is also kind
 of the point. There is a spectrum of gratuitous touches between the spartan
 pages of [Hacker News](https://news.ycombinator.com/) and
 [Craigslist](https://newyork.craigslist.org/) on one end and the sensory
-overload of [old MySpace](https://news.codecademy.com/myspace-coding-legacy/) on
-the other.
+overload of [old
+MySpace](https://news.codecademy.com/myspace-and-the-coding-legacy/) on the
+other.
 
 I ran across a site that had fancy, animated underlines for links, and I wanted
 to add a similar effect to my site. It was important to me to use a pure CSS

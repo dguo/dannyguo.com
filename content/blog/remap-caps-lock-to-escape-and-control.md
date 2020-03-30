@@ -153,7 +153,7 @@ folder](https://support.microsoft.com/en-us/help/4026268/windows-10-change-start
 Reference the [docs](https://www.autohotkey.com/docs/Program.htm#run) for more
 info.
 
-```autohotkey
+```txt
 *CapsLock::
     Send {Blind}{Ctrl Down}
     cDown := A_TickCount

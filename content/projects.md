@@ -6,9 +6,9 @@ title: Danny Guo · Projects
 
 ## Professional
 
-* [Seed](https://seedfi.com/) (2019 - present)
+* [SeedFi](https://seedfi.com/) (2019 - present)
 * [Sublime Fund](https://sublimefund.org) (2017 - present)
-* [Bloomberg](https://bloomberg.com) (2013 - 2017) - Worked on [Terminal](https://www.bloomberg.com/professional/solution/bloomberg-terminal/) functions and the [Bloomberg Service Center](https://service.bloomberg.com) website
+* [Bloomberg](https://bloomberg.com) (2013 - 2017) - Worked on [Terminal](https://www.bloomberg.com/professional/solution/bloomberg-terminal/) functions and the [Customer Service Center](https://service.bloomberg.com) website
 
 ## Libraries
 
@@ -52,5 +52,4 @@ title: Danny Guo · Projects
 
 * [ioredis](https://github.com/luin/ioredis) - Added [transparent key prefixing](https://github.com/luin/ioredis#transparent-key-prefixing)
 * [yarn](https://yarnpkg.com) - Added [offline mirror pruning](https://yarnpkg.com/en/docs/prune-offline-mirror) (mentioned in a [F8 2017 presentation](https://developers.facebook.com/videos/f8-2017/building-high-quality-javascript-tools/) at around 39:00)
-* [pull requests](https://showmyprs.com/user/dguo) (yes, I really dislike typos)
 * [recent GitHub activity](https://gitstalk.netlify.com/dguo)

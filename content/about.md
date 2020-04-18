@@ -8,7 +8,7 @@ My name is Danny Guo. I spend most of my time writing software, but I'm always
 interested in learning and trying new things.
 
 I am currently working on [Sublime Fund](https://sublimefund.org) and
-[Seed](https://seedfi.com/). Before that, I worked at
+[SeedFi](https://seedfi.com/). Before that, I worked at
 [Bloomberg](https://www.bloomberg.com/) on their [Customer Service
 Center](https://service.bloomberg.com) website.
 
@@ -36,10 +36,3 @@ If you'd like to support my open source efforts, use any of these methods:
 * [Flattr](https://flattr.com/@dannyguo)
 * [Ko-fi](https://ko-fi.com/dannyguo)
 * [PayPal](https://www.paypal.me/DannyGuo)
-
-## More info
-
-* [Books](/books/)
-* [Food](/food/)
-* [Music](/music/)
-* [Referral links](/referrals/)

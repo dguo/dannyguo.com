@@ -30,9 +30,9 @@ which is possible as of Firefox 59. I decided to do spectrum cycling instead:
 
 {{< youtube pI96n8kjKW8 >}}
 
-Here's a GIF of what it looks like:
+Here's what it looks like:
 
-![Chromatastic video](https://i.imgur.com/qRwh1WU.gif)
+{{< video qRwh1WU >}}
 
 The color transitions occur fairly slowly, so the overall effect shouldn't be
 distracting.

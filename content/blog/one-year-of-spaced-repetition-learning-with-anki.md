@@ -1,7 +1,6 @@
 ---
 categories:
   - education
-date: 2019-11-23
 draft: true
 tags:
   - anki

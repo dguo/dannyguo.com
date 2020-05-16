@@ -1,7 +1,6 @@
 ---
 categories:
   - finance
-date: 2019-08-20
 draft: true
 tags:
   - retirement

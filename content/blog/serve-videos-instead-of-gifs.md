@@ -67,7 +67,7 @@ The solution is to use a format that's actually designed to serve videos, like
 [WebM](https://en.wikipedia.org/wiki/WebM). Many services do this transparently.
 When Twitter [added GIF
 support](https://techcrunch.com/2014/06/19/gasp-twitter-gifs-arent-actually-gifs/)
-in 2014, they implemented the fetaure by converting uploaded GIFs into videos to
+in 2014, they implemented the feature by converting uploaded GIFs into videos to
 serve instead. Imgur [started doing the same
 thing](https://blog.imgur.com//2014/10/09/introducing-gifv/) the same year.
 

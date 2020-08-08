@@ -77,7 +77,7 @@ Then the problem started happening again. I also experienced issues playing
 [Counter-Strike](https://en.wikipedia.org/wiki/Counter-Strike:_Global_Offensive),
 and [Valorant](https://en.wikipedia.org/wiki/Valorant) (on Windows through Boot
 Camp), all games that my machine should be able to handle without any problems.
-It would stuttter even after I turned the resolution and graphical settings all
+It would stutter even after I turned the resolution and graphical settings all
 the way down.
 
 I thought it might have something to do with my monitors. In my desk setup, I

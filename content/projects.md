@@ -25,7 +25,9 @@ title: Danny Guo · Projects
     [TurboTax Online](https://turbotax.intuit.com/)
 * [Splurge Stopper](https://amazon.com/gp/product/B07CSRNT9R) ([GitHub](https://github.com/dguo/splurge-stopper)) - Amazon Alexa skill for avoiding splurging on purchases
 * [churn](https://github.com/dguo/churn) - CLI for keeping track of credit card
-  activity (payments and rewards)
+    activity (payments and rewards)
+* [Morning Joy](https://github.com/dguo/morning-joy) - Texts you an uplifting
+    news story and a picture of something cute every morning
 
 ## Browser Extensions
 

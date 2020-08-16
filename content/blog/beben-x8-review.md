@@ -9,7 +9,9 @@ title: BEBEN X8 Review
 ---
 
 The [BEBEN X8
-headphones](https://www.amazon.com/gp/product/B07PN2FK2W/ref=as_li_ss_tl?ie=UTF8&psc=1&linkCode=ll1&tag=thdalo00-20&linkId=c7e6ea9cd21015aa5bb8bae9d67481db&language=en_US) are a set of true wireless headphones, as in there isn't a cord between the buds.
+headphones](https://www.amazon.com/gp/product/B07PN2FK2W/ref=as_li_ss_tl?ie=UTF8&psc=1&linkCode=ll1&tag=thdalo00-20&linkId=c7e6ea9cd21015aa5bb8bae9d67481db&language=en_US)
+are a set of true wireless headphones, as in there isn't a cord between the
+buds.
 
 [Apple
 Airpods](https://www.amazon.com/Apple-AirPods-Charging-Latest-Model/dp/B07PXGQC1Q/ref=as_li_ss_tl?dchild=1&keywords=airpods&qid=1597609643&s=electronics&sr=1-3&linkCode=ll1&tag=thdalo00-20&linkId=f74c368f5b3a2c83060da85acc1b2394&language=en_US)

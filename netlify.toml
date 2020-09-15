@@ -17,3 +17,8 @@
   from = "/pawblock"
   to = "https://www.pawblock.dannyguo.com"
   status = 301
+
+[[redirects]]
+  from = "/web-worker-demo"
+  to = "https://dguo.github.io/web-worker-demo/"
+  status = 302

@@ -2,8 +2,7 @@
 canonicalUrl: https://blog.logrocket.com/how-to-improve-interface-responsiveness-with-web-workers/
 categories:
   - programming
-date: 2020-10-20
-draft: true
+date: 2020-10-21
 tags:
   - web-workers
 title: How to Improve Interface Responsiveness With Web Workers
@@ -120,6 +119,8 @@ Now let’s add something that’s computationally expensive. We’ll install
 [quantization](https://en.wikipedia.org/wiki/Color_quantization) library that
 we’ll use to calculate the main colors of a given image, creating a color
 palette from the image. Here’s an example.
+
+![color palette example](https://i.imgur.com/wnE6IsO.jpg)
 
 Let’s update the `body`.
 
@@ -347,12 +348,19 @@ instead](https://www.viget.com/articles/animation-performance-101-browser-under-
 
 Here’s what it looks like.
 
-On Firefox, the browser eventually displays a warning.
+{{< video HmJ95LY >}}
+
+On Firefox, the browser eventually displays a warning that a web page is slowing
+down your browser.
+
+![Firefox warning](https://i.imgur.com/ac5EAOu.png)
 
 If you have a fast computer, the problem may not be as obvious because your CPU
 can churn through the work quickly. To simulate a slower device, you can use
 Chrome, which has a developer tools setting to throttle the CPU. Open the
 performance tab and then its settings to reveal the option.
+
+![Chrome CPU throttling option](https://i.imgur.com/qZuJmYw.png)
 
 ### Adding a Worker
 
@@ -434,6 +442,8 @@ receives a message from `index.js`, and `postMessage` sends a message to
 Try generating a palette with the worker, and you should see that the time keeps
 updating during the processing. The form also remains interactive instead of
 freezing. Here’s what it should look like.
+
+{{< video EER1Snx >}}
 
 ## Conclusion
 

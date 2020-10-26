@@ -53,3 +53,40 @@ scene](https://youtu.be/q4m-3Eo3suE?t=40):
 > may thrive with this sort of opportunity. And studies show affirmative action
 > admits have a higher predisposition to contribute to society.
 > Hang on, I gotta write this down.
+
+Mulready is capable of articulating not just his own position but also the
+opposing position. When is the last time you've seen this happen in a political
+debate? Also notice that from what we can tell, he's doing so in relatively good
+faith. He's basically saying "of these potential justifications for your
+argument, here's the one that I find most compelling."
+
+When arguing with someone, it's easy to get into the mindset of wanting to win.
+But in real life, the real winner is the person who expands his or her mindset
+and grasps not just the nuances of all sides of the argument.
+
+The true test of a belief is being able to argue for the other side of a debate
+even better than they can but then still being able to counter that argument.
+Most people don't bother with this exercise. It requires humility and effort.
+Our entrenched beliefs make it hard to be honest with ourselves.
+
+Debate as sport can teach very useful skills, but it frames a debate as a
+competition, which it doesn't have to be.
+
+It'd be interesting to see a debate that takes place just as they do now, but
+then the opponents have to switch sides and re-conduct the same debate.
+
+Real debates on important things should take time.
+
+Debates should happen through writing, not verbally.
+
+Debators should be held accountable to the claims they make.
+
+One of my pet peeves is when there is what seems like an obvious counterargument
+to something, but the candidate never addresses it. See Paul Graham's views on
+wealth inequality. What do progressives think of it?
+
+Yes, interruptions are annoying during TV debates, but how else do you address
+the details? The debates aren't long enough, and people wouldn't have enough
+patience for candidates to address the finer points of an argument. But these
+topics are complex and deserve that kind of scrutiny. I'd rather see a real deep
+dive into a specific topic rather than getting overviews of several.

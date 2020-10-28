@@ -5,7 +5,7 @@ date:
 draft: true
 tags:
   -
-title: Debates
+title: Debates as Sport
 ---
 
 At the beginning of high school, I attended an info session for the debate team.
@@ -28,6 +28,17 @@ the opponent has made a good point.
 We have fact checkers after the fact or sometimes even during the debates, but
 that in itself is disheartening because it means the debates proceed with
 statements that can't even be relied on.
+
+Plenty of arguments are superfluous anyway. Identifying the premises and chain
+of reasoning will make it obvious in many situations what the debators are
+actually disagreeing on. Doing it from the perspective of the conclusions is
+largely a waste of time.
+
+Once we get into the mindset that we're right, it's very hard to accept the
+valid points of the opposite side's argument. To approach a debate from the
+conclusions puts us in a defensive mindset. The conclusion is a belief, a part
+of our identity. And that makes it [difficult to stay
+open-minded](http://www.paulgraham.com/identity.html).
 
 Some people consider it a skill when debaters dodge the question by either
 ignoring it and answering the question that they really wanted to be asked.

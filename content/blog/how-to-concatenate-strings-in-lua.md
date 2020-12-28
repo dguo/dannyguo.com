@@ -1,8 +1,7 @@
 ---
 categories:
   - programming
-date: 2020-12-26
-draft: true
+date: 2020-12-28
 tags:
   - lua
 title: How to Concatenate Strings in Lua
@@ -18,7 +17,11 @@ message = "Hello, " .. "world!"
 -- message equals "Hello, World!"
 ```
 
-Numbers are coerced to strings.
+Numbers are coerced to strings. For fine-grained control over number formatting,
+use
+[string.format](https://www.lua.org/manual/5.4/manual.html#pdf-string.format),
+which behaves mostly like C's
+[printf](https://www.cplusplus.com/reference/cstdio/printf/).
 
 ```lua
 count = 42
@@ -26,13 +29,24 @@ message = "The count is: " .. count
 -- message equals "The count is: 42"
 ```
 
-But trying to concatenate other [types](https://www.lua.org/pil/2.html), like
-`nil` or a table, will result in an error.
+Trying to concatenate other [types](https://www.lua.org/pil/2.html), like nil or
+a table, will result in an error.
 
 ```lua
 count = nil
 message = "The count is: " .. count
 -- results in an "attempt to concatenate a nil value" error
+```
+
+Note that Lua [doesn't have](https://stackoverflow.com/q/20091779/1481479)
+syntactic sugar for [augmented
+assignment](https://en.wikipedia.org/wiki/Augmented_assignment). The following
+is invalid syntax.
+
+```lua
+message = "Hello, "
+message ..= "world!"
+-- results in a "syntax error near '..'" error
 ```
 
 Strings in Lua are [immutable](https://www.lua.org/pil/2.4.html), so the
@@ -53,7 +67,7 @@ strings.
 
 ```lua
 message = ""
-for i=i,10000 do
+for i=1,100000 do
   message = message .. i
 end
 ```
@@ -63,23 +77,55 @@ faster](https://www.reddit.com/r/lua/comments/1t6ois/tableconcat_is_fast/) to
 use [table.concat](https://www.lua.org/manual/5.4/manual.html#6.6).
 
 ```lua
-strings = {"Hello, ", "world!"}
-message = table.concat(strings)
--- message equals "Hello, World!"
+numbers = {}
+for i=1,100000 do
+  numbers[i] = i
+end
+message = table.concat(numbers)
 ```
 
-separator example
+Here's a benchmark comparsion (using
+[hyperfine](https://github.com/sharkdp/hyperfine)) from running the `..` example
+as `slow.lua` and running the `table.concat` example as `fast.lua`.
 
-In typical cases, the difference shouldn't matter, but if you're working with
-many strings, it's a good idea to use `table.concat`.
+```sh
+hyperfine 'lua slow.lua'
+# Benchmark #1: lua slow.lua
+#   Time (mean ± σ):      1.287 s ±  0.115 s    [User: 1.120 s, System: 0.078 s]
+#   Range (min … max):    1.187 s …  1.528 s    10 runs
+hyperfine 'lua fast.lua'
+# Benchmark #1: lua fast.lua
+#   Time (mean ± σ):      39.3 ms ±   3.8 ms    [User: 34.6 ms, System: 2.8 ms]
+#   Range (min … max):    35.3 ms …  58.3 ms    48 runs
+```
+
+The difference probably doesn't matter in most cases, but it's a good
+optimization to be aware of.
+
+`table.concat` can also be easier to use because it can take a separator
+argument to add between elements.
+
+```lua
+message = table.concat({1, 2, 3, 4, 5})
+-- message equals "12345"
+message = table.concat({1, 2, 3, 4, 5}, ", ")
+-- message equals "1, 2, 3, 4, 5"
+```
+
+It can also take start and end indexes.
+
+```lua
+message = table.concat({1, 2, 3, 4, 5}, ", ", 2, 4)
+-- message equals "2, 3, 4"
+```
 
 ## Direct Approach
 
-If you don't actually need a variable holding the final string, you can save
-some memory usage over `table.concat` by writing it out directly.
+Depending on your use case, you might be able to save some memory usage over
+`table.concat` by generating the result directly.
 
 ```lua
-
+for i=1,100000 do
+  io.stdout:write(i)
+end
 ```
-
-number formatting example

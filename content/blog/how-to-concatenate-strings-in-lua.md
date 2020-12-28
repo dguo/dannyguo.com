@@ -7,7 +7,7 @@ tags:
 title: How to Concatenate Strings in Lua
 ---
 
-The most straightforward way to concatenate strings in
+The most straightforward way to concatenate (or combine) strings in
 [Lua](https://www.lua.org/about.html) is to use the dedicated [string
 concatenation operator](https://www.lua.org/pil/3.4.html), which is two periods
 (`..`).

@@ -112,7 +112,8 @@ message = table.concat({1, 2, 3, 4, 5}, ", ")
 -- message equals "1, 2, 3, 4, 5"
 ```
 
-It can also take start and end indexes.
+It can also take start and end indexes. Keep in mind that Lua arrays [start with
+index 1](https://www.lua.org/pil/11.1.html).
 
 ```lua
 message = table.concat({1, 2, 3, 4, 5}, ", ", 2, 4)

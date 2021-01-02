@@ -8,30 +8,45 @@ tags:
 title: What I Learned by Relearning Html
 ---
 
-I made my first website in middle school as part of a class project. We learned
-some basic HTML. My favorite part was embedding a MP3 song.
-
-I didn't touch web development again until college. I made a lightweight news
-aggregator called The Daily Lore. The original version is
-[here](https://www.dailylore.com/legacy).
-
-I've made other websites professionally and on the side. But I realized that all
-my learning was done on the spot, in the process of making sites.
+I've been making websites for close to a decade now, both professionally and for
+side projects. One day, I reflected on the fact that all of my web development
+education has come in the middle of actually making websites. In most cases, I'd
+have a specific problem, I'd Google how to solve it, and I'd learn something new
+in the process.
 
 I wondered what I was missing by never actually learning HTML in a comprehensive
-way. Forget CSS and JavaScript. I'm just talking about raw HTML.
+way. Forget CSS and JavaScript. I'm just talking about raw HTML. It might seem
+laughable to go back to such a basic aspect of web development, but I've
+realized how easy it is to feel competent with a skill just because you can
+know it enough to do some useful things.
+
+So I resolved to relearn HTML and find out what I've been missing.
+
+## History
+
+For context, I made my first website in middle school for a class project. We
+learned basic HTML, and I felt like a wizard when I discovered that I could
+embed a MP3 song.
+
+But I didn't touch web development again until college. I made a lightweight
+news aggregator called [The Daily Lore](https://www.dailylore.com/). I preserved
+the original version [here](https://www.dailylore.com/legacy).
+
+Since then, I've worked on two websites professionally, one for a
+[non-profit](https://sublimefund.org/), and a few tiny ones for side projects.
 
 ## Introduction to HTML5
 
-I went through Coursera's [Introduction to
-HTML5](https://www.coursera.org/learn/html) course. I expected to know a lot of
-the content already, since the course was designed for complete beginners, and I
-had already done web development for a few years at that point.
+So I wouldn't consider myself to be extremely experienced, but I surely had more
+experience than the typical student for Coursera's [Introduction to
+HTML5](https://www.coursera.org/learn/html) course. I went in expecting to know
+a lot of the content already, since the course was designed for complete
+beginners.
 
-But it was surprising how much was new to me. I knew enough to make a seemingly
-functional website, but the course reminded me about the importance of using
-semantic elements and about techniques to improve accessibility, things I had
-never paid much attention to.
+I did in fact know a lot of the material already, but it was surprising how much
+was still new to me. I knew enough to make a seemingly functional website, but
+the course reminded me about the importance of using semantic elements and about
+techniques to improve accessibility, things I had never paid much attention to.
 
 Instead of semantic elements, I usually used a lot of generic divs to make what
 I needed. The course taught me that in a lot of cases, there are specific
@@ -67,6 +82,9 @@ top of that, there were many interesting details and attributes that I didn't
 know about.
 
 ## What I Learned
+
+The [address](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address)
+element is for contact information, not just physical, mailing addresses.
 
 ## Conclusion
 

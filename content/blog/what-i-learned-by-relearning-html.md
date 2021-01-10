@@ -17,10 +17,11 @@ in the process.
 I wondered what I was missing by never actually learning HTML in a comprehensive
 way. Forget CSS and JavaScript. I'm just talking about raw HTML. It might seem
 laughable to go back to such a basic aspect of web development after a
-nontrivial amount of experience, but I've realized how easy it is to feel
-competent with a skill just because you know enough to do a few useful things.
+nontrivial amount of experience, but it's easy to develop a misleading amount of
+confidence with a skill just because you know enough to do a few useful things.
 
-So I set out to relearn HTML and find out what I didn't know.
+So I set out to relearn HTML and discover my [unknown
+unknowns](https://en.wikipedia.org/wiki/There_are_known_knowns).
 
 ## Experience
 
@@ -64,29 +65,27 @@ images should have alt descriptions, and that was about it.
 I have a friend who is probably the only person I know who has read the entire
 [NFL rulebook](https://operations.nfl.com/the-rules) (the 2020 version is 87
 pages long). Watching football with him was fun because he was so good at
-understanding weird situations and how the referees would act. I figured there
-was a similar opportunity for me with HTML.
+understanding weird situations. I figured there was a similar opportunity for me
+with HTML.
 
-The exact equivalent would be to read the [HTML
+The exact equivalent would have been to read the [HTML
 standard](https://html.spec.whatwg.org/) for every HTML element, but I decided
-to read the MDN documentation instead.
+to read the [MDN
+documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) for
+every element instead. I read the entire page for each element, took notes, and
+made [Anki](https://apps.ankiweb.net/) cards for the bits that I wanted to
+commit to memory.
 
-I didn't intend to come out as a master of HTML. Rather, I generally find it
-incredibly useful just to be aware of what is out there. I can't recall all the
-details about using a `picture` element, but now that I know it exists, I can
-always look up the relevant details later.
+There were a lot of deprecated elements that I only skimmed through, and I
+didn't bother to take notes for those. But there were still dozens of standard
+elements and attributes that were new to me.
 
-It's a categorical difference from not being aware of it at all.
-
-I read the entire page for each one, took notes, and made Anki cards from the
-notes.
-
-There are a lot of deprecated elements that I only skimmed through and didn't
-bother to take notes.
-
-But even then, there were dozens of elements that I had never used before. On
-top of that, there were many interesting details and attributes that I didn't
-know about.
+I didn't intend to come out of this experience as a master of HTML. I still have
+to apply what I've learned to actual websites. But I find it useful just to be
+aware of what is out there. I can't recall all the details about using a
+`picture` element, but now that I know it exists, I can always look up the
+relevant details later. It's a categorical difference from not being aware of it
+at all.
 
 ## What I Learned
 
@@ -95,9 +94,9 @@ element is for contact information, not just physical, mailing addresses.
 
 ## Conclusion
 
-It was easy to feel confident about HTML after doing web development for a few
-years, but there was tremendous value in going back to learn it in a somewhat
-more rigorous manner.
+It was easy to feel confident about HTML after doing web development for several
+years, but there was tremendous value in going back to learn it in a more
+rigorous manner.
 
 I still think learning by doing can be a great method, but this experience has
 made me want to go back and learn other things with a bottom up approach.

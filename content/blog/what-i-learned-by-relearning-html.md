@@ -16,56 +16,63 @@ in the process.
 
 I wondered what I was missing by never actually learning HTML in a comprehensive
 way. Forget CSS and JavaScript. I'm just talking about raw HTML. It might seem
-laughable to go back to such a basic aspect of web development, but I've
-realized how easy it is to feel competent with a skill just because you can
-know it enough to do some useful things.
+laughable to go back to such a basic aspect of web development after a
+nontrivial amount of experience, but I've realized how easy it is to feel
+competent with a skill just because you know enough to do a few useful things.
 
-So I resolved to relearn HTML and find out what I've been missing.
+So I set out to relearn HTML and find out what I didn't know.
 
-## History
+## Experience
 
 For context, I made my first website in middle school for a class project. We
 learned basic HTML, and I felt like a wizard when I discovered that I could
 embed a MP3 song.
 
-But I didn't touch web development again until college. I made a lightweight
-news aggregator called [The Daily Lore](https://www.dailylore.com/). I preserved
-the original version [here](https://www.dailylore.com/legacy).
+I didn't touch web development again until college. I made a lightweight news
+aggregator called [The Daily Lore](https://www.dailylore.com/) that's still
+running (I preserved what it originally looked like
+[here](https://www.dailylore.com/legacy)).
 
-Since then, I've worked on two websites professionally, one for a
-[non-profit](https://sublimefund.org/), and a few tiny ones for side projects.
+Since then, I've worked on two websites professionally, one website for a
+[nonprofit](https://sublimefund.org/), and a few tiny websites for side
+projects.
 
 ## Introduction to HTML5
 
-So I wouldn't consider myself to be extremely experienced, but I surely had more
-experience than the typical student for Coursera's [Introduction to
-HTML5](https://www.coursera.org/learn/html) course. I went in expecting to know
-a lot of the content already, since the course was designed for complete
-beginners.
+I wouldn't consider myself to be a web development expert, but I surely had way
+more experience than the typical student for
+[Coursera](https://www.coursera.org/)'s [Introduction to
+HTML5](https://www.coursera.org/learn/html) course. So I started the course
+expecting to know a lot of the content already, especially since the course was
+designed for complete beginners with no programming backgrounds.
 
-I did in fact know a lot of the material already, but it was surprising how much
-was still new to me. I knew enough to make a seemingly functional website, but
-the course reminded me about the importance of using semantic elements and about
-techniques to improve accessibility, things I had never paid much attention to.
+As I went through the course, I did in fact know a lot of the material already,
+but I was surprised by how much was still new to me. I knew enough to make a
+functional website, but the course reminded me about the importance of using
+semantic elements and about techniques to improve accessibility, things I had
+never paid much attention to.
 
 Instead of semantic elements, I usually used a lot of generic divs to make what
 I needed. The course taught me that in a lot of cases, there are specific
 elements to use to represent specific content.
 
-Accessibility was also something I had never considered. I knew that images
-should have alt descriptions, and that was about it.
+Accessibility was also something I had never considered in depth. I knew that
+images should have alt descriptions, and that was about it.
 
 ## Reading the Documentation
 
-I wondered how much else I wasn't even aware of. So I decided to read the MDN
-documentation for every HTML element. I have a friend who is probably the only
-person I know who has read the entire NFL rulebook. Watching football with him
-was fun because he was so much better than me at understanding weird cases and
-how the referees would act. I figured there was a similar opportunity for me
-with HTML.
+I have a friend who is probably the only person I know who has read the entire
+[NFL rulebook](https://operations.nfl.com/the-rules) (the 2020 version is 87
+pages long). Watching football with him was fun because he was so good at
+understanding weird situations and how the referees would act. I figured there
+was a similar opportunity for me with HTML.
 
-I didn't intend to come out as a master of HTML. Rather, I generally find it be
-incredibly useful just be aware of what is out there. I can't recall all the
+The exact equivalent would be to read the [HTML
+standard](https://html.spec.whatwg.org/) for every HTML element, but I decided
+to read the MDN documentation instead.
+
+I didn't intend to come out as a master of HTML. Rather, I generally find it
+incredibly useful just to be aware of what is out there. I can't recall all the
 details about using a `picture` element, but now that I know it exists, I can
 always look up the relevant details later.
 

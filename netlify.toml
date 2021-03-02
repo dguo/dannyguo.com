@@ -19,6 +19,11 @@
   status = 301
 
 [[redirects]]
+  from = "/react-with-fuse-demo"
+  to = "https://dguo.github.io/react-with-fuse-demo/"
+  status = 302
+
+[[redirects]]
   from = "/web-worker-demo"
   to = "https://dguo.github.io/web-worker-demo/"
   status = 302

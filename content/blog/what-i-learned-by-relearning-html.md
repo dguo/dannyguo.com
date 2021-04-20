@@ -8,17 +8,17 @@ tags:
 title: What I Learned by Relearning Html
 ---
 
-I've been making websites for close to a decade now, both professionally and for
-side projects. One day, I reflected on the fact that all of my web development
-education has come in the middle of actually making websites. In most cases, I'd
-have a specific problem, Google how to solve it, and learn something new in the
+I've worked on websites for several years, both professionally and for side
+projects. One day, I reflected on the fact that all of my web development
+education has come from actually making websites. In most cases, I'd have a
+specific problem, Google how to solve it, and learn something new in the
 process.
 
 I wondered what I was missing by never learning HTML in a comprehensive way.
 Forget CSS and JavaScript. I'm just talking about raw HTML. It might seem
-laughable to go back to such a basic aspect of web development after a
-nontrivial amount of experience, but it's easy to develop a misleading amount of
-confidence with a skill just because you know enough to do a few useful things.
+laughable to go back to such a basic aspect of web development after a decent
+amount of experience, but it's easy to become overconfident with a skill just
+because you know enough to do a few useful things.
 
 So I set out to relearn HTML and discover my [unknown
 unknowns](https://en.wikipedia.org/wiki/There_are_known_knowns).
@@ -38,11 +38,11 @@ projects.
 ## Introduction to HTML5
 
 Based just on that experience, I wouldn't consider myself to be a web
-development expert, but I surely had far more experience than the typical
-student for [Coursera](https://www.coursera.org/)'s [Introduction to
+development expert, but I surely had far more knowledge than the typical student
+for [Coursera](https://www.coursera.org/)'s [Introduction to
 HTML5](https://www.coursera.org/learn/html) course. I started the course
-expecting to know a lot of the content already, since the course was designed
-for complete beginners with no programming backgrounds.
+expecting to know a lot of the content already, since it was designed for
+complete beginners with no programming backgrounds.
 
 As I went through the material, I did in fact know a lot of it already, but I
 was surprised by how much was still new to me. I knew enough to make a
@@ -50,26 +50,24 @@ functional website, but the course reminded me about the importance of using
 semantic elements and about techniques to improve accessibility, things I had
 never paid much attention to.
 
-Instead of semantic elements, I tend to use plenty of generic divs to make what
-I need. The course taught me that in many cases, there are specific elements to
-use to represent specific content.
+Instead of semantic elements, I tend to use generic divs to make what I need.
+The course taught me that in many cases, there are specific elements to use to
+represent specific content.
 
 Accessibility was also something I had never considered in depth. I knew that
 images should have `alt` descriptions, and that was about it. One of the key
-points of the course was that using the apprpriate semantic elements is an
+points of the course is that using the appropriate semantic elements is an
 important aspect of making a site more accessible.
 
-For example, people who use screen readers can jump around using heading elements
-(`h1` through `h6`), so it's important to use them and make sure they're in the
-correct order. It's wrong to use them just to make text bigger. They have
-meaning in defining the layout of the content.
+For example, people who use screen readers can jump around using heading
+elements (`h1` through `h6`), so it's important to use them and make sure
+they're in the correct order. It's wrong to use them just to make text bigger.
+They have meaning in terms of defining the layout of the content.
 
-You could accomplish the same thing visually by using `p` tags and using CSS to
-make higher elements larger font sizes. It could be identical from a visual
-perspective. But it'd be much less semantic and accessible as a result.
-
-There is a lot more to HTML and web development than making things look the way
-we want. It's important to make them mean what we want as well.
+You could use `p` tags and alter their font sizes with CSS to create a website
+that looks identical, but it'd be less semantic and less accessible than the one
+that uses proper headings. There is more to web development than making websites
+look the way we want. It's important to make them mean what we want as well.
 
 ## Reading the Documentation
 
@@ -87,28 +85,26 @@ every element instead. I read the entire page for each element, took notes, and
 made [Anki](https://apps.ankiweb.net/) cards for the bits that I wanted to
 commit to memory.
 
-There were a lot of deprecated elements that I only skimmed through, and I
-didn't bother to take notes for those. But there were still dozens of standard
+There were many deprecated elements that I only skimmed through, and I didn't
+bother to take notes for those. But there were still dozens of standardized
 elements and attributes that were totally new to me.
 
-I didn't intend to come out of this experience as a master of HTML. I still have
-to apply what I've learned to actual websites. But I find it useful just to be
-aware of what is out there. Even though I can't recall all the details about
-using a `picture` element, I know it exists now, I can always look up the
-relevant details later during implementation. It's a categorical difference from
-not being aware of it at all and using `img` everywhere because I don't know any
-better.
+I didn't intend to come out of this experience as a master of HTML, and I still
+have to apply what I've learned. But I find it useful just to be aware of what
+is available. Even though I can't recall all the details about using a `picture`
+element, I know it exists now, and I can always look up the relevant details
+later during implementation. It's a categorical difference from not being aware
+of it at all and using `img` everywhere because I don't know any better.
 
 ## What I Learned
 
 The [address](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address)
-element is for contact information, not just physical, mailing addresses.
+element is for contact information, not just physical mailing addresses.
 
 ## Conclusion
 
-It was easy to feel confident about HTML after doing web development for several
-years, but there was tremendous value in going back to learn it in a more
-rigorous manner.
-
-While I still think learning by doing is highly effective, this experience has
-made me want to go back and learn other things with a bottom up approach.
+It was easy to feel confident with HTML after doing web development for several
+years, but I found plenty of value in going back to learn it in a more rigorous
+manner. While I still think learning by doing is highly effective, this
+experience has made me want to go back and learn other things with a bottom up
+approach.

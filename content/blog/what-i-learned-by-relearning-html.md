@@ -70,6 +70,15 @@ to create a website that looks identical, but it'd be less semantic and less
 accessible. There is more to web development than making websites look the way
 we want. It's important to make the content *mean* what we want as well.
 
+Accessibility also involves more than just improving how websites work with
+screen readers. We also need to consider font size, font style, color contrast,
+people not being to recognize that audio is playing, people tabbing through a
+page, a page having too much information, and animations that make the page
+layout change as someone is trying to interact with it.
+
+Improving accessibility also goes hand in hand with search engine optimization
+and usability. Improve one, and you can improve all the others.
+
 ## Reading the Documentation
 
 I have a friend who is probably the only person I know who has read the entire
@@ -100,7 +109,47 @@ of it at all and using `img` everywhere because I don't know any better.
 ## What I Learned
 
 The [address](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address)
-element is for contact information, not just physical mailing addresses.
+element is for contact information in general, not just physical mailing
+addresses.
+
+There are a few elements that seem unnecessary. The
+[legend](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend)
+element represents a caption for a
+[fieldset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
+element, the
+[caption](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption)
+element represents a caption for a
+[table](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
+element, and the
+[figcaption](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption)
+element represents a caption for a
+[figure](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
+element. I don't know why one element couldn't do the job for all three, since
+the meaning could be derived from the parent element.
+
+Some elements are difficult to style, such as the
+[select](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
+element.
+
+Wikipedia is the perfect site for what HTML was really designed for: mostly
+static documents. There are a few elements and attributes that are intended to
+make things possible without needing JavaScript. For example, the
+[details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
+element creates a widget that can toggled between an open and closed state.
+
+Bootstrap's progress bar [doesn't
+use](https://getbootstrap.com/docs/5.0/components/progress/) the HTML
+[progress](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
+element.
+
+<!-- markdownlint-disable no-inline-html -->
+> We don’t use the HTML5 <progress> element, ensuring you can stack progress
+> bars, animate them, and place text labels over them.
+<!-- markdownlint-enable no-inline-html -->
+
+The [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+element is one of the most complex elements because of how many input types and
+attributes it supports.
 
 ## Conclusion
 

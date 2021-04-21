@@ -32,8 +32,9 @@ web development again until college. I made a lightweight news aggregator called
 what it originally looked like [here](https://www.dailylore.com/legacy)).
 
 Since then, I've worked on two websites professionally, one website for a
-[nonprofit](https://sublimefund.org/), and a few tiny websites for side
-projects.
+[nonprofit](https://sublimefund.org/), this personal website, and a few small
+websites for side projects, such as [Make a
+README](https://www.makeareadme.com/).
 
 ## Introduction to HTML5
 
@@ -44,30 +45,30 @@ HTML5](https://www.coursera.org/learn/html) course. I started the course
 expecting to know a lot of the content already, since it was designed for
 complete beginners with no programming backgrounds.
 
-As I went through the material, I did in fact know a lot of it already, but I
-was surprised by how much was still new to me. I knew enough to make a
-functional website, but the course reminded me about the importance of using
-semantic elements and about techniques to improve accessibility, things I had
-never paid much attention to.
+As I went through the material, I did in fact know a lot of it already, but it
+was still a good refresher for two points in particular: the importance of using
+semantic elements and what to think about in terms of accessibility.
 
-Instead of semantic elements, I tend to use generic divs to make what I need.
-The course taught me that in many cases, there are specific elements to use to
-represent specific content.
+I've always had a bad habit of using generic `div`s to make what I need, rather
+than semantic elements that represent specific content, like the
+[header](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header) and
+[footer](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer)
+elements.
 
 Accessibility was also something I had never considered in depth. I knew that
 images should have `alt` descriptions, and that was about it. One of the key
-points of the course is that using the appropriate semantic elements is an
-important aspect of making a site more accessible.
+points of the course is that using the appropriate semantic elements is
+important to making a site more accessible.
 
 For example, people who use screen readers can jump around using heading
 elements (`h1` through `h6`), so it's important to use them and make sure
 they're in the correct order. It's wrong to use them just to make text bigger.
 They have meaning in terms of defining the layout of the content.
 
-You could use `p` tags and alter their font sizes with CSS to create a website
-that looks identical, but it'd be less semantic and less accessible than the one
-that uses proper headings. There is more to web development than making websites
-look the way we want. It's important to make them mean what we want as well.
+Instead of headings, we could use `p` tags and alter their font sizes with CSS
+to create a website that looks identical, but it'd be less semantic and less
+accessible. There is more to web development than making websites look the way
+we want. It's important to make the content *mean* what we want as well.
 
 ## Reading the Documentation
 
@@ -106,5 +107,5 @@ element is for contact information, not just physical mailing addresses.
 It was easy to feel confident with HTML after doing web development for several
 years, but I found plenty of value in going back to learn it in a more rigorous
 manner. While I still think learning by doing is highly effective, this
-experience has made me want to go back and learn other things with a bottom up
+experience has made me want to go back and relearn other things with a bottom up
 approach.

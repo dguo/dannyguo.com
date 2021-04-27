@@ -1,7 +1,7 @@
 ---
 categories:
-  - education
-date:
+  - programming
+date: 2021-04-27
 draft: true
 tags:
   - html
@@ -56,28 +56,35 @@ than semantic elements that represent specific content, like the
 elements.
 
 Accessibility was also something I had never considered in depth. I knew that
-images should have `alt` descriptions, and that was about it. One of the key
-points of the course is that using the appropriate semantic elements is
-important to making a site more accessible.
+images should have `alt` descriptions, and that was about it. One of the
+course's key points is that using the appropriate semantic elements is important
+to making a site more accessible.
 
 For example, people who use screen readers can jump around using heading
 elements (`h1` through `h6`), so it's important to use them and make sure
-they're in the correct order. It's wrong to use them just to make text bigger.
-They have meaning in terms of defining the layout of the content.
+they're in the correct order. It's wrong to use them just to make text bigger
+because they have meaning in terms of defining the content structure.
 
 Instead of headings, we could use `p` tags and alter their font sizes with CSS
 to create a website that looks identical, but it'd be less semantic and less
 accessible. There is more to web development than making websites look the way
 we want. It's important to make the content *mean* what we want as well.
 
-Accessibility also involves more than just improving how websites work with
-screen readers. We also need to consider font size, font style, color contrast,
-people not being to recognize that audio is playing, people tabbing through a
-page, a page having too much information, and animations that make the page
-layout change as someone is trying to interact with it.
+Accessibility isn't just about improving how websites work with screen readers.
+We should think about font size, font style, and color contrast for people who
+have visual impairments or color blindness. We should consider that people who
+have hearing loss may have a harder time recognizing that audio or video is
+playing. We should make tab navigation work well for people who rely primarily
+on the keyboard, perhaps because they have a difficult time using a mouse. When
+we add animations, we should take care to avoid ones that make it more difficult
+for someone to actually use the website, such as ones that change the page
+layout in the middle of interactions. And we should consider when a page is
+overloaded with too much information, making it hard for people to understand
+things.
 
-Improving accessibility also goes hand in hand with search engine optimization
-and usability. Improve one, and you can improve all the others.
+Improving accessibility goes hand in hand with usability and search engine
+optimization. The course points out that improving one frequently means
+improving all the others.
 
 ## Reading the Documentation
 
@@ -96,23 +103,58 @@ made [Anki](https://apps.ankiweb.net/) cards for the bits that I wanted to
 commit to memory.
 
 There were many deprecated elements that I only skimmed through, and I didn't
-bother to take notes for those. But there were still dozens of standardized
-elements and attributes that were totally new to me.
+bother to take notes for those, but dozens of standardized elements and
+attributes were totally new to me.
 
 I didn't intend to come out of this experience as a master of HTML, and I still
-have to apply what I've learned. But I find it useful just to be aware of what
-is available. Even though I can't recall all the details about using a `picture`
-element, I know it exists now, and I can always look up the relevant details
-later during implementation. It's a categorical difference from not being aware
-of it at all and using `img` everywhere because I don't know any better.
+have to apply what I've learned (including to this website), but I find it
+useful just to be aware of what is available. Even though I can't recall all the
+details about using a
+[picture](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
+element, I know it exists now, and I can always look up the details later during
+implementation. It's a categorical difference from not being aware of it at all
+and using a plain `img` everywhere because I don't know any better.
 
-## What I Learned
+## Observations
+
+As I read the documentation, some things were particularly interesting to me,
+and I had some observations.
 
 The [address](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address)
 element is for contact information in general, not just physical mailing
 addresses.
 
-There are a few elements that seem unnecessary. The
+The [definition](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn)
+element represents the term that is being defined, rather than the definition
+itself.
+
+There is a whole set of
+[ruby](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby) elements
+that are primarily used to show the pronunciations of East Asian characters.
+
+The [track](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track)
+element provides a standard way to embed timed text tracks for video and audio.
+I had never heard of the
+[WebVTT](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API) (web video
+text tracks) format before.
+
+The [map](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map) element
+seems like an anachronism.
+
+The [data](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data)
+element provides a machine-readable translation for content. This seems likes it
+could help screen scraping, something that websites are actively trying to
+prevent more and more often.
+
+There's a fair amount of subtlety in terms of when to use
+[strong](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong) vs.
+[em](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em) vs.
+[i](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i) vs.
+[u](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u) vs.
+[b](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b) vs.
+[mark](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark).
+
+There are a few elements that seem redundant. The
 [legend](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend)
 element represents a caption for a
 [fieldset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
@@ -127,13 +169,28 @@ element represents a caption for a
 element. I don't know why one element couldn't do the job for all three, since
 the meaning could be derived from the parent element.
 
-Some elements are difficult to style, such as the
+### Browser Support
+
+The [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+element is one of the most complex elements because it supports so many
+combinations of input types and attributes. Browser support is correspondingly
+patchy.
+
+Some elements are also difficult to style, such as the
 [select](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
 element.
 
+A website developer may want to rely on standard functionality instead of using
+a library or implementing it themselves, but then they have to worry about it
+not working well in certain browsers. Or they have to worry about inconsistency
+with the website's design. Sure, you could argue that platform consistency is
+more important.
+
+### Interactivity
+
 Wikipedia is the perfect site for what HTML was really designed for: mostly
 static documents. There are a few elements and attributes that are intended to
-make things possible without needing JavaScript. For example, the
+make interactivity possible without JavaScript. For example, the
 [details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 element creates a widget that can toggled between an open and closed state.
 
@@ -147,9 +204,8 @@ element.
 > bars, animate them, and place text labels over them.
 <!-- markdownlint-enable no-inline-html -->
 
-The [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
-element is one of the most complex elements because of how many input types and
-attributes it supports.
+Tables can be pretty sophisticated. But there's still no built-in support for
+sorting and pagination.
 
 ## Conclusion
 

@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2021-04-27
+date: 2021-04-28
 draft: true
 tags:
   - html
@@ -10,17 +10,17 @@ title: What I Learned by Relearning Html
 
 I've worked on websites for several years, both professionally and for side
 projects. One day, I reflected on the fact that all of my web development
-education has come from actually making websites. In most cases, I'd have a
+education had come from actually making websites. In most cases, I'd have a
 specific problem, Google how to solve it, and learn something new in the
 process.
 
 I wondered what I was missing by never learning HTML in a comprehensive way.
 Forget CSS and JavaScript. I'm just talking about raw HTML. It might seem
-laughable to go back to such a basic aspect of web development after a decent
+silly to go back to such a basic aspect of web development after a decent
 amount of experience, but it's easy to become overconfident with a skill just
 because you know enough to do a few useful things.
 
-So I set out to relearn HTML and discover my [unknown
+So I decided to relearn HTML and discover my [unknown
 unknowns](https://en.wikipedia.org/wiki/There_are_known_knowns).
 
 ## Experience
@@ -29,7 +29,7 @@ For context, I made my first website in middle school for a class project. We
 learned basic HTML, and embedding a MP3 song felt like magic. But I didn't touch
 web development again until college. I made a lightweight news aggregator called
 [The Daily Lore](https://www.dailylore.com/) that's still running (I preserved
-what it originally looked like [here](https://www.dailylore.com/legacy)).
+the [original version](https://www.dailylore.com/legacy)).
 
 Since then, I've worked on two websites professionally, one website for a
 [nonprofit](https://sublimefund.org/), this personal website, and a few small
@@ -38,9 +38,9 @@ README](https://www.makeareadme.com/).
 
 ## Introduction to HTML5
 
-Based just on that experience, I wouldn't consider myself to be a web
-development expert, but I surely had far more knowledge than the typical student
-for [Coursera](https://www.coursera.org/)'s [Introduction to
+I don't consider myself to be a web development expert based on just that
+experience, but I surely had far more knowledge than the typical student for
+[Coursera](https://www.coursera.org/)'s [Introduction to
 HTML5](https://www.coursera.org/learn/html) course. I started the course
 expecting to know a lot of the content already, since it was designed for
 complete beginners with no programming backgrounds.
@@ -49,8 +49,8 @@ As I went through the material, I did in fact know a lot of it already, but it
 was still a good refresher for two points in particular: the importance of using
 semantic elements and what to think about in terms of accessibility.
 
-I've always had a bad habit of using generic `div`s to make what I need, rather
-than semantic elements that represent specific content, like the
+I've always had a bad habit of using generic `<div>` elements to make what I
+need, rather than semantic elements that represent specific content, like the
 [header](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header) and
 [footer](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer)
 elements.
@@ -60,13 +60,14 @@ images should have `alt` descriptions, and that was about it. One of the
 course's key points is that using the appropriate semantic elements is important
 to making a site more accessible.
 
-For example, people who use screen readers can jump around using heading
-elements (`h1` through `h6`), so it's important to use them and make sure
+For example, people who use screen readers can jump around using
+[heading](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)
+elements (`<h1>` through `<h6>`), so it's important to use them and make sure
 they're in the correct order. It's wrong to use them just to make text bigger
-because they have meaning in terms of defining the content structure.
+because their purpose is to define the structure of the content.
 
-Instead of headings, we could use `p` tags and alter their font sizes with CSS
-to create a website that looks identical, but it'd be less semantic and less
+Instead of headings, we could use `<p>` elements and alter their font sizes with
+CSS to create a website that looks identical, but it'd be less semantic and less
 accessible. There is more to web development than making websites look the way
 we want. It's important to make the content *mean* what we want as well.
 
@@ -77,14 +78,15 @@ have hearing loss may have a harder time recognizing that audio or video is
 playing. We should make tab navigation work well for people who rely primarily
 on the keyboard, perhaps because they have a difficult time using a mouse. When
 we add animations, we should take care to avoid ones that make it more difficult
-for someone to actually use the website, such as ones that change the page
+for someone to actually use the website, such as animations that change the page
 layout in the middle of interactions. And we should consider when a page is
-overloaded with too much information, making it hard for people to understand
-things.
+overloaded with too much information or too many elements, making it hard for
+people to understand things or how to actually use the website.
 
-Improving accessibility goes hand in hand with usability and search engine
-optimization. The course points out that improving one frequently means
-improving all the others.
+It's easy to forget about accessibility, but we should strive to make websites
+work well for as many people as possible. Accessibility also goes hand in hand
+with usability and search engine optimization. The course points out that
+improving one frequently means improving all the others.
 
 ## Reading the Documentation
 
@@ -139,12 +141,14 @@ I had never heard of the
 text tracks) format before.
 
 The [map](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map) element
-seems like an anachronism.
+seems like an anachronism, considering that it isn't responsive, and I
+rarely see images being used for links anymore.
 
 The [data](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data)
 element provides a machine-readable translation for content. This seems likes it
-could help screen scraping, something that websites are actively trying to
-prevent more and more often.
+could help screen scraping, which some websites like [LinkedIn have been
+actively trying to
+prevent](https://www.theverge.com/2019/9/10/20859399/linkedin-hiq-data-scraping-cfaa-lawsuit-ninth-circuit-ruling).
 
 There's a fair amount of subtlety in terms of when to use
 [strong](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong) vs.
@@ -188,11 +192,12 @@ more important.
 
 ### Interactivity
 
-Wikipedia is the perfect site for what HTML was really designed for: mostly
-static documents. There are a few elements and attributes that are intended to
-make interactivity possible without JavaScript. For example, the
+Wikipedia is the perfect website for what HTML was originally designed for:
+static documents that are connected through hyperlinks. HTML now has some
+elements and attributes that are intended to make interactivity possible without
+JavaScript. For example, the
 [details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
-element creates a widget that can toggled between an open and closed state.
+element creates a widget that can be toggled between open and closed states.
 
 Bootstrap's progress bar [doesn't
 use](https://getbootstrap.com/docs/5.0/components/progress/) the HTML

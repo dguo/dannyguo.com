@@ -15,6 +15,7 @@ title: Danny Guo · Projects
 * [format-stripe-metadata](https://github.com/sublimefund/format-stripe-metadata) - Ensure that [Stripe metadata](https://stripe.com/docs/api#metadata) is valid
 * [sleep-ts](https://github.com/dguo/sleep-ts) - Pause JavaScript execution using Promises and flexible time formats
 * [strsim-rs](https://github.com/dguo/strsim-rs) - Rust implementations of [string similarity metrics](https://en.wikipedia.org/wiki/String_metric)
+* [sunrise-sunset-js](https://github.com/dguo/sunrise-sunset-js) - JavaScript client for the [Sunrise-Sunset API](https://sunrise-sunset.org/api)
 
 ## Applications
 

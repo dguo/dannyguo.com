@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2021-04-28
+date: 2021-05-06
 draft: true
 tags:
   - html
@@ -64,7 +64,8 @@ For example, people who use screen readers can jump around using
 [heading](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)
 elements (`<h1>` through `<h6>`), so it's important to use them and make sure
 they're in the correct order. It's wrong to use them just to make text bigger
-because their purpose is to define the structure of the content.
+because their purpose is to define the structure of the content, just like a
+table of contents.
 
 Instead of headings, we could use `<p>` elements and alter their font sizes with
 CSS to create a website that looks identical, but it'd be less semantic and less
@@ -93,16 +94,17 @@ improving one frequently means improving all the others.
 I have a friend who is probably the only person I know who has read the entire
 [NFL rulebook](https://operations.nfl.com/the-rules) (the 2020 version is 87
 pages long). Watching football with him was fun because he was so good at
-understanding weird situations. I figured there was a similar opportunity for me
-with HTML.
+understanding nuances to the game and weird situations. I figured there was a
+similar opportunity for me with HTML.
 
 The strict equivalent would have been to read the [HTML
 standard](https://html.spec.whatwg.org/) for every HTML element, but I decided
 to read the [MDN
 documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) for
-every element instead. I read the entire page for each element, took notes, and
-made [Anki](https://apps.ankiweb.net/) cards for the bits that I wanted to
-commit to memory.
+every element instead since MDN has a lot of information about browser
+compatibility and using elements in practice. I read the entire page for each
+element, took notes, and made [Anki](https://apps.ankiweb.net/) cards for the
+bits that I wanted to commit to memory.
 
 There were many deprecated elements that I only skimmed through, and I didn't
 bother to take notes for those, but dozens of standardized elements and
@@ -115,7 +117,7 @@ details about using a
 [picture](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
 element, I know it exists now, and I can always look up the details later during
 implementation. It's a categorical difference from not being aware of it at all
-and using a plain `img` everywhere because I don't know any better.
+and using a plain `<img>` for all cases because I don't know any better.
 
 ## Observations
 
@@ -137,12 +139,11 @@ that are primarily used to show the pronunciations of East Asian characters.
 The [track](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track)
 element provides a standard way to embed timed text tracks for video and audio.
 I had never heard of the
-[WebVTT](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API) (web video
-text tracks) format before.
+[WebVTT](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API) (Web Video
+Text Tracks) format before.
 
 The [map](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map) element
-seems like an anachronism, considering that it isn't responsive, and I
-rarely see images being used for links anymore.
+seems like an anachronism, especially considering that it isn't responsive.
 
 The [data](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data)
 element provides a machine-readable translation for content. This seems likes it
@@ -150,12 +151,12 @@ could help screen scraping, which some websites like [LinkedIn have been
 actively trying to
 prevent](https://www.theverge.com/2019/9/10/20859399/linkedin-hiq-data-scraping-cfaa-lawsuit-ninth-circuit-ruling).
 
-There's a fair amount of subtlety in terms of when to use
-[strong](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong) vs.
-[em](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em) vs.
-[i](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i) vs.
-[u](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u) vs.
-[b](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b) vs.
+There's subtlety when it comes to correctly choosing to use
+[strong](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong)
+versus [em](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em) versus
+[i](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i) versus
+[u](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u) versus
+[b](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b) versus
 [mark](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark).
 
 There are a few elements that seem redundant. The
@@ -173,7 +174,23 @@ element represents a caption for a
 element. I don't know why one element couldn't do the job for all three, since
 the meaning could be derived from the parent element.
 
-### Browser Support
+### The Future of HTML
+
+As I read through the documentation, it kept making me consider the question of
+how HTML should evolve, given that the browser keeps gaining more and more
+functionality, to the point that it's becoming an operating system in itself.
+There's even an experimental [API for connecting to Bluetooth
+devices](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API).
+
+Wikipedia is the perfect website for what HTML was originally designed for:
+static documents that are connected through hyperlinks. But now we use the
+browser to deliver full on applications, like [Figma](https://www.figma.com/).
+
+HTML now has some
+elements and attributes that are intended to make interactivity possible without
+JavaScript. For example, the
+[details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
+element creates a widget that can be toggled between open and closed states.
 
 The [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
 element is one of the most complex elements because it supports so many
@@ -184,20 +201,20 @@ Some elements are also difficult to style, such as the
 [select](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
 element.
 
-A website developer may want to rely on standard functionality instead of using
-a library or implementing it themselves, but then they have to worry about it
-not working well in certain browsers. Or they have to worry about inconsistency
-with the website's design. Sure, you could argue that platform consistency is
-more important.
+Website developers may want to rely on standard functionality instead of using a
+library or implementing a feature themselves, but then they have to worry about
+it not working well in certain browsers or stylistic inconsistency with the
+rest of the website.
 
-### Interactivity
-
-Wikipedia is the perfect website for what HTML was originally designed for:
-static documents that are connected through hyperlinks. HTML now has some
-elements and attributes that are intended to make interactivity possible without
-JavaScript. For example, the
-[details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
-element creates a widget that can be toggled between open and closed states.
+I'm interested to see if [Web
+Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) become
+more popular. If they do, the situation could be like a programming language,
+where different languages take difference stances on the question of how much
+functionality should be included in the standard library rather than relying on
+third party libraries. [GitHub](https://github.com) has [started to use Web
+Components](https://github.blog/2021-05-04-how-we-use-web-components-at-github/),
+and they publish their components to
+[WebComponents.org](https://www.webcomponents.org/).
 
 Bootstrap's progress bar [doesn't
 use](https://getbootstrap.com/docs/5.0/components/progress/) the HTML

@@ -177,7 +177,7 @@ the meaning could be derived from the parent element.
 ### The Future of HTML
 
 As I read through the documentation, it kept making me consider the question of
-how HTML should evolve. Browsers keeps gaining more and more functionality, to
+how HTML should evolve. Browsers keep gaining more and more functionality, to
 the point that they are becoming more like operating systems.  There's even an
 experimental [API for connecting to Bluetooth
 devices](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API).

@@ -1,6 +1,11 @@
 ---
-unlisted: true
-title: What I Learned by Relearning Html
+categories:
+  - programming
+date: 2021-05-07
+tags:
+  - html
+  - education
+title: What I Learned by Relearning HTML
 ---
 
 I've worked on websites for several years, both professionally and for side
@@ -86,11 +91,11 @@ improving one frequently means improving all the others.
 
 ## Reading the Documentation
 
-I have a friend who is probably the only person I know who has read the entire
-[NFL rulebook](https://operations.nfl.com/the-rules) (the 2020 version is 87
-pages long). Watching football with him was fun because he was so good at
-understanding nuances to the game and weird situations. I figured there was a
-similar opportunity for me with HTML.
+I have a [friend](https://azeemba.com/) who is probably the only person I know
+who has read the entire [NFL rulebook](https://operations.nfl.com/the-rules)
+(the 2020 version is 87 pages long). Watching football with him was fun because
+he was so good at understanding nuances to the game and weird situations. I
+figured there was a similar opportunity for me with HTML.
 
 The strict equivalent would have been to read the [HTML
 standard](https://html.spec.whatwg.org/) for every HTML element, but I decided

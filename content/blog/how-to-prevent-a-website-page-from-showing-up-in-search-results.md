@@ -1,11 +1,10 @@
 ---
 categories:
   - programming
-date: 2021-05-09
-draft: true
+date: 2021-05-11
 tags:
   - seo
-title: How to Prevent a Page From Showing Up in Search Results
+title: How to Prevent a Website Page From Showing Up in Search Results
 ---
 
 To prevent a website page from showing up in search results, either set a
@@ -45,34 +44,47 @@ The `robots.txt` file is for controlling *crawling*, not *indexing*.
 
 ## Directives
 
-Besides `noindex`, you can send other directive values. However, not all
-crawlers support the same set of values.
+There are many possible directive values, and you can specify more than one by
+separating them with commas:
 
+* `all`: no restrictions (the default behavior)
 * `noindex`: exclude the page from search results
 * `nofollow`: don't follow the links in the page
 * `none`: the same as `noindex, nofollow`
-* `noarchive` or `nocache`: don't allow the search result to link to a cached
-  version of the page
-* `nosnippet`: don't show a snippet or video preview of the page in search
-  results
+* `noarchive` or `nocache`: don't link to a cached version of the page
+* `nosnippet`: don't show a description, snippet, thumbnail, or video preview of
+  the page in search results
+* `max-snippet:[length]`: limit a snippet to `[length]` number of characters
+* `max-image-preview:[setting]`: set an image preview's maximum size, where
+  `[setting]` can be `none`, `standard`, or `large`
+* `max-video-preview:[length]`: limit a video preview to `[length]` number of
+  seconds
+* `notranslate`: don't link to a translation of the page
+* `noimageindex`: don't index images on the page
+* `unavailable_after:[datetime]`: exclude the page from search results after
+  `[datetime]`, which should be in a standard format, such as [ISO
+  8601](https://en.wikipedia.org/wiki/ISO_8601)
 
-Check out [this documentation for which ones Google
-supports](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives)
-and [this documentation for which ones Bing
-supports](https://www.bing.com/webmasters/help/which-robots-metatags-does-bing-support-5198d240).
+However, not all crawlers support all values. For example, check out [this
+documentation for
+Google](https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives),
+[this documentation for
+Bing](https://www.bing.com/webmasters/help/which-robots-metatags-does-bing-support-5198d240),
+and [this documentation for
+Yandex](https://yandex.com/support/webmaster/controlling-robot/meta-robots.html).
 
 ## Specifying Crawlers
 
-If you want different directives based on the specific crawler, you can specify
-the [user agent](https://en.wikipedia.org/wiki/User_agent) in the meta tag's
-name:
+If you want to use different directives based on the specific crawler, you can
+specify the [user agent](https://en.wikipedia.org/wiki/User_agent) in the meta
+tag's name:
 
 ```html
 <meta name="googlebot" content="noindex" />
 <meta name="bingbot" content="nofollow" />
 ```
 
-Or in the header:
+Or in the header value:
 
 ```txt
 X-Robots-Tag: googlebot: noindex

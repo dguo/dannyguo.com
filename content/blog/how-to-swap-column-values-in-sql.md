@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2021-05-14
+date: 2021-05-15
 draft: true
 tags:
   - sql
@@ -13,56 +13,65 @@ tags:
 title: How to Swap Column Values in SQL
 ---
 
-If you need to swap column values in SQL, it's easy to do for most databases.
-For Postgres, Oracle, SQL Server, and SQLite, you can simply set the column
-equal to the other column. Here's an example. If you run:
+If you need to swap column values in SQL, it's easy to do in most databases. For
+Postgres, Oracle, SQL Server, and SQLite, you can simply set the columns equal
+to each other in an `update`. Here's an example that you can try with a SQLite
+database. You can also try it online with [this DB Fiddle for
+SQLite](https://www.db-fiddle.com/f/gRoFnCbEhWq9gxqhUUHHc4/2).
 
 ```sql
-create table foos (
-    a text,
-    b text
+create table coordinates (
+    x integer,
+    y integer
 );
 
-insert into foos (a, b)
-values ('elephant', 'tiger');
+insert into coordinates (x, y)
+values (5, 12);
 
-select * from foos;
+select * from coordinates;
 ```
 
-You should see this output:
+You should see this output (after [turning headers
+on](https://database.guide/format-sqlite-query-results-as-columns-with-column-headers/)):
 
-```sh
-a        b
-elephant tiger
+```txt
+sqlite> .headers on
+sqlite> select * from coordinates;
+x|y
+5|12
 ```
 
 And then if you run:
 
 ```sql
-update foos
-set a = b, b = a;
+update coordinates
+set x = y, y = x;
 
-select * from foos;
+select * from coordinates;
 ```
 
 The values should be swapped:
 
-```sh
-a     b
-tiger elephant
+```txt
+x|y
+12|5
 ```
-
-Try it with [this DB Fiddle for
-Postgres](https://www.db-fiddle.com/f/tAMmoF7d444DNVrCKFV8tN/0) or [this DB
-Fiddle for SQLite](https://www.db-fiddle.com/f/gRoFnCbEhWq9gxqhUUHHc4/1).
 
 ## MySQL
 
-MySQL is trickier. If you try to use the same update as Postgres or SQLite,
-you'll end up with both columns being set to the same value. The output of the
-update will be:
+Unfortunately, this approach doesn't work for MySQL. If you try it, you'll end up
+with both columns having the same value. The output of the update will be:
 
-```sh
-a     b
-tiger tiger
+```txt
+x|y
+12|12
 ```
+
+You can try it for yourself with [this DB Fiddle for
+MySQL](https://www.db-fiddle.com/f/dF6FFWfjKjt5HEKzEG5wRC/0).
+
+[Artem Russakovskii](https://beerpla.net/) gives us some good workarounds in
+[this post](https://beerpla.net/2009/02/17/swapping-column-values-in-mysql/).
+
+The first is similar to how we might swap variables in some programming
+languages: use a temporary variable.

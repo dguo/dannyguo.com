@@ -201,10 +201,8 @@ use](https://getbootstrap.com/docs/5.0/components/progress/) the HTML
 [progress](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress)
 element.
 
-<!-- markdownlint-disable no-inline-html -->
-> We don’t use the HTML5 <progress> element, ensuring you can stack progress
+> We don’t use the HTML5 \<progress\> element, ensuring you can stack progress
 > bars, animate them, and place text labels over them.
-<!-- markdownlint-enable no-inline-html -->
 
 Another example is the
 [table](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)

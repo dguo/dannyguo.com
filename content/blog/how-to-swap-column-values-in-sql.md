@@ -1,23 +1,22 @@
 ---
 categories:
   - programming
-date: 2021-05-15
-draft: true
+date: 2021-06-25
 tags:
   - sql
   - postgres
   - mysql
   - sqlite
   - oracle
-  - sqlserver
+  - sql-server
 title: How to Swap Column Values in SQL
 ---
 
-If you need to swap column values in SQL, it's easy to do in most databases. For
-Postgres, Oracle, SQL Server, and SQLite, you can simply set the columns equal
-to each other in an `update`. Here's an example that you can try with a SQLite
-database. You can also try it online with [this DB Fiddle for
-SQLite](https://www.db-fiddle.com/f/gRoFnCbEhWq9gxqhUUHHc4/2).
+If you need to swap column values in SQL, it's easy to do in most databases. The
+big exception is [MySQL](#mysql). For Postgres, Oracle, SQL Server, and SQLite,
+you can simply set the columns equal to each other in an `update`. Here's an
+example that you can try with SQLite.  You can also try it online with [this DB
+Fiddle for SQLite](https://www.db-fiddle.com/f/gRoFnCbEhWq9gxqhUUHHc4/2).
 
 ```sql
 create table coordinates (
@@ -59,8 +58,8 @@ x|y
 
 ## MySQL
 
-Unfortunately, this approach doesn't work for MySQL. If you try it, you'll end up
-with both columns having the same value. The output of the update will be:
+Unfortunately, this approach doesn't work for MySQL. You'll end up with both
+columns having the same value. The output of the update will be:
 
 ```txt
 x|y
@@ -68,10 +67,19 @@ x|y
 ```
 
 You can try it for yourself with [this DB Fiddle for
-MySQL](https://www.db-fiddle.com/f/dF6FFWfjKjt5HEKzEG5wRC/0).
+MySQL](https://www.db-fiddle.com/f/dF6FFWfjKjt5HEKzEG5wRC/2).
 
-[Artem Russakovskii](https://beerpla.net/) gives us some good workarounds in
-[this post](https://beerpla.net/2009/02/17/swapping-column-values-in-mysql/).
+[Artem Russakovskii](https://beerpla.net/) gives us a few workarounds in [this
+post](https://beerpla.net/2009/02/17/swapping-column-values-in-mysql/).  See
+[this Stack Overflow answer](https://stackoverflow.com/a/559291/1481479) for
+more discussion.
 
-The first is similar to how we might swap variables in some programming
-languages: use a temporary variable.
+The cleanest workaround is to use a temporary variable:
+
+```sql
+update coordinates
+set x = (@temp := x), x = y, y = @temp;
+```
+
+You can try it for yourself with [this DB
+Fiddle](https://www.db-fiddle.com/f/xxwUotZ1YBSQXvBnM9JomY/2).

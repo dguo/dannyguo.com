@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2021-07-09
+date: 2021-07-10
 draft: true
 tags:
   - javascript
@@ -55,15 +55,56 @@ TypeError: String.prototype.replaceAll called with a non-global RegExp argument
 
 ## Special Replacements
 
-There are special patterns that you can use in the replacement string.
-
-You can use `$&` to insert the matched string.
+There are special patterns that you can use in the replacement string. The first
+one is `$&`, which lets you insert the matched string. Here's an example that
+surrounds each word with asterisks, using [this
+regex](https://regex101.com/r/DUInpP/1).
 
 ```javascript
-const text = "The bank account numbers are 143838 and 23299.";
-const newText = text.replaceAll(/\d/g, "$&-");
-// newText === "The bank account numbers are ****** and *****."
+const text = "life goes on";
+const newText = text.replaceAll(/\w+/g, "*$&*");
+// newText === "*life* *goes* *on*"
 ```
+
+The next pattern is `` $` ``, which lets you insert the part of the string
+before the matched string.
+
+```javascript
+const text = "CatDogBird";
+const newText = text.replaceAll("Dog", "$`");
+// newText === "CatCatBird"
+```
+
+The next pattern is `$'`, which lets you insert the part of the string
+after the matched string.
+
+```javascript
+const text = "CatDogBird";
+const newText = text.replaceAll("Dog", "$'");
+// newText === "CatBirdBird"
+```
+
+The next pattern is `$n`, which lets you insert the nth match.
+
+```javascript
+const text = "life goes on";
+const newText = text.replaceAll(/\w+/g, "*$&*");
+// newText === "*life* *goes* *on*"
+```
+
+The last pattern is `$$`, which lets you insert a raw `"$"`. This gives you an
+escape hatch if you actually want to put the characters for one of the special
+patterns in your string.
+
+```javascript
+const text = "$` is cool, but $` is rarer than $&.";
+const newText = text.replaceAll("$`", "$$'");
+// newText === "$' is cool, but $' is rarer than $&."
+```
+
+However, this is also a potential source of bugs! If
+you don't know about these patterns, you'll probably get unexpected results. For
+example, to put "$$" in the string, you need to escape twice using "$$$$".
 
 ## Using a Function for Replacement Logic
 
@@ -87,3 +128,6 @@ const newText = text.replaceAll(/Demi/g, "Hannah");
 It's important to use the `g` regex flag. If you omit it, you won't get a
 runtime error, but `replace` will only replace the *first* occurrence of the
 substring.
+
+`replace` also supports the special replacement patterns and using a function
+instead of a string for the replacement.

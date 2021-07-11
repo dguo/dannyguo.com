@@ -12,6 +12,9 @@ rssLimit: 20
 title: Danny Guo
 
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     style: monokai
 

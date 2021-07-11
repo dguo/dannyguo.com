@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2021-07-10
+date: 2021-07-11
 draft: true
 tags:
   - javascript
@@ -19,6 +19,9 @@ const newText = text.replaceAll("Demi", "Hannah");
 // text === "Blake likes Demi, but Demi prefers Dylan."
 // newText === "Blake likes Hannah, but Hannah prefers Dylan."
 ```
+
+You can try out the examples in this post for yourself with [this
+Replit](https://replit.com/@dyguo/replace-all-substrings-in-javascript).
 
 `replaceAll` [is a part](https://github.com/tc39/proposal-string-replaceall) of
 the [ES2021 specification](https://en.wikipedia.org/wiki/ECMAScript#ES2021). All
@@ -53,7 +56,7 @@ is required. Without it, you'll get a
 TypeError: String.prototype.replaceAll called with a non-global RegExp argument
 ```
 
-## Special Replacements
+## Special Replacement Patterns
 
 There are special patterns that you can use in the replacement string. The first
 one is `$&`, which lets you insert the matched string. Here's an example that
@@ -84,17 +87,20 @@ const newText = text.replaceAll("Dog", "$'");
 // newText === "CatBirdBird"
 ```
 
-The next pattern is `$n`, which lets you insert the nth match.
+The next pattern is `$n`, which is available when you use a regex that contains
+[capturing groups](https://javascript.info/regexp-groups). The `n` refers to the
+n<sup>th</sup> match (starting at an index of 1). Here's an example that changes
+the positions of words.
 
 ```javascript
-const text = "life goes on";
-const newText = text.replaceAll(/\w+/g, "*$&*");
-// newText === "*life* *goes* *on*"
+const text = "foo bar baz";
+const newText = text.replaceAll(/(\w+) (\w+) (\w+)/g, "$3 $1 $2");
+// newText === "baz foo bar"
 ```
 
-The last pattern is `$$`, which lets you insert a raw `"$"`. This gives you an
-escape hatch if you actually want to put the characters for one of the special
-patterns in your string.
+The last pattern is `$$`, which lets you insert a raw `$`. This gives you an
+escape hatch if you want to avoid the special pattern logic and use the
+characters literally.
 
 ```javascript
 const text = "$` is cool, but $` is rarer than $&.";
@@ -102,9 +108,16 @@ const newText = text.replaceAll("$`", "$$'");
 // newText === "$' is cool, but $' is rarer than $&."
 ```
 
-However, this is also a potential source of bugs! If
-you don't know about these patterns, you'll probably get unexpected results. For
-example, to put "$$" in the string, you need to escape twice using "$$$$".
+However, these patterns are also a potential source of bugs! Someone could use
+them accidentally and get unexpected results.  For example, to put `$$` in the
+result string, you need to escape twice using `$$$$` because `$$` in the
+replacement string will only insert a single `$` in the result.
+
+```javascript
+const text = "PostgreSQL has dollar quoting: !!Mary's Room!!";
+const newText = text.replaceAll("!!", "$$$$");
+// newText === "PostgreSQL has dollar quoting: $$Mary's Room$$"
+```
 
 ## Using a Function for Replacement Logic
 
@@ -126,8 +139,8 @@ const newText = text.replaceAll(/Demi/g, "Hannah");
 ```
 
 It's important to use the `g` regex flag. If you omit it, you won't get a
-runtime error, but `replace` will only replace the *first* occurrence of the
-substring.
+runtime error like with `replaceAll`, but `replace` will only replace the
+*first* occurrence of the substring.
 
 `replace` also supports the special replacement patterns and using a function
 instead of a string for the replacement.

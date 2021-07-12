@@ -1,8 +1,7 @@
 ---
 categories:
   - programming
-date: 2021-07-11
-draft: true
+date: 2021-07-12
 tags:
   - javascript
 title: How to Replace All Instances of a Substring in JavaScript
@@ -59,7 +58,7 @@ TypeError: String.prototype.replaceAll called with a non-global RegExp argument
 ## Special Replacement Patterns
 
 There are special patterns that you can use in the replacement string. The first
-one is `$&`, which lets you insert the matched string. Here's an example that
+one is `$&`, which lets you insert the matched substring. Here's an example that
 surrounds each word with asterisks, using [this
 regex](https://regex101.com/r/DUInpP/1).
 
@@ -70,7 +69,7 @@ const newText = text.replaceAll(/\w+/g, "*$&*");
 ```
 
 The next pattern is `` $` ``, which lets you insert the part of the string
-before the matched string.
+before the matched substring.
 
 ```javascript
 const text = "CatDogBird";
@@ -78,8 +77,8 @@ const newText = text.replaceAll("Dog", "$`");
 // newText === "CatCatBird"
 ```
 
-The next pattern is `$'`, which lets you insert the part of the string
-after the matched string.
+The next pattern is `$'`, which lets you insert the part of the string after the
+matched substring.
 
 ```javascript
 const text = "CatDogBird";
@@ -121,11 +120,33 @@ const newText = text.replaceAll("!!", "$$$$");
 
 ## Using a Function for Replacement Logic
 
+For even more advanced cases, you can provide a function instead of a
+replacement string.  The function will receive these arguments (in order): the
+matched substring, its offset in the original string, and the entire original
+string.  `replaceAll` will use the return value as the string to insert.
+
 ```javascript
-const text = "Blake likes Demi, but Demi prefers Dylan.";
-const newText = text.replaceAll("Demi", (value) => {
+const text = "foo bar foo baz foo";
+const newText = text.replaceAll("foo", (substring, offset, string) => {
+    const prefix = offset === 0 ? "first" : "more";
+    return `${prefix}-${substring}`;
 });
-// newText === "Blake likes Hannah, but Hannah prefers Dylan."
+// newText === "first-foo bar more-foo baz more-foo"
+```
+
+If there are regex capture groups, the function will receive the n<sup>th</sup>
+values as additional arguments in between the matched substring and offset
+arguments.
+
+```javascript
+const text = "foo bar baz";
+const newText = text.replaceAll(
+    /(\w+) (\w+) (\w+)/g,
+    (substring, n1, n2, n3, offset, string) => {
+        return `1-${n1} 2-${n2} 3-${n3}`;
+    }
+);
+// newText === "1-foo 2-bar 3-baz"
 ```
 
 ## Using .replace with a Regular Expression
@@ -142,5 +163,5 @@ It's important to use the `g` regex flag. If you omit it, you won't get a
 runtime error like with `replaceAll`, but `replace` will only replace the
 *first* occurrence of the substring.
 
-`replace` also supports the special replacement patterns and using a function
-instead of a string for the replacement.
+`replace` also supports the special replacement patterns and using a replacement
+function instead of a string.

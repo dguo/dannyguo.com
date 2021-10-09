@@ -13,6 +13,13 @@ conditioner](https://www.amazon.com/FRIGIDAIRE-Window-Mounted-Mini-Compact-Condi
 in my bedroom. It's dumb in the sense that it doesn't have a built-in
 thermometer, so it's unable to maintain a constant temperature.
 
+Edit: Someone helpfully [pointed
+out](https://news.ycombinator.com/item?id=28813747) that my unit *does* have the
+ability to self-regulate. Looking at some customer reviews, I do see some
+complaints that it doesn't work very well on this model. But still, I should
+have read the manual instead of assuming that the top knob is just a static
+control. My bad!
+
 ![Frigidiare air conditioner controls](https://i.imgur.com/HFMgHWV.jpg)
 
 If I leave it on overnight, it eventually makes the room too cold. I decided to

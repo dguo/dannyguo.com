@@ -110,7 +110,7 @@ features. There's an [open
 issue](https://github.com/gohugoio/hugo/issues/4243) for adding native Sass
 support, and this tweet confirms that it's coming:
 
-{{< tweet 1007361748201037824 >}}
+{{< tweet user="GoHugoIO" id="1007361748201037824" >}}
 
 I did find the layout system to be a little confusing in terms of figuring out
 how Hugo [determines](https://gohugo.io/templates/lookup-order/) which layouts

@@ -1,6 +1,6 @@
-FROM node:12.10.0-alpine
+FROM node:16.13.0-alpine
 
-LABEL maintainer="dannyguo91@gmail.com"
+LABEL maintainer="danny@dannyguo.com"
 
 # Avoid "x509: certificate signed by unknown authority" errors
 RUN apk --no-cache add ca-certificates
@@ -12,7 +12,7 @@ WORKDIR /tmp
 RUN wget ${HUGO_BINARY_URL} && \
     tar xzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
     mv hugo /usr/local/bin && \
-    rm *
+    rm -r *
 
 WORKDIR /home/node
 COPY package.json yarn.lock ./

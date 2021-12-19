@@ -27,3 +27,8 @@
   from = "/web-worker-demo"
   to = "https://dguo.github.io/web-worker-demo/"
   status = 302
+
+[[redirects]]
+  from = "/jenny-and-danny/*"
+  to = "https://jenny-and-danny.netlify.app/:splat"
+  status = 200

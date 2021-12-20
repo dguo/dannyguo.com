@@ -30,5 +30,5 @@
 
 [[redirects]]
   from = "/jennyanddanny/*"
-  to = "https://jenny-and-danny.netlify.app/:splat"
+  to = "https://jenny-and-danny.netlify.app/jennyanddanny/:splat"
   status = 200

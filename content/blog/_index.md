@@ -4,5 +4,4 @@ title: Danny Guo · Blog
 
 # Blog
 
-You can [search](/search) for a post, or [subscribe](/newsletter) for future
-posts.
+You can [subscribe](/newsletter) to my newsletter for future posts.

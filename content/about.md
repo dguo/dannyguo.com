@@ -4,11 +4,8 @@ title: Danny Guo · About
 
 # About Me
 
-My name is Danny Guo. I spend most of my time writing software, but I'm always
-interested in learning and trying new things.
-
-I am currently working on [Sublime Fund](https://sublimefund.org) and
-[SeedFi](https://seedfi.com/). Before that, I worked at
+Hi! My name is Danny Guo. I'm currently working on [SeedFi](https://www.seedfi.com/)
+and [Sublime Fund](https://sublimefund.org). I previously worked at
 [Bloomberg](https://www.bloomberg.com/) on their [Customer Service
 Center](https://service.bloomberg.com) website.
 
@@ -20,7 +17,6 @@ Center](https://service.bloomberg.com) website.
 * [Hacker News](https://news.ycombinator.com/user?id=dguo)
 * [Keybase](https://keybase.io/dannyguo)
 * [LinkedIn](https://www.linkedin.com/in/danny-guo/)
-* [MDN](https://developer.mozilla.org/en-US/profiles/dguo)
 * [Medium](https://medium.com/@dannyguo)
 * [npm](https://www.npmjs.com/~dguo)
 * [repl.it](https://repl.it/@dyguo)
@@ -29,7 +25,8 @@ Center](https://service.bloomberg.com) website.
 
 ## Donate
 
-If you'd like to support my open source efforts, use any of these methods:
+If you'd like to support my open source efforts, you can use any of these
+methods:
 
 * [Buy Me A Coffee](https://buymeacoff.ee/dannyguo)
 * [Cash App](http://cash.me/$DannyGuo)

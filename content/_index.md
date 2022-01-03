@@ -4,15 +4,17 @@ title: Danny Guo
 ---
 
 # Hello, World
-Welcome to my corner of the Internet. Feel free to check out my
-[writing](/blog) and [other activities](/projects). I'm currently working on
-[Sublime Fund](https://sublimefund.org), with the goal of getting more people
-involved in philanthropy.
+
+Welcome to my corner of the Internet. Feel free to check out my [writing](/blog)
+and [other activities](/projects). I'm currently working on
+[SeedFi](https://www.seedfi.com/) (we're
+[hiring](https://jobs.lever.co/SeedFi)!) and [Sublime
+Fund](https://sublimefund.org).
 
 If you'd like to go somewhere else but aren't sure where, try checking out a
-[trending subreddit](https://www.reddit.com/r/trendingsubreddits/), a [random
-Wikipedia article](https://en.wikipedia.org/wiki/Special:Random), or a [random
-YouTube video](http://www.ytroulette.com).
+[trending subreddit](https://www.reddit.com/subreddits/leaderboard), a [random
+Wikipedia article](https://en.wikipedia.org/wiki/Special:Random), or a [trending
+YouTube video](https://www.youtube.com/feed/trending).
 
 > “Would you tell me, please, which way I ought to go from here?”
 >

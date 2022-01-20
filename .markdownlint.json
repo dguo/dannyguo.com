@@ -4,6 +4,7 @@
     "line-length": {
         "code_blocks": false
     },
+    "no-bare-urls": false,
     "no-inline-html": false,
     "single-title": {
         "front_matter_title": ""

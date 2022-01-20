@@ -1,22 +1,28 @@
 ---
 categories:
   - security
-date: 2022-01-19
-draft: true
+date: 2022-01-20
 tags:
   - actalis
 title: How to Get a Free S/MIME Certificate
 ---
 
-I recently needed to get a [S/MIME](https://en.wikipedia.org/wiki/S/MIME)
-certificate. If you're willing to pay,
+I recently needed a [S/MIME](https://en.wikipedia.org/wiki/S/MIME) certificate
+to fulfill someone's security requirement. If you're willing to pay,
 [Sectigo](https://sectigo.com/ssl-certificates-tls/email-smime-certificate)
 seems like a good, affordable option. I didn't actually need to use mine for
-email, so I looked for a free option. From what I could find,
-[Actalis](https://www.actalis.com/s-mime-certificates.aspx) is the only free one
-(beyond generating it yourself).
+email, so I looked for a free option.
 
-You can request one using [this
+I first checked out [Let's Encrypt](https://letsencrypt.org/), but they [don't
+issue S/MIME
+certificates](https://community.letsencrypt.org/t/s-mime-certificates/153). I
+also found [instructions for generating self-signed
+certificates](https://www.dalesandro.net/create-self-signed-smime-certificates/),
+but I needed mine to come from an external [certificate
+authority](https://en.wikipedia.org/wiki/Certificate_authority).
+
+[Actalis](https://www.actalis.com/s-mime-certificates.aspx) was the only free
+provider that I could find. You can request a certificate from them using [this
 form](https://extrassl.actalis.it/portal/uapub/freemail?lang=en), and the
 certificate lasts for one year. Actalis does generate the private key, so that
 may be unacceptable depending on your situation.
@@ -91,9 +97,9 @@ should prompt you for the password that the Actalis website provided.
 openssl pkcs12 -in PKCS12_Credential_<email address>.pfx -nokeys -out certificate.pem
 ```
 
-`certificate.pem` contains the [certificate
-chain](https://en.wikipedia.org/wiki/Root_certificate): your certificate, an
-intermediate certificate, and the Actalis root certificate.
+`certificate.pem` will contain the [certificate
+chain](https://en.wikipedia.org/wiki/Chain_of_trust): your public certificate,
+an intermediate certificate, and the Actalis root certificate.
 
 Run this command to extract the private key as `private-key.pem`.
 

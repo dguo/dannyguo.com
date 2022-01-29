@@ -15,19 +15,15 @@ switches have been.
 
 I considered Ergodox keyboards, such as the EZ and the Moonlander.
 
-
 ## Delivery
 
 I ordered my UHK in November 2020. I received it October 2021.
 
-
 ## Packaging
-
 
 ## Hardware
 
 I do wish I could tent the halves even higher up.
-
 
 ## Software
 

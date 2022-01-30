@@ -1,15 +1,15 @@
 ---
 categories:
   - learning
-date: 2022-01-29
+date: 2022-01-30
 draft: true
 tags:
   - seatbelt
-title: Seatbelts
+title: My Seatbelt Rule
 ---
 
 One of my formative childhood lessons came when I was playing in the garage one
-day. I went into my mom's minivan and put the seatbelt on (probably to pretend I
+day. I went into my mom's car and put the seatbelt on (probably to pretend I
 was flying a plane). I realized that I could still lean pretty far forward. Far
 enough that my head could touch the dashboard. This seemed ridiculous! What's
 the point of the seatbelt if it doesn't actually stop me from going too far? I
@@ -22,19 +22,20 @@ fast. Nine-year-old me was not in fact smarter than Toyota engineers.
 
 For anyone who doesn't know what I'm talking about, modern seatbelts have
 dynamic behavior. If you pull on them slowly, they won't engage, allowing you to
-retain your range of motion. If you pull on them quickly, which is what would
-happen in a car crash, they'll stop quickly.
+still have some range of motion. If you pull on them quickly, which is what
+would happen in a car crash, they'll stop quickly. If you're curious how
+seatbelts work, I recommend watching [this YouTube
+video](https://www.youtube.com/watch?v=uRaU1HMJyCo) and reading [this
+article](https://howcarpartswork.blogspot.com/2016/05/seat-belt-working.html).
 
-Now whenever I have the thought of "that's really stupid!", I try to check
-myself and remember my experience with the seatbelt.
+Now whenever I'm tempted to judge something as stupidly designed, I try to check
+myself and remember my experience with the seatbelt. My rule of thumb is:
 
-Sometimes things really are stupid, but my rule of thumb is to give greater
-benefit of the doubt in proportion to how much I know about the subject.
+> My willingness to judge something should be roughly proportional to how much I
+> know about it.
 
-And even for things I know somewhat well, that's still relative to my knowledge
-in other things. There's so much I don't know.
-
-## How It Works
-
-I learned later that seatbelt have the dynamic behavior by using a centrifugal
-clutch.
+Sometimes things really are poorly designed (check out [The Design of Everyday
+Things](https://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654?&linkCode=ll1&tag=thdalo00-20&linkId=073e8798f7afc5fba508aa95f8813219&language=en_US&ref_=as_li_ss_tl)),
+but I strive to give more benefit of the doubt when I don't know much about the
+subject. And even for things I know somewhat well, that's still relative to my
+knowledge in other things. There's so much I don't know.

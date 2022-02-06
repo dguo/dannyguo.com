@@ -53,5 +53,6 @@ error](https://en.wikipedia.org/wiki/Fundamental_attribution_error)), or a
 system that seems pointless at first glance (see [Chesterton's
 Fence](https://fs.blog/chestertons-fence/)).
 
-There's *so much* I don't know. Which means there's so much I shouldn't judge
-without learning more.
+There's *so much* [I don't
+know](https://www.dannyguo.com/blog/what-i-learned-by-relearning-html/). Which
+means there's so much I shouldn't judge without learning more.

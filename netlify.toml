@@ -33,3 +33,9 @@
   to = "https://jenny-and-danny.netlify.app/jennyanddanny/:splat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/netlify-subsite-test/*"
+  to = "https://netlify-subsite-test.netlify.app/:splat"
+  status = 200
+  force = true

@@ -28,6 +28,15 @@
   to = "https://dguo.github.io/web-worker-demo/"
   status = 302
 
+# We shouldn't need this redirect for the home page because of the next, catch-all
+# redirect. But without this one, we get an infinite redirect issue for some
+# reason.
+[[redirects]]
+  from = "/jennyanddanny"
+  to = "https://jenny-and-danny.netlify.app/jennyanddanny"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/jennyanddanny/*"
   to = "https://jenny-and-danny.netlify.app/jennyanddanny/:splat"

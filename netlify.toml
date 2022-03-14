@@ -35,7 +35,7 @@
   force = true
 
 [[redirects]]
-  from = "/netlify-subsite-test/*"
-  to = "https://netlify-subsite-test.netlify.app/:splat"
+  from = "/netlifysubsitetest/*"
+  to = "https://netlify-subsite-test.netlify.app/netlifysubsitetest/:splat"
   status = 200
   force = true

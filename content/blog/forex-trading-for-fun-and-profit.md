@@ -1,33 +1,42 @@
 ---
 categories:
   - programming
-date: 2022-03-12
+date: 2022-03-15
 draft: true
 tags:
   - forex
 title: Forex Trading for Fun and Profit
 ---
 
-In college, I wrote foreign exchange (forex) trading programs. This was
-sophomore year. My only programming experience was our introduction to
-programming class. I used a [Martingale
-strategy](https://en.wikipedia.org/wiki/Martingale_(betting_system)).
+My first experience with programming was an [introductory computer science
+class](https://www.cs.princeton.edu/courses/archive/spring10/cos126/info.html)
+during my freshman year of college. A few months later, armed with a B grade
+knowledge of variables, loops, functions, and classes, I dove into my first
+programming side project. I wrote [foreign
+exchange](https://en.wikipedia.org/wiki/Foreign_exchange_market) (forex) trading
+programs.
 
 I've published as much of my old code as reasonable to
-[GitHub](https://github.com/dguo/forex-trading).
+[GitHub](https://github.com/dguo/forex-trading), and I've tried to leave it as
+intact as possible. What follows is the story behind that code.
 
 ## Forex Trading
 
 When most people think of financial trading, they probably think of buying and
-selling stocks or maybe bonds. But the financial world is innovative and looks
-for opportunities to make money by creating markets so that you can effectively
-bet on almost anything, like the price of wheat three years from now. Or even
-stranger things like [how volatile the stock market will
-be](https://www.investopedia.com/stock-analysis/2012/4-ways-to-trade-the-vix-vxx-vxz-tvix-xxv0504.aspx).
+selling stocks or maybe even bonds. But the financial world goes much deeper
+than that. Particularly through the
+[power](https://www.investopedia.com/terms/d/derivativestimebomb.asp) of
+[derivatives](https://www.investopedia.com/terms/d/derivative.asp), there are
+ways for you to bet on all sorts of things, like the [future price of
+wheat](https://www.vice.com/en/article/k7wyew/wheat-futures-are-the-hottest-stock-on-wall-street),
+the [volatility of the stock
+market](https://www.investopedia.com/stock-analysis/2012/4-ways-to-trade-the-vix-vxx-vxz-tvix-xxv0504.aspx),
+or even the [difference](https://www.investopedia.com/terms/s/spreadoption.asp)
+between the price of a natural resource (such as crude oil) and the price of
+something that is refined from that resource (such as gasoline).
 
 What's the largest market in the world by trading volume? It's not stocks or
-crypto. It's actually the [foreign exchange
-market](https://en.wikipedia.org/wiki/Foreign_exchange_market).
+crypto. It's actually the foreign exchange market.
 
 Consider the experience of going abroad (perhaps back in non-COVID times) to a
 country that uses a different currency. You might go to a bank to change your
@@ -55,6 +64,9 @@ Systems in MQL for MetaTrader
 and learned how to write "expert advisors" (EAs).
 
 I didn't know how to persist data, so I used CSV files as a storage mechanism.
+
+I used a [Martingale
+strategy](https://en.wikipedia.org/wiki/Martingale_(betting_system)).
 
 ## Results
 

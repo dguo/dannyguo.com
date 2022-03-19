@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2022-03-15
+date: 2022-03-19
 draft: true
 tags:
   - forex
@@ -18,7 +18,7 @@ programs.
 
 I've published as much of my old code as reasonable to
 [GitHub](https://github.com/dguo/forex-trading), and I've tried to leave it as
-intact as possible. What follows is the story behind that code.
+intact as possible. This is the story behind that code.
 
 ## Forex Trading
 
@@ -35,8 +35,14 @@ or even the [difference](https://www.investopedia.com/terms/s/spreadoption.asp)
 between the price of a natural resource (such as crude oil) and the price of
 something that is refined from that resource (such as gasoline).
 
-What's the largest market in the world by trading volume? It's not stocks or
-crypto. It's actually the foreign exchange market.
+In terms of trading volume, those markets are all dwarfed by the one that I
+became interested in: the foreign exchange market, which is the market for
+currencies. It's the largest, most liquid market in the world. It has its own
+[interesting
+history](https://www.investopedia.com/articles/forex/10/forex-market-history.asp),
+which includes [George Soros](https://en.wikipedia.org/wiki/George_Soros) making
+$1 billion in a day by [betting against the Bank of
+England](https://fortunly.com/articles/george-soros-and-the-bank-of-england/).
 
 Consider the experience of going abroad (perhaps back in non-COVID times) to a
 country that uses a different currency. You might go to a bank to change your

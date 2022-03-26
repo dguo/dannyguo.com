@@ -156,7 +156,7 @@ the `replace` function with a regex.
 
 ```javascript
 const text = "Blake likes Demi, but Demi prefers Dylan.";
-const newText = text.replaceAll(/Demi/g, "Hannah");
+const newText = text.replace(/Demi/g, "Hannah");
 ```
 
 It's important to use the `g` regex flag. If you omit it, you won't get a

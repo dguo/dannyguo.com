@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2022-03-26
+date: 2022-03-27
 draft: true
 tags:
   - forex
@@ -72,7 +72,7 @@ making a profit. The first step was to pick a broker.
 ## Picking a Broker
 
 I researched many brokers. One interesting thing was that many of them were
-located in Cyprus.
+located in Cyprus. I believe this is due to lower taxes.
 
 A key characteristic that I was concerned about was the maximum leverage amount.
 Leverage means borrowing money so that you only have to put in a small amount of
@@ -96,6 +96,41 @@ had a desktop application called fxTrade that I used. Here's a screenshot:
 
 ![Oanda fxTrade interface](https://i.imgur.com/dWFc9SV.png)
 
+### Spread
+
+If you look at a particular [currency
+pair](https://en.wikipedia.org/wiki/Currency_pair), you'll see that has a sell
+price (also known as the [ask
+price](https://www.investopedia.com/terms/a/ask.asp)) as well as a buy price
+(also known as the [bid
+price](https://www.investopedia.com/terms/b/bidprice.asp)), and the buy price is
+always higher than the sell price. The difference is known as the [bid-ask
+spread](https://www.investopedia.com/terms/b/bid-askspread.asp). It means that
+if you could simltaneously buy a pair and then sell it, you would lose money.
+This is the primary way that brokers make money.
+
+### PIPs
+
+The spread is usually shown as a number of pips ([percentage in
+point](https://www.investopedia.com/terms/p/pip.asp)).
+
+### Currencies
+
+You can see from the screenshot what currencies I could trade through Oanda:
+
+* United States dollar
+* Canadian dollar
+* Australian dollar
+* Japanese yen
+* European Union euro
+* New Zealand dollar
+* Swiss franc
+* Pound sterling
+
+I learned some interesting nicknames. The GBP/USD pair is also known as the
+cable because the exchange rate was transmitted by underwater cables across the
+Atlantic Ocean.
+
 ## Automated Trading
 
 I automated my trading with [MetaTrader
@@ -104,12 +139,38 @@ I automated my trading with [MetaTrader
 I bought a book named [Expert Advisor Programming: Creating Automated Trading
 Systems in MQL for MetaTrader
 4](https://www.amazon.com/Expert-Advisor-Programming-Automated-MetaTrader/dp/0982645902?crid=3QDACH7CXL46R&keywords=Expert+Advisor+Programming%3A+Creating+Automated+Trading+Systems+in+MQL+for+MetaTrader+4&qid=1644888838&sprefix=expert+advisor+programming+creating+automated+trading+systems+in+mql+for+metatrader+4%2Caps%2C97&sr=8-1&linkCode=ll1&tag=thdalo00-20&linkId=2c0c6edb764af5bde0421e042ee819e1&language=en_US&ref_=as_li_ss_tl)
-and learned how to write "expert advisors" (EAs).
+and learned how to write "expert advisors" (EAs) in MetaQuotes Language 4
+(MQL4), which has syntax similar to C++.
 
 I didn't know how to persist data, so I used CSV files as a storage mechanism.
 
+I ran my EAs on a laptop that I left on 24/7. For alerting, I used the
+[SendMail](https://docs.mql4.com/common/sendmail) function to email me whenever
+the system placed a trade.
+
 I used a [Martingale
 strategy](https://en.wikipedia.org/wiki/Martingale_(betting_system)).
+
+I noticed a few interesting things as I looked at my old code again.
+
+I did some attempts at
+[backtesting](https://www.investopedia.com/terms/b/backtesting.asp).
+
+I found this `DoublesEqual` function in `PairUpdater/PairUpdater.mq4`.
+
+```cpp
+//+------------------------------------------------------------------+
+//| function to check if two doubles are equal                       |
+//+------------------------------------------------------------------+
+bool DoublesEqual(double number1, double number2)
+{
+//----
+  if (NormalizeDouble(number1 - number2, 4) == 0) return (true);
+  else return (false);
+//----
+}
+//+------------------------------------------------------------------+
+```
 
 ## Results
 

@@ -46,6 +46,7 @@ title: Danny Guo · Projects
 
 ## Miscellaneous
 
+* [Check Author and Committer Action](https://github.com/marketplace/actions/check-author-and-committer) ([GitHub](https://github.com/dguo/check-author-and-committer-action)) - [GitHub Actions](https://github.com/features/actions) action for checking the email address and/or name for the author and/or committer
 * [Blood Moon](https://blood-moon.dannyguo.com/) ([GitHub](https://github.com/dguo/blood-moon)) - A bold, dark color scheme for code
 * [dotfiles](https://github.com/dguo/dotfiles) - My personal system configuration
 * [React Production Build PSA](https://github.com/dguo/react-production-build-psa) - PSA to get developers to use the production build of React

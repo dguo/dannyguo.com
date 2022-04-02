@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2022-03-27
+date: 2022-04-02
 draft: true
 tags:
   - forex
@@ -28,7 +28,7 @@ selling stocks or bonds or maybe crypto. But the financial world goes much
 deeper than that. Particularly through the
 [power](https://www.investopedia.com/terms/d/derivativestimebomb.asp) of
 [derivatives](https://www.investopedia.com/terms/d/derivative.asp), there are
-ways for you to bet on all sorts of things, like the [future price of
+ways to bet on all sorts of things, like the [future price of
 wheat](https://www.vice.com/en/article/k7wyew/wheat-futures-are-the-hottest-stock-on-wall-street),
 the [volatility of the stock
 market](https://www.investopedia.com/stock-analysis/2012/4-ways-to-trade-the-vix-vxx-vxz-tvix-xxv0504.aspx),
@@ -52,16 +52,16 @@ Consider the experience of going from the United States to Europe (perhaps back
 in non-COVID times). You might go to a bank ahead of time to change your U.S.
 [dollars](https://en.wikipedia.org/wiki/United_States_dollar) into
 [euros](https://en.wikipedia.org/wiki/Euro). You make the exchange at a certain
-rate. You go to Europe for a while. When you get back, you change your remaining
-euros back into dollars. Depending on how the exchange rate has fluctuated while
-you were gone, you could have a profit or loss on the dollars that you didn't
-spend. This is a small-scale example of [foreign exchange
+rate, and then you go to Europe for a while. When you get back, you change your
+remaining euros back into dollars. Depending on how the exchange rate has
+fluctuated while you were gone, you could have a profit or loss on the dollars
+that you didn't spend. This is a small-scale example of [foreign exchange
 risk](https://en.wikipedia.org/wiki/Foreign_exchange_risk).
 
-Now imagine the case of a large corporation that operates internationally. The
-corporation might make deals that involve receiving payments at a later date. If
-the corporation doesn't take any steps to mitigate its foreign exchange risk, it
-is effectively gambling on exchange rates. Instead, companies can
+Now think about the case of a large company that operates internationally. The
+company might make deals that involve receiving payments at a later date. If the
+company doesn't take any steps to mitigate its foreign exchange risk, it is
+effectively gambling on exchange rates. Instead, companies can
 [hedge](https://en.wikipedia.org/wiki/Foreign_exchange_hedge) their risk using
 derivatives. This also means that the company gives up any chance of making a
 profit.
@@ -80,7 +80,7 @@ money to control a larger position. When I was looking at brokers, the highest
 amount that I saw was 500:1. That means that for a $500 position, you only need
 to put in $1.
 
-High amounts of leverage are common in the foreign exchange market because
+High levels of leverage are common in the foreign exchange market because
 exchange rates tend to be fairly stable. So you need large positions in order to
 magnify the effects of small changes.
 
@@ -91,23 +91,23 @@ I used [Oanda](https://www.oanda.com) to trade. They let me leverage up to 50:1.
 
 ## Manual Trading
 
-I made some small trades manually at first just to get a feel for things. Oanda
-had a desktop application called fxTrade that I used. Here's a screenshot:
+I made some small trades manually at first just to get a feel for things. I used
+Oanda's desktop application. Here's a screenshot from 2010:
 
 ![Oanda fxTrade interface](https://i.imgur.com/dWFc9SV.png)
 
 ### Spread
 
 If you look at a particular [currency
-pair](https://en.wikipedia.org/wiki/Currency_pair), you'll see that has a sell
-price (also known as the [ask
+pair](https://en.wikipedia.org/wiki/Currency_pair), you'll see that it has a
+sell price (also known as the [ask
 price](https://www.investopedia.com/terms/a/ask.asp)) as well as a buy price
 (also known as the [bid
 price](https://www.investopedia.com/terms/b/bidprice.asp)), and the buy price is
 always higher than the sell price. The difference is known as the [bid-ask
 spread](https://www.investopedia.com/terms/b/bid-askspread.asp). It means that
-if you could simltaneously buy a pair and then sell it, you would lose money.
-This is the primary way that brokers make money.
+if you could simultaneously buy a pair and sell it, you would lose money.  This
+is the primary way that brokers make money.
 
 ### PIPs
 
@@ -171,6 +171,95 @@ bool DoublesEqual(double number1, double number2)
 }
 //+------------------------------------------------------------------+
 ```
+
+Note the useless comment that doesn't tell anything more than the function
+signature.
+
+There's also the unnecessary conditions instead of just returning the boolean
+directly.
+
+`Averager/Averager.java` has [this
+monstrosity](https://github.com/dguo/forex-trading/blob/b90bb61b25b8ce4496d382609ddd6a428a1ffcfc/Averager/Averager.java#L123).
+
+```cpp
+if (DoublesEqual(total, 1000.0) && Hour() == 7) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 2000.0) && (Hour() == 3 || Hour() == 11)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 3000.0) && (Hour() == 1 || Hour() == 7 || Hour() == 13)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 4000.0) && (Hour() == 0 || Hour() == 5 || Hour() == 10 || Hour() == 15)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 5000.0) && (Hour() == 23 || Hour() == 3 || Hour() == 7 || Hour() == 11 || Hour() == 15)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 6000.0) && (Hour() == 22 || Hour() == 1 || Hour() == 4 || Hour() == 7 || Hour() == 10 || Hour() == 13)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 7000.0) && (Hour() == 22 || Hour() == 1 || Hour() == 4 || Hour() == 7 || Hour() == 10 || Hour() == 13 || Hour() == 16)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 8000.0) && (Hour() == 22 || Hour() == 1 || Hour() == 3 || Hour() == 6 || Hour() == 9 || Hour() == 12 || Hour() == 15 || Hour() == 18)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 9000.0) && (Hour() == 22 || Hour() == 1 || Hour() == 2 || Hour() == 5 || Hour() == 7 || Hour() == 10 || Hour() == 13 || Hour() == 16 || Hour() == 18)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 10000.0) && (Hour() == 21 || Hour() == 0 || Hour() == 1 || Hour() == 3 || Hour() == 5 || Hour() == 7 || Hour() == 10 || Hour() == 12 || Hour() == 14 || Hour() == 16)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 11000.0) && (Hour() == 21 || Hour() == 23 || Hour() == 1 || Hour() == 3 || Hour() == 5 || Hour() == 7 || Hour() == 9 || Hour() == 11 || Hour() == 13 || Hour() == 15 || Hour() == 17)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 12000.0) && (Hour() == 21 || Hour() == 22 || Hour() == 0 || Hour() == 2 || Hour() == 3 || Hour() == 5 || Hour() == 7 || Hour() == 9 || Hour() == 11 || Hour() == 13 || Hour() == 15 || Hour() == 17)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 13000.0) && (Hour() == 21 || Hour() == 22 || Hour() == 0 || Hour() == 1 || Hour() == 2 || Hour() == 3 || Hour() == 4 || Hour() == 6 || Hour() == 8 || Hour() == 10 || Hour() == 12 || Hour() == 14 || Hour() == 16)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 14000.0) && (Hour() == 21 || Hour() == 22 || Hour() == 0 || Hour() == 1 || Hour() == 2 || Hour() == 3 || Hour() == 4 || Hour() == 5 || Hour() == 6 || Hour() == 9 || Hour() == 10 || Hour() == 12 || Hour() == 14 || Hour() == 16)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 15000.0) && (Hour() == 21 || Hour() == 22 || Hour() == 0 || Hour() == 1 || Hour() == 2 || Hour() == 3 || Hour() == 4 || Hour() == 5 || Hour() == 6 || Hour() == 7 || Hour() == 9 || Hour() == 12 || Hour() == 13 || Hour() == 15 || Hour() == 16)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 16000.0) && (Hour() == 21 || Hour() == 22 || Hour() == 0 || Hour() == 1 || Hour() == 2 || Hour() == 3 || Hour() == 4 || Hour() == 5 || Hour() == 6 || Hour() == 7 || Hour() == 8 || Hour() == 11 || Hour() == 12 || Hour() == 14 || Hour() == 15 || Hour() == 16)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 17000.0) && (Hour() == 21 || Hour() == 22 || Hour() == 0 || Hour() == 1 || Hour() == 2 || Hour() == 3 || Hour() == 4 || Hour() == 5 || Hour() == 6 || Hour() == 7 || Hour() == 8 || Hour() == 10 || Hour() == 11 || Hour() == 13 || Hour() == 14 || Hour() == 15 || Hour() == 16)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 18000.0) && (Hour() == 21 || Hour() == 22 || Hour() == 0 || Hour() == 1 || Hour() == 2 || Hour() == 3 || Hour() == 4 || Hour() == 5 || Hour() == 6 || Hour() == 7 || Hour() == 8 || Hour() == 9 || Hour() == 10 || Hour() == 11 || Hour() == 12 || Hour() == 13 || Hour() == 15 || Hour() == 16)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 19000.0) && (Hour() == 21 || Hour() == 22 || Hour() == 0 || Hour() == 1 || Hour() == 2 || Hour() == 3 || Hour() == 4 || Hour() == 5 || Hour() == 6 || Hour() == 7 || Hour() == 8 || Hour() == 9 || Hour() == 10 || Hour() == 11 || Hour() == 12 || Hour() == 13 || Hour() == 14 || Hour() == 15 || Hour() == 16)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 20000.0) && (Hour() == 21 || Hour() == 22 || Hour() == 0 || Hour() == 1 || Hour() == 2 || Hour() == 3 || Hour() == 4 || Hour() == 5 || Hour() == 6 || Hour() == 7 || Hour() == 8 || Hour() == 9 || Hour() == 10 || Hour() == 11 || Hour() == 12 || Hour() == 13 || Hour() == 14 || Hour() == 15 || Hour() == 16 || Hour() == 17)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 21000.0) && (Hour() == 21 || Hour() == 22 || Hour() == 0 || Hour() == 1 || Hour() == 2 || Hour() == 3 || Hour() == 4 || Hour() == 5 || Hour() == 6 || Hour() == 7 || Hour() == 8 || Hour() == 9 || Hour() == 10 || Hour() == 11 || Hour() == 12 || Hour() == 13 || Hour() == 14 || Hour() == 15 || Hour() == 16 || Hour() == 17 || Hour() == 18)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 22000.0) && (Hour() == 21 || Hour() == 22 || Hour() == 23 || Hour() == 0 || Hour() == 1 || Hour() == 2 || Hour() == 3 || Hour() == 4 || Hour() == 5 || Hour() == 6 || Hour() == 7 || Hour() == 8 || Hour() == 9 || Hour() == 10 || Hour() == 11 || Hour() == 12 || Hour() == 13 || Hour() == 14 || Hour() == 15 || Hour() == 16 || Hour() == 17 || Hour() == 18)) firstHalf[d] = firstHalf[d] + 1000.0;
+if (DoublesEqual(total, 23000.0) && (Hour() == 20 || Hour() == 21 || Hour() == 22 || Hour() == 23 || Hour() == 0 || Hour() == 1 || Hour() == 2 || Hour() == 3 || Hour() == 4 || Hour() == 5 || Hour() == 6 || Hour() == 7 || Hour() == 8 || Hour() == 9 || Hour() == 10 || Hour() == 11 || Hour() == 12 || Hour() == 13 || Hour() == 14 || Hour() == 15 || Hour() == 16 || Hour() == 17 || Hour() == 18)) firstHalf[d] = firstHalf[d] + 1000.0;
+```
+
+I was apparently very tolerant of repetition. See this code from
+`MeanReversion/tests/Optimizer.java`, complete with a variable name of `wtf`.
+
+```java
+for (int aa = 0; aa < width; aa++) {
+    //  for (int bb = aa + 1; bb < width; bb++) {
+     //   for (int cc = bb + 1; cc < width; cc++) {
+        //  for (int dd = cc + 1; dd < width; dd++) {
+         //   for (int ee = dd + 1; ee < width; ee++) {
+              //for (int ff = ee + 1; ff < width; ff++) {
+               // for (int gg = ff + 1; gg < width; gg++) {
+                  //for (int hh = gg + 1; hh < width; hh++) {
+                 //   for (int ii = hh + 1; ii < width; ii++) {
+                      //    for (int jj = ii + 1; jj < width; jj++) {
+                      //  for (int kk = jj + 1; kk < width; kk++) {
+                      //  for (int ll = kk + 1; ll < width; ll++) {
+                      //   for (int mm = ll + 1; mm < width; mm++) {
+                      // for (int nn = mm + 1; nn < width; nn++) {
+                      //   for (int oo = nn + 1; oo < width; oo++) {
+                      //    for (int pp = oo + 1; pp < width; pp++) {
+                      //      for (int qq = pp + 1; qq < width; qq++) {
+                      //         for (int rr = qq + 1; rr < width; rr++) {
+                      //     for (int ss = rr + 1; ss < width; ss++) {
+                      //     for (int tt = ss + 1; tt < width; tt++) {
+                      //  for (int uu = tt + 1; uu < width; uu++) {
+                      // for (int vv = uu + 1; vv < width; vv++) {
+                      // for (int ww = vv + 1; ww < width; ww++) {
+
+                      boolean[] invalid = new boolean[23];
+                      for (int wtf = 0; wtf < width; wtf++) {
+                        invalid[wtf] = true;
+                       if (wtf == aa || wtf == aa || wtf == aa) invalid[wtf] = false;
+                  //      if (wtf == dd || wtf == ee || wtf == ff) invalid[wtf] = false;
+                        //if (wtf == gg || wtf == hh || wtf == ii) invalid[wtf] = false;
+                        //   if (wtf == jj || wtf == kk || wtf == ll) invalid[wtf] = false;
+                        //   if (wtf == mm || wtf == nn || wtf == oo) invalid[wtf] = false;
+                        // if (wtf == pp || wtf == qq || wtf == rr) invalid[wtf] = false;
+                        // if (wtf == ss || wtf == tt || wtf == uu) invalid[wtf] = false;
+                        //   if (wtf == vv || wtf == ww) invalid[wtf] = false;
+                      }
+```
+
+In `Forex/Other/Test2/Forex.java`, I
+[apparently](https://github.com/dguo/forex-trading/blob/b90bb61b25b8ce4496d382609ddd6a428a1ffcfc/Forex/Other/Test2/Forex.java#L28)
+didn't like to have useful error messages.
+
+```java
+if(rawData.isEmpty()) System.out.println("wtf");
+```
+
+This should give you some idea of the sophistication of my programming abilities
+at the time. I hooked up all that mental horsepower to my Oanda account and let
+it rip.
 
 ## Results
 

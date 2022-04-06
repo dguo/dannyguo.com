@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2022-04-03
+date: 2022-04-06
 draft: true
 tags:
   - javascript
@@ -12,40 +12,48 @@ To check if a JavaScript string begins with a particular string, use the
 `startsWith` method.
 
 ```javascript
-const testString = "foobar";
+const testString = "Foobar";
 
 // evaluates to true
-testString.startsWith("foo")
+testString.startsWith("Foo");
 
 // evaluates to false
-testString.startsWith("zoo");
+testString.startsWith("bar");
+
+// evaluates to false (the check is case-sensitive)
+testString.startsWith("foo");
 ```
 
 Similarly, to check if a JavaScript string ends with a particular string, use
 the `endsWith` method.
 
 ```javascript
-const testString = "foobar";
+const testString = "Foobar";
 
 // evaluates to true
-testString.endsWith("bar")
+testString.endsWith("bar");
 
 // evaluates to false
 testString.endsWith("baz");
+
+// evaluates to false (the check is case-sensitive)
+testString.startsWith("BAR");
 ```
 
 ## Advanced Usage
 
 The `startsWith` method takes an optional starting index as a second parameter.
 The index is [zero-based](https://en.wikipedia.org/wiki/Zero-based_numbering),
-so if you want to start at the second character in the string, for example, you
-would pass in a value of 1.
+so if you want to start the check at the fourth character in the string, you
+would pass in a value of 3.
 
 ```javascript
 const testString = "foobar";
 
 // evaluates to false
-testString.startsWith("bar")
+testString.startsWith("bar");
+// this is equivalent
+testString.startsWith("bar", 0);
 
 // evaluates to true
 testString.startsWith("bar", 3);
@@ -58,10 +66,10 @@ limits the length of the string that you are searching.
 const testString = "foobar";
 
 // evaluates to false
-testString.endsWith("foo")
+testString.endsWith("oo");
 
-// evaluates to true
-testString.endsWith("foo", 3);
+// evaluates to true because it's equivalent to "foo".endsWith("oo")
+testString.endsWith("oo", 3);
 ```
 
 ## Alternatives
@@ -69,4 +77,32 @@ testString.endsWith("foo", 3);
 `startsWith` and `endsWith` were a part of the [ECMAScript
 2015](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_%E2%80%93_ECMAScript_2015)
 specification, so all modern browsers [support the
-methods](https://caniuse.com/mdn-javascript_builtins_string_startswith).
+methods](https://caniuse.com/mdn-javascript_builtins_string_startswith). If you
+can't use them for whatever reason, such as needing to support Internet
+Explorer, one option is to use a regex.
+
+To replicate `startsWith`, you can use the `^` character to match the beginning
+of the input.
+
+```javascript
+const testString = "foobar";
+
+// evaluates to true
+/^foo/.test(testString);
+```
+
+To replicate `endsWith`, you can use the `$` character to match the end
+of the input.
+
+```javascript
+const testString = "foobar";
+
+// evaluates to true
+/bar$/.test(testString);
+```
+
+You could also use the `indexOf` method.
+
+```javascript
+const testString = "foobar";
+```

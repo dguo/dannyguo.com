@@ -1,8 +1,7 @@
 ---
 categories:
   - programming
-date: 2022-04-06
-draft: true
+date: 2022-04-07
 tags:
   - javascript
 title: How to Check if a JavaScript String Begins or Ends With a String
@@ -19,6 +18,9 @@ testString.startsWith("Foo");
 
 // evaluates to false
 testString.startsWith("bar");
+
+// evaluates to false
+testString.startsWith("Foobarbaz");
 
 // evaluates to false (the check is case-sensitive)
 testString.startsWith("foo");
@@ -74,12 +76,13 @@ testString.endsWith("oo", 3);
 
 ## Alternatives
 
-`startsWith` and `endsWith` were a part of the [ECMAScript
+`startsWith` and `endsWith` were part of the [ECMAScript
 2015](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_%E2%80%93_ECMAScript_2015)
 specification, so all modern browsers [support the
 methods](https://caniuse.com/mdn-javascript_builtins_string_startswith). If you
 can't use them for whatever reason, such as needing to support Internet
-Explorer, one option is to use a regex.
+Explorer, one option is to use a
+[regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
 
 To replicate `startsWith`, you can use the `^` character to match the beginning
 of the input.
@@ -101,8 +104,5 @@ const testString = "foobar";
 /bar$/.test(testString);
 ```
 
-You could also use the `indexOf` method.
-
-```javascript
-const testString = "foobar";
-```
+Alternatively, you can use `lastIndexOf` and `indexOf` to replicate the methods,
+as [detailed here](https://stackoverflow.com/a/36876507/1481479).

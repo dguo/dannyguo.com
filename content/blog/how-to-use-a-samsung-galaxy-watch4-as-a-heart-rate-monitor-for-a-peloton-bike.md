@@ -2,6 +2,7 @@
 categories:
   - fitness
 date: 2022-01-26
+lastmod: 2022-04-17
 tags:
   - peloton
 title: How to Use a Samsung Galaxy Watch4 as a Heart Rate Monitor for a Peloton Bike
@@ -40,13 +41,13 @@ In the meantime, you should see a "connecting" message on your bike.
 
 ![Screenshot of the Peloton connecting message](https://imgur.com/K713rap.jpg)
 
-Next, you'll probably see a "couldn't connect" message.
+Next, you might see a "couldn't connect" message.
 
 ![Screenshot of the Peloton couldn't connect message](https://imgur.com/BxVgnye.jpg)
 
-In the app, press the refresh button in the bottom right to restart Bluetooth
-advertising. In a few seconds, the bike should try to connect again, and then
-you should see a "connected" message.
+If this happens, press the refresh button in the bottom right of the app to
+restart Bluetooth advertising. In a few seconds, the bike should try to connect
+again, and then you should see a "connected" message.
 
 ![Screenshot of the Peloton connected message](https://imgur.com/HXxHTRd.jpg)
 
@@ -56,15 +57,14 @@ There should be a heart symbol in the top right.
 
 Now you can start a class, and you should see your heart rate!
 
-I haven't found a reliable way to avoid having to make two connection attempts.
-I had a hypothesis that the issue was the bike trying to connect before the app
-had a heart rate to send out. I tried opening the app and waiting for the heart
-rate before turning on the bike, but I still got a failed connection on the
-first attempt.
+If you frequently get connection failures, try updating your watch to the latest
+version. The connection failures largely went away for me after an [April 2022
+update](https://www.xda-developers.com/galaxy-watch-4-update-samsung-health-improvements-march-patch/).
 
-I've also found that once I'm in a class, it seems to be harder to get the
-connection to work. So now I always wait for a successful connection before
-joining a class.
+I have also experienced an issue where the heart rate updates would stop in the
+middle of the ride, so the heart rate on the bike would freeze at a particular
+number. I've been able to reliably avoid this issue by turning on my watch's
+always on display while I ride.
 
 A final tip is that when you're done with your ride, you can manually stop the
 Heart for Bluetooth app by pressing the flag button in the middle left. This

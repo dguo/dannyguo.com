@@ -1,14 +1,14 @@
 ---
 categories:
   - writing
-date: 2022-04-25
+date: 2022-04-30
 draft: true
 tags:
   - blogging
 title: Why I Blog
 ---
 
-Some people have asked me why I blog. Here are my reasons, in roughly decreasing
+Some people have asked me why I blog. These are my reasons, in roughly decreasing
 order of importance to me.
 
 ## Clarify My Thinking
@@ -23,32 +23,35 @@ when I write them down.
 
 If you had asked me when I was a student about the purpose of writing is, I
 would have said something like putting what you think into words. What I
-understand now is that that very action can change my thinking as I go.
+understand now is that that very action can change my thinking as I go. This is
+not an original thought of mine. See Paul Graham's
+[essay](http://www.paulgraham.com/words.html) on "Putting Ideas Into Words."
 
 It can give me better words to express myself.
 
-## Sharing Knowledge
+## Sharing Knowledge and Ideas
 
-I know how good it feels to read a great blog post. Whether the post perfectly
-solves a problem that I have, teaches me something new, or encourages me to
-change my mind about something, I love soaking up knowledge, and I tend to
-prefer blog posts over other mediums.
+I love the feeling that I get from reading a great blog post, whether the post
+perfectly solves a problem that I have, teaches me something new, or encourages
+me to change my mind about something.
 
-Every medium has its advantages and disadvantages, but blogs are usually my
-favorite. They allow room for more nuance and detail than tweets, they aren't a
-huge time commitment like books, they allow me to read at my own pace, unlike
-videos, and they are easy to link to and reference.
-
-Blogging allows me to share what I know. I don't claim to know particularly more
-than anyone else, but I know from comments that at least a few people have find
-some of my posts helpful, and that is gratifying for me.
-
-Learning by making mistakes is painful and inefficient in general. I love to
-absorb knowledge from other people so that I avoid making the same mistakes.
-Likewise, I don't want others to make the same mistakes that I do, which is why
-I have no problem telling everyone that I once [ppublished an AWS secret key to
-a public GitHub
+One reason is that I try to avoid learning by making mistakes. That's painful
+and inefficient. Instead, I try to learn from other people so that I avoid
+making the same mistakes. Likewise, I don't want others to make my mistakes,
+which is why I have no problem telling the world that I once [published an AWS
+secret key to a public GitHub
 repo](https://www.dannyguo.com/blog/i-published-my-aws-secret-key-to-github/).
+
+Every medium for sharing information has its advantages and disadvantages, but I
+generally prefer blog posts. They allow room for more nuance and detail than
+tweets, they take much less time to read than books, they are easy to consume at
+my own pace (unlike videos), and they are easy to link to and reference.
+
+So blogging allows me to share what I know. I don't claim to actually know all
+that much, but I believe that everyone has something worth sharing. The idea
+that my posts could be helpful for even just one other person motivates me. And
+I know from comments that at least a few people have find some of my posts
+helpful, and that alone is gratifying.
 
 ## Learn Things
 

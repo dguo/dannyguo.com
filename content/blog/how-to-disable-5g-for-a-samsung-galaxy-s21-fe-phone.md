@@ -1,8 +1,7 @@
 ---
 categories:
-  -
-date: 2022-05-21
-draft: true
+  - hardware
+date: 2022-05-23
 tags:
   - samsung
 title: How to Disable 5G for a Samsung Galaxy S21 FE Phone
@@ -10,10 +9,16 @@ title: How to Disable 5G for a Samsung Galaxy S21 FE Phone
 
 I switched to a [Samsung Galaxy S21
 FE](https://www.amazon.com/Samsung-Unlocked-Smartphone-Intelligent-Graphite/dp/B09BFTMQH9?crid=3GTO7RQL8WJZH&keywords=galaxy+s21+fe&qid=1653143909&sprefix=galaxy+s21+f%2Caps%2C150&sr=8-2&linkCode=ll1&tag=thdalo00-20&linkId=d6efde9cebf6aafabe69c73450ee7468&language=en_US&ref_=as_li_ss_tl)
-phone, and I looked to disable 5G because my understanding is that it can cause
-a significant decrease in battery life.
+phone, and one of the first things I did was to disable
+[5G](https://en.wikipedia.org/wiki/5G) because my understanding is that it can
+cause a noticeable decrease in battery life, and I've never felt a need for
+speeds faster than what [4G
+LTE](https://en.wikipedia.org/wiki/LTE_(telecommunication)) provides anyway. I
+used an app called [Samsung Band
+Selection](https://play.google.com/store/apps/details?id=com.ray.samsungbandselection)
+to disable 5G.
 
-Samsung's own site has a [page on the
+Samsung's own website has a [page on the battery drain
 issue](https://www.samsung.com/us/support/troubleshooting/TSG01201462/):
 
 > At this time, the 5G networks are only used for data connections and are not
@@ -27,16 +32,31 @@ issue](https://www.samsung.com/us/support/troubleshooting/TSG01201462/):
 
 There is
 [evidence](https://www.wsj.com/articles/5g-drains-your-iphones-battery-heres-what-you-can-do-about-it-11647716969)
-of this for iPhones as well.
+of this issue for iPhones as well.
 
-To turn 5G off, I expected to be able to do so through the phone's settings, but
-I couldn't find a setting to do so. The "Network mode"
+I originally expected to turn 5G off through the phone's settings, but I wasn't
+able to because the "Network mode"
 [setting](https://www.digitaltrends.com/mobile/how-to-turn-off-5g-on-a-samsung-phone/)
 that I've seen on my older devices wasn't there. I don't know if it's because I
-bought an unlocked version, or maybe Samsung doesn't want people to be able to
+bought an unlocked phone, or maybe Samsung doesn't want people to be able to
 change the network mode in general anymore.
 
-![Mobile network settings](https://i.imgur.com/ZSDoXhB.jpg)
+![Mobile network settings](https://i.imgur.com/6MjOaPc.jpg)
 
-As a workaround, I found an app called [Samsung Band
-Selection](https://play.google.com/store/apps/details?id=com.ray.samsungbandselectio).
+As a workaround, I found the [Samsung Band
+Selection](https://play.google.com/store/apps/details?id=com.ray.samsungbandselection)
+app.
+
+![Samsung Band Selection app](https://i.imgur.com/h16FP4w.jpg)
+
+Instead of selecting individual bands, I went into "More Network Settings" and
+saw the "Preferred network type" setting.
+
+![Extra mobile network settings](https://i.imgur.com/bzwvawz.jpg)
+
+I changed it from 5G to LTE.
+
+![Disabling 5G](https://i.imgur.com/j3caepW.jpg)
+
+And that has worked as expected. When I first got the phone, I saw the 5G symbol
+in the top bar. Now I only ever see 4G.

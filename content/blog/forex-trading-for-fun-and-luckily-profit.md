@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2022-04-02
+date: 2022-05-24
 draft: true
 tags:
   - forex
@@ -93,7 +93,7 @@ it easier to both make and lose money.
 
 500:1 scared me, so I didn't anticipate wanting to use that much leverage. Some
 of the brokers also seemed sketchy to me. I ended up picking
-[Oanda](https://www.oanda.com), which let me leverage up to 50:1.
+[Oanda](https://www.oanda.com/us-en/trading/), which let me leverage up to 50:1.
 
 ## Manual Trading
 
@@ -102,10 +102,47 @@ Oanda's desktop application. Here's an old screenshot:
 
 ![Oanda fxTrade interface](https://i.imgur.com/dWFc9SV.png)
 
+### Currencies
+
+You can see from the screenshot what currencies I could trade through Oanda:
+
+* Australian dollar (AUD)
+* Canadian dollar (CAD)
+* European Union euro (EUR)
+* Japanese yen (JPY)
+* New Zealand dollar (NZD)
+* Pound sterling (GBP)
+* Swiss franc (CHF)
+* United States dollar (USD)
+
+I learned some nicknames for currencies, such as
+"[loonie](https://www.investopedia.com/terms/l/loonie.asp)" for the Canadian
+dollar because the $1 Canadian coin has a
+[loon](https://en.wikipedia.org/wiki/Loon) on one side. Similarly, the New
+Zealand dollar is informally known as the "kiwi" because the $1 New Zealand coin
+has a [kiwi bird](https://en.wikipedia.org/wiki/Kiwi_(bird)) on one side.
+
+### Currency Pair
+
+You can also see that the currencies come in
+[pairs](https://en.wikipedia.org/wiki/Currency_pair), such as EUR/USD. When I
+look up EUR/USD right now, it has a rate of 1.07. That means that 1 euro is
+currently equivalent to 1.07 U.S. dollars.
+
+For each pair, the first currency is the "base" currency, and the second
+currency is the "quote" currency. When you buy a currency pair, you are
+simultaneously buying the base currency and selling the quote currency. You can
+also sell a currency pair, which means selling the base currency and buying the
+quote currency. So when you buy a currency pair, you hope to make a profit by
+the rate going up, and when you sell a pair, you hope that the rate goes down.
+
+Currency pairs also have interesting nicknames. The GBP/USD pair is also known
+as the cable because the exchange rate was transmitted by underwater cables
+across the Atlantic Ocean.
+
 ### Spread
 
-If you look at a particular [currency
-pair](https://en.wikipedia.org/wiki/Currency_pair), you'll see that it has a
+If you look at a particular currency pair, you'll see that it has a
 sell price (also known as the [ask
 price](https://www.investopedia.com/terms/a/ask.asp)) as well as a buy price
 (also known as the [bid
@@ -119,23 +156,6 @@ primary way that brokers make money.
 
 The spread is usually shown as a number of pips ([percentage in
 point](https://www.investopedia.com/terms/p/pip.asp)).
-
-### Currencies
-
-You can see from the screenshot what currencies I could trade through Oanda:
-
-* United States dollar
-* Canadian dollar
-* Australian dollar
-* Japanese yen
-* European Union euro
-* New Zealand dollar
-* Swiss franc
-* Pound sterling
-
-I learned some interesting nicknames. The GBP/USD pair is also known as the
-cable because the exchange rate was transmitted by underwater cables across the
-Atlantic Ocean.
 
 ## Automated Trading
 

@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2022-05-24
+date: 2022-05-25
 draft: true
 tags:
   - forex
@@ -126,41 +126,54 @@ has a [kiwi bird](https://en.wikipedia.org/wiki/Kiwi_(bird)) on one side.
 
 You can also see that the currencies come in
 [pairs](https://en.wikipedia.org/wiki/Currency_pair), such as EUR/USD. When I
-look up EUR/USD right now, it has a rate of 1.07. That means that 1 euro is
-currently equivalent to 1.07 U.S. dollars.
+look up EUR/USD [right now](https://finance.yahoo.com/quote/EURUSD=X/), it has a
+rate of 1.07. That means that 1 euro is currently equivalent to 1.07 U.S.
+dollars.
 
 For each pair, the first currency is the "base" currency, and the second
 currency is the "quote" currency. When you buy a currency pair, you are
 simultaneously buying the base currency and selling the quote currency. You can
 also sell a currency pair, which means selling the base currency and buying the
-quote currency. So when you buy a currency pair, you hope to make a profit by
-the rate going up, and when you sell a pair, you hope that the rate goes down.
+quote currency. So when you buy a currency pair, you hope the rate goes up, and
+when you sell a pair, you hope that the rate goes down.
 
-Currency pairs also have interesting nicknames. The GBP/USD pair is also known
-as the cable because the exchange rate was transmitted by underwater cables
-across the Atlantic Ocean.
+Some currency pairs also have nicknames. GBP/USD is known as the
+"[cable](https://www.investopedia.com/terms/c/cable.asp)" as a reference to
+[underwater
+cables](https://en.wikipedia.org/wiki/Transatlantic_communications_cable) that
+spanned the Atlantic Ocean to enable faster communication between the United
+States and England. Later, EUR/USD became known as the "fiber" as a nod to the
+[fiber-optic cables](https://en.wikipedia.org/wiki/Fiber-optic_cable) that are
+used now for the same purpose.
 
 ### Spread
 
-If you look at a particular currency pair, you'll see that it has a
-sell price (also known as the [ask
+You might have noticed that each currency pair actually has two prices: a sell
+price (also known as the [ask
 price](https://www.investopedia.com/terms/a/ask.asp)) as well as a buy price
 (also known as the [bid
 price](https://www.investopedia.com/terms/b/bidprice.asp)), and the buy price is
-always higher than the sell price. The difference is known as the [bid-ask
-spread](https://www.investopedia.com/terms/b/bid-askspread.asp). It means that
-if you simultaneously buy a pair and sell it, you would lose money.  This is the
-primary way that brokers make money.
+always higher than the sell price.
 
-### PIPs
+The difference is known as the [bid-ask
+spread](https://www.investopedia.com/terms/b/bid-askspread.asp). It means that
+if you simultaneously buy a pair and sell it, you would lose money. The broker
+would effectively keep the difference, and that is the primary way that the
+broker makes money. So to make a profit yourself, it's not enough for the
+currency pair to change in your favor. It has to change enough for you to beat
+the spread.
 
 The spread is usually shown as a number of pips ([percentage in
-point](https://www.investopedia.com/terms/p/pip.asp)).
+point](https://www.investopedia.com/terms/p/pip.asp)). A pip is the smallest
+price change possible for a given currency pair. Typically, that means 1 pip is
+0.0001. So if you buy EUR/USD at 1.0721 and then sell it at 1.0763, you've made
+a profit of 42 pips.
 
 ## Automated Trading
 
-I automated my trading with [MetaTrader
-4](https://en.wikipedia.org/wiki/MetaTrader_4).
+One reason I picked Oanda as my broker is because they have an integration with
+[MetaTrader 4](https://en.wikipedia.org/wiki/MetaTrader_4), which I knew would
+allow me to automate my trading.
 
 I bought a book named [Expert Advisor Programming: Creating Automated Trading
 Systems in MQL for MetaTrader

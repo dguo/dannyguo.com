@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2022-05-25
+date: 2022-05-26
 draft: true
 tags:
   - forex
@@ -167,28 +167,53 @@ The spread is usually shown as a number of pips ([percentage in
 point](https://www.investopedia.com/terms/p/pip.asp)). A pip is the smallest
 price change possible for a given currency pair. Typically, that means 1 pip is
 0.0001. So if you buy EUR/USD at 1.0721 and then sell it at 1.0763, you've made
-a profit of 42 pips.
+a profit of 42 pips. Oanda supports the concept of [fractional
+pips](https://www1.oanda.com/forex-trading/learn/getting-started/pips), so their
+rates have an additional decimal place.
+
+In the screenshot, the number at the bottom center of each currency pair is the
+spread. The spread is usually tighter for pairs that have greater trading
+volume. You can see that EUR/USD, which is the most traded pair, had a spread of
+1.2 pips at the time. Whereas AUD/NZD had a spread of 6.1 pips.
+
+Spreads also change throughout the day. As a whole, the forex market is [open 24
+hours a
+day](https://www.investopedia.com/ask/answers/how-forex-market-trade-24-hours-day/).
+Trading volume is correlated with when markets are open. So the busiest time is
+when the European and U.S. markets are both open, and that's when spreads are
+the tightest. But because of time zones, there is always at least one market
+open.
+
+## Martingale
+
+After I got a handle on the basics of forex trading, I tried to come up with a
+trading strategy. Spoiler warning: I didn't know what I was doing.
+
+I ended up with a strategy of making a small bet to start. If the rate moved
+several pips in my favor, I'd cash out and reverse my position. If the rate
+moved against me, I'd make another, larger bet.
+
+I later learned that this is called a [Martingale
+strategy](https://en.wikipedia.org/wiki/Martingale_(betting_system)).
 
 ## Automated Trading
 
-One reason I picked Oanda as my broker is because they have an integration with
-[MetaTrader 4](https://en.wikipedia.org/wiki/MetaTrader_4), which I knew would
-allow me to automate my trading.
+The next step was to automate my trading. One reason I picked Oanda as my broker
+was their integration with a platform called [MetaTrader
+4](https://en.wikipedia.org/wiki/MetaTrader_4), which I knew would make
+automation easy.
 
 I bought a book named [Expert Advisor Programming: Creating Automated Trading
 Systems in MQL for MetaTrader
 4](https://www.amazon.com/Expert-Advisor-Programming-Automated-MetaTrader/dp/0982645902?crid=3QDACH7CXL46R&keywords=Expert+Advisor+Programming%3A+Creating+Automated+Trading+Systems+in+MQL+for+MetaTrader+4&qid=1644888838&sprefix=expert+advisor+programming+creating+automated+trading+systems+in+mql+for+metatrader+4%2Caps%2C97&sr=8-1&linkCode=ll1&tag=thdalo00-20&linkId=2c0c6edb764af5bde0421e042ee819e1&language=en_US&ref_=as_li_ss_tl)
-and learned how to write "expert advisors" (EAs) in MetaQuotes Language 4
-(MQL4), which has syntax similar to C++.
+to learn how to write "expert advisors" (EAs) in [MetaQuotes Language
+4](https://docs.mql4.com/) (MQL4), which has syntax similar to C++.
 
 I didn't know how to persist data, so I used CSV files as a storage mechanism.
 
 I ran my EAs on a laptop that I left on 24/7. For alerting, I used the
 [SendMail](https://docs.mql4.com/common/sendmail) function to email me whenever
 the system placed a trade.
-
-I used a [Martingale
-strategy](https://en.wikipedia.org/wiki/Martingale_(betting_system)).
 
 I noticed a few interesting things as I looked at my old code again.
 

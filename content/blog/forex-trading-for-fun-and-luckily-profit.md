@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2022-05-26
+date: 2022-05-28
 draft: true
 tags:
   - forex
@@ -184,24 +184,44 @@ when the European and U.S. markets are both open, and that's when spreads are
 the tightest. But because of time zones, there is always at least one market
 open.
 
-## Martingale
+## Strategy
 
 After I got a handle on the basics of forex trading, I tried to come up with a
-trading strategy. Spoiler warning: I didn't know what I was doing.
+trading strategy. Spoiler alert: I didn't know what I was doing.
 
-I ended up with a strategy of making a small bet to start. If the rate moved
-several pips in my favor, I'd cash out and reverse my position. If the rate
-moved against me, I'd make another, larger bet.
+I ended up with a strategy of taking a small position to start. If the rate
+moved several pips in my favor, I'd cash out and then reverse my position. If
+the rate moved against me, I'd take another, larger position in the same
+direction as the original position. My hope was that the new position would make
+enough profit to outweigh any loss from the original position. If the rate
+continued to move against me, I'd make a third, even larger trade. And so on.
 
-I later learned that this is called a [Martingale
-strategy](https://en.wikipedia.org/wiki/Martingale_(betting_system)).
+In most cases, it only took me a few trades to make a profit in one direction.
+The risk was that if a rate kept moving against me, I would eventually run out
+of money. At that point, all my money would be in one position that could be
+wiped out with a margin call.
+
+So I was able to consistently make small profits, but there was always the risk
+of a catastrophic loss that would wipe out all those small gains. I later
+learned that this is called a [Martingale
+strategy](https://en.wikipedia.org/wiki/Martingale_(betting_system)). In
+retrospect, I had no reason to believe that my strategy was any good. I had no
+special insight into forex rate changes or technological advantage. My strategy
+was just gambling.
+
+At one point, I did look into using [economic
+indicator](https://www.investopedia.com/terms/e/economic_indicator.asp) releases
+as a basis for trades. I even did some crude
+[backtesting](https://www.investopedia.com/terms/b/backtesting.asp) with historical
+indicators and forex rates. But I never put such a strategy into action. The
+Martingale was my primary method during my brief stint as a forex trader.
 
 ## Automated Trading
 
-The next step was to automate my trading. One reason I picked Oanda as my broker
-was their integration with a platform called [MetaTrader
-4](https://en.wikipedia.org/wiki/MetaTrader_4), which I knew would make
-automation easy.
+I executed my strategy manually for a while. The next step was to automate my
+trading. One reason I picked Oanda as my broker was their integration with a
+platform called [MetaTrader 4](https://en.wikipedia.org/wiki/MetaTrader_4),
+which I knew would make automation easy.
 
 I bought a book named [Expert Advisor Programming: Creating Automated Trading
 Systems in MQL for MetaTrader

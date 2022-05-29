@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2022-05-28
+date: 2022-05-29
 draft: true
 tags:
   - forex
@@ -227,18 +227,107 @@ I bought a book named [Expert Advisor Programming: Creating Automated Trading
 Systems in MQL for MetaTrader
 4](https://www.amazon.com/Expert-Advisor-Programming-Automated-MetaTrader/dp/0982645902?crid=3QDACH7CXL46R&keywords=Expert+Advisor+Programming%3A+Creating+Automated+Trading+Systems+in+MQL+for+MetaTrader+4&qid=1644888838&sprefix=expert+advisor+programming+creating+automated+trading+systems+in+mql+for+metatrader+4%2Caps%2C97&sr=8-1&linkCode=ll1&tag=thdalo00-20&linkId=2c0c6edb764af5bde0421e042ee819e1&language=en_US&ref_=as_li_ss_tl)
 to learn how to write "expert advisors" (EAs) in [MetaQuotes Language
-4](https://docs.mql4.com/) (MQL4), which has syntax similar to C++.
+4](https://docs.mql4.com/) (MQL4), which has syntax similar to C++, as well as
+built-in functions for trading, such as
+[OrderSend](https://docs.mql4.com/trading/ordersend) and
+[OrderClose](https://docs.mql4.com/trading/orderclose).
 
-I didn't know how to persist data, so I used CSV files as a storage mechanism.
+I wrote a helper function to place an order.
+
+```cpp
+void PlaceOrder(string pairToTrade, double sizeOfTrade)
+{
+  string pair = pairToTrade;
+  double lots = NormalizeDouble(MathAbs(sizeOfTrade), 2);
+  bool goLong = true;
+  if (FirstGreater(0.00, sizeOfTrade)) goLong = false;
+  double bidPrice = MarketInfo(pair, MODE_BID);
+  double askPrice = MarketInfo(pair, MODE_ASK);
+
+  // place the order if the lot size is below the maximum
+  if (FirstGreater(100.00, lots)) {
+    if (goLong) {
+      OrderSend(pair, 0, lots, askPrice, 20000, 0, 0, NULL, 8, 0, Green);
+    }
+    else {
+      OrderSend(pair, 1, lots, bidPrice, 20000, 0, 0, NULL, 8, 0, Green);
+    }
+  }
+
+  // otherwise, split it up into as many orders as needed
+  else {
+    while (FirstGreater(lots, 100.00)) {
+      if (goLong) {
+        OrderSend(pair, 0, 100.00, askPrice, 20000, 0, 0, NULL, 8, 0, Green);
+      }
+      else {
+        OrderSend(pair, 1, 100.00, bidPrice, 20000, 0, 0, NULL, 8, 0, Green);
+      }
+      lots = NormalizeDouble(lots - 100.00, 2);
+    }
+    if (goLong) {
+      OrderSend(pair, 0, lots, askPrice, 20000, 0, 0, NULL, 8, 0, Green);
+    }
+    else {
+      OrderSend(pair, 1, lots, bidPrice, 20000, 0, 0, NULL, 8, 0, Green);
+    }
+  }
+}
+```
+
+I defined a [special start function](https://book.mql4.com/programm/special)
+that would be called whenever there was a new tick (a rate update).
+
+The only way that I learned in school to persist data was to use text files, so
+that's what I did. I wrote and read CSV files.
+
+```cpp
+int handle = FileOpen(Symbol() + ".csv", FILE_CSV|FILE_READ, ",");
+FileReadString(handle);
+FileReadString(handle);
+FileReadString(handle);
+roundZeroMargin = StrToDouble(FileReadString(handle));
+FileReadString(handle);
+roundOneMargin = StrToDouble(FileReadString(handle));
+FileReadString(handle);
+roundTwoMargin = StrToDouble(FileReadString(handle));
+FileReadString(handle);
+roundThreeMargin = StrToDouble(FileReadString(handle));
+FileReadString(handle);
+roundFourMargin = StrToDouble(FileReadString(handle));
+FileReadString(handle);
+currentStreak = StrToInteger(FileReadString(handle));
+FileReadString(handle);
+lockDirection = StrToInteger(FileReadString(handle));
+FileReadString(handle);
+lockPrice = StrToDouble(FileReadString(handle));
+FileReadString(handle);
+inMotion = StrToInteger(FileReadString(handle));
+FileClose(handle);
+```
 
 I ran my EAs on a laptop that I left on 24/7. For alerting, I used the
-[SendMail](https://docs.mql4.com/common/sendmail) function to email me whenever
-the system placed a trade.
+[SendMail](https://docs.mql4.com/common/sendmail) function to email me.
+
+```cpp
+// Stop Loss
+if ((OrdersTotal() > 0) && (MathMax(100.0, AccountFreeMargin()) == 100.0)) {
+
+  // close all orders and reset variables
+  CloseAllOrders();
+  ResetVariables();
+
+  // send emergency email
+  SendMail("Margin Call!", "No more margin left.");
+
+  // stop the EA
+  Sleep(100000000);
+}
+```
+
+### Code Review
 
 I noticed a few interesting things as I looked at my old code again.
-
-I did some attempts at
-[backtesting](https://www.investopedia.com/terms/b/backtesting.asp).
 
 I found this `DoublesEqual` function in `PairUpdater/PairUpdater.mq4`.
 

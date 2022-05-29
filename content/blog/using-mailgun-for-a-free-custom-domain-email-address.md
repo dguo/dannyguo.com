@@ -60,14 +60,13 @@ POP and IMAP support. I don't fault Zoho for making this change, but I would
 prefer to access all my email through my Gmail account. I have also read some
 anecdotes that Zoho Mail can be slow in sending and receiving emails.
 
-Next, I looked at [FastMail](https://www.fastmail.com/) and
-[ProtonMail](https://protonmail.com/), which are frequently cited by people who
-have chosen to [avoid Google services](https://nomoregoogle.com/). FastMail
+Next, I looked at [FastMail](https://www.fastmail.com/) and [Proton
+Mail](https://proton.me/mail), which are frequently cited by people who have
+chosen to [avoid Google services](https://nomoregoogle.com/). FastMail
 [costs](https://www.fastmail.com/pricing/) $5 per month or $50 per year for a
-plan that includes custom domain support. ProtonMail [requires a paid
-plan](https://protonmail.com/support/knowledge-base/custom-domain-support/) for
-the feature, and the cheapest [paid plan](https://protonmail.com/pricing) is $5
-per month or $48 per year.
+plan that includes custom domain support. Proton Mail [requires a paid
+plan](https://proton.me/support/custom-domain) for the feature, and the cheapest
+[paid plan](https://proton.me/pricing) is $5 per month or $48 per year.
 
 Another option was to use [Google Domains](https://domains.google/). It includes
 a free [email forwarding

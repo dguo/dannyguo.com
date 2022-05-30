@@ -2,7 +2,7 @@
 categories:
   - fitness
 date: 2022-01-26
-lastmod: 2022-04-17
+lastmod: 2022-05-30
 tags:
   - peloton
 title: How to Use a Samsung Galaxy Watch4 as a Heart Rate Monitor for a Peloton Bike
@@ -63,8 +63,11 @@ update](https://www.xda-developers.com/galaxy-watch-4-update-samsung-health-impr
 
 I have also experienced an issue where the heart rate updates would stop in the
 middle of the ride, so the heart rate on the bike would freeze at a particular
-number. I've been able to reliably avoid this issue by turning on my watch's
-always on display while I ride.
+number. At first, I was able to avoid the issue by turning on my watch's always
+on display while I ride. I later noticed that the Heart for Bluetooth
+description has a fix for this issue. You need to go into the Galaxy Wearable
+app, go to the watch settings, go to the list of apps, go to Heart for
+Bluetooth, and turn on "Allow background activity."
 
 A final tip is that when you're done with your ride, you can manually stop the
 Heart for Bluetooth app by pressing the flag button in the middle left. This

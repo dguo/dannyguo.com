@@ -1,7 +1,7 @@
 ---
 categories:
   - automation
-date: 2022-05-31
+date: 2022-06-01
 draft: true
 tags:
   - android
@@ -32,6 +32,8 @@ version 5.11. Tasker can have a high learning curve, especially for
 non-programmers. But it allows for fine-grained control, so I knew it'd be
 possible to configure what I wanted.
 
+## Setting up Tasker
+
 I set Tasker as my default "Caller ID & spam app" and then made a Tasker profile
 for the "Call Screened" event.
 
@@ -42,22 +44,37 @@ For the caller, the `C:ANY`
 the phone number of any contact." The `!` in front of it means "not." So
 `!C:ANY` matches any phone number that isn't in my contacts.
 
-I have two more conditions, the first is that the `%cs_incoming` variable has to
+I have two more conditions. The first is that the `%cs_incoming` variable has to
 be `true` because I don't need to screen outgoing calls. The second is that the
-`%cs_number` variable (representing the caller's phone number) has to start with
-my own number's area code.
+`%cs_number` variable, which has the caller's phone number as the value, has to
+start with my own number's area code. So the pattern is like `999*`.
 
-If all three conditions are true, then the profile runs the task that I set up.
+If a call meets all of these requirements, then the profile runs the task that I
+set up. The task has two actions.
 
 ![Tasker task](https://i.imgur.com/wIZVgrD.jpg)
 
-I set up a notification.
+The first action is a notification that shows the phone number. Tasker lets me
+set custom categories for notifications, so I gave this one a "Blocked number"
+category. Then I used Android settings to make the category a silent
+notification (no sound or vibration) so that it doesn't actually distract me. I
+originally wanted a notiification just to help confirm that things were working
+as expected, but I found later that I also get a great feeling of satisfaction
+every time I see the notification.
 
 ![Tasker notification](https://i.imgur.com/xMBRDrF.jpg)
 
-And then set up the actual screening.
+The second action is the actual call blocking. The action "disallows" the call,
+which means that my phone won't ring or vibrate. From the caller's perspective,
+it'll seem like an unanswered call. For now, I'm still allowing the caller to
+leave a voicemail, but in the future, I may prevent that as well by turning on
+the "Reject" option, which will make it seem like I manually rejected the call.
 
 ![Tasker screening](https://i.imgur.com/TpSKONz.jpg)
 
-To start, I've configured it to only disallow the call, so calls can still go to
-my voicemail. I wanted to make sure it was working as intended first.
+## Results
+
+This setup has worked well for me. I don't have to bother manually rejecting
+unknown calls, and the rate of spam attempts (based on my silent notifications)
+seems to have gone down anyway. I used to get about one or two calls a day. Now
+I go several days before getting the silent notification.

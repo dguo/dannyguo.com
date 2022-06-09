@@ -5,7 +5,7 @@ LABEL maintainer="danny@dannyguo.com"
 # Avoid "x509: certificate signed by unknown authority" errors
 RUN apk --no-cache add ca-certificates
 
-ENV HUGO_VERSION 0.89.1
+ENV HUGO_VERSION 0.100.2
 ENV HUGO_BINARY_URL https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
 
 WORKDIR /tmp

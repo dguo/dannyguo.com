@@ -18,3 +18,12 @@
 <title>{{ .Title }}</title>
 
 {{ template "_internal/google_analytics_async.html" . }}
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ECRL96RLWL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ECRL96RLWL');
+</script>

@@ -92,7 +92,7 @@ that we expect from a GIF.
 
 The `playsinline` attribute is necessary for [iOS in
 particular](https://webkit.org/blog/6784/new-video-policies-for-ios/). See this
-[StackOverflow answer](https://stackoverflow.com/a/48493032/1481479).
+[Stack Overflow answer](https://stackoverflow.com/a/48493032/1481479).
 
 The element will load the [first
 source](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content#Media_file_support_in_browsers)

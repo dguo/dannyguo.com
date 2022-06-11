@@ -128,13 +128,13 @@ TS2320: Interface 'Element' cannot simultaneously extend types 'ReactElement<any
 ```
 
 I found this [GitHub issue](https://github.com/yarnpkg/yarn/issues/4489), and
-this [StackOverflow question](https://stackoverflow.com/q/45736109/1481479). The
-probelm is that nested instances of the React types are created. The issue
+this [Stack Overflow question](https://stackoverflow.com/q/45736109/1481479).
+The probelm is that nested instances of the React types are created. The issue
 apparently doesn't happen with npm. It doesn't seem that there is an obvious
 workaround with Yarn. I have run into this issue before and was able to fix it
 by blowing away my `node_modules` and Yarn lockfile. But that didn't work this
-time, and it's a suboptimal solution anyway because I'll inevitably pick up
-many non-React related subdependency updates, which could break something.
+time, and it's a suboptimal solution anyway because I'll inevitably pick up many
+non-React related subdependency updates, which could break something.
 
 I assume React + TypeScript + Yarn isn't that uncommon of a combination, so I'm
 surprised that the GitHub issue hasn't received more attention and thumbs ups.
@@ -295,22 +295,47 @@ implied by its name at all.
 ## 2018-03-13
 
 ### JavaScript modules with TypeScript
-I'm following [this Twilio blog post](https://www.twilio.com/blog/2017/06/writing-a-node-module-in-typescript.html) on how to write a TypeScript package than can also be used by regular JavaScript. It's smooth for the most part, but
-figuring out how to correctly import and export code takes some research.
 
-I have to pull in another package ([ms](https://github.com/zeit/ms)), and I want to use the now official ES6
-[import statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import), but the generated code throws an error when `ms` is called. It [turns out](https://stackoverflow.com/q/29596714/1481479) I need to use this strange, TypeScript-specific syntax to [interop with CommonJS modules](https://www.typescriptlang.org/docs/handbook/modules.html#export--and-import--require): `import ms = require('ms');`. It fixes the issue though.
+I'm following [this Twilio blog
+post](https://www.twilio.com/blog/2017/06/writing-a-node-module-in-typescript.html)
+on how to write a TypeScript package than can also be used by regular
+JavaScript. It's smooth for the most part, but figuring out how to correctly
+import and export code takes some research.
+
+I have to pull in another package ([ms](https://github.com/zeit/ms)), and I want
+to use the now official ES6 [import
+statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import),
+but the generated code throws an error when `ms` is called. It [turns
+out](https://stackoverflow.com/q/29596714/1481479) I need to use this strange,
+TypeScript-specific syntax to [interop with CommonJS
+modules](https://www.typescriptlang.org/docs/handbook/modules.html#export--and-import--require):
+`import ms = require('ms');`. It fixes the issue though.
 
 I only have a single function to export, so I want to use `export default`.
 TypeScript happily compiles it, but when I try to require the output in regular
-JS, it fails. I'm running into [this issue](https://github.com/Microsoft/TypeScript/issues/2719), which is that `export default foo;` becomes `exports.default = foo;`. So in Node, the user would have to do `const foo = require('foo').default;`. I decide to drop the `default` and just export the function. So an ES6 consumer would do `import {foo} from 'foo';`, and a Node user would do `const foo = require('foo').foo;`. It still looks clunky, but it's better than `default`.
+JS, it fails. I'm running into [this
+issue](https://github.com/Microsoft/TypeScript/issues/2719), which is that
+`export default foo;` becomes `exports.default = foo;`. So in Node, the user
+would have to do `const foo = require('foo').default;`. I decide to drop the
+`default` and just export the function. So an ES6 consumer would do `import
+{foo} from 'foo';`, and a Node user would do `const foo = require('foo').foo;`.
+It still looks clunky, but it's better than `default`.
 
-Then I learn that for importing at least, [TypeScript 2.7](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html) added a new `esModuleInterop` flag that allows for importing CommonJS in the way that I originally wanted to: `import ms from 'ms';`. I add the flag, and it works.
+Then I learn that for importing at least, [TypeScript
+2.7](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html)
+added a new `esModuleInterop` flag that allows for importing CommonJS in the way
+that I originally wanted to: `import ms from 'ms';`. I add the flag, and it
+works.
 
-As I browse numerous GitHub issues and StackOverflow questions, it makes me wonder how much collective time we have spent on figuring out how to import and export
-code in JavaScript. I'm really glad ES6 was able to provide an official solution, but it seems like we're going to be dealing with compatibility issues for a long
-time. Node still doesn't support `import` natively because [it's such a hard problem](https://medium.com/the-node-js-collection/an-update-on-es6-modules-in-node-js-42c958b890c). I'm thankful to the people who are working on making the
-whole situation as painless for end users as possible.
+As I browse numerous GitHub issues and Stack Overflow questions, it makes me
+wonder how much collective time we have spent on figuring out how to import and
+export code in JavaScript. I'm really glad ES6 was able to provide an official
+solution, but it seems like we're going to be dealing with compatibility issues
+for a long time. Node still doesn't support `import` natively because [it's such
+a hard
+problem](https://medium.com/the-node-js-collection/an-update-on-es6-modules-in-node-js-42c958b890c).
+I'm thankful to the people who are working on making the whole situation as
+painless for end users as possible.
 
 The package that I published is [sleep-ts](https://www.npmjs.com/package/sleep-ts).
 

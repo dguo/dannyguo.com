@@ -1,0 +1,36 @@
+---
+categories:
+  - programming
+date: 2022-06-11
+draft: true
+tags:
+  - favicon
+  - xkcd
+title: Updating My Favicon, Courtesy of Randall Munroe
+---
+
+I wrote a post on [serving videos instead of
+GIFs](https://www.dannyguo.com/blog/serve-videos-instead-of-gifs/), and one
+Reddit comment [helpfully pointed
+out](https://www.reddit.com/r/programming/comments/gl7ttl/serve_videos_instead_of_gifs/fqw7lap/)
+how absurdly large my favicon was:
+
+> And yet that webpage has a 170kb favicon - a 256x256 image with essentially 3
+> colors but stored in an uncompressed 24 bit format.
+
+I updated my favicon to a sketch that I got from [Randall
+Munroe](https://en.wikipedia.org/wiki/Randall_Munroe), who is the author of
+[xkcd](https://xkcd.com/) and [What If?: Serious Scientific Answers to Absurd
+Hypothetical
+Questions](https://www.amazon.com/What-If-Scientific-Hypothetical-Questions/dp/0544272994?crid=FJWL4J94JJN5&keywords=randall+munroe&qid=1654983209&sprefix=randall+munroe%2Caps%2C75&sr=8-3&linkCode=ll1&tag=thdalo00-20&linkId=be65676d693ee4c0c09c8f09c58096fc&language=en_US&ref_=as_li_ss_tl).
+
+When I was in college, he visited to give a
+[talk](https://lectures.princeton.edu/lectures/2011/larry-gonick-randall-munroe).
+At the end, there was a line of students who wanted to briefly meet him, and
+some asked for autographs. I asked him to autograph a printout of
+[#876](https://xkcd.com/876/), which references [Plato's
+Cave](https://en.wikipedia.org/wiki/Allegory_of_the_cave) from [The
+Republic](https://www.amazon.com/Republic-Plato-Allan-Bloom/dp/0465094082?crid=316HZB89FGE9H&keywords=republic+plato&qid=1654984868&sprefix=republic+plato%2Caps%2C76&sr=8-4&linkCode=ll1&tag=thdalo00-20&linkId=49c528f777b799c5c446689d491c84f4&language=en_US&ref_=as_li_ss_tl)
+(I majored in philosophy).
+
+![Trapped](https://imgs.xkcd.com/comics/trapped.png)

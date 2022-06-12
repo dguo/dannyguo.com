@@ -5,8 +5,24 @@
 [build.environment]
   HUGO_VERSION = "0.100.2"
 
+# For Plausible proxying:
+# https://plausible.io/docs/proxy/guides/netlify#troubleshooting
+[build.processing.js]
+  bundle = false
+  minify = false
+
 [context.production.environment]
   HUGO_ENV = "production"
+
+# Plausible
+[[redirects]]
+  from = "/blueberry-cobbler/js/script.js"
+  to = "https://plausible.io/js/script.js"
+  status = 200
+[[redirects]]
+  from = "/blueberry-cobbler/api/event"
+  to = "https://plausible.io/api/event"
+  status = 200
 
 [[redirects]]
   from = "/blood-moon"

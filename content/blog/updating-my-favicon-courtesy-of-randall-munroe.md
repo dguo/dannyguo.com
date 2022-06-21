@@ -1,7 +1,7 @@
 ---
 categories:
   - programming
-date: 2022-06-19
+date: 2022-06-21
 draft: true
 tags:
   - favicon
@@ -11,8 +11,11 @@ title: Updating My Favicon, Courtesy of Randall Munroe
 
 Since 2017, my personal website's
 [favicon](https://en.wikipedia.org/wiki/Favicon) was a [yin-yang
-symbol](https://en.wikipedia.org/wiki/Yin_and_yang) that I added on a whim. I
-didn't think about it again for a long time. Until I published a post on
+symbol](https://en.wikipedia.org/wiki/Yin_and_yang) that I added on a whim.
+
+![Old favicon](https://i.imgur.com/sSvnSCK.jpg)
+
+I didn't think about it again for a long time. Until I published a post on
 [serving videos instead of
 GIFs](https://www.dannyguo.com/blog/serve-videos-instead-of-gifs/), and one
 Reddit comment [helpfully pointed
@@ -48,4 +51,28 @@ from it. There are multiple ones for [different
 scenarios](https://css-tricks.com/favicon-quiz/), and they range from 479 bytes
 to 15 KB. Much better than the original 170 KB.
 
+![New favicon](https://i.imgur.com/oQgvAuL.jpg)
+
 The sketch is maybe a *bit* too detailed for a favicon, but I love it anyway.
+
+## Interesting Favicons
+
+Updating my favicon think about all the interesting things I've seen regarding
+favicons.
+
+Gmail and Whatsapp can show your unread count.
+
+Google Calendar shows the current date.
+
+There's [Tinycon](https://github.com/tommoor/tinycon) for adding alert bubbles.
+
+Which inspired [Piecon](https://github.com/lipka/piecon) for progress pie
+charts.
+
+[Tiny Mirror](https://twitter.com/davywtf/status/1119783380734836737) turns the
+favicon into a webcam.
+
+Even the [origin story of
+favicons](https://thehistoryoftheweb.com/how-we-got-the-favicon/) is
+interesting. A Microsoft engineer named Bharat Shyam snuck it in to Internet
+Explorer by getting permission from a junior project manager.

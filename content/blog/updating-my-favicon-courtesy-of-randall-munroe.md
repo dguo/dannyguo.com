@@ -1,8 +1,7 @@
 ---
 categories:
   - programming
-date: 2022-06-21
-draft: true
+date: 2022-06-22
 tags:
   - favicon
   - xkcd
@@ -57,22 +56,31 @@ The sketch is maybe a *bit* too detailed for a favicon, but I love it anyway.
 
 ## Interesting Favicons
 
-Updating my favicon think about all the interesting things I've seen regarding
-favicons.
+Updating my favicon made me think about the interesting things I've seen
+regarding favicons.
 
-Gmail and Whatsapp can show your unread count.
+Gmail and Whatsapp show unread counts, and Google Calendar shows the current
+date.
 
-Google Calendar shows the current date.
+![Dynamic favicons](https://i.imgur.com/M8U0Iyz.jpg)
 
-There's [Tinycon](https://github.com/tommoor/tinycon) for adding alert bubbles.
+[Tinycon](https://github.com/tommoor/tinycon) is a library for showing alert
+bubbles. Which inspired [Piecon](https://github.com/lipka/piecon) for showing
+progress pie charts.
 
-Which inspired [Piecon](https://github.com/lipka/piecon) for progress pie
-charts.
+There's also [Tiny
+Mirror](https://twitter.com/davywtf/status/1119783380734836737), which turns the
+favicon into a webcam video!
 
-[Tiny Mirror](https://twitter.com/davywtf/status/1119783380734836737) turns the
-favicon into a webcam.
+Many browsers have added support for SVG favicons, which [allows for things
+like](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/)
+dark mode support through the
+[prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+media query.
 
-Even the [origin story of
-favicons](https://thehistoryoftheweb.com/how-we-got-the-favicon/) is
-interesting. A Microsoft engineer named Bharat Shyam snuck it in to Internet
-Explorer by getting permission from a junior project manager.
+Even the [favicon origin
+story](https://thehistoryoftheweb.com/how-we-got-the-favicon/) is interesting. A
+Microsoft engineer named Bharat Shyam snuck the feature into Internet Explorer.
+He waited until a junior program manager was in charge before requesting
+permission to add it, knowing that a junior person would be less likely to block
+it. Thanks to that bit of mischief, the internet became a little more fun.

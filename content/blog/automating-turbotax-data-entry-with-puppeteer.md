@@ -15,20 +15,16 @@ edition](https://turbotax.intuit.com/personal-taxes/online/free-edition.jsp) of
 Online](https://turbotax.intuit.com/). For non-retirement account investments,
 each transaction must be documented in the tax return with [Form
 8949](https://www.irs.gov/forms-pubs/about-form-8949). I had hundreds of
-transactions in my account in 2018, and I didn't want to enter them manually.
+transactions for my account in 2018, and I didn't want to enter them manually.
 
 Betterment has a [TurboTax
-integration](https://www.betterment.com/resources/tax-software-importing/) to do
+integration](https://www.betterment.com/help/tax-importing-turbotax) to do
 this work automatically, but TurboTax [doesn't
 allow](https://turbotax.intuit.com/personal-taxes/compare/online/) importing
 investment transactions unless you have the Premier plan or above. I also
 couldn't [import a TXF
 file](https://github.com/andreasg123/stock-gain-tax-import) because that feature
-is only available in the desktop versions of TurboTax. I didn't want to pay for
-the Premier plan, in part because of Intuit's [lobbying
-efforts](https://www.propublica.org/article/filing-taxes-could-be-free-simple-hr-block-intuit-lobbying-against-it)
-against a simpler tax filing system and because of their other [questionable
-practices](https://www.propublica.org/article/intuit-turbotax-h-r-block-gutted-free-tax-filing-internal-memo).
+is only available in the desktop versions of TurboTax.
 
 This seemed like a great opportunity to try out
 [Puppeteer](https://github.com/GoogleChrome/puppeteer). It's a

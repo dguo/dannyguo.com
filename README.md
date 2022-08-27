@@ -60,8 +60,9 @@ post](https://help.medium.com/hc/en-us/articles/215552778-Unlisted-publishing).
 
 1. Remove the `draft` flag from the front matter
 2. Add an `unlisted` flag with a value of `true`
-3. Leave the `date`, `categories`, and `tags` fields empty
-4. Commit, and push to deploy
+3. [Filter](https://docs.astro.build/en/guides/integrations-guide/sitemap/#filter) the URL from the sitemap
+4. Leave the `date`, `categories`, and `tags` fields empty
+5. Commit, and push to deploy
 
 ## Checklist for Publishing a Final Post
 

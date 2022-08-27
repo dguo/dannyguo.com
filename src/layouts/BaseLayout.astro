@@ -68,15 +68,15 @@ const { frontmatter } = Astro.props;
         <title>{frontmatter?.title || "Danny Guo"}</title>
 
         <!-- Plausible -->
-        <script
+        {import.meta.env.PROD && <script
             defer
             data-domain="dannyguo.com"
             data-api="/blueberry-cobbler/api/event"
             src="/blueberry-cobbler/js/script.js"
-        ></script>
+        ></script>}
 
         <!-- Google Analytics -->
-        <script
+        {import.meta.env.PROD && <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${
                 import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID
@@ -90,7 +90,7 @@ const { frontmatter } = Astro.props;
             gtag("js", new Date());
 
             gtag("config", "UA-90320718-1");
-        </script>
+        </script>}
 
         <!-- TODO
         {{ block "head-extra" . }}{{ end }}

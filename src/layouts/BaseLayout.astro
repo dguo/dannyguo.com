@@ -184,15 +184,14 @@ const { frontmatter } = Astro.props;
             </footer>
         </div>
 
-        <script type="text/javascript">
+        <script>
             console.log("Hello!");
             console.log();
             console.log(
-                "You may be interested to know that this site is built using Astro (https://astro.build/) and deployed on Netlify (https://www.netlify.com/)."
+                "You may be interested to know that this site is built using Astro (https://astro.build) and deployed on Netlify (https://www.netlify.com)."
             );
-            // TODO
             console.log(
-                "The source code is available on GitHub ({{ .Site.Params.sourceCodeRepo }})."
+                `The source code is available on GitHub (${import.meta.env.PUBLIC_SOURCE_CODE_REPO}).`
             );
             console.log();
             console.log("Cheers,");

@@ -1,3 +1,0 @@
----
-title: Danny Guo · Newsletter
----

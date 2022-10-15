@@ -1,5 +1,6 @@
 ---
-const { frontmatter } = Astro.props;
+const props = Astro.props.frontmatter || Astro.props;
+const title = props.title || import.meta.env.PUBLIC_AUTHOR_NAME;
 ---
 
 <!DOCTYPE html>
@@ -65,7 +66,7 @@ const { frontmatter } = Astro.props;
         <meta name="theme-color" content="#ffffff" />
 
         <!-- TODO -->
-        <title>{frontmatter?.title || "Danny Guo"}</title>
+        <title>{title}</title>
 
         <!-- Plausible -->
         {import.meta.env.PROD && <script

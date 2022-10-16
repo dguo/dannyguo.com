@@ -90,8 +90,10 @@ a {
 }
 
 /* Animated link underline on hover
-   Adapted from https://codepen.io/shshaw/details/pdyJBW */
-a:not(.anchor):not(.link-button):not(.link-image):not(.ais-pagination--link) {
+   Adapted from https://codepen.io/shshaw/details/pdyJBW
+
+   The ais exclusion is for Algolia pagination links. */
+a:not(.anchor):not(.link-button):not(.link-image):not(.ais-Pagination-link) {
   background-image: linear-gradient(currentColor, currentColor);
   background-position: 0% 100%;
   background-repeat: no-repeat;
@@ -99,8 +101,8 @@ a:not(.anchor):not(.link-button):not(.link-image):not(.ais-pagination--link) {
   transition: background-size 0.3s;
 }
 
-a:not(.anchor):not(.link-button):not(.link-image):not(.ais-pagination--link):hover,
-a:not(.anchor):not(.link-button):not(.link-image):not(.ais-pagination--link):focus {
+a:not(.anchor):not(.link-button):not(.link-image):not(.ais-Pagination-link):hover,
+a:not(.anchor):not(.link-button):not(.link-image):not(.ais-Pagination-link):focus {
   background-size: 100% 2px;
 }
 

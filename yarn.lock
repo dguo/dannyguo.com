@@ -144,20 +144,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@algolia/ui-components-highlight-vdom@npm:^1.1.2":
-  version: 1.2.0
-  resolution: "@algolia/ui-components-highlight-vdom@npm:1.2.0"
+"@algolia/ui-components-highlight-vdom@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@algolia/ui-components-highlight-vdom@npm:1.2.1"
   dependencies:
-    "@algolia/ui-components-shared": 1.2.0
+    "@algolia/ui-components-shared": 1.2.1
     "@babel/runtime": ^7.0.0
-  checksum: a40687541525ca857d3902852a9a28299cb9acfe83708ae444575b375228344e0ccbf32c179b71138c12afcc0949ec76b91e3e0d0fe5e3e356117fa23444de25
+  checksum: d06721372406678d7d3dcbc75894ff727994e7f71d9d53a0c7b94705d694826977082b4ae2cd1bd847a271661d2b6921ba9ffed26401289d06b1c609415b7e74
   languageName: node
   linkType: hard
 
-"@algolia/ui-components-shared@npm:1.2.0, @algolia/ui-components-shared@npm:^1.1.2":
-  version: 1.2.0
-  resolution: "@algolia/ui-components-shared@npm:1.2.0"
-  checksum: 70f9b33be4143a0e7d3f11bdde7c76551ffd4bbc0c2a257125af4c6e74cd8eba3d4b29e6eb76e04e950f1796af56eeab1ed29a50c6fa1299edaca6483e9d0417
+"@algolia/ui-components-shared@npm:1.2.1, @algolia/ui-components-shared@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@algolia/ui-components-shared@npm:1.2.1"
+  checksum: e0e7c06fbfc855c24283446a903adff3e4523c9a1652cfb187f3d701278d246f9ef23b7d80c0ec9e933f9a835d0a2227906f6e92b4fca5e315e89abcf8049b2f
   languageName: node
   linkType: hard
 
@@ -2332,9 +2332,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:1.5.0":
-  version: 1.5.0
-  resolution: "astro@npm:1.5.0"
+"astro@npm:1.5.1":
+  version: 1.5.1
+  resolution: "astro@npm:1.5.1"
   dependencies:
     "@astrojs/compiler": ^0.27.1
     "@astrojs/language-server": ^0.26.2
@@ -2399,7 +2399,7 @@ __metadata:
     zod: ^3.17.3
   bin:
     astro: astro.js
-  checksum: daf999583459769e0f7f64791ce209c11be9baa84bbba2eccf5d60ecdb920aa6ef2becd76c39dbc2ec478e902e578dedc3989b5853c30e60b8b24ed64f1b2eeb
+  checksum: e84429fb90f779664ef1864ef5760f839a01565285d967d3f3a914fffb85596c24c788ef0253916e3c8b977b3531f08618b9a404d9f483a256205449b0be2c03
   languageName: node
   linkType: hard
 
@@ -2835,13 +2835,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.2.5":
-  version: 2.3.2
-  resolution: "classnames@npm:2.3.2"
-  checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
-  languageName: node
-  linkType: hard
-
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -3100,13 +3093,13 @@ __metadata:
     "@astrojs/rss": 1.0.2
     "@astrojs/sitemap": 1.0.0
     algoliasearch: 4.14.2
-    astro: 1.5.0
+    astro: 1.5.1
     atomic-algolia: 0.3.19
     eslint: 8.25.0
     instantsearch.css: 7.4.5
-    instantsearch.js: 4.48.0
+    instantsearch.js: 4.48.1
     markdownlint-cli: 0.32.2
-    stylelint: 14.13.0
+    stylelint: 14.14.0
     stylelint-config-recommended: 9.0.0
   languageName: unknown
   linkType: soft
@@ -5236,18 +5229,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"instantsearch.js@npm:4.48.0":
-  version: 4.48.0
-  resolution: "instantsearch.js@npm:4.48.0"
+"instantsearch.js@npm:4.48.1":
+  version: 4.48.1
+  resolution: "instantsearch.js@npm:4.48.1"
   dependencies:
     "@algolia/events": ^4.0.1
-    "@algolia/ui-components-highlight-vdom": ^1.1.2
-    "@algolia/ui-components-shared": ^1.1.2
+    "@algolia/ui-components-highlight-vdom": ^1.2.1
+    "@algolia/ui-components-shared": ^1.2.1
     "@types/google.maps": ^3.45.3
     "@types/hogan.js": ^3.0.0
     "@types/qs": ^6.5.3
     algoliasearch-helper: ^3.11.1
-    classnames: ^2.2.5
     hogan.js: ^3.0.2
     htm: ^3.0.0
     preact: ^10.10.0
@@ -5255,7 +5247,7 @@ __metadata:
     search-insights: ^2.1.0
   peerDependencies:
     algoliasearch: ">= 3.1 < 6"
-  checksum: 38064c678d2ed7823e7ae5fe94dca670382d2e281f9c848065d3a314e482c16ac079838c44b150a9c52285b59f261beca670ef571dd70ef773328a06f225cbed
+  checksum: 76c633c27267fd78c1d6c909cbcda41068fcc13319529408f1ea0fe6becc12fe977fb8505f671cce73b35203258a5e1972f5ccbf14ffc195e4136b68ac9f9920
   languageName: node
   linkType: hard
 
@@ -7755,6 +7747,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss@npm:^8.4.17":
+  version: 8.4.18
+  resolution: "postcss@npm:8.4.18"
+  dependencies:
+    nanoid: ^3.3.4
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 9349fd99849b2e3d2e134ff949b7770ecb12375f352723ce2bcc06167eba3850ea7844c1b191a85cd915d6a396b4e8ee9a5267e6cc5d8d003d0cbc7a97555d39
+  languageName: node
+  linkType: hard
+
 "preact@npm:^10.10.0":
   version: 10.11.2
   resolution: "preact@npm:10.11.2"
@@ -9131,9 +9134,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:14.13.0":
-  version: 14.13.0
-  resolution: "stylelint@npm:14.13.0"
+"stylelint@npm:14.14.0":
+  version: 14.14.0
+  resolution: "stylelint@npm:14.14.0"
   dependencies:
     "@csstools/selector-specificity": ^2.0.2
     balanced-match: ^2.0.0
@@ -9158,7 +9161,7 @@ __metadata:
     micromatch: ^4.0.5
     normalize-path: ^3.0.0
     picocolors: ^1.0.0
-    postcss: ^8.4.16
+    postcss: ^8.4.17
     postcss-media-query-parser: ^0.2.3
     postcss-resolve-nested-selector: ^0.1.1
     postcss-safe-parser: ^6.0.0
@@ -9175,7 +9178,7 @@ __metadata:
     write-file-atomic: ^4.0.2
   bin:
     stylelint: bin/stylelint.js
-  checksum: 81efcb2ea015fe490651f0976a927c51efa493a32b2b8e681d68aba8a275a1d8d0ebf8eaf50ef3233e3dc367077db63792e7e69bf6abb18940d63fd6c9f772df
+  checksum: 3196f5992262d82f3c8dea1d710a3dda1b6c890697eba7df58a3bc8fcd681d509449fa4be3f03e91155f5014df82973b57266ddbc34f41130aa27cc046113b8b
   languageName: node
   linkType: hard
 

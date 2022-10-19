@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 canonicalUrl: https://blog.logrocket.com/the-history-and-legacy-of-jquery/
 categories:
   - programming

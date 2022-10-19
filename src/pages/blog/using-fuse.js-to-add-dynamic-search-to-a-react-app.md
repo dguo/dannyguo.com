@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 canonicalUrl: https://blog.logrocket.com/fuse-js-dynamic-search-react-app/
 categories:
   - programming

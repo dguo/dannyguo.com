@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 categories:
   - security
 date: "2020-03-25"

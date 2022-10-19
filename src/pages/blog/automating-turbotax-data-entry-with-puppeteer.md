@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 categories:
   - webdev
 date: "2019-05-12"

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 canonicalUrl: https://blog.logrocket.com/how-to-keep-javascript-libraries-up-to-date/
 categories:
   - programming

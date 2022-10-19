@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 categories:
   - fitness
 date: "2022-01-26"

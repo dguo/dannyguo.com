@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 categories:
   - computers
 date: "2020-07-15"

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 canonicalUrl: https://daily.dev/blog/how-to-use-git-bisect-for-debugging
 categories:
   - programming

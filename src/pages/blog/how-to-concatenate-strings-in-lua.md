@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 categories:
   - programming
 date: "2020-12-28"

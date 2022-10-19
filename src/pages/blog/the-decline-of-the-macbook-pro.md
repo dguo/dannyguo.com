@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 date: "2018-06-07"
 title: The Decline of the MacBook Pro
 ---

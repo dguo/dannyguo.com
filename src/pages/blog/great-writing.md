@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 date: "2017-06-13"
 title: Great Writing
 ---

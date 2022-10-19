@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 canonicalUrl: https://blog.logrocket.com/safari-next-internet-explorer/
 categories:
   - programming

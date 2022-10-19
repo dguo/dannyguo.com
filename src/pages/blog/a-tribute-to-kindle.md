@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 date: "2018-05-08"
 title: A Tribute to Kindle
 ---

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 canonicalUrl: https://blog.logrocket.com/the-introductory-guide-to-assemblyscript/
 categories:
   - programming

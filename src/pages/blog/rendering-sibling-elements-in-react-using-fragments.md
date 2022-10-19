@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 canonicalUrl: https://blog.logrocket.com/rendering-sibling-elements-react-fragments/
 categories:
   - programming

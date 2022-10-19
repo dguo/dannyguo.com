@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 date:
 draft: true
 title: Credit Card Rewards

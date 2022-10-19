@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 date: "2017-11-03"
 title: Digital Security Coach
 ---

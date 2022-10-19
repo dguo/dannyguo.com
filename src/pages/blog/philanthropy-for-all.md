@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 date: "2018-01-24"
 title: Philanthropy for All
 ---

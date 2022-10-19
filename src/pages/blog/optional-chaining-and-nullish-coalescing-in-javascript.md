@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 canonicalUrl: https://blog.logrocket.com/optional-chaining-and-nullish-coalescing-in-javascript/
 categories:
   - programming

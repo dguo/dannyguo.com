@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 date: "2018-05-04"
 title: Splurge Stopper
 ---

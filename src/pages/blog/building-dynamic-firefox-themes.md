@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 date: "2018-04-12"
 title: Building Dynamic Firefox Themes
 ---

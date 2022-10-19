@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 canonicalUrl: https://blog.logrocket.com/how-to-handle-pii-websites-web-apps/
 categories:
   - programming

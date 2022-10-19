@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BlogPostLayout.astro
 canonicalUrl: https://blog.logrocket.com/how-to-improve-interface-responsiveness-with-web-workers/
 categories:
   - programming

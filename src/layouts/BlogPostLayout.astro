@@ -1,0 +1,87 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const props = Astro.props.frontmatter;
+---
+
+<link rel="stylesheet" href="/css/post.css" type="text/css" />
+
+    <!-- {{ with .Params.canonicalUrl }}
+        <link rel="canonical" href="{{.}}" />
+    {{ end }} -->
+
+<BaseLayout>
+    <article>
+        <h1>{props.title}</h1>
+
+        <!-- <div class="subheader">{{ if ne .Date .Lastmod }}Updated on <time itemprop="dateModified" datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "January 2, 2006" }}</time>&nbsp;&nbsp;·&nbsp;&nbsp;Published on {{ end }}<time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{.Date.Format "January 2, 2006"}}</time>{{ if eq .Date .Lastmod }}&nbsp;&nbsp;·&nbsp;&nbsp;{{ else }}<br>{{ end }}{{ .WordCount | lang.NumFmt 0 }} words&nbsp;&nbsp;·&nbsp;&nbsp;~{{ .ReadingTime | lang.NumFmt 0 }} minute{{ if not (eq .ReadingTime 1) }}s{{ end }} to read -->
+            <!-- {{ if (findRE "<a href=\"https://www.amazon.com/" .Content 1) }}
+            <br>
+            I may earn commissions from purchases made through affiliate links in this post.
+            {{ end  }} -->
+        <!-- </div> -->
+
+        <slot />
+    </article>
+
+    <hr class="separator">
+
+    <!-- <div class="clearfix">
+        {{ with .PrevInSection }}
+            {{ if (not .Params.unlisted) }}
+                <span class="previous-link">
+                    <a href="{{ .Permalink }}">← {{ .Title }}</a>
+                </span>
+            {{ end }}
+        {{ end }}
+
+        {{ with .NextInSection }}
+            {{ if (not .Params.unlisted) }}
+                <span class="next-link">
+                    <a href="{{ .Permalink }}">{{ .Title }} →</a>
+                </span>
+            {{ end }}
+        {{ end }}
+    </div> -->
+
+    <hr class="separator" />
+
+    <p class="follow-up-message">
+        Follow me on <a href={`https://twitter.com/${import.meta.env.PUBLIC_AUTHOR_TWITTER_NAME}`}>Twitter</a> or subscribe to my <a href="/newsletter">free newsletter</a> or <a href="/blog/feed.xml" type="application/rss+xml">RSS feed</a> for future posts.
+    </p>
+
+    <p class="follow-up-message">
+        Found an error or typo? Feel free to open a pull request on
+        <a href="{{ .Site.Params.sourceCodeRepo }}/blob/main/content/{{ .File.Path }}">GitHub</a>.
+    </p>
+
+    <hr class="separator">
+
+    <!-- {{ template "_internal/disqus.html" . }} -->
+
+    <div id="disqus_thread"></div>
+    <script is:inline>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://dannyguo.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <div class="separator"></div>
+</BaseLayout>
+
+<!-- {{ if (findRE "<pre" .Content 1) }}
+    <script src="/js/copy-code-button.js"></script>
+{{ end  }} -->

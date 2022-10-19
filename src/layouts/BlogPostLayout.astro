@@ -53,12 +53,10 @@ const canonicalUrl = props.canonicalUrl || new URL(props.url, import.meta.env.PU
 
     <p class="follow-up-message">
         Found an error or typo? Feel free to open a pull request on
-        <a href="{{ .Site.Params.sourceCodeRepo }}/blob/main/content/{{ .File.Path }}">GitHub</a>.
+        <a href={`${import.meta.env.PUBLIC_SOURCE_CODE_REPO}/blob/main/src/pages/blog/${fileName}`}>GitHub</a>.
     </p>
 
     <hr class="separator">
-
-    <!-- {{ template "_internal/disqus.html" . }} -->
 
     <div id="disqus_thread"></div>
     <script is:inline>

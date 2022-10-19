@@ -2,15 +2,16 @@
 import BaseLayout from "./BaseLayout.astro";
 
 const props = Astro.props.frontmatter;
+const fileParts = props.file.split('/');
+const fileName = fileParts[fileParts.length - 1];
+const canonicalUrl = props.canonicalUrl || new URL(props.url, import.meta.env.PUBLIC_DOMAIN).href;
 ---
 
 <link rel="stylesheet" href="/css/post.css" type="text/css" />
 
-    <!-- {{ with .Params.canonicalUrl }}
-        <link rel="canonical" href="{{.}}" />
-    {{ end }} -->
-
 <BaseLayout>
+    <link slot="head-extra" rel="canonical" href={canonicalUrl} />
+
     <article>
         <h1>{props.title}</h1>
 

@@ -1,54 +1,73 @@
 ---
+import path from "node:path";
+
 import BaseLayout from "./BaseLayout.astro";
 
 const props = Astro.props.frontmatter;
-const fileParts = props.file.split('/');
-const fileName = fileParts[fileParts.length - 1];
-const canonicalUrl = props.canonicalUrl || new URL(props.url, import.meta.env.PUBLIC_DOMAIN).href;
+
+const parsedFile = path.parse(props.file);
+const fileName = parsedFile.name;
+const canonicalUrl =
+    props.canonicalUrl ||
+    new URL(props.url, import.meta.env.PUBLIC_DOMAIN).href;
 
 const rawContent = Astro.props.rawContent();
 const hasAmazonLink = /https:\/\/www.amazon.com/.test(rawContent);
 
 const locale = "en-us";
-const localeOptions = { month: "long", day: "numeric", year: "numeric", timeZone: "UTC"} as const;
+const localeOptions = {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+} as const;
 ---
 
 <link rel="stylesheet" href="/css/post.css" type="text/css" />
 
-<BaseLayout>
+<BaseLayout title={props.title}>
     <link slot="head-extra" rel="canonical" href={canonicalUrl} />
 
     <article>
         <h1>{props.title}</h1>
 
         <div class="subheader">
-            {props.lastmod &&
-              <>
-                Updated on <time itemprop="dateModified" datetime={props.lastmod}>
-                    {new Date(props.lastmod).toLocaleDateString(locale, localeOptions)}
-                </time>
-                &nbsp;·&nbsp;
-              </>
+            {
+                props.lastmod && (
+                    <>
+                        Updated on{" "}
+                        <time itemprop="dateModified" datetime={props.lastmod}>
+                            {new Date(props.lastmod).toLocaleDateString(
+                                locale,
+                                localeOptions
+                            )}
+                        </time>
+                        &nbsp;·&nbsp;
+                    </>
+                )
             }
             {props.lastmod && <>Published on </>}
             <time itemprop="datePublished" datetime={props.date}>
                 {new Date(props.date).toLocaleDateString(locale, localeOptions)}
             </time>
             {props.lastmod ? <br /> : <>&nbsp;·&nbsp;</>}
-            {props.numberOfWords.toLocaleString(locale)} words
-            &nbsp;·&nbsp;
-            ~{props.minutesToRead.toLocaleString(locale)} minute{props.minutesToRead !== 1 && <>s</>} to read
-            {hasAmazonLink &&
-             <>
-                <br />
-                I may earn commissions from purchases made through affiliate links in this post.
-             </>}
+            {props.numberOfWords.toLocaleString(locale)} words &nbsp;·&nbsp; ~{
+                props.minutesToRead.toLocaleString(locale)
+            } minute{props.minutesToRead !== 1 && <>s</>} to read
+            {
+                hasAmazonLink && (
+                    <>
+                        <br />I may earn commissions from purchases made through
+                        affiliate links in this post.
+                    </>
+                )
+            }
         </div>
 
         <slot />
     </article>
 
-    <hr class="separator">
+    <hr class="separator" />
 
     <!-- <div class="clearfix">
         {{ with .PrevInSection }}
@@ -71,35 +90,48 @@ const localeOptions = { month: "long", day: "numeric", year: "numeric", timeZone
     <hr class="separator" />
 
     <p class="follow-up-message">
-        Follow me on <a href={`https://twitter.com/${import.meta.env.PUBLIC_AUTHOR_TWITTER_NAME}`}>Twitter</a> or subscribe to my <a href="/newsletter">free newsletter</a> or <a href="/blog/feed.xml" type="application/rss+xml">RSS feed</a> for future posts.
+        Follow me on <a
+            href={`https://twitter.com/${
+                import.meta.env.PUBLIC_AUTHOR_TWITTER_NAME
+            }`}>Twitter</a
+        > or subscribe to my <a href="/newsletter">free newsletter</a> or <a
+            href="/blog/feed.xml"
+            type="application/rss+xml">RSS feed</a
+        > for future posts.
     </p>
 
     <p class="follow-up-message">
         Found an error or typo? Feel free to open a pull request on
-        <a href={`${import.meta.env.PUBLIC_SOURCE_CODE_REPO}/blob/main/src/pages/blog/${fileName}`}>GitHub</a>.
+        <a
+            href={`${
+                import.meta.env.PUBLIC_SOURCE_CODE_REPO
+            }/blob/main/src/pages/blog/${fileName}`}>GitHub</a
+        >.
     </p>
 
-    <hr class="separator">
+    <hr class="separator" />
 
     <div id="disqus_thread"></div>
-    <script is:inline>
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-        /*
+    <script define:vars={{ canonicalUrl, fileName, title: props.title }}>
         var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            this.page.url = canonicalUrl;
+            this.page.identifier = fileName;
+            this.page.title = title;
         };
-        */
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://dannyguo.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
+        (function () {
+            var d = document,
+                s = d.createElement("script");
+            s.src = "https://dannyguo.disqus.com/embed.js";
+            s.setAttribute("data-timestamp", +new Date());
+            (d.head || d.body).appendChild(s);
         })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <noscript
+        >Please enable JavaScript to view the <a
+            href="https://disqus.com/?ref_noscript"
+            >comments powered by Disqus.</a
+        >
+    </noscript>
 
     <div class="separator"></div>
 </BaseLayout>

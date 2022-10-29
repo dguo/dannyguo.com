@@ -1,4 +1,6 @@
 *.md
 .yarn/
 dist/
-src/layouts/
+src/layouts/partials
+src/layouts/shortcodes
+src/layouts/BaseLayout.astro

@@ -38,10 +38,6 @@ header:after {
   background-color: #c40233;
   color: #fff;
 }
-::-moz-selection {
-  background-color: #c40233;
-  color: #fff;
-}
 
 h1 {
   color: #009f6b;
@@ -113,11 +109,10 @@ a:not(.anchor):not(.link-button):not(.link-image):not(.ais-Pagination-link):focu
 }
 
 /* Don't apply to syntax highlighting for code examples. */
-:not(pre) > code,
-code:not([data-lang]) {
+:not(pre) > code {
   background-color: #f6f6f6;
-  border-radius: 4px;
   color: #c40233;
+  border-radius: 4px;
   padding: 2px 4px;
 }
 

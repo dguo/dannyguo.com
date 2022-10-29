@@ -5,6 +5,9 @@ const props = Astro.props.frontmatter;
 const fileParts = props.file.split('/');
 const fileName = fileParts[fileParts.length - 1];
 const canonicalUrl = props.canonicalUrl || new URL(props.url, import.meta.env.PUBLIC_DOMAIN).href;
+
+const rawContent = Astro.props.rawContent();
+const hasAmazonLink = /https:\/\/www.amazon.com/.test(rawContent);
 ---
 
 <link rel="stylesheet" href="/css/post.css" type="text/css" />
@@ -28,14 +31,12 @@ const canonicalUrl = props.canonicalUrl || new URL(props.url, import.meta.env.PU
             {props.numberOfWords.toLocaleString("en-us")} words
             &nbsp;·&nbsp;
             ~{props.minutesToRead.toLocaleString("en-us")} minute{props.minutesToRead !== 1 && <>s</>} to read
+            {hasAmazonLink &&
+             <>
+                <br />
+                I may earn commissions from purchases made through affiliate links in this post.
+             </>}
         </div>
-
-        <!-- <div class="subheader">{{ if ne .Date .Lastmod }}Updated on <time itemprop="dateModified" datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "January 2, 2006" }}</time>&nbsp;&nbsp;·&nbsp;&nbsp;Published on {{ end }}<time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{.Date.Format "January 2, 2006"}}</time>{{ if eq .Date .Lastmod }}&nbsp;&nbsp;·&nbsp;&nbsp;{{ else }}<br>{{ end }}{{ .WordCount | lang.NumFmt 0 }} words&nbsp;&nbsp;·&nbsp;&nbsp;~{{ .ReadingTime | lang.NumFmt 0 }} minute{{ if not (eq .ReadingTime 1) }}s{{ end }} to read -->
-            <!-- {{ if (findRE "<a href=\"https://www.amazon.com/" .Content 1) }}
-            <br>
-            I may earn commissions from purchases made through affiliate links in this post.
-            {{ end  }} -->
-        <!-- </div> -->
 
         <slot />
     </article>

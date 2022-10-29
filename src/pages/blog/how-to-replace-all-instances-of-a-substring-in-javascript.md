@@ -52,7 +52,7 @@ flag](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expr
 is required. Without it, you'll get a
 [TypeError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError).
 
-```txt
+```
 TypeError: String.prototype.replaceAll called with a non-global RegExp argument
 ```
 

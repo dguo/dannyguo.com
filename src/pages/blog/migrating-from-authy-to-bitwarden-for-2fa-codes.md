@@ -208,7 +208,7 @@ codes encode URIs that look like this, as
 [documented](https://github.com/google/google-authenticator/wiki/Key-Uri-Format)
 in the Google Authenticator wiki:
 
-```txt
+```
 otpauth://totp/Example:alice@google.com?secret=JBSWY3DPEHPK3PXP&issuer=Example
 ```
 
@@ -233,7 +233,7 @@ print the information.
 This revealed that Twitch uses 7 digit codes instead of the standard 6 and 10
 second intervals instead of the standard 30.
 
-```txt
+```
 otpauth://totp/Twitch?secret=XXXXXXXX&digits=7&period=10
 ```
 

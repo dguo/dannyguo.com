@@ -34,7 +34,7 @@ select * from coordinates;
 You should see this output (after [turning headers
 on](https://database.guide/format-sqlite-query-results-as-columns-with-column-headers/)):
 
-```txt
+```
 sqlite> .headers on
 sqlite> select * from coordinates;
 x|y
@@ -52,7 +52,7 @@ select * from coordinates;
 
 The values should be swapped:
 
-```txt
+```
 x|y
 12|5
 ```
@@ -62,7 +62,7 @@ x|y
 Unfortunately, this approach doesn't work for MySQL. You'll end up with both
 columns having the same value. The output of the update will be:
 
-```txt
+```
 x|y
 12|12
 ```

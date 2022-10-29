@@ -52,7 +52,7 @@ Betterment's [tax forms page](https://wwws.betterment.com/app/tax_forms).
 After removing an extraneous comma at the end of the header row, I used
 [xsv](https://github.com/BurntSushi/xsv) to look at the available columns.
 
-```txt
+```
 $ xsv headers betterment-1099-b.csv
 1   Account
 2   Description
@@ -72,7 +72,7 @@ $ xsv headers betterment-1099-b.csv
 
 Then I inspected the values to get an idea of what the data looks like.
 
-```txt
+```
 $ xsv table betterment-1099-b.csv | xsv sample 3
 Account                  Description                                                   Symbol  CUSIP      Date Acquired  Date Sold   Gross Proceeds  Cost or Other Basis  Gain/(Loss)  Wash Sale Loss Disallowed  Federal Income Tax Withheld  Type of Gain(Loss)  Noncovered Securities  Reporting Category
 Danny's Taxable Account  0.004034 sh. Vanguard Total International Bond ETF Class O    BNDX    92203J407  07/09/2018     09/28/2018  $0.22           $0.22                $0.00        $0.00                      $0.00                        Short-term          No                     A

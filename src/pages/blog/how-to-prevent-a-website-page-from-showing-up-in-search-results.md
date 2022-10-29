@@ -21,7 +21,7 @@ So you can add this tag to the page:
 
 Or send this header for the page:
 
-```txt
+```
 X-Robots-Tag: noindex
 ```
 
@@ -87,7 +87,7 @@ tag's name:
 
 Or in the header value:
 
-```txt
+```
 X-Robots-Tag: googlebot: noindex
 X-Robots-Tag: bingbot: nofollow
 ```

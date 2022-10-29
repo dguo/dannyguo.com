@@ -92,7 +92,7 @@ session with `git bisect start`. Note that you have to be at the top-level
 directory of the repository or else bisect will refuse to start. If you run `git
 status`, you should see this message:
 
-```txt
+```
 You are currently bisecting, started from branch 'main'.
   (use "git bisect reset" to get back to the original branch)
 ```
@@ -112,7 +112,7 @@ with `git bisect good b35894eec380a1039f07f47c1d0b63fa0d015190`. Now that Git
 has a start (the good commit) and an end (the bad commit) to work with, it can
 proceed with the bisection. You should see this message:
 
-```txt
+```
 Bisecting: 5 revisions left to test after this (roughly 3 steps)
 [d44fbe511a46fa78e7428077d74b0f18897ebe65] Add a meta description
 ```
@@ -124,7 +124,7 @@ commit with `git bisect bad` or `git bisect good`, and Git will put you on a new
 commit in the middle of the new search range. Repeat the process until Git
 determines the point at which one commit is good, and the following one is bad:
 
-```txt
+```
 e4203915d6639fdc7028d69a9cc773c2fc2b584b is the first bad commit
 commit e4203915d6639fdc7028d69a9cc773c2fc2b584b
 Author: Danny Guo
@@ -159,7 +159,7 @@ Skipping commits can make your session go faster, but be wary that it can also
 cause bisect to fail to identify a specific commit and issue a message like
 this:
 
-```txt
+```
 There are only 'skip'ped commits left to test.
 The first bad commit could be any of:
 87699539acfe49ff1307cd0fa794d8422ec830c5
@@ -173,7 +173,7 @@ We cannot bisect more!
 You can use `git bisect log` to produce a log of the current session. Here’s an
 example:
 
-```txt
+```
 git bisect start
 # bad: [73ab00c89f17ea5fa19478a9ce4a4488a2bb57fd] Add a README
 git bisect bad 73ab00c89f17ea5fa19478a9ce4a4488a2bb57fd
@@ -207,7 +207,7 @@ other exit code between 1 and 127 (inclusive), Git will mark the commit as bad.
 So in this case, the grep command will return 0 if it finds the correct
 language. When bisect is done, you should see this output:
 
-```txt
+```
 running grep -q lang="en" index.html
 Bisecting: 2 revisions left to test after this (roughly 2 steps)
 [e4203915d6639fdc7028d69a9cc773c2fc2b584b] Make the page responsive

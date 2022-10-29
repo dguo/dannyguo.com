@@ -1,1 +1,4 @@
 *.md
+.yarn/
+dist/
+src/layouts/

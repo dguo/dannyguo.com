@@ -26,6 +26,8 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install packages
         run: yarn install --immutable
+      - name: Check the formatting
+        run: yarn run format:check
       - name: Build the site
         run: yarn run build
       - name: Run linters

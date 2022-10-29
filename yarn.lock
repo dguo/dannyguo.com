@@ -185,6 +185,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@astrojs/compiler@npm:^0.29.3":
+  version: 0.29.5
+  resolution: "@astrojs/compiler@npm:0.29.5"
+  checksum: e9220746c1b2cd286abdf49a83109aa2692b51f04e2f1548c6b9db51f2d9bacd22a26ef20cbd17d9aa1b41338b31ce5d39d9f1515146654bd6c0d59520b01a04
+  languageName: node
+  linkType: hard
+
 "@astrojs/language-server@npm:^0.26.2":
   version: 0.26.2
   resolution: "@astrojs/language-server@npm:0.26.2"
@@ -1704,7 +1711,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pkgr/utils@npm:^2.3.0":
+"@pkgr/utils@npm:^2.3.0, @pkgr/utils@npm:^2.3.1":
   version: 2.3.1
   resolution: "@pkgr/utils@npm:2.3.1"
   dependencies:
@@ -3128,6 +3135,8 @@ __metadata:
     instantsearch.js: 4.48.1
     markdownlint-cli: 0.32.2
     mdast-util-to-string: 3.1.0
+    prettier: 2.7.1
+    prettier-plugin-astro: 0.7.0
     reading-time: 1.5.0
     stylelint: 14.14.0
     stylelint-config-recommended: 9.0.0
@@ -7822,6 +7831,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier-plugin-astro@npm:0.7.0":
+  version: 0.7.0
+  resolution: "prettier-plugin-astro@npm:0.7.0"
+  dependencies:
+    "@astrojs/compiler": ^0.29.3
+    prettier: ^2.7.1
+    sass-formatter: ^0.7.5
+    synckit: ^0.8.4
+  checksum: 589c17bbc809354a062ac0fbdc9cfe869232a689ef3febb991ddfd0b60c553e3a90a2c15cc2510a6014c1ed447a8b0af7c30f525819e2b846644e342c67516b9
+  languageName: node
+  linkType: hard
+
 "prettier-plugin-astro@npm:^0.5.3":
   version: 0.5.3
   resolution: "prettier-plugin-astro@npm:0.5.3"
@@ -7834,7 +7855,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.7.1":
+"prettier@npm:2.7.1, prettier@npm:^2.7.1":
   version: 2.7.1
   resolution: "prettier@npm:2.7.1"
   bin:
@@ -8551,7 +8572,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-formatter@npm:^0.7.2":
+"sass-formatter@npm:^0.7.2, sass-formatter@npm:^0.7.5":
   version: 0.7.5
   resolution: "sass-formatter@npm:0.7.5"
   dependencies:
@@ -9303,6 +9324,16 @@ __metadata:
     "@pkgr/utils": ^2.3.0
     tslib: ^2.4.0
   checksum: 15b1841c16e80e84e4eb7b43680f37ad94377a032cd9f5f6fd1c9cbd32bb1b7d1cf1c32111821d4f1b5477dffb599aeda7f0c1e70c7333fbedd80951d41bf5e8
+  languageName: node
+  linkType: hard
+
+"synckit@npm:^0.8.4":
+  version: 0.8.4
+  resolution: "synckit@npm:0.8.4"
+  dependencies:
+    "@pkgr/utils": ^2.3.1
+    tslib: ^2.4.0
+  checksum: 83e054fe4494dab42114fc4ed36a11b85e18742d304ade3f40d3afb4ba4145d76183adba1f29e2c36e9a0a453b93a83e2387505f96a0efd901f562927a968c44
   languageName: node
   linkType: hard
 

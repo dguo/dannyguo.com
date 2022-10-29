@@ -19,7 +19,8 @@ const posts = await Astro.glob("./*.md");
             )
             .map(
                 (post) =>
-                    ((!post.frontmatter.draft && !post.frontmatter.unlisted) || import.meta.env.DEV) && (
+                    ((!post.frontmatter.draft && !post.frontmatter.unlisted) ||
+                        import.meta.env.DEV) && (
                         <p>
                             <em>{post.frontmatter.date || "Draft"}</em>
                             &middot;

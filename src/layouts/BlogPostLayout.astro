@@ -8,6 +8,9 @@ const canonicalUrl = props.canonicalUrl || new URL(props.url, import.meta.env.PU
 
 const rawContent = Astro.props.rawContent();
 const hasAmazonLink = /https:\/\/www.amazon.com/.test(rawContent);
+
+const locale = "en-us";
+const localeOptions = { month: "long", day: "numeric", year: "numeric", timeZone: "UTC"} as const;
 ---
 
 <link rel="stylesheet" href="/css/post.css" type="text/css" />
@@ -21,16 +24,20 @@ const hasAmazonLink = /https:\/\/www.amazon.com/.test(rawContent);
         <div class="subheader">
             {props.lastmod &&
               <>
-                Updated on <time itemprop="dateModified" datetime={props.lastmod}>{new Date(props.lastmod).toLocaleDateString("en-us", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC"})}</time>
+                Updated on <time itemprop="dateModified" datetime={props.lastmod}>
+                    {new Date(props.lastmod).toLocaleDateString(locale, localeOptions)}
+                </time>
                 &nbsp;·&nbsp;
               </>
             }
             {props.lastmod && <>Published on </>}
-            <time itemprop="datePublished" datetime={props.date}>{new Date(props.date).toLocaleDateString("en-us", { month: "long", day: "numeric", year: "numeric", timeZone: "utc"})}</time>
+            <time itemprop="datePublished" datetime={props.date}>
+                {new Date(props.date).toLocaleDateString(locale, localeOptions)}
+            </time>
             {props.lastmod ? <br /> : <>&nbsp;·&nbsp;</>}
-            {props.numberOfWords.toLocaleString("en-us")} words
+            {props.numberOfWords.toLocaleString(locale)} words
             &nbsp;·&nbsp;
-            ~{props.minutesToRead.toLocaleString("en-us")} minute{props.minutesToRead !== 1 && <>s</>} to read
+            ~{props.minutesToRead.toLocaleString(locale)} minute{props.minutesToRead !== 1 && <>s</>} to read
             {hasAmazonLink &&
              <>
                 <br />

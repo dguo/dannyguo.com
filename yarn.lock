@@ -3127,6 +3127,8 @@ __metadata:
     instantsearch.css: 7.4.5
     instantsearch.js: 4.48.1
     markdownlint-cli: 0.32.2
+    mdast-util-to-string: 3.1.0
+    reading-time: 1.5.0
     stylelint: 14.14.0
     stylelint-config-recommended: 9.0.0
   languageName: unknown
@@ -6322,7 +6324,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdast-util-to-string@npm:^3.0.0, mdast-util-to-string@npm:^3.1.0":
+"mdast-util-to-string@npm:3.1.0, mdast-util-to-string@npm:^3.0.0, mdast-util-to-string@npm:^3.1.0":
   version: 3.1.0
   resolution: "mdast-util-to-string@npm:3.1.0"
   checksum: f42ddd4e22f2215a75715b92ea6e3149c4ba356e7781d7b94fc86ded1c79cec3f986afeecef3a4a80068c9b224a6520099783a12146b957de24f020a3e47dd29
@@ -8002,6 +8004,13 @@ __metadata:
     micromatch: ^3.1.10
     readable-stream: ^2.0.2
   checksum: 3879b20f1a871e0e004a14fbf1776e65ee0b746a62f5a416010808b37c272ac49b023c47042c7b1e281cba75a449696635bc64c397ed221ea81d853a8f2ed79a
+  languageName: node
+  linkType: hard
+
+"reading-time@npm:1.5.0":
+  version: 1.5.0
+  resolution: "reading-time@npm:1.5.0"
+  checksum: e27bc5a70ba0f4ac337896b18531b914d38f4bee67cbad48029d0c11dd0a7a847b2a6bba895ab7ce2ad3e7ecb86912bdc477d8fa2d48405a3deda964be54d09b
   languageName: node
   linkType: hard
 

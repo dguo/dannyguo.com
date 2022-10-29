@@ -1,4 +1,7 @@
 ---
+import "@fontsource/open-sans";
+import "@fontsource/source-serif-pro";
+
 const props = Astro.props.frontmatter || Astro.props;
 const title = props.title || import.meta.env.PUBLIC_AUTHOR_NAME;
 ---
@@ -30,16 +33,6 @@ const title = props.title || import.meta.env.PUBLIC_AUTHOR_NAME;
         />
 
         <link rel="stylesheet" href="/css/general.css" type="text/css" />
-        <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Serif+Pro&display=swap"
-            rel="stylesheet"
-        />
-
-        <!-- TODO: fix this
-        {{ if (findRE "<code|<pre" .Content 1) }}
-            <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
-        {{ end  }}
-        -->
 
         <link
             rel="apple-touch-icon"
@@ -196,9 +189,5 @@ const title = props.title || import.meta.env.PUBLIC_AUTHOR_NAME;
             console.log("Cheers,");
             console.log("Danny");
         </script>
-
-        <!-- TODO
-        {{ block "js-extra" . }}{{ end }}
-        -->
     </body>
 </html>

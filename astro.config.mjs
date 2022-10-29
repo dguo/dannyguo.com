@@ -17,5 +17,8 @@ export default defineConfig({
     integrations: [sitemap()],
     markdown: {
         remarkPlugins: [remarkReadingTime],
+        shikiConfig: {
+            theme: "monokai",
+        },
     },
 });

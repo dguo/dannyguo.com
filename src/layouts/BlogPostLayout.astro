@@ -15,6 +15,17 @@ const canonicalUrl = props.canonicalUrl || new URL(props.url, import.meta.env.PU
     <article>
         <h1>{props.title}</h1>
 
+        <div class="subheader">
+            {props.lastmod &&
+              <>
+                Updated on <time itemprop="dateModified" datetime={props.lastmod}>{new Date(props.lastmod).toLocaleDateString("en-us", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC"})}</time>
+                &nbsp;·&nbsp;
+              </>
+            }
+            {props.lastmod && <>Published on </>}
+            <time itemprop="datePublished" datetime={props.date}>{new Date(props.date).toLocaleDateString("en-us", { month: "long", day: "numeric", year: "numeric", timeZone: "utc"})}</time>
+        </div>
+
         <!-- <div class="subheader">{{ if ne .Date .Lastmod }}Updated on <time itemprop="dateModified" datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "January 2, 2006" }}</time>&nbsp;&nbsp;·&nbsp;&nbsp;Published on {{ end }}<time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{.Date.Format "January 2, 2006"}}</time>{{ if eq .Date .Lastmod }}&nbsp;&nbsp;·&nbsp;&nbsp;{{ else }}<br>{{ end }}{{ .WordCount | lang.NumFmt 0 }} words&nbsp;&nbsp;·&nbsp;&nbsp;~{{ .ReadingTime | lang.NumFmt 0 }} minute{{ if not (eq .ReadingTime 1) }}s{{ end }} to read -->
             <!-- {{ if (findRE "<a href=\"https://www.amazon.com/" .Content 1) }}
             <br>

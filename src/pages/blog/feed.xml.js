@@ -2,7 +2,7 @@ import path from "node:path";
 
 import rss from "@astrojs/rss";
 
-const postImportResult = import.meta.glob("./**/*.md", { eager: true });
+const postImportResult = import.meta.glob("./**/*.(md|mdx)", { eager: true });
 const posts = Object.values(postImportResult);
 
 export const get = () =>

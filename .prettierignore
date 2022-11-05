@@ -1,4 +1,5 @@
 *.md
+*.mdx
 .yarn/
 dist/
 src/layouts/partials

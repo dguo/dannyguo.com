@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const posts = await Astro.glob("./*.md");
+const posts = await Astro.glob("./*.(md|mdx)");
 ---
 
 <BaseLayout>

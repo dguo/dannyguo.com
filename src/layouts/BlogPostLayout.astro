@@ -1,20 +1,35 @@
 ---
+import fs from "node:fs";
 import path from "node:path";
 
+import type { MarkdownLayoutProps } from "astro";
 import "@fontsource/source-code-pro";
 
 import BaseLayout from "./BaseLayout.astro";
+
+type Props = MarkdownLayoutProps<{
+    title: string;
+    date: string;
+    canonicalUrl?: string;
+    lastmod?: string;
+    // These two come from remarkReadingTime in the Astro config
+    numberOfWords: number;
+    minutesToRead: number;
+}>;
 
 const props = Astro.props.frontmatter;
 
 const parsedFile = path.parse(props.file);
 const fileName = parsedFile.name;
+const fileBase = parsedFile.base;
 const canonicalUrl =
     props.canonicalUrl ||
     new URL(props.url, import.meta.env.PUBLIC_DOMAIN).href;
 
-const rawContent = Astro.props.rawContent();
-const hasAmazonLink = /https:\/\/www.amazon.com/.test(rawContent);
+/* We can't use Astro.props.rawContent() because that is only supported for
+   regular Markdown, whereas we also have MDX files. */
+const fileContent = fs.readFileSync(props.file).toString();
+const hasAmazonLink = /https:\/\/www.amazon.com/.test(fileContent);
 
 const locale = "en-us";
 const localeOptions = {
@@ -107,7 +122,7 @@ const localeOptions = {
         <a
             href={`${
                 import.meta.env.PUBLIC_SOURCE_CODE_REPO
-            }/blob/main/src/pages/blog/${fileName}`}>GitHub</a
+            }/blob/main/src/pages/blog/${fileBase}`}>GitHub</a
         >.
     </p>
 

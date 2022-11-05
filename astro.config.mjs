@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { toString } from "mdast-util-to-string";
 import getReadingTime from "reading-time";
@@ -14,7 +15,7 @@ export function remarkReadingTime() {
 
 export default defineConfig({
     site: "https://www.dannyguo.com",
-    integrations: [sitemap()],
+    integrations: [mdx(), sitemap()],
     markdown: {
         remarkPlugins: [remarkReadingTime],
         shikiConfig: {

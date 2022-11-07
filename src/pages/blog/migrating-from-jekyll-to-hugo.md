@@ -107,11 +107,10 @@ libraries.
 
 I also had to convert my [Sass](https://sass-lang.com/) files to raw CSS, but
 this wasn't a big deal for me because I was barely using any Sass specific
-features. There's an [open
-issue](https://github.com/gohugoio/hugo/issues/4243) for adding native Sass
-support, and this tweet confirms that it's coming:
-
-{{< tweet user="GoHugoIO" id="1007361748201037824" >}}
+features. There's an [open issue](https://github.com/gohugoio/hugo/issues/4243)
+for adding native Sass support, and [this
+tweet](https://twitter.com/GoHugoIO/status/1007361748201037824) confirms that
+it's coming:
 
 I did find the layout system to be a little confusing in terms of figuring out
 how Hugo [determines](https://gohugo.io/templates/lookup-order/) which layouts

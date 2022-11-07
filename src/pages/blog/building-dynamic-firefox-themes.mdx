@@ -3,6 +3,8 @@ layout: ../../layouts/BlogPostLayout.astro
 date: "2018-04-12"
 title: Building Dynamic Firefox Themes
 ---
+import Video from "../../components/video.astro";
+import YouTube from "../../components/youtube.astro";
 
 [Mozilla](https://www.mozilla.org/) is running a contest called the [Firefox
 Quantum Extensions Challenge](https://extensionschallenge.com/) for building
@@ -21,7 +23,7 @@ in the background. This one was inspired by the lighting effects on my
 [Razer](https://www.razer.com/gaming-keyboards) keyboard. I keep mine in what I
 like to call [Nyan Cat](https://en.wikipedia.org/wiki/Nyan_Cat) mode:
 
-{{< youtube Wd9PSgfVpiM >}}
+<YouTube id="Wd9PSgfVpiM" />
 
 I considered trying to replicate the effect, but it seems like it would be too
 obnoxious in the browser. I'm also not sure if it's feasible with the current
@@ -29,11 +31,11 @@ API. The only method I can think of is to use an [animated
 SVG](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json/theme#Image_formats),
 which is possible as of Firefox 59. I decided to do spectrum cycling instead:
 
-{{< youtube pI96n8kjKW8 >}}
+<YouTube id="pI96n8kjKW8" />
 
 Here's what it looks like:
 
-{{< video qRwh1WU >}}
+<Video imgurId="qRwh1WU" />
 
 The color transitions occur fairly slowly, so the overall effect shouldn't be
 distracting.

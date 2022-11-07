@@ -8,6 +8,7 @@ tags:
   - web-workers
 title: How to Improve Interface Responsiveness With Web Workers
 ---
+import Video from "../../components/video.astro";
 
 *This post was originally written for the [LogRocket
 blog](https://blog.logrocket.com/how-to-improve-interface-responsiveness-with-web-workers/).*
@@ -86,7 +87,7 @@ setInterval(function () {
 By setting the interval to the value of 50 milliseconds, we’ll see the time
 update very quickly.
 
-{{< video WbgtgYL >}}
+<Video imgurId="WbgtgYL" />
 
 ### Setting up a Server
 
@@ -349,7 +350,7 @@ instead](https://www.viget.com/articles/animation-performance-101-browser-under-
 
 Here’s what it looks like.
 
-{{< video HmJ95LY >}}
+<Video imgurId="HmJ95LY" />
 
 On Firefox, the browser eventually displays a warning that a web page is slowing
 down your browser.
@@ -444,7 +445,7 @@ Try generating a palette with the worker, and you should see that the time keeps
 updating during the processing. The form also remains interactive instead of
 freezing. Here’s what it should look like.
 
-{{< video EER1Snx >}}
+<Video imgurId="EER1Snx" />
 
 ## Conclusion
 

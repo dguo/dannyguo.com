@@ -86,10 +86,15 @@ pre.astro-code code > span[style*="display:block;"] {
 .warning {
   background-color: #fcf4a3;
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 4px;
   color: #180d01;
 }
 
 .warning .label {
   font-weight: bold;
+}
+
+.warning p {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

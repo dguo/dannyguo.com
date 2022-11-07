@@ -8,6 +8,7 @@ tags:
   - css
 title: Animated Multiline Link Underlines with CSS
 ---
+import Video from "../../components/video.astro";
 
 One benefit of building my [personal website](https://www.dannyguo.com/) from
 scratch instead of using a [theme](https://themes.gohugo.io/) made by someone
@@ -28,7 +29,7 @@ that has a risk of causing a performance issue or frustrating behavior (see
 
 Here's what the effect looks like now.
 
-{{< video 2sKxENF >}}
+<Video imgurId="2sKxENF" />
 
 ## Implementation
 
@@ -53,13 +54,13 @@ transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Us
 Unfortunately, these solutions have one drawback: they don't work properly if
 the link spans more than one line. The underline only appears on the first line.
 
-{{< video XWPhTQM >}}
+<Video imgurId="XWPhTQM" />
 
 I eventually found a [CodePen](https://codepen.io/shshaw/pen/pdyJBW) by
 [Shaw](https://twitter.com/shshaw) that doesn't have this flaw. I modified the
 CSS until I got to a solution that looks good to me.
 
-{{< video 8pxxwkT >}}
+<Video imgurId="8pxxwkT" />
 
 Here is the relevant code. You can use [this
 repl](https://repl.it/@dyguo/animated-multiline-link-underlines) to play around

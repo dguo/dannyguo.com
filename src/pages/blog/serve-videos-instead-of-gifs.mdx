@@ -8,6 +8,7 @@ tags:
   - webdev
 title: Serve Videos Instead of GIFs
 ---
+import Video from "../../components/video.astro";
 
 The Graphics Interchange Format ([GIF](https://en.wikipedia.org/wiki/GIF)) is
 over 30 years old but is a pervasive part of internet culture. We use GIFs to
@@ -22,7 +23,7 @@ GIFs have a significant drawback: massive file sizes. A single GIF can be larger
 than a typical website ([over 2
 MB](https://www.keycdn.com/support/the-growth-of-web-page-size)).
 
-{{< video iGkFsvW >}}
+<Video imgurId="iGkFsvW" />
 
 ## GIFs
 
@@ -121,7 +122,7 @@ savings can be tremendous. The following video is 103 KB in size, compared to
 4.1 MB for the GIF that I converted it from. That's a size reduction of over
 97%.
 
-{{< video VQMB3VR >}}
+<Video imgurId="VQMB3VR" />
 
 ## Creating Videos
 

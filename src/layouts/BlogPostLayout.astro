@@ -30,6 +30,7 @@ const canonicalUrl =
    regular Markdown, whereas we also have MDX files. */
 const fileContent = fs.readFileSync(props.file).toString();
 const hasAmazonLink = /https:\/\/www.amazon.com/.test(fileContent);
+const hasCodeBlock = /```/.test(fileContent);
 
 const locale = "en-us";
 const localeOptions = {
@@ -43,7 +44,10 @@ const localeOptions = {
 <link rel="stylesheet" href="/css/post.css" type="text/css" />
 
 <BaseLayout title={props.title}>
-    <link slot="head-extra" rel="canonical" href={canonicalUrl} />
+    <Fragment slot="head-extra">
+        <link rel="canonical" href={canonicalUrl} />
+        {hasCodeBlock && <script defer src="/js/copy-code-button.js" />}
+    </Fragment>
 
     <article>
         <h1>{props.title}</h1>
@@ -152,7 +156,3 @@ const localeOptions = {
 
     <div class="separator"></div>
 </BaseLayout>
-
-<!-- {{ if (findRE "<pre" .Content 1) }}
-    <script src="/js/copy-code-button.js"></script>
-{{ end  }} -->

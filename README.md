@@ -21,8 +21,6 @@ Hello! My website is available at https://dannyguo.com.
 
 ## Features
 
-Many of these were easy to add because of Hugo.
-
 * [animated link underlines](https://github.com/dguo/dannyguo.com/commit/14e51391329163fa414ac55d77fdf6da521ab644)
 * [comments](https://github.com/dguo/dannyguo.com/commit/8bbd1e12cf145844e384b1858f169d96fd70b45c)
 * [copy to clipboard buttons for code blocks](https://github.com/dguo/dannyguo.com/commit/6953658a361112c3d3f7c348a537a200d24c8c63)
@@ -95,7 +93,7 @@ post](https://help.medium.com/hc/en-us/articles/215552778-Unlisted-publishing).
 Only do this for substantial changes, not small ones like fixing typos or links.
 
 1. Add the `lastmod` variable to the post's [front
-   matter](https://gohugo.io/content-management/front-matter/#front-matter-variables)
+   matter](https://docs.astro.build/en/guides/markdown-content/#frontmatter-layout)
 2. Update the post content
 3. Publish it
 4. If applicable, update the Medium post and/or the dev.to post

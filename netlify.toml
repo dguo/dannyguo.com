@@ -8,9 +8,6 @@
   bundle = false
   minify = false
 
-[context.production.environment]
-  HUGO_ENV = "production"
-
 # Plausible
 [[redirects]]
   from = "/blueberry-cobbler/js/script.js"

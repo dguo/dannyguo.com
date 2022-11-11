@@ -11,10 +11,9 @@
         "format": "prettier --write .",
         "format:check": "prettier --check .",
         "preview": "astro preview",
-        "lint": "yarn lint:css && yarn lint:html && yarn lint:js && yarn lint:md",
+        "lint": "yarn lint:css && yarn lint:src",
         "lint:css": "stylelint public/css/*",
-        "lint:js": "eslint static/js/*",
-        "lint:md": "markdownlint content/**/*/*.md",
+        "lint:src": "eslint src",
         "update-search-index": "atomic-algolia"
     },
     "dependencies": {
@@ -35,22 +34,35 @@
     },
     "devDependencies": {
         "@astrojs/sitemap": "1.0.0",
+        "@typescript-eslint/parser": "5.42.1",
         "atomic-algolia": "0.3.19",
-        "eslint": "8.26.0",
-        "markdownlint-cli": "0.32.2",
+        "eslint": "8.27.0",
+        "eslint-plugin-astro": "0.21.0",
         "prettier": "2.7.1",
         "prettier-plugin-astro": "0.7.0",
         "stylelint": "14.14.0",
         "stylelint-config-recommended": "9.0.0"
     },
     "eslintConfig": {
-        "extends": "eslint:recommended",
-        "env": {
-            "browser": true
-        },
-        "languageOptions": {
+        "extends": "plugin:astro/recommended",
+        "parserOptions": {
+            "ecmaVersion": "latest",
             "sourceType": "module"
-        }
+        },
+        "overrides": [
+            {
+                "files": [
+                    "*.astro"
+                ],
+                "parser": "astro-eslint-parser",
+                "parserOptions": {
+                    "parser": "@typescript-eslint/parser",
+                    "extraFileExtensions": [
+                        ".astro"
+                    ]
+                }
+            }
+        ]
     },
     "stylelint": {
         "extends": "stylelint-config-recommended"

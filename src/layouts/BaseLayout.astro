@@ -58,11 +58,10 @@ const title = props.title || import.meta.env.PUBLIC_AUTHOR_NAME;
         <meta name="msapplication-TileColor" content="#c40233" />
         <meta name="theme-color" content="#ffffff" />
 
-        <!-- TODO -->
         <title>{title}</title>
 
         <!-- Plausible -->
-        {import.meta.env.PROD && <script
+        {import.meta.env.PROD && <script is:inline
             defer
             data-domain="dannyguo.com"
             data-api="/blueberry-cobbler/api/event"
@@ -70,13 +69,13 @@ const title = props.title || import.meta.env.PUBLIC_AUTHOR_NAME;
         ></script>}
 
         <!-- Google Analytics -->
-        {import.meta.env.PROD && <script
+        {import.meta.env.PROD && <script is:inline
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${
                 import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID
             }`}
-        ></script>
-        <script>
+        ></script>}
+        {import.meta.env.PROD && <script is:inline>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 dataLayer.push(arguments);

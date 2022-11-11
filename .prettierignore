@@ -2,6 +2,5 @@
 *.mdx
 .yarn/
 dist/
-src/layouts/partials
-src/layouts/shortcodes
+# There's an issue with the dataLayer script for Google Analytics
 src/layouts/BaseLayout.astro

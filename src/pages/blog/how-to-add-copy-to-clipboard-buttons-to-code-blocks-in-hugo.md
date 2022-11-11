@@ -133,7 +133,7 @@ it](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API#Browser_compa
 already. For other browsers, there is a
 [polyfill](https://github.com/lgarron/clipboard-polyfill).
 
-I put the code in a function and added click handlers. I used
+I put the code in a function and added a click handler. I used
 [innerText](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText)
 to get the code to be copied. After the copy operation, the button displays
 either an error message or a success message that lasts for two seconds.

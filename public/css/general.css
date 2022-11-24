@@ -97,8 +97,12 @@ a:not(.anchor):not(.link-button):not(.link-image):not(.ais-Pagination-link) {
   transition: background-size 0.3s;
 }
 
-a:not(.anchor):not(.link-button):not(.link-image):not(.ais-Pagination-link):hover,
-a:not(.anchor):not(.link-button):not(.link-image):not(.ais-Pagination-link):focus {
+a:not(.anchor):not(.link-button):not(.link-image):not(
+    .ais-Pagination-link
+  ):hover,
+a:not(.anchor):not(.link-button):not(.link-image):not(
+    .ais-Pagination-link
+  ):focus {
   background-size: 100% 2px;
 }
 

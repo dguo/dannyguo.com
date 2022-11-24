@@ -24,7 +24,7 @@ const fileName = parsedFile.name;
 const fileBase = parsedFile.base;
 const canonicalUrl =
     props.canonicalUrl ||
-    new URL(props.url, import.meta.env.PUBLIC_DOMAIN).href;
+    new URL(props.url as string, import.meta.env.PUBLIC_DOMAIN).href;
 
 /* We can't use Astro.props.rawContent() because that is only supported for
    regular Markdown, whereas we also have MDX files. */

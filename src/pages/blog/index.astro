@@ -1,6 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const posts = await Astro.glob("./*.(md|mdx)");
+import { getBlogPosts } from "./_utils";
+
+const posts: any[] = getBlogPosts({
+    includeDraft: import.meta.env.DEV,
+    includeUnlisted: import.meta.env.DEV,
+});
 ---
 
 <BaseLayout>
@@ -10,23 +15,12 @@ const posts = await Astro.glob("./*.(md|mdx)");
     </p>
 
     {
-        posts
-            .sort((a, b) =>
-                a.frontmatter.date < b.frontmatter.date ||
-                (a.frontmatter.date && !b.frontmatter.date)
-                    ? 1
-                    : -1
-            )
-            .map(
-                (post) =>
-                    ((!post.frontmatter.draft && !post.frontmatter.unlisted) ||
-                        import.meta.env.DEV) && (
-                        <p>
-                            <em>{post.frontmatter.date || "Draft"}</em>
-                            &middot;
-                            <a href={post.url}>{post.frontmatter.title}</a>
-                        </p>
-                    )
-            )
+        posts.map((post) => (
+            <p>
+                <em>{post.frontmatter.date || "Draft"}</em>
+                &middot;
+                <a href={post.url}>{post.frontmatter.title}</a>
+            </p>
+        ))
     }
 </BaseLayout>

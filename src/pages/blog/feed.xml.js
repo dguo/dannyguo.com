@@ -2,9 +2,9 @@ import path from "node:path";
 
 import rss from "@astrojs/rss";
 
-import { getBlogPosts } from "./_utils";
+import { getBlogPostList } from "./_utils";
 
-const posts = getBlogPosts();
+const posts = getBlogPostList();
 
 export const get = () =>
     rss({

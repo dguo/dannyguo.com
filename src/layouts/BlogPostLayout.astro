@@ -6,6 +6,7 @@ import type { MarkdownLayoutProps } from "astro";
 import "@fontsource/source-code-pro";
 
 import BaseLayout from "./BaseLayout.astro";
+import { getBlogPostList } from "../pages/blog/_utils";
 
 type Props = MarkdownLayoutProps<{
     title: string;
@@ -39,6 +40,14 @@ const localeOptions = {
     year: "numeric",
     timeZone: "UTC",
 } as const;
+
+const posts = getBlogPostList({
+    includeDraft: import.meta.env.DEV,
+    includeUnlisted: import.meta.env.DEV,
+});
+const postIndex = posts.findIndex((post) => post.url === props.url);
+const previousPost = posts[postIndex + 1] ?? null;
+const nextPost = posts[postIndex - 1] ?? null;
 ---
 
 <link rel="stylesheet" href="/css/post.css" type="text/css" />
@@ -90,23 +99,25 @@ const localeOptions = {
 
     <hr class="separator" />
 
-    <!-- <div class="clearfix">
-        {{ with .PrevInSection }}
-            {{ if (not .Params.unlisted) }}
+    <div class="clearfix">
+        {
+            previousPost && (
                 <span class="previous-link">
-                    <a href="{{ .Permalink }}">← {{ .Title }}</a>
+                    <a href={previousPost.url}>
+                        ← {previousPost.frontmatter.title}
+                    </a>
                 </span>
-            {{ end }}
-        {{ end }}
+            )
+        }
 
-        {{ with .NextInSection }}
-            {{ if (not .Params.unlisted) }}
+        {
+            nextPost && (
                 <span class="next-link">
-                    <a href="{{ .Permalink }}">{{ .Title }} →</a>
+                    <a href={nextPost.url}>{nextPost.frontmatter.title} →</a>
                 </span>
-            {{ end }}
-        {{ end }}
-    </div> -->
+            )
+        }
+    </div>
 
     <hr class="separator" />
 

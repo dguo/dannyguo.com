@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getBlogPosts } from "./_utils";
+import { getBlogPostList } from "./_utils";
 
-const posts: any[] = getBlogPosts({
+const posts: any[] = getBlogPostList({
     includeDraft: import.meta.env.DEV,
     includeUnlisted: import.meta.env.DEV,
 });

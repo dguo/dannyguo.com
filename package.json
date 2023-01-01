@@ -24,7 +24,7 @@
         "@fontsource/source-code-pro": "4.5.12",
         "@fontsource/source-serif-pro": "4.5.9",
         "algoliasearch": "4.14.3",
-        "astro": "1.6.11",
+        "astro": "1.8.0",
         "hastscript": "7.1.0",
         "instantsearch.css": "7.4.5",
         "instantsearch.js": "4.49.2",

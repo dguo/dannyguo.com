@@ -246,10 +246,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/mdx@npm:0.12.0":
-  version: 0.12.0
-  resolution: "@astrojs/mdx@npm:0.12.0"
+"@astrojs/mdx@npm:0.14.0":
+  version: 0.14.0
+  resolution: "@astrojs/mdx@npm:0.14.0"
   dependencies:
+    "@astrojs/markdown-remark": ^1.2.0
     "@astrojs/prism": ^1.0.2
     "@mdx-js/mdx": ^2.1.2
     "@mdx-js/rollup": ^2.1.1
@@ -266,7 +267,7 @@ __metadata:
     shiki: ^0.11.1
     unist-util-visit: ^4.1.0
     vfile: ^5.3.2
-  checksum: 3903cb04d7b5db2f224cdcadbad8a2b13b92b3762f1395996713fbe67fdce22cbef6ba3c09804886c6c158dbf2c0630d783c045c13b67f4e16b62444c99e0d1b
+  checksum: 71e53f58dd211b79d989a23976e264a21ab85eccbf459b89aad77c47bdb1b8c25d9abdc3a276f3b82ae42022ae8e4ba8a6543e61f31102cab42f4e237ead4d7c
   languageName: node
   linkType: hard
 
@@ -3342,7 +3343,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dannyguo.com@workspace:."
   dependencies:
-    "@astrojs/mdx": 0.12.0
+    "@astrojs/mdx": 0.14.0
     "@astrojs/rss": 2.0.0
     "@astrojs/sitemap": 1.0.0
     "@fontsource/open-sans": 4.5.13

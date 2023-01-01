@@ -18,7 +18,7 @@
     },
     "dependencies": {
         "@astrojs/mdx": "0.12.0",
-        "@astrojs/rss": "1.0.3",
+        "@astrojs/rss": "2.0.0",
         "@astrojs/sitemap": "1.0.0",
         "@fontsource/open-sans": "4.5.13",
         "@fontsource/source-code-pro": "4.5.12",

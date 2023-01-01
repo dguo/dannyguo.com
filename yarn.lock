@@ -305,12 +305,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/rss@npm:1.0.3":
-  version: 1.0.3
-  resolution: "@astrojs/rss@npm:1.0.3"
+"@astrojs/rss@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@astrojs/rss@npm:2.0.0"
   dependencies:
     fast-xml-parser: ^4.0.8
-  checksum: ca1ffd98def1ef74d63fc383b999a29a9b00caa22d3be007e0bf707e917d77151458073e3f59c472a1809471a86c63c3eda62a001a02e703b8ed46379a66f735
+  checksum: 82db559099b6e867c242a7cda891ad3cf8c43896ac98e8f932c33325dae328497e9ac035f34a41ca32eb1ca125d8f960c8e6f070d72aecf32fce52f1a04cb13b
   languageName: node
   linkType: hard
 
@@ -3341,7 +3341,7 @@ __metadata:
   resolution: "dannyguo.com@workspace:."
   dependencies:
     "@astrojs/mdx": 0.12.0
-    "@astrojs/rss": 1.0.3
+    "@astrojs/rss": 2.0.0
     "@astrojs/sitemap": 1.0.0
     "@fontsource/open-sans": 4.5.13
     "@fontsource/source-code-pro": 4.5.12

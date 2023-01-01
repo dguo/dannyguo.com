@@ -147,7 +147,6 @@ const nextPost = posts[postIndex - 1] ?? null;
     <script define:vars={{ canonicalUrl, fileName, title: props.title }}>
         var disqus_config = function () {
             this.page.url = canonicalUrl;
-            this.page.identifier = fileName;
             this.page.title = title;
         };
         (function () {

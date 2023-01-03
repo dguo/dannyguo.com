@@ -1,0 +1,19 @@
+---
+interface Props {
+    name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<iframe
+    height="500px"
+    width="100%"
+    src={`https://repl.it/@dyguo/${name}?lite=true`}
+    scrolling="no"
+    frameborder="no"
+    allowtransparency="true"
+    allowfullscreen="true"
+    sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"
+>
+</iframe>

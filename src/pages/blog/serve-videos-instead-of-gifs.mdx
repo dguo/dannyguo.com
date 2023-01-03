@@ -1,0 +1,156 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+categories:
+  - programming
+date: "2020-05-16"
+tags:
+  - optimization
+  - webdev
+title: Serve Videos Instead of GIFs
+---
+import Video from "../../components/video.astro";
+
+The Graphics Interchange Format ([GIF](https://en.wikipedia.org/wiki/GIF)) is
+over 30 years old but is a pervasive part of internet culture. We use GIFs to
+serve short, silent, and looping videos, which frequently become
+[memes](https://en.wikipedia.org/wiki/Internet_meme). [Entire
+services](https://giphy.com/) exist to create and share them, and many
+smartphone keyboards have built-in GIF support.
+
+It's also easy to embed them into websites with simple
+[image](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) tags. Yet
+GIFs have a significant drawback: massive file sizes. A single GIF can be larger
+than a typical website ([over 2
+MB](https://www.keycdn.com/support/the-growth-of-web-page-size)).
+
+<Video imgurId="iGkFsvW" />
+
+## GIFs
+
+> I don't care what anything was *designed* to do. I care about what it *can* do.
+>
+> -- [Gene Kranz](https://en.wikipedia.org/wiki/Gene_Kranz) in [Apollo
+13](https://youtu.be/XLMDSjCzEx8)
+
+GIFs [were never
+designed](https://www.wired.com/2017/05/gif-turns-30-ancient-format-changed-internet/)
+to serve full videos. Almost to the contrary, [Steve
+Wilhite](https://en.wikipedia.org/wiki/Steve_Wilhite) designed the format to
+solve the problem of efficiently serving simple images, like weather maps and
+other graphics.
+
+Each image in a GIF is limited to a color pallete of 256 colors. Images are also
+[losslessly compressed](https://en.wikipedia.org/wiki/Lossless_compression)
+using [LZW](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch).
+These factors made GIF a good choice for graphics rather than images like
+photographs, which have much more detail and are better suited for a format like
+[JPEG](https://en.wikipedia.org/wiki/JPEG).
+
+GIF also allowed for storing more than one image in a file. This fact made it
+easy for a new GIF specification (GIF89a) to add the option for time delays
+between images, turning them into frames of an animation.
+
+The specification also allows for a space called the application extension
+block. [Netscape Navigator](https://en.wikipedia.org/wiki/Netscape_Navigator)
+v2.0 used this space to allow GIF creators to specify that a GIF should loop a
+certain number of times or indefinitely. This gave us the GIF as we commonly see
+it today.
+
+However, GIFs tend to be several megabytes in size now because we frequently use
+them to display videos comprised of images with a lot of detail. Remember that
+each one is losslessly compressed. Furthermore, GIF doesn't do any compression
+between frames, a basic foundation of typical [video
+compression](https://en.wikipedia.org/wiki/Data_compression#Video) techniques.
+Frames of a video tend to be fairly similar. Because GIFs don't exploit this
+information redundancy, the format is a very inefficient way to serve videos.
+
+The solution is to use a format that's actually designed to serve videos, like
+[MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14) or
+[WebM](https://en.wikipedia.org/wiki/WebM). Many services do this transparently.
+When Twitter [added GIF
+support](https://techcrunch.com/2014/06/19/gasp-twitter-gifs-arent-actually-gifs/)
+in 2014, they implemented the feature by converting uploaded GIFs into videos to
+serve instead. Imgur [started doing the same
+thing](https://blog.imgur.com//2014/10/09/introducing-gifv/) the same year.
+
+## Serving Videos
+
+Serving videos instead of GIFs is easy to do now with the HTML [video
+element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video), which
+is supported [almost universally](https://caniuse.com/#feat=video), but it does
+take more work to use a video tag rather than an image tag. To serve the video
+equivalent of a GIF, we can use markup like this:
+
+```html
+<video autoplay loop muted playsinline>
+    <source src="dancing-baby.webm" type="video/webm">
+    <source src="dancing-baby.mp4" type="video/mp4">
+    <p>Your browser doesn't support this embedded video.</p>
+</video>
+```
+
+Using the `autoplay`, `loop`, and `muted` attributes gives us the same behavior
+that we expect from a GIF.
+
+The `playsinline` attribute is necessary for [iOS in
+particular](https://webkit.org/blog/6784/new-video-policies-for-ios/). See this
+[Stack Overflow answer](https://stackoverflow.com/a/48493032/1481479).
+
+The element will load the [first
+source](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content#Media_file_support_in_browsers)
+that the browser supports. In this case, if the browser can't play WebM videos,
+it will try to play the MP4 version instead.
+
+We also provide a fallback message in case the browser doesn't support the video
+element. This is distinct from the case where the browser doesn't support any of
+the sources. In that case, the element fires an error event.
+
+We don't have to provide the [MIME
+type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
+for each source, but doing so might allow the browser to [save a network
+request](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#Attributes).
+If it can't handle the type, it can move on to the next source rather than
+making a request to the server.
+
+Video behavior can also be affected by the user's power settings. For example,
+videos won't autoplay on iOS if the user has [low power
+mode](https://support.apple.com/en-us/HT205234) on. Instead, the user should see
+the controls and can manually play the video.
+
+While serving a video is not as straightforward as serving a GIF, the file size
+savings can be tremendous. The following video is 103 KB in size, compared to
+4.1 MB for the GIF that I converted it from. That's a size reduction of over
+97%.
+
+<Video imgurId="VQMB3VR" />
+
+## Creating Videos
+
+To quickly convert a GIF into a video, there are plenty of websites that let you
+[do a one-off conversion](https://cloudconvert.com/gif-to-mp4).
+
+To convert a GIF into a video file on the command line, I use
+[FFmpeg](https://ffmpeg.org/).
+
+```sh
+ffmpeg -f gif -i dancing-baby.gif dancing-baby.mp4
+```
+
+To take video screenshots in macOS, I use [Kap](https://getkap.co/). It supports
+saving the videos as GIF, MP4, WebM, or
+[APNG](https://en.wikipedia.org/wiki/APNG) files.
+[QuickTime](https://support.apple.com/quicktime) also [supports screen
+recordings](https://support.apple.com/guide/quicktime-player/record-your-screen-qtp97b08e666/mac).
+
+If you use [Imgur](https://imgur.com/), one issue that I've experienced is poor
+video quality after uploading MP4s. The reason seems to be that [they get
+recompressed](https://community.imgur.com/t/videos-losing-quality-on-upload/62258).
+So at least for Imgur, it's better to upload a GIF and let them take care of
+converting it into a video.
+
+One final note: [according to
+Wilhite](https://www.youtube.com/watch?v=CBtKxsuGvko), GIF [is
+pronounced](https://bits.blogs.nytimes.com/2013/05/23/battle-over-gif-pronunciation-erupts/)
+with a soft "G," like "jif." That settles the [never-ending
+debate](https://www.mentalfloss.com/article/551894/how-do-linguists-pronounce-gif)
+for me.

@@ -1,18 +1,12 @@
 [build]
-  command = "hugo"
-  publish = "public"
-
-[build.environment]
-  HUGO_VERSION = "0.100.2"
+  command = "yarn run build"
+  publish = "dist"
 
 # For Plausible proxying:
 # https://plausible.io/docs/proxy/guides/netlify#troubleshooting
 [build.processing.js]
   bundle = false
   minify = false
-
-[context.production.environment]
-  HUGO_ENV = "production"
 
 # Plausible
 [[redirects]]

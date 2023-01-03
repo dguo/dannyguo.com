@@ -1,3 +1,6 @@
 # Let Git handle line endings if the user doesn't have core.autocrlf set
 * text=auto
 
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+/.yarn/releases/** binary
+/.yarn/plugins/** binary

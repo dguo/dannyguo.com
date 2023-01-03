@@ -1,0 +1,192 @@
+---
+import "@fontsource/open-sans";
+import "@fontsource/source-serif-pro";
+
+const props = Astro.props.frontmatter || Astro.props;
+const title = props.title || import.meta.env.PUBLIC_AUTHOR_NAME;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+                 Z
+                z
+               z
+         /\_/\
+     ("\( -_- )/")
+       ((     ))
+      (...)-(...)
+
+    -->
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="flattr:id" content="g6gjzx" />
+
+        <!-- RSS autodiscovery -->
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title={import.meta.env.PUBLIC_AUTHOR_NAME}
+            href={new URL("/blog/feed.xml", Astro.site)}
+        />
+
+        <link rel="stylesheet" href="/css/general.css" type="text/css" />
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png?v=2"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png?v=2"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png?v=2"
+        />
+        <link rel="manifest" href="/site.webmanifest?v=2" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg?v=2" color="#c40233"
+        />
+        <link rel="shortcut icon" href="/favicon.ico?v=2" />
+        <meta name="msapplication-TileColor" content="#c40233" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <title>{title}</title>
+
+        <!-- Plausible -->
+        {import.meta.env.PROD && <script is:inline
+            defer
+            data-domain="dannyguo.com"
+            data-api="/blueberry-cobbler/api/event"
+            src="/blueberry-cobbler/js/script.js"
+        ></script>}
+
+        <!-- Google Analytics -->
+        {import.meta.env.PROD && <script is:inline
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${
+                import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID
+            }`}
+        ></script>}
+        {import.meta.env.PROD && <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "UA-90320718-1");
+        </script>}
+
+        <slot name="head-extra" />
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <p class="title">Danny Guo | 郭亚东</p>
+
+                <div class="menu">
+                    <a href="/">home</a>
+                    &middot;
+                    <a href="/about">about</a>
+                    &middot;
+                    <a href="/blog">blog</a>
+                    &middot;
+                    <a href="/projects">projects</a>
+                </div>
+            </header>
+
+            <slot />
+
+            <hr />
+            <footer>
+                <p id="social-buttons">
+                    <a
+                        href={`https://twitter.com/${
+                            import.meta.env.PUBLIC_AUTHOR_TWITTER_NAME
+                        }`}
+                        class="link-button twitter"
+                    >
+                        <svg class="icon icon-twitter">
+                            <use xlink:href="/images/icons.svg#icon-twitter"
+                            ></use>
+                        </svg>
+                        Twitter
+                    </a>
+                    <a
+                        href={`https://github.com/${
+                            import.meta.env.PUBLIC_AUTHOR_GITHUB_NAME
+                        }`}
+                        class="link-button github"
+                    >
+                        <svg class="icon icon-github">
+                            <use xlink:href="/images/icons.svg#icon-github"
+                            ></use>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a
+                        href={`mailto:${import.meta.env.PUBLIC_AUTHOR_EMAIL}`}
+                        class="link-button email"
+                    >
+                        <svg class="icon icon-mail">
+                            <use xlink:href="/images/icons.svg#icon-mail"></use>
+                        </svg>
+                        Email
+                    </a>
+                </p>
+
+                <p>
+                    You can encrypt messsages with my <a href="/keys"
+                        >GPG key
+                    </a> if you'd like.
+                </p>
+
+                <p>
+                    &copy;
+                    <!-- Set the date at build time in case the client doesn't run JS. -->
+                    <span id="copyright-year">{new Date().getFullYear()}</span>
+                    <!-- Set the date with JS so that it updates as soon as the year changes. -->
+                    <script type="text/javascript">
+                        document.getElementById("copyright-year").textContent =
+                            new Date().getFullYear();
+                    </script>
+                    {import.meta.env.PUBLIC_AUTHOR_NAME}
+                </p>
+
+                <p>
+                    This content is licensed under
+                    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+                        >CC BY-NC-SA 4.0
+                    </a> and
+                    <a href="{{ .Site.Params.sourceCodeRepo }}">
+                        hosted on GitHub
+                    </a>.
+                </p>
+
+                <p>As an Amazon Associate I earn from qualifying purchases.</p>
+            </footer>
+        </div>
+
+        <script>
+            console.log("Hello!");
+            console.log();
+            console.log(
+                "You may be interested to know that this site is built using Astro (https://astro.build) and deployed on Netlify (https://www.netlify.com)."
+            );
+            console.log(
+                `The source code is available on GitHub (${import.meta.env.PUBLIC_SOURCE_CODE_REPO}).`
+            );
+            console.log();
+            console.log("Cheers,");
+            console.log("Danny");
+        </script>
+    </body>
+</html>

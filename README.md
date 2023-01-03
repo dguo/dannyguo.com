@@ -13,15 +13,13 @@ Hello! My website is available at https://dannyguo.com.
   integration
 * [Google Analytics](https://www.google.com/analytics) for analytics
 * [Google Fonts](https://fonts.google.com/) for the [Open Sans](https://fonts.google.com/specimen/Open+Sans) font
-* [Hugo](https://gohugo.io/) for generating the static site
+* [Astro](https://astro.build/) for generating the site
 * [Imgur](https://imgur.com/) for image hosting
     * This allows me to avoid committing images to Git
 * [Netlify](https://netlify.com/) for hosting
 * [Repl.it](https://repl.it/) for interactive code snippets
 
 ## Features
-
-Many of these were easy to add because of Hugo.
 
 * [animated link underlines](https://github.com/dguo/dannyguo.com/commit/14e51391329163fa414ac55d77fdf6da521ab644)
 * [comments](https://github.com/dguo/dannyguo.com/commit/8bbd1e12cf145844e384b1858f169d96fd70b45c)
@@ -60,8 +58,9 @@ post](https://help.medium.com/hc/en-us/articles/215552778-Unlisted-publishing).
 
 1. Remove the `draft` flag from the front matter
 2. Add an `unlisted` flag with a value of `true`
-3. Leave the `date`, `categories`, and `tags` fields empty
-4. Commit, and push to deploy
+3. [Filter](https://docs.astro.build/en/guides/integrations-guide/sitemap/#filter) the URL from the sitemap
+4. Leave the `date`, `categories`, and `tags` fields empty
+5. Commit, and push to deploy
 
 ## Checklist for Publishing a Final Post
 
@@ -94,7 +93,7 @@ post](https://help.medium.com/hc/en-us/articles/215552778-Unlisted-publishing).
 Only do this for substantial changes, not small ones like fixing typos or links.
 
 1. Add the `lastmod` variable to the post's [front
-   matter](https://gohugo.io/content-management/front-matter/#front-matter-variables)
+   matter](https://docs.astro.build/en/guides/markdown-content/#frontmatter-layout)
 2. Update the post content
 3. Publish it
 4. If applicable, update the Medium post and/or the dev.to post

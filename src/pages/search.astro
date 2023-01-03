@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "instantsearch.css/themes/satellite.css";
+---
+
+<style>
+    #stats {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        font-size: 0.8em;
+        color: #70757a;
+    }
+
+    :global(.ais-Stats) {
+        float: left;
+    }
+
+    :global(.ais-Hits-item) {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #pagination {
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+</style>
+
+<script>
+    import algoliasearch from "algoliasearch/lite";
+    import instantsearch from "instantsearch.js";
+    import {
+        searchBox,
+        hits,
+        pagination,
+        configure,
+        stats,
+    } from "instantsearch.js/es/widgets";
+
+    const searchClient = algoliasearch(
+        "MK3FXFX5GZ",
+        "9c93c5845a4e979b651b9aaca5d63bf9"
+    );
+
+    const search = instantsearch({
+        indexName:
+            window.location.hostname.indexOf("dannyguo.com") === -1
+                ? "dev_posts"
+                : "prod_posts",
+        searchClient,
+        routing: true,
+    });
+
+    search.addWidgets([
+        searchBox({
+            container: "#search-box",
+            placeholder: "Search",
+        }),
+        stats({
+            container: "#stats",
+        }),
+        hits({
+            container: "#hits",
+            templates: {
+                empty: "<p>No results</p>",
+                item: '<p><a href="{{relativePermalink}}">{{title}}</a><br>{{#helpers.highlight}}{ "attribute": "content"}{{/helpers.highlight}}</p>',
+            },
+        }),
+        pagination({
+            container: "#pagination",
+        }),
+        configure({
+            // TODO: figure out how to combine highlights and snippets
+            attributesToHighlight: ["content:400"],
+            // attributesToSnippet: ['content:40'],
+            hitsPerPage: 5,
+        }),
+    ]);
+
+    search.start();
+</script>
+
+<BaseLayout title="Danny Guo · Search">
+    <div id="search-box"></div>
+    <div id="stats">
+        &nbsp;(search powered by <a
+            id="attribution"
+            class="link-image"
+            href="https://www.algolia.com">Algolia</a
+        >)
+    </div>
+    <div id="hits"></div>
+    <div id="pagination"></div>
+</BaseLayout>

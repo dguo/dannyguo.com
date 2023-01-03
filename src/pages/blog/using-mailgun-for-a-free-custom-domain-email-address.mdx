@@ -1,0 +1,234 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+categories:
+  - programming
+date: "2018-12-07"
+lastmod: "2020-02-18"
+tags:
+  - email
+  - tutorial
+title: Using Mailgun for a Free Custom Domain Email Address
+---
+import Warning from "../../components/warning.astro";
+
+<Warning>
+This method is no longer viable. Mailgun has <a
+href="https://news.ycombinator.com/item?id=22192543">updated</a> their <a
+href="https://www.mailgun.com/pricing/">pricing</a> options, and the free plan
+no longer includes receiving email. Check out <a
+href="https://www.zoho.com/mail/zohomail-pricing.html">Zoho Mail's free plan</a>
+for an option that is still free, but keep in mind that it only allows web
+access. A paid but affordable alternative is <a
+href="https://www.namecheap.com/hosting/email/">Namecheap's email hosting</a>.
+Personally, I plan on switching to <a
+href="https://www.fastmail.com/">Fastmail</a> because I'm going to make my
+custom domain email address my primary email address, so I want a full-featured
+service.
+</Warning>
+
+I've been using [Gmail](https://www.google.com/gmail/about/) for my primary
+email address for over 13 years. I should thank my sister for making me use my
+name and not my now embarrassing
+[AIM](https://en.wikipedia.org/wiki/AIM_(software)) username. Here's a look at
+the welcome email back in 2005. Gmail wasn't even a year old yet.
+
+![Gmail welcome email in 2005](https://i.imgur.com/VRHg6jX.png)
+
+Gmail has served me well since then, but mostly for fun (and partly because of [
+vanity](https://theoatmeal.com/comics/email_address)), I recently set up an
+email address on [my own domain](https://dannyguo.com). I ended up going with a
+free solution that involves [Mailgun](https://www.mailgun.com/) and is good
+enough for my purposes. I wanted to still use my Gmail account to actually
+receive and send the custom domain emails. It isn't important to me right now to
+actually have a separate inbox or to stop using Google for email.
+
+## Options
+
+Several years ago, a common choice was Google Apps (now known as [G
+Suite](https://gsuite.google.com/)) because it was free for up to five users.  G
+Suite [got rid](https://support.google.com/a/answer/2855120) of the free edition
+and [costs](https://gsuite.google.com/pricing.html) $5 per month now, so I
+investigated alternatives.
+
+I've read about [Zoho Mail](https://www.zoho.com/mail/) as a free alternative.
+Unfortunately, it stopped offering
+[POP](https://en.wikipedia.org/wiki/Post_Office_Protocol) and
+[IMAP](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol) access
+for its free plan [earlier this
+year](https://help.zoho.com/portal/community/topic/zoho-free-tier-pop-imap-activesync-no-longer-free),
+so the only way to access my email would be through Zoho's website or apps. It
+would [cost](https://www.zoho.com/workplace/pricing.html) $3 per month to add
+POP and IMAP support. I don't fault Zoho for making this change, but I would
+prefer to access all my email through my Gmail account. I have also read some
+anecdotes that Zoho Mail can be slow in sending and receiving emails.
+
+Next, I looked at [FastMail](https://www.fastmail.com/) and [Proton
+Mail](https://proton.me/mail), which are frequently cited by people who have
+chosen to [avoid Google services](https://nomoregoogle.com/). FastMail
+[costs](https://www.fastmail.com/pricing/) $5 per month or $50 per year for a
+plan that includes custom domain support. Proton Mail [requires a paid
+plan](https://proton.me/support/custom-domain) for the feature, and the cheapest
+[paid plan](https://proton.me/pricing) is $5 per month or $48 per year.
+
+Another option was to use [Google Domains](https://domains.google/). It includes
+a free [email forwarding
+feature](https://support.google.com/domains/answer/3251241) that allows for
+sending an email from the alias as well. However, the feature is only available
+when you [use Google's name
+servers](https://support.google.com/domains/answer/3251241). My site runs on
+[Netlify](https://www.netlify.com/), and I use their [DNS
+service](https://www.netlify.com/docs/dns/).
+
+I also looked at mailboxes from other domain registrars.
+[Gandi](https://www.gandi.net) includes [two
+mailboxes](https://www.gandi.net/en/domain/email) with every domain, but Gandi's
+domain prices also [seem more expensive](https://tld-list.com/) than elsewhere,
+especially when considering that [Cloudflare](https://www.cloudflare.com/)'s
+[at-cost domain registrar
+service](https://blog.cloudflare.com/cloudflare-registrar/) is scheduled to be
+available soon.
+
+[Namecheap](https://www.namecheap.com) has very affordable [email
+hosting](https://www.namecheap.com/hosting/email.aspx) that only costs $9.88 a
+year. I was ready to set it up when I stumbled upon one last solution, deep in
+search results for "custom domain email." Some people use
+[Mailgun](https://www.mailgun.com/).
+
+## Mailgun
+
+Essentially, incoming emails go to Mailgun. With a routing rule, I can forward
+those emails to my Gmail, and with some additional configuration, I can also send
+emails from my Gmail but have them appear as if they are sent from my custom
+domain.
+
+Mailgun's [free tier](https://www.mailgun.com/pricing) is way more than enough.
+It allows for 10,000 emails per month. That includes both incoming and outgoing
+emails, but for a personal email account, I'll never even come close to that
+limit.  Even if I do manage to go over, it only costs $0.50 for every additional
+thousand emails.
+
+The plan does restrict you from sending to email addresses that you haven't
+explicitly added to an "authorized recipients" list. However, Mailgun lifts this
+restriction if you provide a payment method, which puts you on the "concept"
+[plan](https://help.mailgun.com/hc/en-us/articles/203068914-What-are-the-differences-between-the-free-and-concept-plans-).
+I was happy to do so.
+
+Do note that Mailgun [does not officially
+recommend](https://help.mailgun.com/hc/en-us/articles/203306710-Can-I-use-Mailgun-for-my-personal-email-address-)
+using the service for personal email, but they do not forbid it. They recommend
+using hosted email services like G Suite instead, which I would definitely do
+for something like a business.
+
+### Instructions
+
+Here are the step by step instructions. Note that Mailgun has distinct [support
+for the European Union
+region](https://www.mailgun.com/blog/we-have-a-new-region-in-europe-yall/). All
+of the links in this guide are for the United States region, so if you are in
+the EU, make sure to stay in one region in the Mailgun dashboard (especially
+when you create a new route) so that you don't run into problems receiving email
+on your custom domain. Thanks to [Kuj](https://disqus.com/by/disqus_WIcggqRDL9/)
+for informing me of this issue in the comments.
+
+[Sign up](https://signup.mailgun.com/) for a Mailgun account, and provide a
+ payment method unless you're okay with the sending restriction.
+
+![Mailgun's payment info form](https://i.imgur.com/iF4KJKP.png)
+
+Go the "[Domains](https://app.mailgun.com/app/domains)" tab to [add a new
+domain](https://app.mailgun.com/app/domains/new). The page recommends using a
+subdomain, like "mail.yourdomain.com" instead of just "yourdomain.com". The
+reason for this recommendation is that in general, you don't want to risk
+hurting your root domain's [email sender
+reputation](https://www.sparkpost.com/resources/email-explained/email-sender-reputation/).
+Companies will sometimes [use different domains or
+subdomains](https://help.mailgun.com/hc/en-us/articles/202256730-How-do-I-pick-a-domain-name-for-my-Mailgun-account-)
+for sending transactional versus marketing emails.
+
+For the purpose of a personal email address, use the root domain if you want to
+receive email there (ben@yourdomain.com) rather than at a subdomain
+(ben@mail.yourdomain.com). The risk of harming your sender reputation is much
+lower because you presumably aren't going to use your personal email to email
+tons of strangers.
+
+![Mailgun's add domain page](https://i.imgur.com/Nnkx9eP.png)
+
+Next, go to wherever you manage your website's DNS settings (like your domain
+registrar) and add the DNS records provided by Mailgun. The [MX
+records](https://en.wikipedia.org/wiki/MX_record) are for setting Mailgun's
+servers as the recipient for emails. The [TXT
+records](https://en.wikipedia.org/wiki/TXT_record) are for setting up
+[SPF](https://en.wikipedia.org/wiki/Sender_Policy_Framework) and
+[DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail), which are two
+ways for recipients to verify an email's authenticity. You don't need to add the
+[CNAME record](https://en.wikipedia.org/wiki/CNAME_record) unless you want to
+track what your recipients do with your emails, like opening them and clicking
+links inside them.
+
+It might take a while for the DNS changes to propogate, though mine only took
+about a minute. Tell Mailgun to check the DNS records. Once they are verified,
+you can go to the "[Routes](https://app.mailgun.com/app/routes)" tab to
+[create](https://app.mailgun.com/app/routes/new) a [routing
+rule](https://mailgun-documentation.readthedocs.io/en/latest/api-routes.html#routes).
+
+Change the expression type to "Match Recipient," and set the custom domain
+address that you want to use. Then check the "Forward" action, and set the
+address where you actually want to receive the emails (like a Gmail account).
+You could set up more sophisticated rules, or even add additional addresses that
+all forward to the same email address.
+
+![Mailgun's create route page](https://i.imgur.com/k39ZI2e.png)
+
+At this point, receiving emails should work. Go ahead, and try it out. I also
+created a [Gmail label](https://support.google.com/mail/answer/118708), and set
+up a [filter](https://support.google.com/mail/answer/6579) so that all emails
+from my custom domain get tagged with it, making it easy for me to view only
+those emails if I want to.
+
+To make sending work, you'll need some additional information from Mailgun. Go
+back to the domains tab, and open your domain. You'll need the values for "SMTP
+Hostname," "Default SMTP Login," and "Default Password."
+
+![Mailgun's domain information page](https://i.imgur.com/DlcFo5y.png)
+
+Go to Gmail settings, and open the "Accounts and Import" tab. In the "Send mail
+as" section, add the custom domain email address. I unchecked the "Treat as an
+alias" option because I want to automatically reply with whichever address is
+the intended recipient. I don't want to have to manually change the sender.
+Normally, [unchecking the option](https://support.google.com/a/answer/1710338)
+means that emails sent to the other address won't show up in Gmail, but in this
+case, Mailgun is handling that part.
+
+![Gmail's add email address popup](https://i.imgur.com/oRGTT8R.png)
+
+Go to the next step, and fill in the info from Mailgun. The Mailgun "SMTP
+Hostname" corresponds to the Gmail "SMTP Server" field, and the "Default SMTP
+Login"" corresponds to the "Username" field. Leave the SMTP port as 587, and
+make sure to fill in the password.
+
+![Gmail's SMTP info popup](https://i.imgur.com/kDjArk5.png)
+
+Press the "Add Account" button, and you should get a confirmation email
+from Gmail that contains a link you can use to verify the request. At this
+point, sending emails should work too! When you compose an email, you can click
+on the "From" field to change who you are sending as.
+
+Try it out. Your recipient should receive the email, and the email details
+should have both the "mailed-by" and "signed-by" fields set to your custom
+domain. From their perspective, they don't know that you actually used Gmail to
+send the email.
+
+![Gmail email details](https://i.imgur.com/zLYaRvL.png)
+
+One last thing you can do is to set a monthly sending limit with your Mailgun
+account. The option is in your [account
+settings](https://app.mailgun.com/app/account/settings). Look for the "Custom
+Message Limit" field. Just in case someone manages to get access to your Gmail
+and tries to use your custom domain address to send email, Mailgun will stop
+processing emails once the limit is hit.
+
+### Conclusion
+
+If Mailgun does change in a way that makes it an unreasonable solution, I will
+probably switch to a Namecheap or ProtonMail mailbox. Until then, I'm happy to
+have found a free solution for a custom domain email address.

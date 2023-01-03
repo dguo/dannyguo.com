@@ -5,28 +5,67 @@
     "author": "Danny Guo",
     "private": true,
     "scripts": {
-        "lint": "yarn lint:css && yarn lint:html && yarn lint:js && yarn lint:md",
-        "lint:css": "stylelint static/css/*",
-        "lint:html": "htmlhint public/**/*/*.html",
-        "lint:js": "eslint static/js/*",
-        "lint:md": "markdownlint content/**/*/*.md",
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "preview": "astro preview",
+        "lint": "yarn lint:css && yarn lint:src",
+        "lint:css": "stylelint public/css/*",
+        "lint:src": "eslint src",
         "update-search-index": "atomic-algolia"
     },
+    "dependencies": {
+        "@astrojs/mdx": "0.14.0",
+        "@astrojs/rss": "2.0.0",
+        "@astrojs/sitemap": "1.0.0",
+        "@fontsource/open-sans": "4.5.13",
+        "@fontsource/source-code-pro": "4.5.12",
+        "@fontsource/source-serif-pro": "4.5.9",
+        "algoliasearch": "4.14.3",
+        "astro": "1.8.0",
+        "hastscript": "7.1.0",
+        "instantsearch.css": "7.4.5",
+        "instantsearch.js": "4.49.2",
+        "mdast-util-to-string": "3.1.0",
+        "reading-time": "1.5.0",
+        "rehype-autolink-headings": "6.1.1",
+        "rehype-slug": "5.1.0"
+    },
     "devDependencies": {
-        "atomic-algolia": "^0.3.19",
-        "eslint": "^8.2.0",
-        "htmlhint": "^0.16.0",
-        "markdownlint-cli": "^0.29.0",
-        "stylelint": "^14.0.1",
-        "stylelint-config-recommended": "^6.0.0"
+        "@typescript-eslint/parser": "5.47.1",
+        "atomic-algolia": "0.3.19",
+        "eslint": "8.31.0",
+        "eslint-plugin-astro": "0.21.1",
+        "prettier": "2.8.1",
+        "prettier-plugin-astro": "0.7.0",
+        "stylelint": "14.16.1",
+        "stylelint-config-recommended": "9.0.0"
     },
     "eslintConfig": {
-        "extends": "eslint:recommended",
-        "env": {
-            "browser": true
-        }
+        "extends": "plugin:astro/recommended",
+        "parserOptions": {
+            "ecmaVersion": "latest",
+            "sourceType": "module"
+        },
+        "overrides": [
+            {
+                "files": [
+                    "*.astro"
+                ],
+                "parser": "astro-eslint-parser",
+                "parserOptions": {
+                    "parser": "@typescript-eslint/parser",
+                    "extraFileExtensions": [
+                        ".astro"
+                    ]
+                }
+            }
+        ]
     },
     "stylelint": {
         "extends": "stylelint-config-recommended"
-    }
+    },
+    "packageManager": "yarn@3.2.2"
 }

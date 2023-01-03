@@ -1,0 +1,272 @@
+/*
+$blue: #0087BD; // NCS blue
+$orange: #EE7F2D; // Princeton
+$red: #C40233; // NCS red
+$green: #009F6B; // NCS green
+$black: #333; // avoid pure black
+$gray: #696969;
+$white: #FFF;
+$twitter-blue: #1da1f2;
+$github-black: #24292e;
+*/
+
+html {
+  border-top: 4px solid #c40233;
+}
+
+body {
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+pre,
+code {
+  font-family: "Source Code Pro", monospace;
+}
+
+.clearfix:after,
+header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* https://css-tricks.com/overriding-the-default-text-selection-color-with-css/ */
+::selection {
+  background-color: #c40233;
+  color: #fff;
+}
+
+h1 {
+  color: #009f6b;
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1.1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Serif Pro", serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.7em;
+  margin-bottom: 0em;
+}
+
+a {
+  color: #0087bd;
+  text-decoration: none;
+}
+
+.menu a {
+  margin: 0px 3px;
+}
+
+/* Animated link underline on hover
+   Adapted from https://codepen.io/shshaw/details/pdyJBW
+
+   The ais exclusion is for Algolia pagination links. */
+a:not(.anchor):not(.link-button):not(.link-image):not(.ais-Pagination-link) {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.3s;
+}
+
+a:not(.anchor):not(.link-button):not(.link-image):not(
+    .ais-Pagination-link
+  ):hover,
+a:not(.anchor):not(.link-button):not(.link-image):not(
+    .ais-Pagination-link
+  ):focus {
+  background-size: 100% 2px;
+}
+
+.icon-link {
+  font-size: 0.7em;
+  margin-left: 0.6em;
+  margin-bottom: 1px;
+}
+
+/* Don't apply to syntax highlighting for code examples. */
+:not(pre) > code {
+  background-color: #f6f6f6;
+  color: #c40233;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+#container {
+  max-width: 700px;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+header {
+  color: #c40233;
+  margin: 25px 0px;
+}
+
+hr {
+  border: 1px solid #eee;
+}
+
+hr.separator {
+  margin-bottom: 25px;
+}
+
+.separator {
+  margin-top: 25px;
+}
+
+footer {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 5px 0px;
+}
+
+.title {
+  float: left;
+  margin: 0px;
+  font-size: large;
+}
+
+@media screen and (max-width: 475px) {
+  .title {
+    float: none;
+  }
+}
+
+.menu {
+  float: right;
+}
+
+@media screen and (max-width: 475px) {
+  .menu {
+    float: none;
+    margin-top: 10px;
+  }
+  .menu a {
+    margin: 0px 0px;
+  }
+}
+
+blockquote {
+  color: #696969;
+  padding-left: 15px;
+  border-left: 2px solid #ccc;
+}
+
+img,
+video {
+  border-radius: 8px;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#social-buttons {
+  margin-bottom: 0.8em;
+}
+
+button,
+.link-button {
+  /* prevent ugly blue highlighting when buttons are clicked on mobile
+     https://stackoverflow.com/a/21003770/1481479 */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button::-moz-focus-inner {
+  /* prevent mobile Firefox's dotted outline when buttons are clicked
+     https://stackoverflow.com/a/199319/1481479 */
+  border: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.link-button {
+  align-items: center;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-flex;
+  padding: 0.3em 1em;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.link-button .icon {
+  margin-right: 0.4em;
+}
+
+.link-button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.twitter:hover {
+  background-color: #0c85d0;
+}
+
+.github {
+  background-color: #24292e;
+}
+
+.github:hover {
+  background-color: #0e1011;
+}
+
+.email {
+  background-color: #c40233;
+}
+
+.email:hover {
+  background-color: #920126;
+}

@@ -1,3 +1,0 @@
-{{/* Adapted from https://discourse.gohugo.io/t/adding-anchor-next-to-headers/1726 */}}
-
-{{ . | replaceRE "(<h[2-6] id=\"([^\"]+)\".+)(</h[2-6]+>)" `${1}<a aria-label="Anchor" class="anchor" href="#${2}"><svg class="icon icon-link"><use xlink:href="/images/icons.svg#icon-link"></use></svg></a>${3}` | safeHTML }}

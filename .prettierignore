@@ -1,0 +1,6 @@
+*.md
+*.mdx
+.yarn/
+dist/
+# There's an issue with the dataLayer script for Google Analytics
+src/layouts/BaseLayout.astro

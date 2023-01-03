@@ -1,0 +1,168 @@
+---
+import fs from "node:fs";
+import path from "node:path";
+
+import type { MarkdownLayoutProps } from "astro";
+import "@fontsource/source-code-pro";
+
+import BaseLayout from "./BaseLayout.astro";
+import { getBlogPostList } from "../pages/blog/_utils";
+
+type Props = MarkdownLayoutProps<{
+    title: string;
+    date: string;
+    canonicalUrl?: string;
+    lastmod?: string;
+    // These two come from remarkReadingTime in the Astro config
+    numberOfWords: number;
+    minutesToRead: number;
+}>;
+
+const props = Astro.props.frontmatter;
+
+const parsedFile = path.parse(props.file);
+const fileName = parsedFile.name;
+const fileBase = parsedFile.base;
+const canonicalUrl =
+    props.canonicalUrl ||
+    new URL(props.url as string, import.meta.env.PUBLIC_DOMAIN).href;
+
+/* We can't use Astro.props.rawContent() because that is only supported for
+   regular Markdown, whereas we also have MDX files. */
+const fileContent = fs.readFileSync(props.file).toString();
+const hasAmazonLink = /https:\/\/www.amazon.com/.test(fileContent);
+const hasCodeBlock = /```/.test(fileContent);
+
+const locale = "en-us";
+const localeOptions = {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+} as const;
+
+const posts = getBlogPostList({
+    includeDraft: import.meta.env.DEV,
+    includeUnlisted: import.meta.env.DEV,
+});
+const postIndex = posts.findIndex((post) => post.url === props.url);
+const previousPost = posts[postIndex + 1] ?? null;
+const nextPost = posts[postIndex - 1] ?? null;
+---
+
+<link rel="stylesheet" href="/css/post.css" type="text/css" />
+
+<BaseLayout title={props.title}>
+    <Fragment slot="head-extra">
+        <link rel="canonical" href={canonicalUrl} />
+        {hasCodeBlock && <script defer src="/js/copy-code-button.js" />}
+    </Fragment>
+
+    <article>
+        <h1>{props.title}</h1>
+
+        <div class="subheader">
+            {
+                props.lastmod && (
+                    <>
+                        Updated on{" "}
+                        <time itemprop="dateModified" datetime={props.lastmod}>
+                            {new Date(props.lastmod).toLocaleDateString(
+                                locale,
+                                localeOptions
+                            )}
+                        </time>
+                        &nbsp;·&nbsp;
+                    </>
+                )
+            }
+            {props.lastmod && <>Published on </>}
+            <time itemprop="datePublished" datetime={props.date}>
+                {new Date(props.date).toLocaleDateString(locale, localeOptions)}
+            </time>
+            {props.lastmod ? <br /> : <>&nbsp;·&nbsp;</>}
+            {props.numberOfWords.toLocaleString(locale)} words &nbsp;·&nbsp; ~{
+                props.minutesToRead.toLocaleString(locale)
+            } minute{props.minutesToRead !== 1 && <>s</>} to read
+            {
+                hasAmazonLink && (
+                    <>
+                        <br />I may earn commissions from purchases made through
+                        affiliate links in this post.
+                    </>
+                )
+            }
+        </div>
+
+        <slot />
+    </article>
+
+    <hr class="separator" />
+
+    <div class="clearfix">
+        {
+            previousPost && (
+                <span class="previous-link">
+                    <a href={previousPost.url}>
+                        ← {previousPost.frontmatter.title}
+                    </a>
+                </span>
+            )
+        }
+
+        {
+            nextPost && (
+                <span class="next-link">
+                    <a href={nextPost.url}>{nextPost.frontmatter.title} →</a>
+                </span>
+            )
+        }
+    </div>
+
+    <hr class="separator" />
+
+    <p class="follow-up-message">
+        Follow me on <a
+            href={`https://twitter.com/${
+                import.meta.env.PUBLIC_AUTHOR_TWITTER_NAME
+            }`}>Twitter</a
+        > or subscribe to my <a href="/newsletter">free newsletter</a> or <a
+            href="/blog/feed.xml"
+            type="application/rss+xml">RSS feed</a
+        > for future posts.
+    </p>
+
+    <p class="follow-up-message">
+        Found an error or typo? Feel free to open a pull request on
+        <a
+            href={`${
+                import.meta.env.PUBLIC_SOURCE_CODE_REPO
+            }/blob/main/src/pages/blog/${fileBase}`}>GitHub</a
+        >.
+    </p>
+
+    <hr class="separator" />
+
+    <div id="disqus_thread"></div>
+    <script define:vars={{ canonicalUrl, fileName, title: props.title }}>
+        var disqus_config = function () {
+            this.page.url = canonicalUrl;
+            this.page.title = title;
+        };
+        (function () {
+            var d = document,
+                s = d.createElement("script");
+            s.src = "https://dannyguo.disqus.com/embed.js";
+            s.setAttribute("data-timestamp", +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript
+        >Please enable JavaScript to view the <a
+            href="https://disqus.com/?ref_noscript"
+            >comments powered by Disqus.</a
+        >
+    </noscript>
+
+    <div class="separator"></div>
+</BaseLayout>

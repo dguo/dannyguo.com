@@ -1819,6 +1819,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@playwright/test@npm:1.29.1":
+  version: 1.29.1
+  resolution: "@playwright/test@npm:1.29.1"
+  dependencies:
+    "@types/node": "*"
+    playwright-core: 1.29.1
+  bin:
+    playwright: cli.js
+  checksum: c4424ee09f6589a296a3a78402f8c9eac841f3e5f44d96e3a2ba07aaa00d53ee9c10cc96379b304743a9e70f231df0ded0ad2fc197f412ada67b4cf17ee24b0f
+  languageName: node
+  linkType: hard
+
 "@polka/url@npm:^1.0.0-next.20":
   version: 1.0.0-next.21
   resolution: "@polka/url@npm:1.0.0-next.21"
@@ -3349,6 +3361,7 @@ __metadata:
     "@fontsource/open-sans": 4.5.13
     "@fontsource/source-code-pro": 4.5.12
     "@fontsource/source-serif-pro": 4.5.9
+    "@playwright/test": 1.29.1
     "@typescript-eslint/parser": 5.47.1
     algoliasearch: 4.14.3
     astro: 1.8.0
@@ -8180,6 +8193,15 @@ __metadata:
   dependencies:
     find-up: ^4.0.0
   checksum: 9863e3f35132bf99ae1636d31ff1e1e3501251d480336edb1c211133c8d58906bed80f154a1d723652df1fda91e01c7442c2eeaf9dc83157c7ae89087e43c8d6
+  languageName: node
+  linkType: hard
+
+"playwright-core@npm:1.29.1":
+  version: 1.29.1
+  resolution: "playwright-core@npm:1.29.1"
+  bin:
+    playwright: cli.js
+  checksum: e1c8423db4d28f44e5365a353f321b04a07709c8bf26d0c908f06d2c2669f715315170f84ca98a532951c2ac6324f5f48f651dca1abe43092c7637bdb4703303
   languageName: node
   linkType: hard
 

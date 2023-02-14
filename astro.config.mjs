@@ -18,7 +18,13 @@ export function remarkReadingTime() {
 
 export default defineConfig({
     site: "https://www.dannyguo.com",
-    integrations: [mdx(), sitemap()],
+    integrations: [
+        mdx(),
+        sitemap({
+            filter: (page) =>
+                !page.includes("blog/forex-trading-for-fun-and-luckily-profit"),
+        }),
+    ],
     markdown: {
         remarkPlugins: [remarkReadingTime],
         rehypePlugins: [

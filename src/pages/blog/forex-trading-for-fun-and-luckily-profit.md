@@ -2,8 +2,8 @@
 layout: ../../layouts/BlogPostLayout.astro
 categories:
   - programming
-date: "2022-05-29"
-draft: true
+date: "2023-02-13"
+unlisted: true
 tags:
   - forex
 title: Forex Trading for Fun and Luckily Profit
@@ -49,26 +49,32 @@ which includes [George Soros](https://en.wikipedia.org/wiki/George_Soros) making
 $1 billion in a day by [betting against the Bank of
 England](https://fortunly.com/articles/george-soros-and-the-bank-of-england/).
 
-Consider the experience of going from the United States to Europe (perhaps back
-in non-COVID times). Let's say you go to a bank ahead of time to change your
-U.S.  [dollars](https://en.wikipedia.org/wiki/United_States_dollar) into
+Consider the experience of going from the United States to Europe. Let's say you
+go to a bank ahead of time to change your U.S.
+[dollars](https://en.wikipedia.org/wiki/United_States_dollar) into
 [euros](https://en.wikipedia.org/wiki/Euro). You make the exchange at a certain
-rate, and then you go to Europe. When you get back, you change your remaining
+rate, and then you go on your trip. When you get back, you change your remaining
 euros back into dollars. Depending on how the exchange rate has fluctuated while
-you were gone, you could have a profit or loss on the dollars that you didn't
+you were gone, you could have a profit or a loss on the money that you didn't
 spend. This is a small-scale example of [foreign exchange
 risk](https://en.wikipedia.org/wiki/Foreign_exchange_risk).
 
-You probably don't care about that risk, but think about the case of a large
-company that operates internationally. The company might make deals that involve
-receiving payments at a later date. If the company doesn't take any steps to
-mitigate its foreign exchange risk, it is effectively gambling on exchange
-rates. Instead, the company can
+You might not care about that risk, but think about a large company that
+operates internationally. The company might make deals that involve receiving
+payments at a later date. If the company doesn't take any steps to mitigate its
+foreign exchange risk, it is effectively gambling on exchange rates. Instead,
+the company can pay to
 [hedge](https://en.wikipedia.org/wiki/Foreign_exchange_hedge) its risk using
-derivatives, removing the chance of making a loss or a profit because of
-exchange rate changes.
+derivatives, removing the chance of a loss. As well as the chance of a profit!
 
-I wanted to do the opposite. I *wanted* to take on risk in the hopes of making a
+The company can set things up in such a way that if the original deal loses
+money because of exchange rate changes, the derivative will make a corresponding
+amount of money. And vice versa. If the original deal makes money, the
+derivative would lose money.
+
+The company is paying for *certainty*.
+
+I wanted to do the opposite. I wanted to take on risk in the hopes of making a
 profit. The first step was to pick a broker.
 
 ## Picking a Broker
@@ -93,8 +99,10 @@ when you are forced to put in more money or close your position.  Leverage makes
 it easier to both make and lose money.
 
 500:1 scared me, so I didn't anticipate wanting to use that much leverage. Some
-of the brokers also seemed sketchy to me. I ended up picking
-[Oanda](https://www.oanda.com/us-en/trading/), which let me leverage up to 50:1.
+of the brokers also seemed sketchy to me. It's hard to explain how, but their
+websites and customer support representatives didn't give me a good feeling. I
+ended up picking [Oanda](https://www.oanda.com/us-en/trading/), which let me
+leverage up to 50:1.
 
 ## Manual Trading
 
@@ -105,7 +113,7 @@ Oanda's desktop application. Here's an old screenshot:
 
 ### Currencies
 
-You can see from the screenshot what currencies I could trade through Oanda:
+You can see what currencies I could trade through Oanda:
 
 * Australian dollar (AUD)
 * Canadian dollar (CAD)
@@ -145,7 +153,7 @@ cables](https://en.wikipedia.org/wiki/Transatlantic_communications_cable) that
 spanned the Atlantic Ocean to enable faster communication between the United
 States and England. Later, EUR/USD became known as the "fiber" as a nod to the
 [fiber-optic cables](https://en.wikipedia.org/wiki/Fiber-optic_cable) that are
-used now for the same purpose.
+used for the same purpose.
 
 ### Spread
 
@@ -159,10 +167,9 @@ always higher than the sell price.
 The difference is known as the [bid-ask
 spread](https://www.investopedia.com/terms/b/bid-askspread.asp). It means that
 if you simultaneously buy a pair and sell it, you would lose money. The broker
-would effectively keep the difference, and that is the primary way that the
-broker makes money. So to make a profit yourself, it's not enough for the
-currency pair to change in your favor. It has to change enough for you to beat
-the spread.
+would effectively keep the difference, and that's how the broker can make
+money. So to make a profit yourself, it's not enough for the currency pair to
+change in your favor. It has to change enough for you to beat the spread.
 
 The spread is usually shown as a number of pips ([percentage in
 point](https://www.investopedia.com/terms/p/pip.asp)). A pip is the smallest
@@ -180,10 +187,9 @@ volume. You can see that EUR/USD, which is the most traded pair, had a spread of
 Spreads also change throughout the day. As a whole, the forex market is [open 24
 hours a
 day](https://www.investopedia.com/ask/answers/how-forex-market-trade-24-hours-day/).
-Trading volume is correlated with when markets are open. So the busiest time is
-when the European and U.S. markets are both open, and that's when spreads are
-the tightest. But because of time zones, there is always at least one market
-open.
+Trading volume is correlated with when markets are open. The busiest time is
+when the European and U.S. markets are simultaneously open, and that's when
+spreads are tightest. But there is always at least one market open.
 
 ## Strategy
 
@@ -199,23 +205,24 @@ continued to move against me, I'd make a third, even larger trade. And so on.
 
 In most cases, it only took me a few trades to make a profit in one direction.
 The risk was that if a rate kept moving against me, I would eventually run out
-of money. At that point, all my money would be in one position that could be
-wiped out with a margin call.
+of money to put in. At that point, all my money would be in one position that
+could be wiped out with a margin call.
 
 So I was able to consistently make small profits, but there was always the risk
 of a catastrophic loss that would wipe out all those small gains. I later
 learned that this is called a [Martingale
 strategy](https://en.wikipedia.org/wiki/Martingale_(betting_system)). In
 retrospect, I had no reason to believe that my strategy was any good. I had no
-special insight into forex rate changes or technological advantage. My strategy
+technological advantage or special insight into forex rate changes. My strategy
 was just gambling.
 
-At one point, I did look into using [economic
+Eventually, I did look into using [economic
 indicator](https://www.investopedia.com/terms/e/economic_indicator.asp) releases
 as a basis for trades. I even did some crude
-[backtesting](https://www.investopedia.com/terms/b/backtesting.asp) with historical
-indicators and forex rates. But I never put such a strategy into action. The
-Martingale was my primary method during my brief stint as a forex trader.
+[backtesting](https://www.investopedia.com/terms/b/backtesting.asp) with
+historical indicators and forex rates. But I never put such a strategy into
+action. The Martingale was my primary method during my brief stint as a forex
+trader.
 
 ## Automated Trading
 
@@ -227,9 +234,9 @@ which I knew would make automation easy.
 I bought a book named [Expert Advisor Programming: Creating Automated Trading
 Systems in MQL for MetaTrader
 4](https://www.amazon.com/Expert-Advisor-Programming-Automated-MetaTrader/dp/0982645902?crid=3QDACH7CXL46R&keywords=Expert+Advisor+Programming%3A+Creating+Automated+Trading+Systems+in+MQL+for+MetaTrader+4&qid=1644888838&sprefix=expert+advisor+programming+creating+automated+trading+systems+in+mql+for+metatrader+4%2Caps%2C97&sr=8-1&linkCode=ll1&tag=thdalo00-20&linkId=2c0c6edb764af5bde0421e042ee819e1&language=en_US&ref_=as_li_ss_tl)
-to learn how to write "expert advisors" (EAs) in [MetaQuotes Language
-4](https://docs.mql4.com/) (MQL4), which has syntax similar to C++, as well as
-built-in functions for trading, such as
+to learn how to write "expert advisors" (EAs, which are basically trading bots)
+in [MetaQuotes Language 4](https://docs.mql4.com/) (MQL4), which has syntax
+similar to C++, as well as built-in functions for trading, such as
 [OrderSend](https://docs.mql4.com/trading/ordersend) and
 [OrderClose](https://docs.mql4.com/trading/orderclose).
 
@@ -279,8 +286,9 @@ void PlaceOrder(string pairToTrade, double sizeOfTrade)
 I defined a [special start function](https://book.mql4.com/programm/special)
 that would be called whenever there was a new tick (a rate update).
 
-The only way that I learned in school to persist data was to use text files, so
-that's what I did. I wrote and read CSV files.
+The only way that I had learned in school to persist data was to use text files,
+so that's what I did. I wrote and read CSV files, which served as a simple
+database.
 
 ```cpp
 int handle = FileOpen(Symbol() + ".csv", FILE_CSV|FILE_READ, ",");
@@ -346,11 +354,11 @@ bool DoublesEqual(double number1, double number2)
 //+------------------------------------------------------------------+
 ```
 
-Note the useless comment that doesn't tell anything more than the function
+Note the useless comment that doesn't tell you anything more than the function
 signature.
 
-There's also the unnecessary conditions instead of just returning the boolean
-directly.
+There are also the unnecessary `if` and `else` conditionals instead of just
+returning the boolean directly.
 
 `Averager/Averager.java` has [this
 monstrosity](https://github.com/dguo/forex-trading/blob/b90bb61b25b8ce4496d382609ddd6a428a1ffcfc/Averager/Averager.java#L123).
@@ -423,9 +431,9 @@ for (int aa = 0; aa < width; aa++) {
                       }
 ```
 
-In `Forex/Other/Test2/Forex.java`, I
-[apparently](https://github.com/dguo/forex-trading/blob/b90bb61b25b8ce4496d382609ddd6a428a1ffcfc/Forex/Other/Test2/Forex.java#L28)
-didn't like to have useful error messages.
+In `Forex/Other/Test2/Forex.java`, I [also
+noticed](https://github.com/dguo/forex-trading/blob/b90bb61b25b8ce4496d382609ddd6a428a1ffcfc/Forex/Other/Test2/Forex.java#L28)
+that I was okay with undescriptive error messages.
 
 ```java
 if(rawData.isEmpty()) System.out.println("wtf");
@@ -437,14 +445,22 @@ it rip.
 
 ## Results
 
-I remember watching the USD/JPY price change dramatically. It later turned out
-to be because of the [Tōhoku earthquake and
+I don't have great records for my performance, but from what I can find, I
+deposited $31,050 in total, and I ended up withdrawing $38,701.99. So that's a
+return of 24.6% ($7,651.99) in about half a year.
+
+I experienced huge swings during that time. There were moments where I had
+thousands of dollars in [paper
+losses](https://www.investopedia.com/terms/p/paperprofitorloss.asp). Other
+times, I'd be up thousands of dollars. To some extent, I became desensitized to
+it all.
+
+But there was one day that reminded me that these numbers represent something
+real. On March 11, 2011, I watched the USD/JPY price change more quickly than I
+had ever seen before. I found out that it was
+[because](https://files.stlouisfed.org/files/htdocs/publications/review/11/09/303-324Neely.pdf)
+of the [Tōhoku earthquake and
 tsunami](https://en.wikipedia.org/wiki/2011_T%C5%8Dhoku_earthquake_and_tsunami).
-
-I saw huge swings. To some extent, I became desensitized to it.
-
-I don't have great records for my performance, but it looks like I deposited
-$31,050. And I ended up withdrawing $38,701.99.
 
 I was lucky that I ended up making a profit. I certainly could have lost it all
 on any given day.

@@ -3,6 +3,7 @@ layout: ../../layouts/BlogPostLayout.astro
 categories:
   - programming
 date: "2023-02-21"
+draft: true
 tags:
 title: A Code Review of My Earliest Side Projects
 ---

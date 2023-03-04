@@ -7,9 +7,7 @@ title: Danny Guo
 
 Welcome to my corner of the Internet. Feel free to check out my [writing](/blog)
 and [other activities](/projects). I'm currently working on
-[SeedFi](https://www.seedfi.com/) (we're
-[hiring](https://jobs.lever.co/SeedFi)!) and [Sublime
-Fund](https://sublimefund.org).
+[SeedFi](https://www.seedfi.com/) and [Sublime Fund](https://sublimefund.org).
 
 If you'd like to go somewhere else but aren't sure where, try checking out a
 [trending subreddit](https://www.reddit.com/subreddits/leaderboard), a [random

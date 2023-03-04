@@ -166,7 +166,7 @@ const title = props.title || import.meta.env.PUBLIC_AUTHOR_NAME;
                     <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
                         >CC BY-NC-SA 4.0
                     </a> and
-                    <a href="{{ .Site.Params.sourceCodeRepo }}">
+                    <a href={import.meta.env.PUBLIC_SOURCE_CODE_REPO}>
                         hosted on GitHub
                     </a>.
                 </p>

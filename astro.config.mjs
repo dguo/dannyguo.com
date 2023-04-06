@@ -22,9 +22,7 @@ export default defineConfig({
         mdx(),
         sitemap({
             filter: (page) =>
-                !page.includes(
-                    "blog/forex-trading-for-fun-and-luckily-profit"
-                ) && !page.includes("blog/why-i-blog"),
+                !page.includes("blog/forex-trading-for-fun-and-luckily-profit"),
         }),
     ],
     markdown: {

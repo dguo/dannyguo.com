@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 categories:
   - programming
-date: "2023-03-04"
+date: "2023-04-11"
 draft: true
 tags:
   - typescript
@@ -18,58 +18,58 @@ This turns a runtime error into a compile-time error.
 You can try out the examples in this post for yourself with [this
 Replit](https://replit.com/@dyguo/how-to-break-and-continue-in-nested-loops-in-javascript).
 
-Let's say we have an enum, and we want to encode a certain value for each enum
-value. We might write a function to do so.
+For example, let's say you have an enum of countries, and you want a way to get
+the capital for each country. You might write a function to do so.
 
 ```typescript
-enum Cities {
-  Foo,
-  Bar,
-  Baz
+enum Country {
+  Australia,
+  China,
+  UnitedStates
 }
 
-function getValueForCity(city: Cities) {
-    if (city === Cities.Foo) {
-        return 0;
-    } else if (city === Cities.Bar) {
-        return 1;
-    } else if (city === Cities.Baz) {
-        return 2;
+function getCountryCapital(country: Country) {
+    if (country === Country.Australia) {
+        return "Canberra";
+    } else if (country === Country.China) {
+        return "Beijing";
+    } else if (country === Country.UnitedStates) {
+        return "Washington, D.C.";
     }
 }
 ```
 
-This does the job, but what if someone adds a new `Cities` value without
-updating `getValueForCity`? Then this function would return `undefined`, which
+This does the job, but what if someone adds a new `Country` value without
+updating `getCountryCapital`? Then the function would return `undefined`, which
 could cause bad behavior. One option is to throw an error.
 
 ```typescript
-function getValueForCity(city: Cities) {
-    if (city === Cities.Foo) {
-        return 0;
-    } else if (city === Cities.Bar) {
-        return 1;
-    } else if (city === Cities.Baz) {
-        return 2;
+function getCountryCapital(country: Country) {
+    if (country === Country.Australia) {
+        return "Canberra";
+    } else if (country === Country.China) {
+        return "Beijing";
+    } else if (country === Country.UnitedStates) {
+        return "Washington, D.C.";
     }
 
-    throw new Error(`Unexpected city: ${city}`);
+    throw new Error(`Unexpected country: ${country}`);
 }
 ```
 
-So we would at least get a runtime error as early as possible. But we can do
-better because using a `Record` lets us turns this into a compile-time error.
+So you would at least get a runtime error as early as possible. But you can do
+better by using a `Record`, which turns this situation into a compile-time
+error.
 
 ```typescript
-const ValueForCity: Record<Cities, number> = {
-    [Cities.Foo]: 0,
-    [Cities.Bar]: 1,
-    [Cities.Baz]: 2
+const CountryToCapital: Record<Country, string> = {
+    [Country.Australia]: "Canberra",
+    [Country.China]: "Beijing",
+    [Country.UnitedStates]: "Washington, D.C."
 }
 ```
 
-Now, if we get add a new value to `Cities`, TypeScript will error out.
-
+Now, if we get add a new value to `Country`, TypeScript will error out.
 
 This works for
 [unions](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types)

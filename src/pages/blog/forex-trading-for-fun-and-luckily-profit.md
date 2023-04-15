@@ -2,7 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 categories:
   - programming
-date: "2023-04-10"
+date: "2023-04-15"
 unlisted: true
 tags:
   - forex
@@ -64,11 +64,11 @@ the company can pay to
 [hedge](https://en.wikipedia.org/wiki/Foreign_exchange_hedge) its risk using
 derivatives, removing the chance of a loss. As well as the chance of a profit!
 
-For example, the company can set things up in such a way that if the original
-deal loses money because of exchange rate changes, the derivative will make a
-corresponding amount of money. And vice versa. If the original deal makes money,
-the derivative would lose money. It would cost some money to set up the
-derivative in the first place, but the company would be paying for *certainty*.
+For example, the company can set things up so that if the original deal loses
+money because of exchange rate changes, the derivative will make a corresponding
+amount of money. And vice versa. If the original deal makes money, the
+derivative would lose money. It would cost some money to set up the derivative
+in the first place, but the company would be paying for *certainty*.
 
 I wanted to do the opposite. I wanted to take on risk in the hopes of making a
 profit. The first step was to pick a broker.
@@ -80,27 +80,37 @@ I researched many brokers. A majority of them were located in Cyprus.
 that's because it's easier to get licensed there and because of lower fees and
 taxes.
 
-One factor for me was the maximum allowed
-[leverage](https://www.investopedia.com/terms/l/leverage.asp). Leverage means
-borrowing money so that you only have to put in a small amount of your own money
-to control a larger position. When I was looking at brokers, the highest amount
-that I saw was a stratospheric 500:1, which means that for a $500 position, you
-only need to put in $1 of your own money, and the broker lends you the remaining
-$499.
+One factor was the maximum allowed
+[leverage](https://www.investopedia.com/terms/l/leverage.asp). Leverage in this
+context refers to borrowing money so that you only have to put in a small amount
+of your own money to control a larger position. When I was looking at brokers,
+the highest amount that I saw was a stratospheric 500:1, which means that for a
+$500 position, you only need to put in $1 of your own money, and the broker
+lends you the remaining $499. In the United States,
+[regulations](https://www.investopedia.com/articles/forex/011515/us-regulations-forex-brokers.asp)
+limit leverage to 50:1.
 
-High amounts of leverage are common in the foreign exchange market because
-exchange rates tend to be fairly stable, so you need large positions in order to
-magnify the effects of small changes. But the power that comes with leverage
-isn't free. The more leverage you use, the easier it is to lose everything
-through a [margin call](https://www.investopedia.com/terms/m/margincall.asp),
-when you are forced to put in more money, or the broker will close your position
-for you. Leverage makes it easier to both make and lose money.
+High amounts of leverage are common in the forex market because exchange rates
+tend to be fairly stable, so it can be hard to make money without large
+positions. Leverage allows you to take those positions without financing them
+completely with your own money, effectively letting you magnify the effects of
+small changes. But the power that comes with leverage isn't free. The more
+leverage you use, the easier it is to lose everything through a [margin
+call](https://www.investopedia.com/terms/m/margincall.asp), when you have too
+big of a loss, and you are forced to put in more money, or the broker will
+close your position for you. Leverage makes it easier to both make and lose
+money.
 
-500:1 scared me, so I didn't anticipate wanting to use that much leverage. Some
-of the brokers also seemed sketchy to me. It's hard to explain how, but their
-websites and customer support representatives didn't give me a good feeling. I
-ended up picking [Oanda](https://www.oanda.com/us-en/trading/), which let me
-leverage up to 50:1.
+With the 500:1 example, the exchange rate only has to change by a small amount
+for you to lose everything you put into the position. That scared me, so I
+didn't anticipate wanting to use that much leverage.
+
+Some of the brokers also seemed sketchy to me. It's hard to explain how, but
+their websites and customer support representatives didn't give me a good
+feeling. I ended up picking [Oanda](https://www.oanda.com/us-en/trading/), which
+let me leverage up to 50:1. They seemed trustworthy, and they supported
+[MetaTrader 4](https://en.wikipedia.org/wiki/MetaTrader_4), which I knew would
+let me automate my trading.
 
 ## Manual Trading
 
@@ -109,7 +119,7 @@ Oanda's desktop application. Here's an old screenshot:
 
 ![Oanda fxTrade interface](https://i.imgur.com/dWFc9SV.png)
 
-### Currencies
+## Currencies
 
 You can see what currencies I could trade through Oanda:
 
@@ -129,7 +139,7 @@ dollar because the $1 Canadian coin has a
 Zealand dollar is informally known as the "kiwi" because the $1 New Zealand coin
 has a [kiwi bird](https://en.wikipedia.org/wiki/Kiwi_(bird)) on one side.
 
-### Currency Pair
+## Currency Pair
 
 You can also see that the currencies come in
 [pairs](https://en.wikipedia.org/wiki/Currency_pair), such as EUR/USD. When I
@@ -153,7 +163,7 @@ States and England. Later, EUR/USD became known as the "fiber" as a nod to the
 [fiber-optic cables](https://en.wikipedia.org/wiki/Fiber-optic_cable) that are
 used for the same purpose.
 
-### Spread
+## Spread
 
 You might have noticed that each currency pair actually has two prices: a sell
 price (also known as the [ask
@@ -165,54 +175,55 @@ always higher than the sell price.
 The difference is known as the [bid-ask
 spread](https://www.investopedia.com/terms/b/bid-askspread.asp). It means that
 if you simultaneously buy a pair and sell it, you would lose money. The broker
-would effectively keep the difference, and that's how the broker can make
+would effectively keep the difference, and that's one way for the broker to make
 money. So to make a profit yourself, it's not enough for the currency pair to
 change in your favor. It has to change enough for you to beat the spread.
 
 The spread is usually shown as a number of pips ([percentage in
 point](https://www.investopedia.com/terms/p/pip.asp)). A pip is the smallest
-price change possible for a given currency pair. Typically, that means 1 pip is
-0.0001. So if you buy EUR/USD at 1.0721 and then sell it at 1.0763, you've made
-a profit of 42 pips. Oanda supports the concept of [fractional
+price change possible for a given currency pair (by convention). Typically, that
+means 1 pip is 0.0001. So if you buy EUR/USD at 1.0721 and then sell it at
+1.0763, you've made a profit of 42 pips. Oanda supports the concept of
+[fractional
 pips](https://www1.oanda.com/forex-trading/learn/getting-started/pips) (also
 known as pipettes), so their rates have an additional decimal place.
 
 In the screenshot, the number at the bottom center of each currency pair is the
-spread. The spread is usually tighter for pairs that have greater trading
-volume. You can see that EUR/USD, which is the most traded pair, had a spread of
-1.2 pips at the time. Whereas AUD/NZD had a spread of 6.1 pips.
+spread. The spread is usually lower for pairs that have greater trading volume.
+You can see that EUR/USD, which is the most traded pair, had a spread of 1.2
+pips at the time. Whereas AUD/NZD had a spread of 6.1 pips.
 
 Spreads also change throughout the day. As a whole, the forex market is [open 24
 hours a
 day](https://www.investopedia.com/ask/answers/how-forex-market-trade-24-hours-day/).
 Trading volume is correlated with when certain markets are open. The busiest
 time is when the European and U.S. markets are simultaneously open, and that's
-when spreads are tightest. But there is always at least one market open.
+when spreads are lowest. But there is always at least one market open.
 
 ## Strategy
 
 After I got a handle on the basics of forex trading, I tried to come up with a
 trading strategy. Spoiler alert: I didn't know what I was doing.
 
-I ended up with a strategy of taking a small position to start. If the rate
-moved several pips in my favor, I'd cash out and then reverse my position. If
-the rate moved against me, I'd take another, larger position in the same
+I ended up with a strategy of taking a small position to start. If the exchange
+rate moved several pips in my favor, I'd cash out and then reverse my position.
+If the rate moved against me, I'd take another, larger position in the same
 direction as the original position. My hope was that the new position would make
 enough profit to outweigh any loss from the original position. If the rate
 continued to move against me, I'd make a third, even larger trade. And so on.
 
-In most cases, it only took me a few trades to make a profit in one direction.
-The risk was that if a rate kept moving against me, I would eventually run out
-of money to put in. At that point, all my money would be in one position that
-could be wiped out with a margin call.
+In most cases, it only took me a few trades to make a profit.  The risk was that
+if a rate kept moving against me, I would eventually run out of money to put in.
+At that point, all my money would be in one position that could be wiped out
+with a margin call.
 
-So I was able to consistently make small profits, but there was always the risk
-of a catastrophic loss that would wipe out all those small gains. I later
-learned that this is called a [martingale
+I was able to consistently make small profits, but there was always the risk of
+a catastrophic loss that would wipe out all those small gains. I later learned
+that my approach is called a [martingale
 strategy](https://en.wikipedia.org/wiki/Martingale_(betting_system)). In
-retrospect, I had no reason to believe that my strategy was any good. I had no
-special insight into forex rate changes and no technological advantage. My
-strategy was just gambling.
+retrospect, I had no reason to believe that it was any good. I had no special
+insight into forex rate changes and no technological advantage. My strategy was
+just gambling.
 
 Eventually, I did look into using [economic
 indicator](https://www.investopedia.com/terms/e/economic_indicator.asp) releases
@@ -221,14 +232,14 @@ as a basis for trades. I even did some crude
 historical indicators and forex rates. But I never put such a strategy into
 action. The martingale system was my primary method.
 
+It's hard to overstate how dumb that seems to me now. The only thing I can take
+solace in is [the idea that this means I've grown a
+bit](https://www.reddit.com/r/Showerthoughts/comments/8fwqcw/if_you_dont_look_back_on_your_past_self_and/).
+
 ## Automated Trading
 
-I executed my strategy manually for a while. The next step was to automate my
-trading. One reason I picked Oanda as my broker was their integration with a
-platform called [MetaTrader 4](https://en.wikipedia.org/wiki/MetaTrader_4),
-which I knew would make automation easy.
-
-I bought a [book on Expert Advisor
+I made trades manually for a while. The next step was to automate my trading
+using MetaTrader 4. I bought a [book on Expert Advisor
 Programming](https://www.amazon.com/Expert-Advisor-Programming-Automated-MetaTrader/dp/0982645902?crid=3QDACH7CXL46R&keywords=Expert+Advisor+Programming%3A+Creating+Automated+Trading+Systems+in+MQL+for+MetaTrader+4&qid=1644888838&sprefix=expert+advisor+programming+creating+automated+trading+systems+in+mql+for+metatrader+4%2Caps%2C97&sr=8-1&linkCode=ll1&tag=thdalo00-20&linkId=2c0c6edb764af5bde0421e042ee819e1&language=en_US&ref_=as_li_ss_tl)
 to learn how to write "expert advisors," which are basically [trading
 bots](https://www.investopedia.com/terms/forex/f/forex-trading-robot.asp). They
@@ -238,9 +249,10 @@ built-in functions for trading, such as
 [OrderSend](https://docs.mql4.com/trading/ordersend) and
 [OrderClose](https://docs.mql4.com/trading/orderclose).
 
-I was a novice programmer, but I figured out enough to make things work in a
-crude manner. I connected my expert advisors to my Oanda account and let
-everything run on a laptop 24/7.
+I was a novice programmer with only one introduction to computer science class
+under my belt, but I figured out enough to make things work in a crude manner. I
+connected my expert advisors to my Oanda account and let everything run on a
+laptop 24/7.
 
 ## Results
 
@@ -254,12 +266,15 @@ losses](https://www.investopedia.com/terms/p/paperprofitorloss.asp). Other
 times, I'd be up thousands of dollars. To some extent, I became desensitized to
 it all.
 
-But there was one day that reminded me that these numbers represent something
-real. On March 11, 2011, I watched the USD/JPY price change more quickly than I
-had ever seen before. I found out that it was
+But there was one day that reminded me that exchange rates aren't just numbers
+in a game. They represent something more real than that. On March 11, 2011, I
+watched the USD/JPY price change more quickly than I had ever seen. I found out
+that it was
 [because](https://files.stlouisfed.org/files/htdocs/publications/review/11/09/303-324Neely.pdf)
 of the [Tōhoku earthquake and
 tsunami](https://en.wikipedia.org/wiki/2011_T%C5%8Dhoku_earthquake_and_tsunami).
+I was gambling with code, but exchange rates both reflect real things that
+happen in world as well as have their own impact on the world.
 
 I was lucky that I ended up making a profit. I could have lost it all on any
 given day.

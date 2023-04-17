@@ -21,8 +21,7 @@ export default defineConfig({
     integrations: [
         mdx(),
         sitemap({
-            filter: (page) =>
-                !page.includes("blog/forex-trading-for-fun-and-luckily-profit"),
+            filter: (page) => !page.includes("blog/example-unlisted-post"),
         }),
     ],
     markdown: {

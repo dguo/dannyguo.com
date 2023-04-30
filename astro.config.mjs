@@ -21,7 +21,7 @@ export default defineConfig({
     integrations: [
         mdx(),
         sitemap({
-            filter: (page) => !page.includes("blog/example-unlisted-post"),
+            filter: (page) => !page.includes("blog/debates-as-competitions"),
         }),
     ],
     markdown: {

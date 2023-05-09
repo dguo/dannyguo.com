@@ -5,8 +5,10 @@ title: Danny Guo · About
 
 # About Me
 
-Hi! My name is Danny Guo. I'm currently working on [SeedFi](https://www.seedfi.com/)
-and [Sublime Fund](https://sublimefund.org). I previously worked at
+Hi! My name is Danny Guo. I'm currently working on
+[SeedFi](https://www.seedfi.com/) (as a part of [Credit
+Karma](https://www.creditkarma.com)) and [Sublime
+Fund](https://sublimefund.org). I previously worked at
 [Bloomberg](https://www.bloomberg.com/) on their [Customer Service
 Center](https://service.bloomberg.com) website.
 

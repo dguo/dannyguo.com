@@ -21,7 +21,9 @@ export default defineConfig({
     integrations: [
         mdx(),
         sitemap({
-            filter: (page) => !page.includes("blog/debates-as-competitions"),
+            filter: (page) =>
+                !page.includes("blog/debates-as-competitions") &&
+                !page.includes("blog/my-approach-to-code-review"),
         }),
     ],
     markdown: {

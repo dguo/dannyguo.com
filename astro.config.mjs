@@ -23,7 +23,10 @@ export default defineConfig({
         sitemap({
             filter: (page) =>
                 !page.includes("blog/debates-as-competitions") &&
-                !page.includes("blog/my-approach-to-code-review"),
+                !page.includes("blog/my-approach-to-code-review") &&
+                !page.includes(
+                    "blog/thinking-in-binaries-spectrums-and-dimensions"
+                ),
         }),
     ],
     markdown: {

@@ -2,23 +2,24 @@
 layout: ../../layouts/BlogPostLayout.astro
 categories:
   - programming
-date: "2023-05-27"
+date: "2023-07-04"
 unlisted: true
 tags:
   - code-review
 title: My Approach to Code Review
 ---
 
-One of my teammates asked me about my approach to [code
-review](https://en.wikipedia.org/wiki/Code_review), as a reviewer. The following
-is my philosophy, which includes many tips and points that I have observed or
-learned from other people in the last decade.
+[One of my teammates](https://twitter.com/pete_millspaugh) asked me about my
+approach to [code review](https://en.wikipedia.org/wiki/Code_review), as a
+reviewer. The following is my philosophy, which includes many tips and points
+that I have observed or learned from other people in the last decade.
 
 ## Automation
 
-Human code review should be a last resort. Time is one of our most valuable
-resouces, so to the extent that it is practical, we should try to automate
-anything that might come up in code review. Continuous integration should catch
+Manual code review shouldn't be our first line of defense. Time is one of our
+most valuable resouces, so to the extent that it is practical, we should try to
+automate anything that might come up in code review. [Continuous
+integration](https://en.wikipedia.org/wiki/Continuous_integration) should catch
 things like [formatting](https://github.com/rishirdua/awesome-code-formatters),
 [lint](https://en.wikipedia.org/wiki/Lint_(software)), and test errors, allowing
 the author to fix issues before requesting a review.
@@ -32,7 +33,22 @@ affect this aspect of programming. I've seen human-based code review services
 before, like [Codementor](https://www.codementor.io/code-review) and
 [PullRequest](https://www.pullrequest.com/), but tools like
 [Metabob](https://metabob.com/) seem poised to push the boundaries of what we
-can expect from automated code review.
+can expect from automated code review, though we need to be mindful of pitfalls
+like the possibility of
+[hallucinations](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)).
+
+## Manual Code Review
+
+It's also worth keeping in mind that we pay a cost by doing code reviews, in
+terms of engineering time and increasing how long it can ship something to
+production. I think most teams have a net benefit from doing them, but consider
+that [Raycast doesn't require code
+reviews](https://www.raycast.com/blog/no-code-reviews-by-default). They leave it
+up to the author whether to request a review. I can imagine how that could work
+well under the right circumstances. Another approach would be to do [pair
+programming](https://en.wikipedia.org/wiki/Pair_programming) and consider that
+to be a replacement for code review. Code review is a best practice, but that
+doesn't mean it's *always* good or necessary.
 
 ## Prioritization
 
@@ -42,9 +58,9 @@ Script](https://www.google.com/script/start/) to triage my email (in Gmail), and
 I've always configured it to treat code review requests as emails I should see
 immediately.
 
-I like to open the pull request (PR) as soon I see it. If I think I can review
-it in a few minutes, I'll try to knock it out in the moment, channeling [David
-Allen's two-minute
+I like to peek at the pull request (PR) immediately. If I think I can
+review it in a few minutes, I'll try to knock it out in the moment, channeling
+[David Allen's two-minute
 rule](https://gettingthingsdone.com/2020/05/the-two-minute-rule-2/). Ideally, I
 can approve it without much thought and let the author merge it without waiting
 around. These PRs are usually small and easily understandable.
@@ -114,7 +130,7 @@ concept through code review.
 This is especially the case when a senior engineer reviews code that a more
 junior engineer writes. But sharing knowledge goes both ways, regardless of any
 experience gap. Reviewing code can also teach the reviewer something. I have
-learned plenty of things from doing reviewing code.
+learned plenty of things from reviewing code.
 
 ## Stay Close to the Code
 
@@ -214,6 +230,13 @@ succinct but descriptive pull request titles (and commit messages if we're not
 squash merging). And I'll comment if linked tickets and pull request
 descriptions have an appropriate level of detail.
 
+## Suggest Addressing in a Follow up PR
+
+Some changes require more than one PR. If you know there is going to be at least
+one more PR that is related to the one you are reviewing, consider suggesting
+that the author address an issue in a follow up PR, allowing them to merge the
+current PR immediately.
+
 ## Consider Urgency
 
 Code review depends on the urgency of the change. I'm not always going to do the
@@ -221,20 +244,16 @@ most thorough review possible. If something needs to go out quickly, especially
 in an emergency, I may just glance through the code. I may even just give a
 rubber stamp and then do a more thorough review after the code is merged.
 
+## Loosen Standards
+
+Similar to urgency, also consider how important the code is. For example, if I'm
+reviewing a one-off script that we don't expect have to run in the future or to
+have to maintain, I loosen my standards.
+
 ## Conclusion
 
-To me, code review goes much deeper than just checking a pull request for
-mistakes. It's an important aspect of doing software engineering as a team and
-is one of the ways that learning computer science in school can be different
-from "real world" programming. Code review is another skill, another thing that
-we can try to improve at for the benefit of ourselves and our teams.
-
-Though it's worth keeping in mind that we do pay a cost by doing code reviews,
-in terms of engineering time and organizational speed. I think most teams have a
-net benefit from doing them, but consider that [Raycast doesn't require code
-reviews](https://www.raycast.com/blog/no-code-reviews-by-default). They leave it
-up to the author whether to request a review. I can imagine how that could work
-well under the right circumstances. Another approach would be to do [pair
-programming](https://en.wikipedia.org/wiki/Pair_programming) and consider that
-to be a replacement for code review. Code review is a best practice, but that
-doesn't mean it's *always* good or necessary.
+Code review goes deeper than just checking a pull request for mistakes. It's an
+important aspect of doing software engineering as a team and is one of the ways
+that learning computer science in school can be different from "real world"
+programming. Code review is another skill, another thing that we can try to
+improve at for the benefit of ourselves and our teams.

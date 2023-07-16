@@ -26,8 +26,8 @@ export default defineConfig({
                 !page.includes("blog/my-approach-to-code-review") &&
                 !page.includes(
                     "blog/thinking-in-binaries-spectrums-and-dimensions"
-                ),
-        }),
+                )
+        })
     ],
     markdown: {
         remarkPlugins: [remarkReadingTime],
@@ -42,17 +42,17 @@ export default defineConfig({
                         return [
                             h("svg.icon.icon-link", { ariaHidden: "true" }, [
                                 h("use", {
-                                    href: "/images/icons.svg#icon-link",
-                                }),
-                            ]),
+                                    href: "/images/icons.svg#icon-link"
+                                })
+                            ])
                         ];
                     },
-                    test: ["h2", "h3", "h4", "h5", "h6"],
-                },
-            ],
+                    test: ["h2", "h3", "h4", "h5", "h6"]
+                }
+            ]
         ],
         shikiConfig: {
-            theme: "monokai",
-        },
-    },
+            theme: "monokai"
+        }
+    }
 });

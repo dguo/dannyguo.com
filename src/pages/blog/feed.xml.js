@@ -14,12 +14,12 @@ export const get = () =>
         items: posts.map((post) => ({
             link: post.url,
             title: post.frontmatter.title,
-            pubDate: post.frontmatter.date,
+            pubDate: post.frontmatter.date
         })),
         customData: `<language>en-us</language><managingEditor>${
             import.meta.env.PUBLIC_AUTHOR_EMAIL
         } (${import.meta.env.PUBLIC_AUTHOR_NAME})</managingEditor>
         <webMaster>${import.meta.env.PUBLIC_AUTHOR_EMAIL} (${
             import.meta.env.PUBLIC_AUTHOR_NAME
-        })</webMaster>`,
+        })</webMaster>`
     });

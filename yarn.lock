@@ -283,13 +283,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/sitemap@npm:1.4.0":
-  version: 1.4.0
-  resolution: "@astrojs/sitemap@npm:1.4.0"
+"@astrojs/sitemap@npm:1.2.2":
+  version: 1.2.2
+  resolution: "@astrojs/sitemap@npm:1.2.2"
   dependencies:
     sitemap: ^7.1.1
     zod: ^3.17.3
-  checksum: ef0360d7b49861b4a41ace6d5708ce3d57f7937f36299169bc31a4cf1eff45149f1e8879e3bbbfed0a738062bdec5e4b31d483b5ed4bbd08d35c2872e6bc90a3
+  checksum: 19211ac62716fe366f722324d01f10e894e219c6a7a29fbd994a16179e933c189a019a6461653472b09e92b6e6cd6bd73ffb3b16bb8185d290677cf71f2720bf
   languageName: node
   linkType: hard
 
@@ -3725,7 +3725,7 @@ __metadata:
   dependencies:
     "@astrojs/mdx": 0.19.7
     "@astrojs/rss": 2.4.3
-    "@astrojs/sitemap": 1.4.0
+    "@astrojs/sitemap": 1.2.2
     "@fontsource/open-sans": 5.0.5
     "@fontsource/source-code-pro": 5.0.5
     "@fontsource/source-serif-pro": 5.0.5

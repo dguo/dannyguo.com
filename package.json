@@ -20,7 +20,7 @@
     "dependencies": {
         "@astrojs/mdx": "0.19.7",
         "@astrojs/rss": "2.4.3",
-        "@astrojs/sitemap": "1.4.0",
+        "@astrojs/sitemap": "1.2.2",
         "@fontsource/open-sans": "5.0.5",
         "@fontsource/source-code-pro": "5.0.5",
         "@fontsource/source-serif-pro": "5.0.5",

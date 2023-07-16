@@ -21,5 +21,6 @@ export const get = () =>
         } (${import.meta.env.PUBLIC_AUTHOR_NAME})</managingEditor>
         <webMaster>${import.meta.env.PUBLIC_AUTHOR_EMAIL} (${
             import.meta.env.PUBLIC_AUTHOR_NAME
-        })</webMaster>`
+        })</webMaster>`,
+        trailingSlash: false
     });

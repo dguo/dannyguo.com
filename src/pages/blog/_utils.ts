@@ -6,7 +6,7 @@ export function getBlogPostList(options?: {
     includeUnlisted?: boolean;
 }): { url: string; frontmatter: any }[] {
     const postsGlob = import.meta.glob("./**/*.(md|mdx)", {
-        eager: true,
+        eager: true
     });
     const posts: any[] = Object.values(postsGlob);
     return posts

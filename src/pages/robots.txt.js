@@ -3,6 +3,6 @@ export async function get() {
         body: `User-agent: *
 
 Sitemap: ${import.meta.env.SITE}sitemap-index.xml
-`,
+`
     };
 }

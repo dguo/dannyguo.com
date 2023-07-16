@@ -26,7 +26,12 @@ export default defineConfig({
                 !page.includes("blog/my-approach-to-code-review") &&
                 !page.includes(
                     "blog/thinking-in-binaries-spectrums-and-dimensions"
-                )
+                ),
+            serialize: (item) => {
+                // Remove trailing slashes
+                item.url = item.url.replace(/\/$/, "");
+                return item;
+            }
         })
     ],
     markdown: {

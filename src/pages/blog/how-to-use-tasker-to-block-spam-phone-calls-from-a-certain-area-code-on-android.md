@@ -62,7 +62,7 @@ set custom categories for notifications, so I gave this one a "Blocked number"
 category. Then I used Android settings to [make the category a silent
 notification](https://www.androidpolice.com/how-to-set-an-android-apps-notifications-to-come-in-silent/)
 (no sound or vibration) so that it doesn't actually distract me. I originally
-wanted a notiification just to help confirm that things were working as
+wanted a notification just to help confirm that things were working as
 expected, but I realized later that I also get a great feeling of satisfaction
 every time I see the notification.
 

@@ -26,6 +26,9 @@ export default defineConfig({
                 !page.includes("blog/my-approach-to-code-review") &&
                 !page.includes(
                     "blog/thinking-in-binaries-spectrums-and-dimensions"
+                ) &&
+                !page.includes(
+                    "blog/build-a-system-vertically-not-horizontally"
                 ),
             serialize: (item) => {
                 // Remove trailing slashes

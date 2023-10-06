@@ -46,7 +46,7 @@ Hello! My website is available at https://dannyguo.com.
 * [problems that I've noticed](https://www.dannyguo.com/problems/)
 * [projects](https://www.dannyguo.com/projects)
 * [mini blog of issues I've run into while programming](https://www.dannyguo.com/friction/)
-* [referral links](https://wwww.dannyguo.com/referrals/)
+* [referral links](https://www.dannyguo.com/referrals/)
 
 ## Checklist for Publishing an Unlisted Post
 

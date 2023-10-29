@@ -22,6 +22,7 @@ export default defineConfig({
         mdx(),
         sitemap({
             filter: (page) =>
+                !page.includes("blog/building-a-hyper-key-tree") &&
                 !page.includes("blog/debates-as-competitions") &&
                 !page.includes("blog/my-approach-to-code-review") &&
                 !page.includes(

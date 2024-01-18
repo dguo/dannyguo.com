@@ -33,6 +33,5 @@ methods:
 
 * [Buy Me A Coffee](https://buymeacoff.ee/dannyguo)
 * [Cash App](http://cash.me/$DannyGuo)
-* [Flattr](https://flattr.com/@dannyguo)
 * [Ko-fi](https://ko-fi.com/dannyguo)
 * [PayPal](https://www.paypal.me/DannyGuo)

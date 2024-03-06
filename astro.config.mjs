@@ -22,7 +22,6 @@ export default defineConfig({
         mdx(),
         sitemap({
             filter: (page) =>
-                !page.includes("blog/making-make-a-readme") &&
                 !page.includes("blog/software-engineering-manager-tactics") &&
                 !page.includes("blog/building-a-hyper-key-tree") &&
                 !page.includes("blog/debates-as-competitions") &&

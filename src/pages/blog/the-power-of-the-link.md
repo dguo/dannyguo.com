@@ -34,9 +34,9 @@ include [html](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html),
 would put [anchor](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
 (not to be confused with the [link
 element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link)) at the
-top of the list. Because an Internet that was stripped down to just plain text
-and links, hypertext in its purest form, would still be tremendously useful and
-interesting.
+top of the list. Because if we stripped the Internet down to just plain text
+and links, hypertext in its purest form, it would still be tremendously useful
+and interesting.
 
 While `html`, `head`, and `body` provide structure, they aren't necessary. If
 you don't provide them, a browser will still render text with links. And even
@@ -51,8 +51,9 @@ Links are powerful because they give us a cheap way to reference something. It
 almost feels like cheating. With a simple link, you can nudge someone towards an
 unfathomably deep [rabbit
 hole](https://en.wikipedia.org/wiki/Down_the_rabbit_hole). You've already
-encountered multiple links in this post. Have you opened any in separate tabs?
-Have you then opened any of their own links?
+encountered multiple links in this post. Have you opened any? Maybe in separate
+tabs to read afterwards? Have you opened any further links from the linked
+pages?
 
 That experience is what makes me appreciate good links as much as the immediate
 content of a website, like a witty phrase or an interesting insight. But a link
@@ -86,7 +87,7 @@ time. And that someone else could be my future self, so it can be selfishly
 helpful.
 
 In my blog posts, I link most proper nouns, at least the first time that they
-appear. And I try to make the links as useful as possible. I tend to use
+appear. I think about what target would be most useful. I tend to use
 [Wikipedia](https://www.wikipedia.org/) articles, since Wikipedia provides great
 overviews, and I also trust Wikipedia links to not suffer from [link
 rot](https://en.wikipedia.org/wiki/Link_rot).
@@ -112,7 +113,11 @@ else. [Warren Buffet](https://en.wikipedia.org/wiki/Warren_Buffett) once
 [referred](https://www.investopedia.com/terms/d/derivativestimebomb.asp) to them
 as "financial weapons of mass destruction," a metaphor that became particularly
 relevant when the [2007-2008 financial
-crisis](https://en.wikipedia.org/wiki/2007%E2%80%932008_financial_crisis) hit.
+crisis](https://en.wikipedia.org/wiki/2007%E2%80%932008_financial_crisis) hit
+([Selena Gomez](https://en.wikipedia.org/wiki/Selena_Gomez) and [Richard
+Thaler](https://en.wikipedia.org/wiki/Richard_Thaler) provide a [fun, brief
+explanation](https://www.youtube.com/watch?v=Pxr_FzpPM2Q) in [The Big
+Short](https://en.wikipedia.org/wiki/The_Big_Short_(film))).
 
 While a bad link isn't as terrible as a crashing program or an economic
 meltdown, I still try to make my link curation as good as possible [for the sake

@@ -34,9 +34,9 @@ needed another team to do something.
 I remember one Friday afternoon when I learned that I needed someone to add a
 connection string to a configuration file. It was a manual process, and only one
 person was really trusted to make the change. That person had left for the day,
-so I had to wait until the next week. Yes, there are meta problems with that
-situation, but it was the reality that I had to work with. In the context of
-completing my project, I should have knocked out the
+so I had to wait until the next week. Yes, there are process/institutional
+problems with that situation, but it was the reality that I had to work with. In
+the context of completing my project, I should have knocked out the
 configuration charge early on. I could have requested the change and worked on
 my code in parallel while I was waiting.
 

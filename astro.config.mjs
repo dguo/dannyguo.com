@@ -28,9 +28,6 @@ export default defineConfig({
                 !page.includes("blog/debates-as-competitions") &&
                 !page.includes("blog/my-approach-to-code-review") &&
                 !page.includes(
-                    "blog/a-code-review-of-my-earliest-side-projects"
-                ) &&
-                !page.includes(
                     "blog/thinking-in-binaries-spectrums-and-dimensions"
                 ),
             serialize: (item) => {

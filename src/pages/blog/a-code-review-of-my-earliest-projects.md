@@ -2,17 +2,18 @@
 layout: ../../layouts/BlogPostLayout.astro
 categories:
   - programming
-date: "2023-09-17"
-unlisted: true
-tags: code-review
-title: A Code Review of My Earliest Side Projects
+date: "2024-03-14"
+tags:
+  - code-review
+title: A Code Review of My Earliest Projects
 ---
 
-While I was cleaning my files, I found my earliest programming side projects. I
-thought it'd be fun to do a sort of code review of them. Do you know that
-feeling of reading code, being mildly horrified, and then realizing that you
-were in fact the one who wrote it? Yeah, I got that a lot while looking at this
-code.
+While I was cleaning my personal files, I found my earliest programming
+projects, which are over a decade old. I decided to do a code review for fun. Do
+you know that feeling of reading code that's only vaguely familiar, being mildly
+horrified, and then realizing that you were in fact the one who wrote it? Yeah,
+I got that a lot while looking at this code. Here are the highlights from three
+projects: forex trading, The Daily Lore, and MovieSeer.
 
 ## Forex Trading
 
@@ -25,15 +26,14 @@ exchange](https://en.wikipedia.org/wiki/Foreign_exchange_market) (forex) trading
 programs. The full story of my brief stint as an amateur currency trader is
 [here](https://www.dannyguo.com/blog/forex-trading-for-fun-and-luckily-profit).
 
-But for the code, I've published as much of it as I could find to
+I've published most of the code to
 [GitHub](https://github.com/dguo/forex-trading). I left it as intact as possible
 and resisted the urge to clean anything up. It's written in [MetaQuotes Language
 4](https://docs.mql4.com/) (MQL4), which has syntax similar to C++, as well as
 built-in functions for trading, such as
 [OrderSend](https://docs.mql4.com/trading/ordersend) and
-[OrderClose](https://docs.mql4.com/trading/orderclose).
-
-For example, here is the function that I wrote to place an order.
+[OrderClose](https://docs.mql4.com/trading/orderclose). Here is the function
+that I wrote to place an order.
 
 ```c
 void PlaceOrder(string pairToTrade, double sizeOfTrade)
@@ -107,9 +107,10 @@ inMotion = StrToInteger(FileReadString(handle));
 FileClose(handle);
 ```
 
-It worked well enough, but if I were to do it over, I'd consider using
-[SQLite](https://www.sqlite.org), which would make it easier to maintain a
-history of data as well as to efficiently query the data.
+It worked well enough, but if I were to do it over, I'd probably use
+[SQLite](https://www.sqlite.org), which is [designed to compete with
+fopen()](https://www.sqlite.org/whentouse.html) and would make it easier to
+maintain a history of data as well as to easily query that data.
 
 ### DoublesEqual
 
@@ -131,20 +132,20 @@ bool DoublesEqual(double number1, double number2)
 //+------------------------------------------------------------------+
 ```
 
-I had unnecessary `if` and `else` conditionals. I could have just directly
-returned the result of `NormalizeDouble(number1 - number2, 4) == 0`.
+I had unnecessary `if` and `else` conditionals. I could have directly returned
+the result of `NormalizeDouble(number1 - number2, 4) == 0` instead.
 
-Also note the useless comment that doesn't tell you anything more than the function
-signature. I found many more cases of bad comments, like this one.
+Also note the useless comment that doesn't tell you anything more than the
+function signature. I found many more cases of bad comments, like [this
+one](https://github.com/dguo/forex-trading/blob/b90bb61b25b8ce4496d382609ddd6a428a1ffcfc/Reversion/RecordUpdater.java#L98).
 
 ```cpp
 // print out success line
 System.out.println("Success");
 ```
 
-Nowadays, I try to make
-sure my comments add meaningful details and context, instead of just repeating
-what the code plainly says.
+Nowadays, I try to write comments that add meaningful details and context,
+instead of just repeating what the code plainly says.
 
 ### Repetition
 
@@ -232,15 +233,17 @@ if(rawData.isEmpty()) System.out.println("wtf");
 ```
 
 Even if I just threw that in for debugging, it only would have taken a couple of
-seconds to make the message actually mean something.
+seconds to [make the message more
+meaningful](https://wix-ux.com/when-life-gives-you-lemons-write-better-error-messages-46c5223e1a2f).
 
 ## The Daily Lore
 
 My next side project was a news aggregation website called [The Daily
-Lore](https://www.dailylore.com/) that would show the headlines from various
-websites. I eventually remade it, but I preserved the original code in [this
-repo](https://github.com/dguo/headlines). I did clean this one up a bit before
-pushing to GitHub.
+Lore](https://www.dailylore.com/legacy/) that showed the headlines from various
+websites. I eventually [remade it](https://www.dailylore.com/), but I preserved
+the original code in [this repo](https://github.com/dguo/headlines). I did clean
+this repo up a bit before pushing to GitHub because there were some issues that
+weren't just bad code.
 
 ### Bad Commit Author
 
@@ -252,33 +255,48 @@ instructions](https://stackoverflow.com/a/750182/1481479).
 ### Missing .gitignore
 
 I also didn't know about the concept of
-[gitignore](https://git-scm.com/docs/gitignore) back then, so I had `.pyc`
-files, Excel spreadsheets, and even a PDF explaining how SVGs work in the repo.
-I removed them from the Git history using [The
+[gitignore](https://git-scm.com/docs/gitignore) back then, so my repo had `.pyc`
+files, Excel spreadsheets, and even a PDF explaining how SVGs work. I removed
+them from the Git history using [The
 BFG](https://rtyley.github.io/bfg-repo-cleaner/).
 
 The worst thing is that I committed secrets, like my AWS secret access key. I
 used The BFG to remove them from the Git history as well. That has [its own
 story](https://www.dannyguo.com/blog/I-published-my-aws-secret-key-to-github).
 
-### Dynamic Website
+### Inconsistent Cases
 
-I didn't know how to make a dynamic website at the time, so to update the
-headlines, I [hardcoded
-them](https://github.com/dguo/headlines/blob/d6aa64ac88895b786acc7694045e6232bfc3229c/generate_units.js#L4)
-into `generate_units.js`, which the website would fetch and run.
+I was inconsistent with [snake case](https://en.wikipedia.org/wiki/Snake_case)
+vs. [camel case](https://en.wikipedia.org/wiki/Camel_case) for naming. Not just
+within the same file but even between [back to back
+lines](https://github.com/dguo/headlines/blob/d6aa64ac88895b786acc7694045e6232bfc3229c/generate_units.js#L57)!
 
 ```javascript
-var sources = []
-sources[0] = ["Rolling Stone", "entertainment", "http://www.rollingstone.com/", "Jack White Abruptly Ends Radio City Show After 50 Minutes", "http://www.rollingstone.com/music/news/jack-white-abruptly-ends-show-after-50-minutes-20120930", "Box Office Report: 'Hotel Transylvania' Sets September Record", "http://www.rollingstone.com/movies/news/box-office-report-hotel-transylvania-sets-september-record-20120930", "Justin Bieber Throws Up Onstage During Believe Tour Kickoff", "http://www.rollingstone.com/music/videos/justin-bieber-vomits-onstage-during-believe-tour-kickoff-20120930"];
-sources[1] = ["NBC News", "a.general", "http://www.nbcnews.com/", "Christie: Romney debate performance will reshape race", "http://pheedo.msnbc.msn.com/click.phdo?i=56070b88d2e03612f00004d936f23c4a", "Paul Ryan: 'We've had some missteps' in campaign", "http://pheedo.msnbc.msn.com/click.phdo?i=33bbf6e400b84c1b2d035a57650d560b"];
-sources[2] = ["NPR", "a.general", "http://www.npr.org/", "Being 'Better Off' May Not Be Enough To Win Colo.", "http://www.npr.org/2012/09/30/162029579/being-better-off-may-not-be-enough-to-win-colo?ft=1&f=1001", "On The Road: Reporting On Lead Poisoning In Nigeria", "http://www.npr.org/blogs/health/2012/09/27/161900047/on-the-road-reporting-on-lead-poisoning-in-nigeria?ft=1&f=1001", "Candidates Push For Colo. To Swing In Their Favor", "http://www.npr.org/2012/09/30/162039205/candidates-push-for-colo-to-swing-in-their-favor?ft=1&f=1001"];
+var number_of_rows = Math.ceil(sources.length / 4);
+
+var currentCategory = "null";
 ```
 
-Then I created a cron job that would update this file and update the info. I
-should have had the cron job just update the HTML directly. That would make the
-JavaScript unnecessary, avoiding a network call and allowing the website to
-function even if JavaScript is disabled.
+Inconsistency hurts readability and is also a sign that
+[linting](https://en.wikipedia.org/wiki/Lint_(software)) and [continuous
+integration](https://en.wikipedia.org/wiki/Continuous_integration) aren't set up
+for a repo.
+
+And yes, it is strange that I used the string `"null"` instead of an actual
+`null` value.
+
+### Inline Styles
+
+I used inline styles [in a few
+cases](https://github.com/dguo/headlines/blob/d6aa64ac88895b786acc7694045e6232bfc3229c/index.html#L106).
+
+```html
+<div class="container" style="margin-top: -20px;">
+```
+
+While I think that's fine for such a simple, one-page website, I had other
+styles in a `styles.css` file. I might as well have put all the styles in there
+so that the styling wasn't done in two different ways.
 
 ## MovieSeer
 
@@ -286,15 +304,15 @@ Last of all, for a college hackathon, I built a movie recommendation website
 called [MovieSeer](https://github.com/dguo/movieseer). I used data from the
 [Rotten Tomatoes](https://www.rottentomatoes.com/) API (which now [requires an
 application](https://developer.fandango.com/rotten_tomatoes) to access). The
-user could like and dislike movies, and MovieSeer would use those preferences,
-along with the Rotten Tomatoes data, to try to find movies that the user would
-like. So it was a very simplistic [content-based
+user could like and dislike movies, and MovieSeer would use those ratings, along
+with the Rotten Tomatoes data, to recommend movies. It was a simplistic
+[content-based
 filtering](https://en.wikipedia.org/wiki/Recommender_system#Content-based_filtering)
 approach.
 
 ### Leftover Debugging
 
-I didn't need to look at the code again to remember my biggest mistake with this
+I didn't need to look at the code to remember my biggest mistake with this
 project. At the end of the hackathon, I volunteered to present first. It went
 well enough, until I hit the button to generate recommendations..and everything
 hung. After an eternity (probably ten seconds in wall clock time), the
@@ -315,8 +333,8 @@ So the server printed each cast member for every movie in the database! And the
 worst thing is that I was aware of it. The [last commit before my
 presentation](https://github.com/dguo/movieseer/commit/506cb05fdfe8cc7faac8ae8c9d170022818905b8)
 had a message of: "demo version (need to remove print statements)". Live demos
-are always treacherous, but I should have run through it one last time before
-the real thing.
+are always treacherous, but I should have done one more practice run before the
+real thing.
 
 ### Database Connection on Every Request
 
@@ -331,17 +349,14 @@ def get_recs(info):
     movies = db.movies
 ```
 
-Besides removing the fairly useless comment, I also could have [set up a
-connection
+In addition to removing the useless comment, I could have [set up a connection
 pool](https://www.mongodb.com/docs/manual/administration/connection-pool-overview/)
-when [the server
-starts](https://github.com/dguo/movieseer/blob/c15c0aa5c1bba331436773defb863fdb9c17471a/server.py#L19)
-instead of creating connections on demand.
+when the server starts instead of repeatedly creating connections.
 
 ### Debug Mode
 
-I always ran the server in [debug
-mode](https://flask.palletsprojects.com/en/2.3.x/debugging/).
+I always ran the [Flask](https://flask.palletsprojects.com/) server in [debug
+mode](https://flask.palletsprojects.com/en/3.0.x/debugging/).
 
 ```python
 if __name__ == '__main__':
@@ -350,27 +365,27 @@ if __name__ == '__main__':
 ```
 
 Which is a big security concern in production and exposes raw error messages to
-the user. I should have made sure to only run it in debug mode during
+the user. I should have made sure to only run the server in debug mode during
 development.
 
 ### Authentication
 
-There's no authentication for
-[requests](https://github.com/dguo/movieseer/blob/c15c0aa5c1bba331436773defb863fdb9c17471a/static/js/loadmovies.js#L165) from the client to the server.
+There was no authentication for
+[requests](https://github.com/dguo/movieseer/blob/c15c0aa5c1bba331436773defb863fdb9c17471a/static/js/loadmovies.js#L165)
+from the client to the server.
 
 ```javascript
 var restart = function() { $.post('../../process_data', info, function(data) {
 ```
 
-I did made this for a hackathon, so I didn't bother with creating a system for
-users, but I like to think that I would have been worried about authentication
-if I did.
+This *was* for a hackathon, so I didn't bother with creating a system for users,
+but I like to think that I would have considered authentication if I did.
 
 Also, `process_data` was a terribly generic name for an endpoint.
 
 ## Conclusion
 
-While looking at my old code made me repeatedly cringe, it was a good reminder
-that I have in fact learned things and have grown as a programmer. My mistakes
-were glaringly obvious. I hope that in another 10 years, my future self will
-look back on what I'm building now with the same feelings.
+Looking at my old code made me repeatedly cringe, but it was a good reminder
+that I have in fact learned things and grown as a programmer. My mistakes were
+glaringly obvious. I hope that in another 10 years, my future self will look
+back on what I'm building now with the same feelings.

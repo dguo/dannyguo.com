@@ -88,9 +88,9 @@ It would have been much easier to spend a little more money in the first place
 to buy an air conditioner that has a built-in thermometer.
 
 I learned later that I also could have used [IFTTT](https://ifttt.com/), which
-has [an Awair integration](https://ifttt.com/awair/details), with a high
-temperature trigger and a low temperature trigger. I could have linked these
-triggers to [the Kasa integration](https://ifttt.com/kasa/details) to turn the
-smart plug on and off.
+has [an Awair integration](https://ifttt.com/awair/triggers/temp_is_high), with
+a high temperature trigger and a low temperature trigger. I could have linked
+these triggers to [the Kasa integration](https://ifttt.com/kasa/details) to turn
+the smart plug on and off.
 
 But doing it through the APIs myself was much more fun!

@@ -223,5 +223,4 @@ longer effective, perhaps with a sensor that looks for a lack of airflow at the
 vents.
 
 To prevent the issue from occurring again, I've set up a recurring task in
-[Todoist](https://todoist.com/r/danny_guo_xlyrub) to remind me to clean my
-computers once a year.
+[Todoist](https://todoist.com) to remind me to clean my computers once a year.

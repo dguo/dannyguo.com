@@ -26,7 +26,6 @@ export default defineConfig({
                 !page.includes("blog/software-engineering-manager-tactics") &&
                 !page.includes("blog/building-a-hyper-key-tree") &&
                 !page.includes("blog/debates-as-competitions") &&
-                !page.includes("blog/my-approach-to-code-review") &&
                 !page.includes(
                     "blog/thinking-in-binaries-spectrums-and-dimensions"
                 ),

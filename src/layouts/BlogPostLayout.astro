@@ -125,10 +125,8 @@ const nextPost = posts[postIndex - 1] ?? null;
         Follow me on <a
             href={`https://twitter.com/${
                 import.meta.env.PUBLIC_AUTHOR_TWITTER_NAME
-            }`}>Twitter</a
-        > or subscribe to my <a href="/newsletter">free newsletter</a> or <a
-            href="/blog/feed.xml"
-            type="application/rss+xml">RSS feed</a
+            }`}>Twitter</a> or <a href={`https://${import.meta.env.PUBLIC_AUTHOR_MASTODON_HANDLE.split('@')[1]}/@${import.meta.env.PUBLIC_AUTHOR_MASTODON_HANDLE.split('@')[0]}`}>Mastodon</a> or subscribe to my <a href="/newsletter">newsletter</a> or <a
+            href="/blog/feed.xml" type="application/rss+xml">RSS feed</a
         > for future posts.
     </p>
 

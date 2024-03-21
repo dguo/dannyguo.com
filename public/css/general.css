@@ -255,6 +255,14 @@ button:hover {
   background-color: #0c85d0;
 }
 
+.mastodon {
+  background-color: #6364ff;
+}
+
+.mastodon:hover {
+  background-color: #563acc;
+}
+
 .github {
   background-color: #24292e;
 }

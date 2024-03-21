@@ -120,6 +120,16 @@ const title = props.title || import.meta.env.PUBLIC_AUTHOR_NAME;
                         Twitter
                     </a>
                     <a
+                        rel="me"
+                        href={`https://${import.meta.env.PUBLIC_AUTHOR_MASTODON_HANDLE.split('@')[1]}/@${import.meta.env.PUBLIC_AUTHOR_MASTODON_HANDLE.split("@")[0]}`}
+                        class="link-button mastodon"
+                    >
+                        <svg class="icon icon-mastodon">
+                            <use xlink:href="/images/icons.svg#icon-mastodon"></use>
+                        </svg>
+                        Mastodon
+                    </a>
+                    <a
                         href={`https://github.com/${
                             import.meta.env.PUBLIC_AUTHOR_GITHUB_NAME
                         }`}

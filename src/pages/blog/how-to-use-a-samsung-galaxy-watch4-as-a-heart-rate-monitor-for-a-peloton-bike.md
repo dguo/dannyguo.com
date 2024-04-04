@@ -3,7 +3,7 @@ layout: ../../layouts/BlogPostLayout.astro
 categories:
   - fitness
 date: "2022-01-26"
-lastmod: "2022-05-30"
+lastmod: "2024-04-04"
 tags:
   - peloton
 title: How to Use a Samsung Galaxy Watch4 as a Heart Rate Monitor for a Peloton Bike
@@ -12,15 +12,26 @@ title: How to Use a Samsung Galaxy Watch4 as a Heart Rate Monitor for a Peloton 
 To use a [Samsung Galaxy
 Watch4](https://www.amazon.com/Samsung-Electronics-Smartwatch-Detection-Bluetooth/dp/B096BJLZZM?&linkCode=ll1&tag=thdalo00-20&linkId=edd3ac30f2add8f2a278045edc1c8a84&language=en_US&ref_=as_li_ss_tl)
 as a heart rate monitor for a [Peloton bike](https://www.onepeloton.com/bikes),
-use the free [Heart for
+install the [Peloton app for
+WearOS](https://play.google.com/store/apps/details?id=com.onepeloton.callisto).
+Another option is to install the free [Heart for
 Bluetooth](https://play.google.com/store/apps/details?id=lukas.the.coder.heartforbluetooth)
 app. Beyond seeing your heart rate in real time, syncing your heart rate also
 allows you to use Peloton's [Strive
 Score](https://blog.onepeloton.com/strive-score/) feature.
 
-## How to Connect
+## Peloton
 
-First [pair your
+Peloton [released an app for
+WearOS](https://www.onepeloton.com/blog/android-watch-app/) on April 4, 2023.
+The app lets you [use your watch as a heart rate
+monitor](https://support.onepeloton.com/s/article/11060651868692-WearOS-App-Tracking).
+But if you have any problems with the Peloton app or if you  want to send your
+heart rate to a non-Peloton device, you can try Heart for Bluetooth instead.
+
+## Heart for Bluetooth
+
+ First [pair your
 watch](https://support.onepeloton.com/hc/en-us/articles/203418965-Pairing-Bluetooth-Headphones)
 to your bike using Bluetooth.
 
@@ -80,6 +91,6 @@ amount of time ends.
 
 If you have an Apple Watch and a Bike+, syncing your heart rate is easy because
 Bike+ [supports
-GymKit](https://support.onepeloton.com/hc/en-us/articles/360048226572-Pairing-Your-Apple-Watch-With-The-Peloton-Bike-).
+GymKit](https://support.onepeloton.com/s/article/360048773312-Apple-GymKit-On-The-Peloton-BikePlus).
 If you have a regular Bike, you can try using the
 [HeartCast](https://www.heartcast.app/) app.

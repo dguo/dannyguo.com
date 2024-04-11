@@ -22,6 +22,7 @@ export default defineConfig({
         mdx(),
         sitemap({
             filter: (page) =>
+                !page.includes("blog/my-cat-alerted-me-to-a-ddos-attack") &&
                 !page.includes("blog/the-power-of-the-link") &&
                 !page.includes("blog/software-engineering-manager-tactics") &&
                 !page.includes("blog/building-a-hyper-key-tree") &&

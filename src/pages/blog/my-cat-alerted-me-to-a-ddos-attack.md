@@ -2,8 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 categories:
   - programming
-date: "2024-04-11"
-unlisted: true
+date: "2024-04-14"
 title: My Cat Alerted Me to a DDoS Attack
 ---
 

@@ -3,6 +3,7 @@ layout: ../../layouts/BlogPostLayout.astro
 categories:
   - hardware
 date: "2022-05-23"
+lastmod: "2024-04-13"
 tags:
   - samsung
 title: How to Disable 5G for a Samsung Galaxy S21 FE Phone
@@ -15,9 +16,10 @@ phone, and one of the first things I did was to disable
 cause a noticeable decrease in battery life, and I've never felt a need for
 speeds faster than what [4G
 LTE](https://en.wikipedia.org/wiki/LTE_(telecommunication)) provides anyway. I
-used an app called [Samsung Band
-Selection](https://play.google.com/store/apps/details?id=com.ray.samsungbandselection)
-to disable 5G.
+use an app called
+[Netmonitor](https://play.google.com/store/apps/details?id=com.parizene.netmonitor)
+to disable 5G. Previously, I used [Samsung Band
+Selection](https://play.google.com/store/apps/details?id=com.ray.samsungbandselection).
 
 Samsung's own website has a [page on the battery drain
 issue](https://www.samsung.com/us/support/troubleshooting/TSG01201462/):
@@ -38,15 +40,48 @@ of this issue for iPhones as well.
 I originally expected to turn 5G off through the phone's settings, but I wasn't
 able to because the "Network mode"
 [setting](https://www.digitaltrends.com/mobile/how-to-turn-off-5g-on-a-samsung-phone/)
-that I've seen on my older devices wasn't there. I don't know if it's because I
-bought an unlocked phone, or maybe Samsung doesn't want people to be able to
-change the network mode in general anymore.
+that I've seen on my older devices wasn't there. It seems like Samsung doesn't
+want people to be able to easily change the network mode anymore.
 
 ![Mobile network settings](https://i.imgur.com/6MjOaPc.jpg)
 
-As a workaround, I found the [Samsung Band
+## Netmonitor
+
+So now I use
+[Netmonitor](https://play.google.com/store/apps/details?id=com.parizene.netmonitor)
+to disable 5G. The service menu does give this warning about using only LTE.
+
+![Netmonitor warning about using only LTE mode](https://i.imgur.com/qGPNalm.jpg)
+
+But I went ahead into phone info.
+
+![Netmonitor phone info](https://i.imgur.com/kPdP0Yp.jpg)
+
+The NR in "Set Preferred Network Type" stands for [New
+Radio](https://en.wikipedia.org/wiki/5G_NR) and refers to 5G. I changed the
+setting to "LTE/WCDMA", and that has kept my phone on 4G.
+
+## Samsung Band Selection
+
+Before Netmonitor, I used the [Samsung Band
 Selection](https://play.google.com/store/apps/details?id=com.ray.samsungbandselection)
-app.
+app. But I eventually got a message saying:
+
+> Workaround Needed
+>
+> In June of 2022, Samsung released a firmware update which blocks public access
+> to the Band Selection screen - unfortunately, your phone is affected, which
+> prevents this app from launching the Band Selection screen directly. However,
+> there are some workarounds available. Like the original solution though, the
+> workarounds aren't guaranteed to last forever sincer Samsung can revoke them
+> at any point in time.
+
+The message then links to [this Reddit
+post](https://www.reddit.com/r/samsung/comments/vc4yqr/psa_samsung_has_removed_the_band_selection_screen/)
+for workarounds. I didn't try any of them because [one of the
+comments](https://www.reddit.com/r/samsung/comments/vc4yqr/comment/jpypxr6/)
+suggested Netmonitor instead. But for posterity, here is how I used Samsung Band
+Selection:
 
 ![Samsung Band Selection app](https://i.imgur.com/h16FP4w.jpg)
 
@@ -59,5 +94,4 @@ I changed it from 5G to LTE.
 
 ![Disabling 5G](https://i.imgur.com/j3caepW.jpg)
 
-And that has worked as expected. When I first got the phone, I saw the 5G symbol
-in the top bar. Now I only ever see 4G.
+And from then on, I only ever saw 4G in the network status.

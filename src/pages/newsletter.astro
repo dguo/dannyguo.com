@@ -9,7 +9,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
     n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
     (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '796104');
+    ml("account", "796104");
 </script>
 
 <BaseLayout title="Danny Guo · Newsletter">
@@ -22,8 +22,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="ml-embedded" data-form="7m0QtF"></div>
 
     <p>
-        You can also follow me on
-        <a href="https://twitter.com/{{ .Site.Author.twitter }}">Twitter</a> or subscribe
-        to <a href="/blog/feed.xml" type="application/rss+xml">my RSS feed</a>.
+        You can also follow me on <a
+            href={`https://twitter.com/${
+                import.meta.env.PUBLIC_AUTHOR_TWITTER_NAME
+            }`}>Twitter</a
+        > or <a
+            href={`https://${
+                import.meta.env.PUBLIC_AUTHOR_MASTODON_HANDLE.split("@")[1]
+            }/@${import.meta.env.PUBLIC_AUTHOR_MASTODON_HANDLE.split("@")[0]}`}
+            >Mastodon</a
+        > or subscribe to my <a href="/blog/feed.xml" type="application/rss+xml"
+            >RSS feed</a
+        >.
     </p>
 </BaseLayout>

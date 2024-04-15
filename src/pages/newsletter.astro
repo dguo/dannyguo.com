@@ -23,7 +23,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <p>
         You can also follow me on
-        <a href="https://twitter.com/{{ .Site.Author.twitter }}">Twitter</a> or subscribe
+        <a href="{`https://twitter.com/${
+                import.meta.env.PUBLIC_AUTHOR_TWITTER_NAME
+            }`}">Twitter</a> or subscribe
         to <a href="/blog/feed.xml" type="application/rss+xml">my RSS feed</a>.
     </p>
 </BaseLayout>

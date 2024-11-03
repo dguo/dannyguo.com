@@ -309,9 +309,12 @@ else on Google Voice that day, and I barely sent any texts or made any calls in
 the days before. I'm confident that if a real person looked at my account,
 they'd agree something in the automation went wrong. You may have some
 skepticism. Unfortunately, I can't provide my activity, since I can't see it
-anymore after the app recognized that my number was ported out.
-
-I'm [not the only
+anymore after the app recognized that my number was ported out. But I'm [not the
+only
 one](https://www.reddit.com/r/Googlevoice/comments/1fcw44j/google_voice_exit_strategy_update/)
-dealing with this kind of a situation. Google can afford to simply not care
-about us.
+dealing with this kind of a situation.
+
+I wonder if I should be more upset. Maybe I should actually try to vote with my
+wallet and switch to that iPhone, move my files from Google Drive to iCloud or
+Dropbox, and migrate to Fastmail. But I know Google can afford to simply not
+care.

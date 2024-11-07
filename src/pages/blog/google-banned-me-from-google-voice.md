@@ -1,9 +1,8 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 categories:
-  - miscellaneous
-date: "2024-11-03"
-unlisted: true
+  - life
+date: "2024-11-07"
 title: Google Banned Me From Google Voice
 ---
 
@@ -100,9 +99,9 @@ details, and I would likely be forced to accept losing my phone number.
 
 I tried making an outbound call. It didn't work. I asked my wife to call me.
 That didn't work either. I asked my wife to text me. From her perspective, it
-looked like it worked, but I obviously couldn't see the text. That was even
-worse because it meant that anyone who texted me wouldn't get any indication
-that anything was wrong.
+looked like it worked, but I never received it. That was even worse because it
+meant that anyone who texted me wouldn't get any indication that anything was
+wrong.
 
 ## First Appeal
 
@@ -158,12 +157,12 @@ On October 6 (two days later), I heard back about my appeal:
 
 On October 7, I submitted a second appeal. I explained that I reviewed the
 Google Voice policies and did not believe I violated any of them. I never sent
-large quantities of texts, I never sent commercial texts, I only used it to text
-friends and family, and there was nothing remotely inappropriate about the
-picture I sent right before I was suspended. The picture was of four adults
-around a baby in a stroller on a sidewalk. The baby is dressed and even has a
-blanket on him. I added that that was the only text I sent on the day I was
-suspended, and I didn't make any calls that day.
+large quantities of texts, I never sent commercial texts, I only texted friends
+and family, and there was nothing remotely inappropriate about the picture I
+sent right before I was suspended. The picture was of four adults around a baby
+in a stroller on a sidewalk. The baby is dressed and even has a blanket on him.
+I added that that was the only text I sent on the day I was suspended, and I
+didn't make any calls that day.
 
 On October 8, I received the same reply that I got for the first appeal.
 
@@ -181,7 +180,10 @@ trying to update my number for a countless number of services, especially since
 I'm sure it'd be a hassle for many of them without access to the old number.
 
 I did some searching and learned that the Google Voice subreddit has [an entire
-document on suspensions](https://www.reddit.com/r/Googlevoice/comments/17n4zl2/google_voice_service_suspensions/). Suspensions apparently happen often enough that the subreddit disallows threads on suspensions since there's nothing they can do about it.
+document on
+suspensions](https://www.reddit.com/r/Googlevoice/comments/17n4zl2/google_voice_service_suspensions/).
+People apparently post about suspensions often enough that the subreddit
+disallows threads on suspensions since there's nothing they can do about them.
 
 I found [one wonderfully detailed
 post](https://www.reddit.com/r/Googlevoice/comments/1dr47m4/account_suspended_reclaiming_your_number_and_your/)
@@ -194,10 +196,10 @@ complaints](https://consumercomplaints.fcc.gov/hc/en-us) with the
 [FCC](https://en.wikipedia.org/wiki/Federal_Communications_Commission). So I
 planned to do that, expecting the whole process to take a couple of months.
 
-On October 9, I added a new line to my Verizon plan as a target for the phone
-number. A silver lining is that with the new line, I was able to get a new
-iPhone 15 for almost free after bill credits. I initiated a port in request with
-my Google Voice number. I expected this transfer to fail, since I was unable to
+On October 9, I added a new line to my Verizon plan as a target for my Google
+Voice number. A silver lining is that with the new line, I was able to get a new
+iPhone 15 for almost free after bill credits. I initiated a port in request for
+my Google Voice number. I expected the port to fail, since I was unable to
 access my Google Voice account to [unlock the
 number](https://support.google.com/voice/answer/1065667?hl=en). Then I would
 submit the FCC complaint.
@@ -208,6 +210,17 @@ an issue where I could make calls and send and receive texts, but I couldn't
 receive calls. I called the Verizon port center (1-888-844-7095), and the person
 who helped me did something on their end to truly finish off the port. After
 that, I could receive calls as well. So I never needed to use the FCC's muscle.
+
+Then I did a [number swap](https://www.verizon.com/support/swap-devices-faqs/)
+between my Verizon lines so that I can use my former Google Voice number on my
+Android phone instead of the iPhone.
+
+After a couple of days, I looked up the number on
+[FreeCarrierLookup](https://freecarrierlookup.com/), and it showed up as a
+wireless Verizon number. Previously, it showed up as a landline, and the carrier
+was [Bandwidth](https://www.bandwidth.com/), which is
+[apparently](https://news.ycombinator.com/item?id=19049200) what powers Google
+Voice SMS in the backend.
 
 On October 23, I received an email from Google Voice saying that my number was
 ported away:
@@ -259,7 +272,9 @@ decline](https://www.theatlantic.com/technology/archive/2023/09/google-search-si
 and the fact that [LLM](https://en.wikipedia.org/wiki/Large_language_model)s are
 just better for certain searches.
 
-But relying on Google worries me because of all those stories I've read about
+### Fear
+
+But relying on Google worries me because of all the stories I've read about
 people being banned. Sure, some of those cases might be lacking some details
 that would justify the bans, but I was convinced enough to put a lot of effort
 into migrating away from Gmail several years ago. Consider how important your
@@ -289,6 +304,8 @@ aren't good anymore or that they kill things off all the time. It's that I'm
 afraid they will just ban me with no recourse. It finally happened, and it
 wasn't even for a service that I was worried about.
 
+### Caveats
+
 I work in software and in fintech. I can understand that Google operates at such
 a massive scale that many things have to be automated, and even if there are
 some false positives, that could be a worthy tradeoff to Google to not have to
@@ -298,7 +315,9 @@ I also understand the logic of not telling people what rules they broke because
 you don't want bad actors to get a better understanding of the system because
 that would allow them to fine tune their attacks accordingly.
 
-But I am still frustrated about temporarily losing my phone number. Sure I never
+### Curiosity
+
+But I'm still frustrated about temporarily losing my phone number. Sure I never
 paid for Google Voice, but Google never gave me an option to pay for it. In this
 case, I would have happily paid $100 just to find out why exactly I was banned.
 What rule or model decided I needed to be banned?

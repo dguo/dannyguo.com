@@ -22,7 +22,6 @@ export default defineConfig({
         mdx(),
         sitemap({
             filter: (page) =>
-                !page.includes("blog/prefer-numbered-lists-to-bullets") &&
                 !page.includes("blog/the-black-hole-problem") &&
                 !page.includes("blog/beat-the-drum") &&
                 !page.includes("blog/the-power-of-the-link") &&

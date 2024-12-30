@@ -2,20 +2,18 @@
 layout: ../../layouts/BlogPostLayout.astro
 categories:
   - communication
-date: "2024-12-01"
-unlisted: true
+date: "2024-12-30"
 title: Prefer Numbered Lists to Bullets
 ---
 
-In the spirit of small communication tips that can add up to help someone become
-a much better communicator, like [no hello](https://nohello.net), my suggestion
-is to prefer numbered lists to bullets. Because numbered lists give others an
-easy way to reference your specific points.
+When communicating in writing (especially asynchronously), I suggest preferring
+numbered lists to bullets because numbered lists give others an easy way to
+reference your specific points.
 
-I try to make my communication more efficient. One way I do that is to batch up
-what I need to say. For example, if I'm getting started on a project, I might
-read the requirements and come up with a list of questions for the project
-manager.
+To make my communication more efficient, I first batch up what I need to say or
+ask. Then I break it down into separate, addressable points. For example, if I'm
+getting started on a project, I might read the requirements and come up with a
+list of questions for the project manager.
 
 Me:
 
@@ -40,20 +38,20 @@ Project manager:
 
 > 2. Let's stop B.
 
-This is a contrived example, but the point is that because we're using numbers,
-it's easy to maintain multiple conversations. Numbers create lightweight threads
-that are easy to follow, even if there are many points, and the back and forth
+Because of the numbering, it's easier to maintain multiple conversations.
+Numbers create lightweight threads that are easy to follow, even if there are
+many more points than in this contrived example, and even if the back and forth
 involves more than just short sentences.
 
 When people use bullets instead, I've seen others respond by copying the entire
-message and then replying inline with a different color. This seems to be a
-common pattern in email (as opposed to something like Slack). I don't think
-that's necessarily bad, but numbering things is easier and can be enough for
-many conversations.
+message and then replying inline with a different color or bolding the
+responses. This seems to be a common pattern in email (as opposed to something
+like Slack). I don't think that's a bad approach, but numbering things is easier
+and can be enough for many conversations.
 
-One objection could be that there is semantic meaning between numbered lists and
-bulleted lists. Numbered lists imply that the order is important, which might
-not be the case. My response is that:
+One objection could be that there is a semantic difference between numbered
+lists and bulleted lists. Numbered lists imply that the order is important,
+which might not be the case. My response is that:
 
 1. This is about effective communication between humans, who are generally smart
    enough to understand when order is important.

@@ -30,7 +30,9 @@ const canonicalUrl =
 /* We can't use Astro.props.rawContent() because that is only supported for
    regular Markdown, whereas we also have MDX files. */
 const fileContent = fs.readFileSync(props.file).toString();
-const hasAmazonLink = /https:\/\/www.amazon.com/.test(fileContent);
+const hasAmazonLink =
+    /https:\/\/www.amazon.com/.test(fileContent) ||
+    /https:\/\/amzn.to/.test(fileContent);
 const hasCodeBlock = /```/.test(fileContent);
 
 const locale = "en-us";
@@ -38,12 +40,12 @@ const localeOptions = {
     month: "long",
     day: "numeric",
     year: "numeric",
-    timeZone: "UTC",
+    timeZone: "UTC"
 } as const;
 
 const posts = getBlogPostList({
     includeDraft: import.meta.env.DEV,
-    includeUnlisted: import.meta.env.DEV,
+    includeUnlisted: import.meta.env.DEV
 });
 const postIndex = posts.findIndex((post) => post.url === props.url);
 const previousPost = posts[postIndex + 1] ?? null;
@@ -125,8 +127,15 @@ const nextPost = posts[postIndex - 1] ?? null;
         Follow me on <a
             href={`https://twitter.com/${
                 import.meta.env.PUBLIC_AUTHOR_TWITTER_NAME
-            }`}>Twitter</a> or <a href={`https://${import.meta.env.PUBLIC_AUTHOR_MASTODON_HANDLE.split('@')[1]}/@${import.meta.env.PUBLIC_AUTHOR_MASTODON_HANDLE.split('@')[0]}`}>Mastodon</a> or subscribe to my <a href="/newsletter">newsletter</a> or <a
-            href="/blog/feed.xml" type="application/rss+xml">RSS feed</a
+            }`}>Twitter</a
+        > or <a
+            href={`https://${
+                import.meta.env.PUBLIC_AUTHOR_MASTODON_HANDLE.split("@")[1]
+            }/@${import.meta.env.PUBLIC_AUTHOR_MASTODON_HANDLE.split("@")[0]}`}
+            >Mastodon</a
+        > or subscribe to my <a href="/newsletter">newsletter</a> or <a
+            href="/blog/feed.xml"
+            type="application/rss+xml">RSS feed</a
         > for future posts.
     </p>
 

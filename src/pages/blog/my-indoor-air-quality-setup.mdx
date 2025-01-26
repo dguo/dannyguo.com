@@ -1,0 +1,243 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+categories:
+  - hardware
+date: "2025-01-25"
+tags:
+  - air
+unlisted: true
+title: My Indoor Air Quality Setup
+---
+import YouTube from "../../components/youtube.astro";
+
+I first became interested in [indoor air
+quality](https://en.wikipedia.org/wiki/Indoor_air_quality) when I saw a
+[post](https://x.com/dhh/status/1234533598583091200) by [David Heinemeier
+Hansson](https://en.wikipedia.org/wiki/David_Heinemeier_Hansson) saying that
+his company, [Basecamp](https://basecamp.com/), gives every employee an air
+quality monitor. I watched a talk that he gave:
+
+<YouTube id="MRqh8oLY7Ik" />
+
+And it resonated with me. Air is another input into your body, just like food
+and water. It seems obvious that what you eat and drink has a huge effect on
+your health, but I had never really thought that much about the air around me.
+Which is of course a sign of privilege considering many cities [deal with
+persistent air pollution](https://www.iqair.com/us/world-air-quality-ranking).
+
+Since then, I've collected an assortment of air quality appliances. When people
+visit for the first time and inevitably ask what each one does, I feel like Mr.
+Monk:
+
+<YouTube id="Sv0O6b65o3U" />
+
+Though I've never actually ran my humidifer and dehumidifier simultaneously.
+
+This post describes my setup so that I [have something to link
+to](https://www.dannyguo.com/blog/why-i-blog#be-able-to-provide-a-link) the
+next time someone is interested.
+
+## Monitoring
+
+On Hansson's recommendation, I bought an [Awair
+Element](https://amzn.to/3BRqG1V) to monitor my air quality. I particuarly
+liked that Awair has an [official API](https://docs.developer.getawair.com/).
+
+The device measures the five main factors for air quality: temperature,
+humidity, carbon dioxide,
+[VOCs](https://en.wikipedia.org/wiki/Volatile_organic_compound) (volatile
+organic compounds), and PM2.5 (particulate matter that is 2.5 micrometers or
+less in diameter). I mentally group the last two together as "pollutants."
+
+## Temperature
+
+Everyone is already familiar with indoor heating and air conditioning, but I
+still have a few things to mention regarding temperature control.
+
+### Radiant Heat
+
+The first is the existence of [radiant heating
+systems](https://www.energy.gov/energysaver/radiant-heating). In my previous
+apartment, the place was equipped with a hydronic radiant floor. I didn't know
+this existed, but I instantly fell in love with it when winter arrived.
+
+Basically, the floor has pipes running through it, and a boiler heats water to
+pump through the pipes. It makes the entire floor pleasantly warm, which is
+particularly nice in the bathroom. And unlike with [forced-air
+heating](https://en.wikipedia.org/wiki/Forced-air), the air doesn't become dry.
+If I ever buy or build a home, I would strongly consider installing a radiant
+heating system.
+
+### Automation
+
+The flip side to a fantastic heating system is that my previous apartment
+didn't have built-in air conditioning of any kind. So I relied on window units
+for the summer. In my bedroom, the thermostat on the air conditioner didn't
+work well, so I [automated turning the unit on and
+off](https://www.dannyguo.com/blog/automating-my-air-conditioner). My setup
+used the Awair API to retrieve the temperature and then toggled a smart plug to
+keep the temperature within a narrow range at night.
+
+I recently had to do the same thing with a heater in a nursery. A [common issue
+in New York City
+buildings](https://www.theguardian.com/us-news/2023/nov/06/steam-heating-environment-america-new-york-city-history)
+is that they have steam-based heating systems that are either on or off, with
+no fine-grained control. So a room can easily get too hot, with the most
+obvious solution being to open the window, as wasteful as that sounds.
+
+I can deal with that in my own room, but for a baby, it was becoming too much
+of a problem for the room to alternate between being in the low 60s and the
+high 80s. I first tried an [oil-filled space heater](https://amzn.to/4jxDFqv)
+with a thermostat. But just like with my old air conditioner, the thermostat
+was ineffective. I suppose it's difficult to make an effective thermostat
+that's built-in to the unit, since it can only measure the temperature right
+next to the unit.
+
+I considered buying a [Vornadobaby Sensa](https://amzn.to/4ayZ6DB) space
+heater, which solves that problem using a separate, wireless sensor for the
+heater to adjust its output. But I had already dealt with this problem before
+with the window air conditioner, so I knew I could replicate the solution.
+
+However, the space heater that I already had was too fancy. Because it was
+digital, I couldn't turn it on and off just by using a smart plug. It required
+a button press to turn on. So I returned it and bought a [cheaper unit with
+analog controls](https://amzn.to/3PP6EIM). I turned off the building's heat in
+the nursery, flipped the logic in my code since now I was controlling a heater
+instead of an air conditioner, and once again experienced the satisfaction of a
+stable temperature.
+
+As a safety measure, I also put a [thermometer with an audible
+alarm](https://amzn.to/4jKUDSD) in the room in case the system fails, and the
+temperature gets too cold or too hot.
+
+### Eight Sleep
+
+Lastly, I've had sleeping issues before and eventually tried out an [Eight
+Sleep](https://www.eightsleep.com/) system ([here is a referral
+link](https://refer.eight.sl/b8psaz88) for a discount). It's a bed cover that,
+similar to radiant heating, uses water running through tubes to heat or cool
+the bed. So you can set the temperature of your bed, and you can even set each
+half of the bed to a different temperature if two people have different
+preferences.
+
+It wasn't quite a miracle worker, but I tend to sleep hot, and it has been nice
+to be able to fix that in a very precise way. So I've been happy with my
+purchase, though I have also been lucky enough to avoid leaking issues that
+[seem to have been fairly
+common](https://www.reddit.com/r/EightSleep/search/?q=leak), at least in
+previous generations of the product.
+
+## Humidity
+
+I learned that in addition to making me just feel uncomfortable, both high and
+low levels of humidity can have negative health effects, especially in terms of
+respiratory issues. I've seen varying numbers for ideal indoor humidity, but
+the consensus seems to be around 30-50%.
+
+So in the summer, I use a [Frigidaire 50 pint
+dehumidifier](https://amzn.to/40NPtOc). On humid days, I would empty it about
+once a day. It astonished me to see how much water it was pulling out of the
+air.
+
+In the winter, I switch to using an [AIRCARE
+humidifier](https://amzn.to/49WaGrX). In the past, I've used the typical
+ultrasonic humdifiers that spray a cool mist into the air. But I learned that
+these can be bad for air quality by putting particulate matter and bacteria
+into the air. For a while, I tried to be diligent and bought gallons of
+distilled water to use. But even with a [supposedly large
+humidifier](https://amzn.to/42o8ZC1), I'd have to refill it multiple times a
+day to try to keep the humidity around 45%.
+
+Then I learned about evaporative humidifiers. This video provides a fantastic
+explanation ([Technology
+Connections](https://www.youtube.com/@TechnologyConnections) is an incredible
+channel in general):
+
+<YouTube id="oHeehYYgl28" />
+
+The gist is that an evaporative humidifer is simple but effective. It's
+basically a tank of water, with a wick that soaks up the water and has a lot of
+surface area, and a fan that drys out the wick to humidify the air. It's like a
+more efficient form of leaving a wet towel out to dry.
+
+Because it's just evaporating water, any unwanted things in that water just
+stay in the humidifier. Yes, that means bacteria can grow in the water, but
+that is also true for ultrasonic humidifiers, and at least the bacteria isn't
+going into the air. I also control the growth by adding a [bacteriostatic
+treatment](https://amzn.to/40Ym585).
+
+With the AIRCARE humidifer, the tank is so large that I only have to refill it
+once a day at most, and I can use plain tap water without worrying.
+
+## CO<sub>2</sub>
+
+High CO<sub>2</sub> levels [impair
+cognition](https://www.colorado.edu/mechanical/2020/04/21/continued-co2-emissions-will-impair-cognition).
+As far as I've
+[researched](https://www.reddit.com/r/chemistry/comments/iqw6hf/cost_effective_co2_scrubber/),
+there's no practical appliance for decreasing CO<sub>2</sub>. Though this
+[Hacker News thread](https://news.ycombinator.com/item?id=40696110) has a
+[comment](https://news.ycombinator.com/item?id=40696500) suggesting something
+called an [energy recovery
+ventilator](https://en.wikipedia.org/wiki/Heat_recovery_ventilation) that I
+need to look into more.
+
+When it builds up, the best thing most people can do is to somehow notice it
+(either by feeling the effects or preemptively with a monitor) and get fresh
+air by opening a window or otherwise improving ventilation.
+
+I've heard the idea of using plants to try to reduce indoor CO<sub>2</sub>, but
+my understanding is that this is [effectively a
+myth](https://pmc.ncbi.nlm.nih.gov/articles/PMC11253968/).
+
+## Pollution
+
+For purifying air, I use a [Coway Airmega 400](https://amzn.to/4gWqQnM) in the
+living room and [smaller Coway units](https://amzn.to/3PeujSz) for bedrooms.
+Here is a demo that partially convinced me to go with this brand:
+
+<YouTube id="q2yHERLA79w" />
+
+I could also verify that the purifier makes a difference because when my Awair
+monitor tells me that VOC or PM2.5 levels are high, the purifier would
+frequently detect the same thing and go to a faster speed. This was
+particularly noticeable while cooking, a [subtle source of indoor air
+pollution](https://www.bbc.com/future/article/20200909-why-indoor-air-pollution-is-an-overlooked-problem).
+
+And during the [2023 Canadian
+wildfires](https://en.wikipedia.org/wiki/2023_Canadian_wildfires), the air
+purifiers did their job in keeping the air inside clean, even when the outside
+air became visibly polluted.
+
+When I changed the filter, it was gratifying to see the pollution that it kept
+out of the air my family breathes:
+
+![Clean Coway air filter next to a dirty one](https://i.imgur.com/sY57WNo.jpg)
+
+### Cars
+
+If you have a car, I also recommend [changing your cabin air
+filter](https://www.cars.com/articles/whats-a-cabin-air-filter-and-when-should-you-replace-it-1420668943312/).
+I didn't know this was a part of routine car maintenance. When I finally
+learned about it and changed mine, the old one was filthy, just like the Coway
+filter:
+
+![Clean cabin air filter next to a dirty one](https://i.imgur.com/FN2f7Lu.jpg)
+
+It was cheap and easy enought to [buy a generic one on
+Amazon](https://amzn.to/3CmijMa) that was compatible with my car and change it
+myself rather than going to an auto shop to do it.
+
+## Conclusion
+
+Yes, writing this all out does make me realize how much of a control freak I
+am. But I sleep better knowing that the air in my place is less likely to
+insidiously cause health issues for my family. And of course, I also sleep
+better when I am hot or cold in my bed and can use the Eight Sleep app to
+change the temperature at will.
+
+But I still dream of a place that has a [heat pump
+system](https://www.energy.gov/energysaver/heat-pump-systems), in conjunction
+with a [whole home
+humdifier](https://indoortemp.com/resources/whole-house-humidifiers-benefits-types-costs),
+powered by a solar roof. There's always a better setup to strive for!

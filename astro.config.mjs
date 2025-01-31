@@ -24,7 +24,6 @@ export default defineConfig({
             filter: (page) =>
                 !page.includes("blog/my-indoor-air-quality-setup") &&
                 !page.includes("blog/the-black-hole-problem") &&
-                !page.includes("blog/beat-the-drum") &&
                 !page.includes("blog/the-power-of-the-link") &&
                 !page.includes("blog/software-engineering-manager-tactics") &&
                 !page.includes("blog/building-a-hyper-key-tree") &&

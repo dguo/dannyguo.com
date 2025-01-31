@@ -2,8 +2,7 @@
 layout: ../../layouts/BlogPostLayout.astro
 categories:
   - communication
-date: "2025-01-25"
-unlisted: true
+date: "2025-01-31"
 title: Beat the Drum
 ---
 

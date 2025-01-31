@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".tool-versions"
       - name: Get the Yarn cache path
         id: yarn-cache-path
         run: echo "::set-output name=path::$(yarn config get cacheFolder)"
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           path: ${{ steps.yarn-cache-path.outputs.path }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -36,7 +36,7 @@ jobs:
         run: yarn playwright install --with-deps
       - name: Run Playwright tests
         run: yarn playwright test
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report

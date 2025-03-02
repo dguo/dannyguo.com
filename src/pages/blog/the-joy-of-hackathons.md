@@ -43,7 +43,8 @@ theme. This can help you come up with a good idea, since your brain doesn't have
 to start from an overwhelmingly infinite set of possibilities.
 
 Combining freedom with constraints in this way means that you have agency but
-are also forced by circumstance to actually create something.
+are also forced by circumstance to actually create something instead of choosing
+the default path of not doing anything because the challenge seems too big.
 
 ## Benefits
 

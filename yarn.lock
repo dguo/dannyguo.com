@@ -10585,17 +10585,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.17.3":
-  version: 3.18.0
-  resolution: "zod@npm:3.18.0"
-  checksum: 62d73294a623a1f082d5de7ec2a02c9e9c670b904895216378165e72c244ab64d92d92fd480fbf7b6c9a8356d033f7aa6aafb77b4754bfc2d63da3f1b8154dc0
-  languageName: node
-  linkType: hard
-
-"zod@npm:^3.20.6":
-  version: 3.21.4
-  resolution: "zod@npm:3.21.4"
-  checksum: 03c79fa4610a35e24119771970be764c6e177a271a225587f86a7fc35d55e94a154d8e1970d23ffe35b567c147262bedbcb53b31aa30eeef2493fbd13e1b4aca
+"zod@npm:^3.17.3, zod@npm:^3.20.6":
+  version: 3.22.4
+  resolution: "zod@npm:3.22.4"
+  checksum: 73622ca36a916f785cf528fe612a884b3e0f183dbe6b33365a7d0fc92abdbedf7804c5e2bd8df0a278e1472106d46674281397a3dd800fa9031dc3429758c6ac
   languageName: node
   linkType: hard
 

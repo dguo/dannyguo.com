@@ -92,7 +92,7 @@ possible.
 
 ### SMS
 
-I only use SMS-based two=facotr authentication when I am forced to. I've never
+I only use SMS-based two-factor authentication when I am forced to. I've never
 liked being reliant on cell service (which is vulnerable to things like SIM
 swapping) and access to my cell phone (which can be stolen or broken) to be able
 to log in to things. This wasn't so bad when I was on [Google

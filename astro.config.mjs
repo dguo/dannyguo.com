@@ -22,6 +22,7 @@ export default defineConfig({
         mdx(),
         sitemap({
             filter: (page) =>
+                !page.includes("blog/fatherhood") &&
                 !page.includes("blog/peak-indignation") &&
                 !page.includes("blog/my-approach-to-authentication") &&
                 !page.includes("blog/making-my-own-wedding-website") &&
